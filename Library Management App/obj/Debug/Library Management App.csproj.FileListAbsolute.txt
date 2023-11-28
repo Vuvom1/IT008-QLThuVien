@@ -46,3 +46,66 @@ C:\Users\vominhvu\source\repos\Library Management App\obj\Debug\Library Manageme
 C:\Users\vominhvu\source\repos\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
 C:\Users\vominhvu\source\repos\Library Management App\obj\Debug\Library Management App.exe
 C:\Users\vominhvu\source\repos\Library Management App\obj\Debug\Library Management App.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Library Management App.exe.config
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Library Management App.exe
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Library Management App.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\EntityFramework.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\EntityFramework.SqlServer.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\FontAwesome.Sharp.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\MaterialDesignColors.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Core.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Platform.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\IT008-QLThuVien\Library Management App\bin\Debug\EntityFramework.xml
+D:\IT008-QLThuVien\Library Management App\bin\Debug\EntityFramework.SqlServer.xml
+D:\IT008-QLThuVien\Library Management App\bin\Debug\MaterialDesignColors.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Core.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Core.xml
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\IT008-QLThuVien\Library Management App\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.AssemblyReference.cache
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Resource\InfoCard.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Resource\StyleResource.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\MainWindow.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Resource\InfoCard.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\UserControls\InfoCard.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\UserControls\Item.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\BooksView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\HomeView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\MainView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\ReadersView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\App.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App_MarkupCompile.cache
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App_MarkupCompile.lref
+D:\IT008-QLThuVien\Library Management App\obj\Debug\App.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\MainWindow.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Resource\MainResource.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\UserControls\InfoCard.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\UserControls\Item.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\BooksView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\HomeView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\MainView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\ReadersView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.g.resources
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library_Management_App.Properties.Resources.resources
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.GenerateResource.cache
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.CoreCompileInputs.cache
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.exe
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.pdb
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\AddBooksView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\AddReadersView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\AddBooksView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\AddReadersView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\DetailReaderView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\DetailReaderView.baml
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\DetailBookView.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App_Content.g.cs
+D:\IT008-QLThuVien\Library Management App\obj\Debug\View\DetailBookView.baml
