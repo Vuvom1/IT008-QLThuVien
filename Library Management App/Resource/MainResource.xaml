@@ -2,5 +2,11 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewmodel="clr-namespace:Library_Management_App.ViewModel">
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
-    
+    <viewmodel:BooksViewModel x:Key="BooksVM"></viewmodel:BooksViewModel>
+    <viewmodel:ReadersViewModel x:Key="ReadersVM"></viewmodel:ReadersViewModel>
+    <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
+    <viewmodel:AddBooksViewModel x:Key="AddBooksVM"></viewmodel:AddBooksViewModel>
+    <viewmodel:AddReadersViewModel x:Key="AddReadersVM"></viewmodel:AddReadersViewModel>
+    <viewmodel:DetailReaderViewModel x:Key="DetailRdVM"></viewmodel:DetailReaderViewModel>
+    <viewmodel:DetailBookViewModel x:Key="DetailBookVM"></viewmodel:DetailBookViewModel>
 </ResourceDictionary>

@@ -1,8 +1,15 @@
-﻿
-FC:\Users\vominhvu\source\repos\Library Management App\App.xaml;;
-FC:\Users\vominhvu\source\repos\Library Management App\MainWindow.xaml;;
-FC:\Users\vominhvu\source\repos\Library Management App\Resource\MainResource.xaml;;
-FC:\Users\vominhvu\source\repos\Library Management App\UserControls\InfoCard.xaml;;
-FC:\Users\vominhvu\source\repos\Library Management App\UserControls\Item.xaml;;
-FC:\Users\vominhvu\source\repos\Library Management App\View\MainView.xaml;;
+﻿D:\IT008-QLThuVien\Library Management App\obj\Debug\GeneratedInternalTypeHelper.g.cs
+FD:\IT008-QLThuVien\Library Management App\App.xaml;;
+FD:\IT008-QLThuVien\Library Management App\MainWindow.xaml;;
+FD:\IT008-QLThuVien\Library Management App\Resource\MainResource.xaml;;
+FD:\IT008-QLThuVien\Library Management App\UserControls\InfoCard.xaml;;
+FD:\IT008-QLThuVien\Library Management App\UserControls\Item.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\AddBooksView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\AddReadersView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\BooksView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\DetailBookView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\DetailReaderView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\HomeView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\MainView.xaml;;
+FD:\IT008-QLThuVien\Library Management App\View\ReadersView.xaml;;
 

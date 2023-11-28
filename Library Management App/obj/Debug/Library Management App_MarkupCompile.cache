@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\vominhvu\source\repos\Library Management App\obj\Debug\
+D:\IT008-QLThuVien\Library Management App\obj\Debug\
 Library_Management_App
 none
 false
 DEBUG;TRACE
-C:\Users\vominhvu\source\repos\Library Management App\App.xaml
-7-4888449
+D:\IT008-QLThuVien\Library Management App\App.xaml
+14-1302387494
+1702765311
+25-96589099
+251916552037
+MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\HomeView.xaml;View\MainView.xaml;View\ReadersView.xaml;
 
-121407746411
-25-1031484616
-MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\MainView.xaml;
-
-True
+False
 
