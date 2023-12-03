@@ -1,0 +1,21 @@
+﻿<Window x:Class="AppManageLibrary.Quan_Ly_Tien_Phat"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppManageLibrary"
+        mc:Ignorable="d"
+        Title="Quan_Ly_Tien_Phat" Height="450" Width="800">
+    <Grid>
+        <Label Content="PHIẾU THU TIỀN PHẠT" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="10,130,0,59" AutoGenerateColumns="False" FontSize="24" FontWeight="Bold">
+            <DataGrid.Columns>
+                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Họ tên độc giả" CanUserResize="False" Width="200"/>
+                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Tổng nợ" CanUserResize="False" Width="200"/>
+                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Số tiền thu" CanUserResize="False" Width="200"/>
+                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Còn lại" CanUserResize="False" Width="180"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
