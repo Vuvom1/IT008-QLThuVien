@@ -116,7 +116,7 @@
                             Uid="1"
                             FontFamily="{StaticResource Custom}"
                             x:Name="btnOrder"
-                            Command="{Binding OrderCM}">
+                            Command="{Binding BookCM}">
                             </RadioButton>
 
                             <RadioButton
@@ -134,7 +134,7 @@
                             FontFamily="{StaticResource Custom}"
                             Uid="3"
                             x:Name="btnKH"
-                            Command="{Binding KHCM}">
+                            Command="{Binding ReaderCM}">
 
                             </RadioButton>
                             <RadioButton

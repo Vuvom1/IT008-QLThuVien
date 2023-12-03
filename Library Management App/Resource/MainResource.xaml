@@ -1,9 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:viewmodel="clr-namespace:Library_Management_App.ViewModel">
+
+    <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
+    <viewmodel:RegisterVM x:Key="RegistVM"></viewmodel:RegisterVM>
+    <viewmodel:ForgetPasswordViewModel x:Key="ForgetPassVM"></viewmodel:ForgetPasswordViewModel>
+    
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:BooksViewModel x:Key="BooksVM"></viewmodel:BooksViewModel>
     <viewmodel:ReadersViewModel x:Key="ReadersVM"></viewmodel:ReadersViewModel>
+    <viewmodel:BorrowViewModel x:Key="BorrowVM"></viewmodel:BorrowViewModel>
     <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
     <viewmodel:AddBooksViewModel x:Key="AddBooksVM"></viewmodel:AddBooksViewModel>
     <viewmodel:AddReadersViewModel x:Key="AddReadersVM"></viewmodel:AddReadersViewModel>

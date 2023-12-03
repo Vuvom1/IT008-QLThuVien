@@ -20,6 +20,10 @@ namespace Library_Management_App.ViewModel
 
         public ICommand SignoutCM { get; set; }
 
+        public ICommand BookCM { get; set; }
+
+        public ICommand ReaderCM { get; set; }
+
         public ICommand SettingCM { get; set; }
 
         public ICommand BorrowCM { get; set; }
@@ -43,6 +47,16 @@ namespace Library_Management_App.ViewModel
             {
                 MainFrame = p;
                 p.Content = new BorrowView();
+            });
+
+            ReaderCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new ReadersView();
+            });
+
+            BookCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new BooksView();
             });
 
             BorrowCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>

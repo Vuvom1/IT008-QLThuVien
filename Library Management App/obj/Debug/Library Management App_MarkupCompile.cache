@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\IT008-QLThuVien\Library Management App\obj\Debug\
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\
 Library_Management_App
 none
 false
 DEBUG;TRACE
-D:\IT008-QLThuVien\Library Management App\App.xaml
-14-1302387494
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\App.xaml
+22-1386276451
 1702765311
-25-96589099
-251916552037
-MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\HomeView.xaml;View\MainView.xaml;View\ReadersView.xaml;
+39686987604
+251065388556
+MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;
 
 False
 

@@ -102,13 +102,22 @@
     <Compile Include="ViewModel\AddReadersViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BooksViewModel.cs" />
+    <Compile Include="ViewModel\BorrowViewModel.cs" />
     <Compile Include="ViewModel\DetailBookViewModel.cs" />
     <Compile Include="ViewModel\DetailReaderViewModel.cs" />
+    <Compile Include="ViewModel\ForgetPasswordViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ReadersViewModel.cs" />
+    <Compile Include="ViewModel\RegisterVM.cs" />
+    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\SignUpViewModel.cs" />
     <Compile Include="View\AddBooksView.xaml.cs">
       <DependentUpon>AddBooksView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddBorrowView.xaml.cs">
+      <DependentUpon>AddBorrowView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\AddReadersView.xaml.cs">
       <DependentUpon>AddReadersView.xaml</DependentUpon>
@@ -116,20 +125,41 @@
     <Compile Include="View\BooksView.xaml.cs">
       <DependentUpon>BooksView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\BorrowDetailView.xaml.cs">
+      <DependentUpon>BorrowDetailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BorrowView.xaml.cs">
+      <DependentUpon>BorrowView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\DetailBookView.xaml.cs">
       <DependentUpon>DetailBookView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DetailReaderView.xaml.cs">
       <DependentUpon>DetailReaderView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ForgotPasswordPageView.xaml.cs">
+      <DependentUpon>ForgotPasswordPageView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginPageView.xaml.cs">
+      <DependentUpon>LoginPageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ReadersView.xaml.cs">
       <DependentUpon>ReadersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SettingView.xaml.cs">
+      <DependentUpon>SettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SignUpView.xaml.cs">
+      <DependentUpon>SignUpView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -167,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\AddBorrowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\AddReadersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -174,6 +208,14 @@
     <Page Include="View\BooksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BorrowDetailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\BorrowView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\DetailBookView.xaml">
       <SubType>Designer</SubType>
@@ -183,9 +225,21 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ForgotPasswordPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="View\HomeView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginPageView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="View\MainView.xaml">
       <SubType>Designer</SubType>
@@ -194,6 +248,14 @@
     <Page Include="View\ReadersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SignUpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -219,6 +281,9 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resource\Font\Nunito-ExtraBold.ttf" />
+    <Resource Include="Resource\Font\NunitoBold.ttf" />
+    <Resource Include="Resource\Font\NunitoRegular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
