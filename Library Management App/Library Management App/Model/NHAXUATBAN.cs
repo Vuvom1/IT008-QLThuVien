@@ -6,29 +6,23 @@ namespace Library_Management_App.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    public partial class TO1
+    [Table("NHAXUATBAN")]
+    public partial class NHAXUATBAN
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public TO1()
+        public NHAXUATBAN()
         {
-            GIAOVIENs = new HashSet<GIAOVIEN>();
+            SACHes = new HashSet<SACH>();
         }
 
         [Key]
-        public int MATO { get; set; }
+        [StringLength(50)]
+        public string MANXB { get; set; }
 
-        [StringLength(255)]
-        public string TENTO { get; set; }
-
-        public int? SOLUONG { get; set; }
-
-        public int? TOTRUONG { get; set; }
-
-        public bool? DELETED { get; set; }
+        [StringLength(50)]
+        public string TENNXB { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GIAOVIEN> GIAOVIENs { get; set; }
-
-        public virtual GIAOVIEN GIAOVIEN { get; set; }
+        public virtual ICollection<SACH> SACHes { get; set; }
     }
 }

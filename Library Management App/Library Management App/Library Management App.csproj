@@ -90,24 +90,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Model\ADMIN.cs" />
-    <Compile Include="Model\GIANGDAY.cs" />
-    <Compile Include="Model\GIAOVIEN.cs" />
-    <Compile Include="Model\HOCSINH.cs" />
-    <Compile Include="Model\HOCTAP.cs" />
-    <Compile Include="Model\KETQUA.cs" />
-    <Compile Include="Model\KHOI.cs" />
-    <Compile Include="Model\LOAIDIEM.cs" />
-    <Compile Include="Model\LOGIN.cs" />
-    <Compile Include="Model\LOP.cs" />
-    <Compile Include="Model\MONHOC.cs" />
-    <Compile Include="Model\NHANXET.cs" />
-    <Compile Include="Model\PHUHUYNH.cs" />
+    <Compile Include="Model\CTPM.cs" />
+    <Compile Include="Model\CTPN.cs" />
+    <Compile Include="Model\DOCGIA.cs" />
+    <Compile Include="Model\HOADON.cs" />
+    <Compile Include="Model\NGUOIDUNG.cs" />
+    <Compile Include="Model\NHAXUATBAN.cs" />
+    <Compile Include="Model\PHIEUMUON.cs" />
+    <Compile Include="Model\PHIEUNHAP.cs" />
     <Compile Include="Model\QLTV.cs" />
-    <Compile Include="Model\TBMON.cs" />
-    <Compile Include="Model\THANHTICH.cs" />
-    <Compile Include="Model\THI.cs" />
-    <Compile Include="Model\TO1.cs" />
+    <Compile Include="Model\ROLE.cs" />
+    <Compile Include="Model\SACH.cs" />
+    <Compile Include="Model\THELOAI.cs" />
     <Compile Include="Resource\InfoCard.xaml.cs">
       <DependentUpon>InfoCard.xaml</DependentUpon>
     </Compile>

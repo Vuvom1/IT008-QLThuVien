@@ -6,26 +6,23 @@ namespace Library_Management_App.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("LOAIDIEM")]
-    public partial class LOAIDIEM
+    [Table("ROLE")]
+    public partial class ROLE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAIDIEM()
+        public ROLE()
         {
-            THIs = new HashSet<THI>();
+            NGUOIDUNGs = new HashSet<NGUOIDUNG>();
         }
 
         [Key]
-        public int MALD { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MAROLE { get; set; }
 
-        [StringLength(20)]
-        public string TENLD { get; set; }
-
-        public int? HESO { get; set; }
-
-        public bool? DELETED { get; set; }
+        [StringLength(50)]
+        public string TENROLE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<THI> THIs { get; set; }
+        public virtual ICollection<NGUOIDUNG> NGUOIDUNGs { get; set; }
     }
 }

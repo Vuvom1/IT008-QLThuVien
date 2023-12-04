@@ -12,182 +12,175 @@ namespace Library_Management_App.Model
         {
         }
 
-        public virtual DbSet<ADMIN> ADMINs { get; set; }
-        public virtual DbSet<GIANGDAY> GIANGDAYs { get; set; }
-        public virtual DbSet<GIAOVIEN> GIAOVIENs { get; set; }
-        public virtual DbSet<HOCSINH> HOCSINHs { get; set; }
-        public virtual DbSet<HOCTAP> HOCTAPs { get; set; }
-        public virtual DbSet<KETQUA> KETQUAs { get; set; }
-        public virtual DbSet<KHOI> KHOIs { get; set; }
-        public virtual DbSet<LOAIDIEM> LOAIDIEMs { get; set; }
-        public virtual DbSet<LOGIN> LOGINs { get; set; }
-        public virtual DbSet<LOP> LOPs { get; set; }
-        public virtual DbSet<MONHOC> MONHOCs { get; set; }
-        public virtual DbSet<NHANXET> NHANXETs { get; set; }
-        public virtual DbSet<PHUHUYNH> PHUHUYNHs { get; set; }
-        public virtual DbSet<TBMON> TBMONs { get; set; }
-        public virtual DbSet<THANHTICH> THANHTICHes { get; set; }
-        public virtual DbSet<THI> THIs { get; set; }
-        public virtual DbSet<TO1> TO1 { get; set; }
+        public virtual DbSet<CTPM> CTPMs { get; set; }
+        public virtual DbSet<CTPN> CTPNs { get; set; }
+        public virtual DbSet<DOCGIA> DOCGIAs { get; set; }
+        public virtual DbSet<HOADON> HOADONs { get; set; }
+        public virtual DbSet<NGUOIDUNG> NGUOIDUNGs { get; set; }
+        public virtual DbSet<NHAXUATBAN> NHAXUATBANs { get; set; }
+        public virtual DbSet<PHIEUMUON> PHIEUMUONs { get; set; }
+        public virtual DbSet<PHIEUNHAP> PHIEUNHAPs { get; set; }
+        public virtual DbSet<ROLE> ROLEs { get; set; }
+        public virtual DbSet<SACH> SACHes { get; set; }
+        public virtual DbSet<THELOAI> THELOAIs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<ADMIN>()
-                .Property(e => e.AVA)
+            modelBuilder.Entity<CTPM>()
+                .Property(e => e.MACTPM)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<GIAOVIEN>()
+            modelBuilder.Entity<CTPM>()
+                .Property(e => e.MAPM)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CTPM>()
+                .Property(e => e.MASACH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CTPM>()
+                .Property(e => e.TIENPHAT)
+                .HasPrecision(10, 0);
+
+            modelBuilder.Entity<CTPN>()
+                .Property(e => e.MASACH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DOCGIA>()
+                .Property(e => e.MADG)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DOCGIA>()
+                .Property(e => e.TENDG)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DOCGIA>()
+                .Property(e => e.DCHI)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<DOCGIA>()
                 .Property(e => e.EMAIL)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<GIAOVIEN>()
+            modelBuilder.Entity<DOCGIA>()
                 .Property(e => e.SDT)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<GIAOVIEN>()
-                .Property(e => e.AVA)
+            modelBuilder.Entity<HOADON>()
+                .Property(e => e.MAND)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<GIAOVIEN>()
-                .HasMany(e => e.GIANGDAYs)
-                .WithRequired(e => e.GIAOVIEN)
-                .WillCascadeOnDelete(false);
+            modelBuilder.Entity<HOADON>()
+                .Property(e => e.MADG)
+                .IsUnicode(false);
 
-            modelBuilder.Entity<GIAOVIEN>()
-                .HasMany(e => e.LOPs)
-                .WithOptional(e => e.GIAOVIEN)
-                .HasForeignKey(e => e.GVCN);
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.MAND)
+                .IsUnicode(false);
 
-            modelBuilder.Entity<GIAOVIEN>()
-                .HasMany(e => e.TO11)
-                .WithOptional(e => e.GIAOVIEN)
-                .HasForeignKey(e => e.TOTRUONG);
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.TENND)
+                .IsUnicode(false);
 
-            modelBuilder.Entity<HOCSINH>()
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.GIOITINH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NGUOIDUNG>()
                 .Property(e => e.SDT)
+                .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<HOCSINH>()
-                .Property(e => e.SOHIEU)
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.DIACHI)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<HOCSINH>()
-                .Property(e => e.NIENKHOA)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOCSINH>()
-                .Property(e => e.AVA)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOCSINH>()
-                .HasMany(e => e.KETQUAs)
-                .WithRequired(e => e.HOCSINH)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<HOCSINH>()
-                .HasMany(e => e.LOPs)
-                .WithOptional(e => e.HOCSINH)
-                .HasForeignKey(e => e.LOPTRUONG);
-
-            modelBuilder.Entity<HOCSINH>()
-                .HasMany(e => e.NHANXETs)
-                .WithRequired(e => e.HOCSINH)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<HOCSINH>()
-                .HasOptional(e => e.PHUHUYNH)
-                .WithRequired(e => e.HOCSINH);
-
-            modelBuilder.Entity<HOCSINH>()
-                .HasMany(e => e.TBMONs)
-                .WithRequired(e => e.HOCSINH)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<KETQUA>()
-                .Property(e => e.DTB)
-                .HasPrecision(3, 1);
-
-            modelBuilder.Entity<LOGIN>()
+            modelBuilder.Entity<NGUOIDUNG>()
                 .Property(e => e.USERNAME)
+                .IsFixedLength()
                 .IsUnicode(false);
 
-            modelBuilder.Entity<LOGIN>()
-                .Property(e => e.USERPASS)
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.PASS)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<LOGIN>()
-                .HasMany(e => e.ADMINs)
-                .WithOptional(e => e.LOGIN)
-                .HasForeignKey(e => e.MALOGIN);
-
-            modelBuilder.Entity<LOGIN>()
-                .HasMany(e => e.GIAOVIENs)
-                .WithOptional(e => e.LOGIN)
-                .HasForeignKey(e => e.MALOGIN);
-
-            modelBuilder.Entity<LOGIN>()
-                .HasMany(e => e.HOCSINHs)
-                .WithOptional(e => e.LOGIN)
-                .HasForeignKey(e => e.MALOGIN);
-
-            modelBuilder.Entity<LOP>()
-                .Property(e => e.TENLOP)
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.AVA)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<LOP>()
-                .Property(e => e.NAMHOC)
+            modelBuilder.Entity<NGUOIDUNG>()
+                .Property(e => e.MAIL)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<LOP>()
-                .HasMany(e => e.GIANGDAYs)
-                .WithRequired(e => e.LOP)
+            modelBuilder.Entity<NHAXUATBAN>()
+                .Property(e => e.MANXB)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<NHAXUATBAN>()
+                .Property(e => e.TENNXB)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PHIEUMUON>()
+                .Property(e => e.MAPM)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PHIEUMUON>()
+                .Property(e => e.MADG)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PHIEUMUON>()
+                .Property(e => e.MAND)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PHIEUNHAP>()
+                .Property(e => e.MAND)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<PHIEUNHAP>()
+                .HasMany(e => e.CTPNs)
+                .WithRequired(e => e.PHIEUNHAP)
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<LOP>()
-                .HasMany(e => e.KETQUAs)
-                .WithRequired(e => e.LOP)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<LOP>()
-                .HasMany(e => e.NHANXETs)
-                .WithRequired(e => e.LOP)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<LOP>()
-                .HasMany(e => e.TBMONs)
-                .WithRequired(e => e.LOP)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<MONHOC>()
-                .HasMany(e => e.GIANGDAYs)
-                .WithRequired(e => e.MONHOC)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<MONHOC>()
-                .HasMany(e => e.TBMONs)
-                .WithRequired(e => e.MONHOC)
-                .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<PHUHUYNH>()
-                .Property(e => e.SDTBO)
+            modelBuilder.Entity<ROLE>()
+                .Property(e => e.TENROLE)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<PHUHUYNH>()
-                .Property(e => e.SDTME)
+            modelBuilder.Entity<SACH>()
+                .Property(e => e.TENSACH)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TBMON>()
-                .Property(e => e.DTB)
+            modelBuilder.Entity<SACH>()
+                .Property(e => e.MATL)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<THI>()
-                .Property(e => e.DIEM)
+            modelBuilder.Entity<SACH>()
+                .Property(e => e.MANXB)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TO1>()
-                .HasMany(e => e.GIAOVIENs)
-                .WithOptional(e => e.TO1)
-                .HasForeignKey(e => e.MATO);
+            modelBuilder.Entity<SACH>()
+                .Property(e => e.TRIGIA)
+                .HasPrecision(10, 0);
+
+            modelBuilder.Entity<SACH>()
+                .Property(e => e.MASACH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SACH>()
+                .Property(e => e.ISBN)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<SACH>()
+                .HasMany(e => e.CTPNs)
+                .WithRequired(e => e.SACH)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<THELOAI>()
+                .Property(e => e.MATL)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<THELOAI>()
+                .Property(e => e.TENTL)
+                .IsUnicode(false);
         }
     }
 }

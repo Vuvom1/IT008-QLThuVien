@@ -6,24 +6,23 @@ namespace Library_Management_App.Model
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("KHOI")]
-    public partial class KHOI
+    [Table("THELOAI")]
+    public partial class THELOAI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHOI()
+        public THELOAI()
         {
-            LOPs = new HashSet<LOP>();
+            SACHes = new HashSet<SACH>();
         }
 
         [Key]
-        public int MAKHOI { get; set; }
+        [StringLength(50)]
+        public string MATL { get; set; }
 
-        [StringLength(255)]
-        public string TENKHOI { get; set; }
-
-        public bool? DELETED { get; set; }
+        [StringLength(50)]
+        public string TENTL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<LOP> LOPs { get; set; }
+        public virtual ICollection<SACH> SACHes { get; set; }
     }
 }
