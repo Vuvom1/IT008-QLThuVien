@@ -187,3 +187,11 @@ C:\Users\vominhvu\Source\Repos\Vuvom1\IT008-QLThuVien\Library Management App\obj
 C:\Users\vominhvu\Source\Repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.GenerateResource.cache
 C:\Users\vominhvu\Source\Repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.CoreCompileInputs.cache
 C:\Users\vominhvu\Source\Repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\FineMoneyView.g.cs
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\StatisticReport1.g.cs
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\ImportBookView.g.cs
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\StatisticReport2.g.cs
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\FineMoneyView.baml
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\StatisticReport1.baml
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\ImportBookView.baml
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\View\StatisticReport2.baml

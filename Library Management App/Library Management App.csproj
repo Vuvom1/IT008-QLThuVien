@@ -122,6 +122,12 @@
     <Compile Include="View\AddReadersView.xaml.cs">
       <DependentUpon>AddReadersView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\FineMoneyView.xaml.cs">
+      <DependentUpon>FineMoneyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatisticReport1.xaml.cs">
+      <DependentUpon>StatisticReport1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\BooksView.xaml.cs">
       <DependentUpon>BooksView.xaml</DependentUpon>
     </Compile>
@@ -143,6 +149,9 @@
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ImportBookView.xaml.cs">
+      <DependentUpon>ImportBookView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginPageView.xaml.cs">
       <DependentUpon>LoginPageView.xaml</DependentUpon>
     </Compile>
@@ -160,6 +169,9 @@
     </Compile>
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatisticReport2.xaml.cs">
+      <DependentUpon>StatisticReport2.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +217,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\FineMoneyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\StatisticReport1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\BooksView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -233,6 +253,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ImportBookView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginPageView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -256,6 +280,10 @@
     <Page Include="View\SignUpView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StatisticReport2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

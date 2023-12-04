@@ -1,0 +1,21 @@
+﻿<Page x:Class="Library_Management_App.View.StatisticReport2"
+              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Management_App.View"
+        mc:Ignorable="d"
+        Title="Bao_Cao_Thong_Ke_2" Height="450" Width="800">
+    <Grid>
+        <Label Content="BÁO CÁO THỐNG KÊ SÁCH TRẢ TRỄ" HorizontalAlignment="Left" Margin="220,29,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="Ngày" HorizontalAlignment="Left" Margin="345,76,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="44,156,44,156" RenderTransformOrigin="0.509,0.645" AutoGenerateColumns="False" FontSize="18" FontWeight="Bold">
+            <DataGrid.Columns>
+                <DataGridTextColumn CanUserResize="False" FontWeight="Normal" FontSize="18" Header="STT" Width="100" Binding="{Binding RowIndex}"/>
+                <DataGridTextColumn CanUserResize="False" FontSize="18" Header="Tên sách" Width="200"/>
+                <DataGridTextColumn CanUserResize="False" FontSize="18" Header="Ngày mượn" Width="200"/>
+                <DataGridTextColumn CanUserResize="False" FontSize="18" Header="Số ngày trả trễ" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Page>

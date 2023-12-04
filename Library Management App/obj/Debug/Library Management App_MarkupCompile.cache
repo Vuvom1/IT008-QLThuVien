@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\App.xaml
-22-1386276451
+26-1609944218
 1702765311
-39686987604
+43-1792611729
 251065388556
-MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;
+MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\FineMoneyView.xaml;View\StatisticReport1.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\ImportBookView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;View\StatisticReport2.xaml;
 
 False
 

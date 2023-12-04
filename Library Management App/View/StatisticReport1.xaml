@@ -1,0 +1,41 @@
+﻿<Page x:Class="Library_Management_App.View.StatisticReport1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library_Management_App.View"
+        mc:Ignorable="d"
+        Title="Bao_Cao_Thong_Ke_1" Height="450" Width="800">
+    <Grid>
+        <Label Content="BÁO CÁO THỐNG KÊ TÌNH HÌNH MƯỢN SÁCH THEO THỂ LOẠI " HorizontalAlignment="Left" Margin="39,37,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <Label Content="THÁNG" HorizontalAlignment="Left" Margin="252,103,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Margin="342,103,0,0" VerticalAlignment="Top" Width="120" FontSize="18">
+            <Button Content="1"/>
+            <Button Content="2"/>
+            <Button Content="3"/>
+            <Button Content="4"/>
+            <Button Content="5"/>
+            <Button Content="6"/>
+            <Button Content="7"/>
+            <Button Content="8"/>
+            <Button Content="9"/>
+            <Button Content="10"/>
+            <Button Content="11"/>
+            <Button Content="12"/>
+        </ComboBox>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="39,154,56,154" AutoGenerateColumns="False" FontSize="18" FontWeight="Bold">
+            <DataGrid.BindingGroup>
+                <BindingGroup/>
+            </DataGrid.BindingGroup>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="STT" CanUserResize="False" Width="100" Binding="{Binding RowIndex}" IsReadOnly="False"/>
+                <DataGridTextColumn Header="Tên thể loại" CanUserResize="False" Width="200"/>
+                <DataGridTextColumn Header="Số lượt mượn" CanUserResize="False" Width="200"/>
+                <DataGridTextColumn Header="Tỉ lệ" CanUserResize="False" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Tổng số lượt mượn:" HorizontalAlignment="Left" Margin="402,304,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <TextBox HorizontalAlignment="Left" Margin="586,312,0,0" TextWrapping="Wrap" Text="........................" VerticalAlignment="Top" Width="120" FontSize="18" FontWeight="Bold"/>
+
+    </Grid>
+</Page>
