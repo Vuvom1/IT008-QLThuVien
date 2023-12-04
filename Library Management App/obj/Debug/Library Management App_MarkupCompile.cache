@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\vominhvu\source\repos\Library Management App\obj\Debug\
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\obj\Debug\
 Library_Management_App
 none
 false
 DEBUG;TRACE
-C:\Users\vominhvu\source\repos\Library Management App\App.xaml
-7-4888449
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\App.xaml
+22-1386276451
+1702765311
+39686987604
+251065388556
+MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;
 
-121407746411
-25-1031484616
-MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\MainView.xaml;
-
-True
+False
 

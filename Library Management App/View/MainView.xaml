@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:i= "http://schemas.microsoft.com/xaml/behaviors"
         xmlns:local="clr-namespace:Library_Management_App"
         xmlns:view="clr-namespace:Library_Management_App.View"
         mc:Ignorable="d"
@@ -15,9 +15,9 @@
         Background="Transparent"
         AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
-        
+        DataContext="{StaticResource MainVM}"
         Name="Mainview">
-       <!-- DataContext="{StaticResource MainVM}"  -->
+       
 
     
     <Window.Triggers>
@@ -44,7 +44,7 @@
 
 
             <Border Grid.Column="0"
-                    Background="#FF6363AB"
+                    Background="#1784C2"
                     CornerRadius="40,0,0,40" Height="700" VerticalAlignment="Top">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -101,8 +101,9 @@
 
                         <StackPanel>
                             <RadioButton
+                            Width="200"
                             x:Name="btnHome"
-                            Style="{StaticResource BtnHome}"
+                            Style="{StaticResource BtnDashboard}"
                             IsChecked="True"  
                             FontFamily="{StaticResource Custom}"
                             Uid="0"
@@ -110,14 +111,16 @@
                             </RadioButton>
 
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnCreateBill}"
                             Uid="1"
                             FontFamily="{StaticResource Custom}"
                             x:Name="btnOrder"
-                            Command="{Binding OrderCM}">
+                            Command="{Binding BookCM}">
                             </RadioButton>
 
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnProduct}"
                             FontFamily="{StaticResource Custom}"
                             Uid="2"
@@ -126,23 +129,25 @@
 
                             </RadioButton>
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnKH}"
                             FontFamily="{StaticResource Custom}"
                             Uid="3"
                             x:Name="btnKH"
-                            Command="{Binding KHCM}">
+                            Command="{Binding ReaderCM}">
 
                             </RadioButton>
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnWarehouse}"
                             FontFamily="{StaticResource Custom}"
                             Uid="4"
-                            x:Name="btnImport"
-                            Command="{Binding ImportCM}">
-
-
+                            x:Name="btnBorrow"
+                            Command="{Binding BorrowCM}">
                             </RadioButton>
+                            
                             <RadioButton
+                            Width="200"
                             Visibility="{Binding SetQuanLy}"
                             Style="{StaticResource BtnStatistic}"
                             FontFamily="{StaticResource Custom}"
@@ -153,6 +158,7 @@
 
                             </RadioButton>
                             <RadioButton
+                            Width="200"
                             x:Name="btnQLNNV"
                             Uid="6"
                             Visibility="{Binding SetQuanLy}"
@@ -163,6 +169,7 @@
 
                             </RadioButton>
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnSetting}"
                             FontFamily="{StaticResource Custom}"
                             Uid="7"
@@ -170,6 +177,7 @@
 
                             </RadioButton>
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnNoti}"
                             FontFamily="{StaticResource Custom}"
                             Uid="7"
@@ -177,6 +185,7 @@
                             </RadioButton>
 
                             <RadioButton
+                            Width="200"
                             Style="{StaticResource BtnSupport}"
                             FontFamily="{StaticResource Custom}"
                             Uid="7"
@@ -214,17 +223,22 @@
                 VerticalAlignment="Top"
                 HorizontalAlignment="Right"
                 Margin="10 20 30 0">
-                            <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#6C63FF" Height="24" Width="24" Margin="0,0,8,0" MouseDown="MinimizeButton">
+                            <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#1784C2" Height="24" Width="24" Margin="0,0,8,0" MouseDown="MinimizeButton">
                             </materialDesign:PackIcon>
-                            <materialDesign:PackIcon Kind="CloseThick" Foreground="#6C63FF" Height="24" Width="24" MouseDown="CloseButton">
+                            <materialDesign:PackIcon Kind="CloseThick" Foreground="#1784C2" Height="24" Width="24" MouseDown="CloseButton">
                             </materialDesign:PackIcon>
                         </StackPanel>
                     </Border>
 
                     <Frame x:Name="frame"
                            Background="White"
-                           NavigationUIVisibility="Hidden" Grid.Row="1" Height="605" Width="700" >
-                       
+                           NavigationUIVisibility="Hidden" Grid.Row="1" Height="605" Width="700" DataContext="{StaticResource MainVM}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Loaded">
+                                <i:InvokeCommandAction Command="{Binding LoadPageCM}"
+                                    CommandParameter="{Binding ElementName=frame}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Frame>
                 </Grid>
 

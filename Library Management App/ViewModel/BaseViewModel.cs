@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Demo.ViewModel
+namespace Library_Management_App.ViewModel
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
