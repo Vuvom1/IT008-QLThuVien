@@ -1,0 +1,86 @@
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Library Management App.exe.config
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Library Management App.exe
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Library Management App.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\EntityFramework.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\EntityFramework.SqlServer.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\FontAwesome.Sharp.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\MaterialDesignColors.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Core.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Platform.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Xaml.dll
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\EntityFramework.xml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\EntityFramework.SqlServer.xml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\MaterialDesignColors.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Microsoft.Xaml.Behaviors.xml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Core.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Core.xml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Xaml.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Xamarin.Forms.Xaml.xml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.AssemblyReference.cache
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Resource\InfoCard.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Resource\StyleResource.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\MainWindow.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Resource\InfoCard.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\UserControls\InfoCard.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\UserControls\Item.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddBooksView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddBorrowView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddReadersView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\BooksView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\BorrowDetailView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\BorrowView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\DetailBookView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\DetailReaderView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\FineMoneyView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ForgotPasswordPageView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\HomeView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ImportBookView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\LoginPageView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\LoginView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\MainView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ReadersView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SettingView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SignUpView.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport1.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport2.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\App.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App_MarkupCompile.cache
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App_MarkupCompile.lref
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\MainWindow.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Resource\MainResource.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\UserControls\InfoCard.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\UserControls\Item.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddBooksView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddBorrowView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddReadersView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\BooksView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\BorrowDetailView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\BorrowView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\DetailBookView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\DetailReaderView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\FineMoneyView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ForgotPasswordPageView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\HomeView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ImportBookView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\LoginPageView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\LoginView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\MainView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ReadersView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SettingView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SignUpView.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport1.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport2.baml
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.g.resources
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library_Management_App.Properties.Resources.resources
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.GenerateResource.cache
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.CoreCompileInputs.cache
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.exe
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.pdb
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\App.baml

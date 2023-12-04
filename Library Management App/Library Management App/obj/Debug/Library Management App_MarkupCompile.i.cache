@@ -1,0 +1,20 @@
+﻿Library Management App
+
+
+winexe
+C#
+.cs
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\
+Library_Management_App
+none
+false
+DEBUG;TRACE
+D:\New folder\IT008-QLThuVien\Library Management App\Library Management App\App.xaml
+26-1609944218
+
+62-1603676146
+27-854746389
+MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\FineMoneyView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\ImportBookView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;View\StatisticReport1.xaml;View\StatisticReport2.xaml;
+
+False
+
