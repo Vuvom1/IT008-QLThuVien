@@ -170,3 +170,5 @@ C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Lib
 C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
 C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.exe
 C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.pdb
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ChangePasswordView.g.cs
+C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\ChangePasswordView.baml

@@ -1,4 +1,5 @@
-﻿using Library_Management_App.ViewModel;
+﻿using Library_Management_App.Model;
+using Library_Management_App.ViewModel;
 using Library_Management_App.View;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,11 @@ namespace Library_Management_App.ViewModel
     public class LoginViewModel : BaseViewModel
     {
         public static bool IsLogin { get; set; }
+
         private string _Username;
-
         public string Username { get => _Username; set { _Username = value; OnPropertyChanged(); } }
-        private string _Password;
 
+        private string _Password;
         public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
         public static Frame MainFrame { get; set; }
 
@@ -52,19 +53,38 @@ namespace Library_Management_App.ViewModel
 
             LoginCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                IsLogin = true;
-                //Const.TenDangNhap = Username;
-                Window oldWindow = App.Current.MainWindow;
-                MainView mainView = new MainView();
-                App.Current.MainWindow = oldWindow;
-                oldWindow.Close();
-                mainView.Show();
+                try
+                {
+                    string PassEncode = MD5Hash(Base64Encode(Password));
+                    var accCount = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == Username && x.PASS == PassEncode && x.TTND).Count();
+                    if (accCount > 0)
+                    {
+                        IsLogin = true;
+                        Const.UserName = Username;
+                        Window oldWindow = App.Current.MainWindow;
+                        MainView mainView = new MainView();
+                        App.Current.MainWindow = oldWindow;
+                        oldWindow.Close();
+                        mainView.Show();
+                        Username = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButton.OK);
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Mất kết nối đến cơ sở dữ liệu!", "Thông báo", MessageBoxButton.OK);
+                }
             });
 
             ForgetPasswordCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
                 MainFrame.Content = new ForgotPasswordPageView();
             });
+
+
 
 
         }
@@ -90,7 +110,31 @@ namespace Library_Management_App.ViewModel
 
         public void login(LoginPageView p) 
         {
-            
+            try
+            {
+                if (p == null) return;
+                string PassEncode = MD5Hash(Base64Encode(Password));
+                var accCount = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == Username && x.PASS == PassEncode && x.TTND).Count();
+                if (accCount > 0)
+                {
+                    IsLogin = true;
+                    Const.UserName = Username;
+                    Window oldWindow = App.Current.MainWindow;
+                    MainView mainView = new MainView();
+                    App.Current.MainWindow = oldWindow;
+                    oldWindow.Close();
+                    mainView.Show();
+                    Username = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButton.OK);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Mất kết nối đến cơ sở dữ liệu!", "Thông báo", MessageBoxButton.OK);
+            }
         }
 
     }
