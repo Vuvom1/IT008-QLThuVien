@@ -92,6 +92,7 @@
     </ApplicationDefinition>
     <Compile Include="Model\CTPM.cs" />
     <Compile Include="Model\CTPN.cs" />
+    <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\DOCGIA.cs" />
     <Compile Include="Model\HOADON.cs" />
     <Compile Include="Model\NGUOIDUNG.cs" />
