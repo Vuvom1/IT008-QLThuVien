@@ -121,8 +121,10 @@
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\DetailBookViewModel.cs" />
     <Compile Include="ViewModel\DetailReaderViewModel.cs" />
+    <Compile Include="ViewModel\FineMoneyViewModel.cs" />
     <Compile Include="ViewModel\ForgetPasswordViewModel.cs" />
     <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\ImportBookViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ReadersViewModel.cs" />
@@ -130,6 +132,8 @@
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\SignUpViewModel.cs" />
+    <Compile Include="ViewModel\StatisticReport1ViewModel.cs" />
+    <Compile Include="ViewModel\StatisticReport2ViewModel.cs" />
     <Compile Include="View\AddBooksView.xaml.cs">
       <DependentUpon>AddBooksView.xaml</DependentUpon>
     </Compile>

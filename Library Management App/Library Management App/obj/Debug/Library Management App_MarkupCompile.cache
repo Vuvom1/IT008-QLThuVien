@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\App.xaml
 27-335145047
 
-61-51198797
+64-2034821147
 271451627951
 MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\ChangePasswordView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\FineMoneyView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\ImportBookView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;View\StatisticReport1.xaml;View\StatisticReport2.xaml;
 
-True
+False
 

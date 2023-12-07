@@ -28,6 +28,14 @@ namespace Library_Management_App.ViewModel
 
         public ICommand BorrowCM { get; set; }
 
+        public ICommand FineMoneyCM { get; set; }
+
+        public ICommand ImportCM { get; set; }
+
+        public ICommand StatisticRP1CM { get; set; }
+
+        public ICommand StatisticRP2CM { get; set; }
+
         public void LoadTenND(MainView p)
         {
         }
@@ -67,6 +75,26 @@ namespace Library_Management_App.ViewModel
             SettingCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame.Content = new SettingView();
+            });
+
+            ImportCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new ImportBookView();
+            });
+
+            FineMoneyCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new FineMoneyView();
+            });
+
+            StatisticRP1CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new StatisticReport1();
+            });
+
+            StatisticRP2CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new StatisticReport2();
             });
 
             SignoutCM = new RelayCommand<FrameworkElement>((p) => { return p == null ? false : true; }, (p) =>
