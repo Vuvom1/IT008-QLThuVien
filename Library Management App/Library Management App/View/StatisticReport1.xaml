@@ -3,16 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesignDialogHost="http://materialdesigninxaml.net/winfx/xaml/themes/dialoghost"
         xmlns:local="clr-namespace:Library_Management_App.View"
         mc:Ignorable="d"
         Title="Bao_Cao_Thong_Ke_1" Height="450" Width="800">
-    <Grid Background="#FF78EBDA">
+    
+    <Grid Background="#FFEDEEEE">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Label Content="BÁO CÁO THỐNG KÊ TÌNH HÌNH MƯỢN SÁCH THEO THỂ LOẠI " HorizontalAlignment="Left" Margin="39,37,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Background="#FF78EBDA" Foreground="#DDD42B5C"/>
-        <Label Content="THÁNG" HorizontalAlignment="Left" Margin="252,103,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#DDD42B5C"/>
+        <Label Content="BÁO CÁO THỐNG KÊ TÌNH HÌNH MƯỢN SÁCH THEO THỂ LOẠI " HorizontalAlignment="Left" Margin="39,37,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Background="#FFECF4F3" Foreground="#FF6C63FF"/>
+        <Label Content="THÁNG" HorizontalAlignment="Left" Margin="252,103,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#FF6C63FF"/>
         <ComboBox HorizontalAlignment="Left" Margin="342,103,0,0" VerticalAlignment="Top" Width="120" FontSize="18">
             <Button Content="1"/>
             <Button Content="2"/>
@@ -38,7 +41,7 @@
                 <DataGridTextColumn Header="Tỉ lệ" CanUserResize="False" Width="200"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Tổng số lượt mượn:" HorizontalAlignment="Left" Margin="402,79,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#DDD42B5C" Grid.Row="1"/>
+        <Label Content="Tổng số lượt mượn:" HorizontalAlignment="Left" Margin="402,79,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#FF6C63FF" Grid.Row="1"/>
         <TextBox HorizontalAlignment="Left" Margin="586,87,0,0" TextWrapping="Wrap" Text="........................" VerticalAlignment="Top" Width="120" FontSize="18" FontWeight="Bold" Grid.Row="1"/>
 
     </Grid>

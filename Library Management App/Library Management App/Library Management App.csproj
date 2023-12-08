@@ -134,6 +134,7 @@
     <Compile Include="ViewModel\SignUpViewModel.cs" />
     <Compile Include="ViewModel\StatisticReport1ViewModel.cs" />
     <Compile Include="ViewModel\StatisticReport2ViewModel.cs" />
+    <Compile Include="ViewModel\StatisticRP1AndRP2ViewModel.cs" />
     <Compile Include="View\AddBooksView.xaml.cs">
       <DependentUpon>AddBooksView.xaml</DependentUpon>
     </Compile>
@@ -196,6 +197,9 @@
     </Compile>
     <Compile Include="View\StatisticReport2.xaml.cs">
       <DependentUpon>StatisticReport2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\StatisticRP1AndRP2View.xaml.cs">
+      <DependentUpon>StatisticRP1AndRP2View.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -312,6 +316,10 @@
     <Page Include="View\StatisticReport2.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\StatisticRP1AndRP2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

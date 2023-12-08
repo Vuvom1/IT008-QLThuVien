@@ -9,11 +9,24 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Linq;
+using System.Windows.Navigation;
 
 namespace Library_Management_App.ViewModel
 {
     internal class MainViewModel : BaseViewModel
     {
+
+        private string _selectedOption;
+        public string SelectedOption
+        {
+            get { return _selectedOption; }
+            set
+            {
+                _selectedOption = value;
+                OnPropertyChanged(nameof(SelectedOption));
+            }
+        }
+
         public static Frame MainFrame { get; set; }
 
         public ICommand LoadPageCM { get; set; }
@@ -36,6 +49,11 @@ namespace Library_Management_App.ViewModel
 
         public ICommand StatisticRP2CM { get; set; }
 
+
+        public ICommand StatisticRP1AndRP2CM { get; set; }
+
+
+
         public void LoadTenND(MainView p)
         {
         }
@@ -51,6 +69,8 @@ namespace Library_Management_App.ViewModel
 
         public MainViewModel()
         {
+
+
             LoadPageCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame = p;
@@ -97,6 +117,12 @@ namespace Library_Management_App.ViewModel
                 MainFrame.Content = new StatisticReport2();
             });
 
+            StatisticRP1AndRP2CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new StatisticRP1AndRP2View();
+            });
+
+
             SignoutCM = new RelayCommand<FrameworkElement>((p) => { return p == null ? false : true; }, (p) =>
             {
                 FrameworkElement window = GetParentWindow(p);
@@ -121,5 +147,7 @@ namespace Library_Management_App.ViewModel
                 return parent;
             }
         }
+
+        
     }
 }

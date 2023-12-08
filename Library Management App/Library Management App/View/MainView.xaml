@@ -153,7 +153,7 @@
                             FontFamily="{StaticResource Custom}"
                             Uid="5"
                             x:Name="btnReport"
-                            Command="{Binding StatisticRP1CM}">
+                            Command="{Binding StatisticRP1AndRP2CM}">
 
 
                             </RadioButton>

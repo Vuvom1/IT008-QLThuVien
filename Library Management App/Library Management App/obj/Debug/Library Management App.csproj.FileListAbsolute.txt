@@ -260,3 +260,5 @@ C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Manage
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.exe
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.pdb
+C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticRP1AndRP2View.g.cs
+C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticRP1AndRP2View.baml

@@ -6,9 +6,8 @@
         xmlns:local="clr-namespace:Library_Management_App.View"
         mc:Ignorable="d"
         Title="Bao_Cao_Thong_Ke_2" Height="450" Width="800">
-    <Grid Background="#FF78EBDA">
-        <Label Content="BÁO CÁO THỐNG KÊ SÁCH TRẢ TRỄ" HorizontalAlignment="Left" Margin="220,29,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Background="#FF74E6D9" Foreground="#DDD42B5C"/>
-        <Label Content="Ngày" HorizontalAlignment="Left" Margin="345,76,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Foreground="#DDCC2253"/>
+    <Grid Background="#FFEDF3F2">
+        <Label Content="BÁO CÁO THỐNG KÊ SÁCH TRẢ TRỄ" HorizontalAlignment="Left" Margin="220,29,0,0" VerticalAlignment="Top" FontSize="24" FontWeight="Bold" Background="#FFF8FCFC" Foreground="#FF6C63FF"/>
         <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="44,156,44,156" RenderTransformOrigin="0.509,0.645" AutoGenerateColumns="False" FontSize="18" FontWeight="Bold">
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserResize="False" FontWeight="Normal" FontSize="18" Header="STT" Width="100" Binding="{Binding RowIndex}"/>
