@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Release\
+C:\Users\vominhvu\Source\Repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\obj\Release\
 Library_Management_App
 none
 false
 TRACE
-C:\Users\vominhvu\source\repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\App.xaml
-26-1609944218
+C:\Users\vominhvu\Source\Repos\Vuvom1\IT008-QLThuVien\Library Management App\Library Management App\App.xaml
+27-335145047
 
-55-810178080
-27-894381796
-MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\FineMoneyView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\ImportBookView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;View\StatisticReport1.xaml;View\StatisticReport2.xaml;
+60-965193146
+27-1966826020
+MainWindow.xaml;Resource\InfoCard.xaml;Resource\MainResource.xaml;Resource\StyleResource.xaml;UserControls\InfoCard.xaml;UserControls\Item.xaml;View\AddBooksView.xaml;View\AddBorrowView.xaml;View\AddReadersView.xaml;View\BooksView.xaml;View\BorrowDetailView.xaml;View\BorrowView.xaml;View\ChangePasswordView.xaml;View\DetailBookView.xaml;View\DetailReaderView.xaml;View\FineMoneyView.xaml;View\ForgotPasswordPageView.xaml;View\HomeView.xaml;View\ImportBookView.xaml;View\LoginPageView.xaml;View\LoginView.xaml;View\MainView.xaml;View\ReadersView.xaml;View\SettingView.xaml;View\SignUpView.xaml;View\StatisticReport1.xaml;View\StatisticReport2.xaml;
 
 True
 

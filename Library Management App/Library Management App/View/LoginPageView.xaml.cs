@@ -28,6 +28,7 @@ namespace Library_Management_App.View
         {
             SignUpView signUpView = new SignUpView();
             signUpView.Show();
+            
         }
     }
 }

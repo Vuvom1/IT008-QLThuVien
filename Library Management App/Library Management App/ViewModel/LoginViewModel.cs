@@ -56,7 +56,9 @@ namespace Library_Management_App.ViewModel
                 try
                 {
                     string PassEncode = MD5Hash(Base64Encode(Password));
+                
                     var accCount = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == Username && x.PASS == PassEncode && x.TTND).Count();
+
                     if (accCount > 0)
                     {
                         IsLogin = true;
@@ -101,41 +103,13 @@ namespace Library_Management_App.ViewModel
             }
             return hash.ToString();
         }
+
         public static string Base64Encode(string plainText)
         {
             var plainTextBytes = System.Text.Encoding.UTF8.GetBytes(plainText);
             return System.Convert.ToBase64String(plainTextBytes);
         }
 
-
-        public void login(LoginPageView p) 
-        {
-            try
-            {
-                if (p == null) return;
-                string PassEncode = MD5Hash(Base64Encode(Password));
-                var accCount = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == Username && x.PASS == PassEncode && x.TTND).Count();
-                if (accCount > 0)
-                {
-                    IsLogin = true;
-                    Const.UserName = Username;
-                    Window oldWindow = App.Current.MainWindow;
-                    MainView mainView = new MainView();
-                    App.Current.MainWindow = oldWindow;
-                    oldWindow.Close();
-                    mainView.Show();
-                    Username = "";
-                }
-                else
-                {
-                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng!", "Thông báo", MessageBoxButton.OK);
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Mất kết nối đến cơ sở dữ liệu!", "Thông báo", MessageBoxButton.OK);
-            }
-        }
 
     }
 }

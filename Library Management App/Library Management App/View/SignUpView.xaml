@@ -13,7 +13,7 @@
         Background="Transparent"
         AllowsTransparency="True" 
         Title="Đăng ký" Height="450" Width="650" WindowStartupLocation="CenterScreen"
-        DataContext="{StaticResource RegisterVM}">
+        DataContext="{StaticResource SignUpVM}">
 
     <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded">

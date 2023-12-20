@@ -114,6 +114,7 @@
       <DependentUpon>Item.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\AddBooksViewModel.cs" />
+    <Compile Include="ViewModel\AddBorrowViewModel.cs" />
     <Compile Include="ViewModel\AddReadersViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BooksViewModel.cs" />
@@ -126,7 +127,6 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ReadersViewModel.cs" />
-    <Compile Include="ViewModel\RegisterVM.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\SignUpViewModel.cs" />

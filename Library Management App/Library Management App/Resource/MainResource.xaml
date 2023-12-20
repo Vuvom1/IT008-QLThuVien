@@ -3,8 +3,11 @@
                     xmlns:viewmodel="clr-namespace:Library_Management_App.ViewModel">
 
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
-    <viewmodel:RegisterVM x:Key="RegistVM"></viewmodel:RegisterVM>
+
     <viewmodel:ForgetPasswordViewModel x:Key="ForgetPassVM"></viewmodel:ForgetPasswordViewModel>
+
+    <viewmodel:SignUpViewModel x:Key="SignUpVM"></viewmodel:SignUpViewModel>
+    
     <viewmodel:ChangePasswordViewModel x:Key="ChangePasswordVM"></viewmodel:ChangePasswordViewModel>
     
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
