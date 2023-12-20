@@ -5,9 +5,9 @@ using System.Linq;
 
 namespace Library_Management_App.Model
 {
-    public partial class Model1 : DbContext
+    public partial class QLTV : DbContext
     {
-        public Model1()
+        public QLTV()
             : base("name=QLTV")
         {
         }

@@ -96,11 +96,11 @@
     <Compile Include="Model\DataProvider.cs" />
     <Compile Include="Model\DOCGIA.cs" />
     <Compile Include="Model\HOADON.cs" />
+    <Compile Include="Model\Model1.cs" />
     <Compile Include="Model\NGUOIDUNG.cs" />
     <Compile Include="Model\NHAXUATBAN.cs" />
     <Compile Include="Model\PHIEUMUON.cs" />
     <Compile Include="Model\PHIEUNHAP.cs" />
-    <Compile Include="Model\QLTV.cs" />
     <Compile Include="Model\ROLE.cs" />
     <Compile Include="Model\SACH.cs" />
     <Compile Include="Model\THELOAI.cs" />
