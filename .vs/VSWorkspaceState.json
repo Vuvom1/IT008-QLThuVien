@@ -1,6 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Library Management App",
+    "\\Library Management App\\Library Management App",
+    "\\Library Management App\\Library Management App\\Model",
+    "\\Library Management App\\Library Management App\\Resource",
+    "\\Library Management App\\Library Management App\\View",
+    "\\Library Management App\\Library Management App\\ViewModel"
   ],
+  "SelectedNode": "\\Library Management App\\Library Management App\\ViewModel\\BorrowViewModel.cs",
   "PreviewInSolutionExplorer": false
 }
