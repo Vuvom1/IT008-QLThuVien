@@ -25,6 +25,12 @@ namespace Library_Management_App.Model
         [StringLength(50)]
         public string MAND { get; set; }
 
+        public DateTime? TGMUON { get; set; }
+
+        public decimal? TIENPHAT { get; set; }
+
+        public DateTime? TGTRA { get; set; }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTPM> CTPMs { get; set; }
 
