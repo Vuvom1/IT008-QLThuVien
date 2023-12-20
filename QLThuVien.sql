@@ -15,10 +15,8 @@ USE QLTHUVIEN
 CREATE TABLE CTPM (
   MACTPM varchar(50) NOT NULL,
   MAPM varchar(50) DEFAULT NULL,
-  MASACH varchar(50) DEFAULT NULL,
-  TGMUON datetime DEFAULT NULL,
-  TIENPHAT decimal(10,0) DEFAULT NULL,
-  TGTRA datetime DEFAULT NULL
+  MASACH varchar(50) DEFAULT NULL
+  
 );
 -- --------------------------------------------------------
 
@@ -102,7 +100,10 @@ CREATE TABLE NHAXUATBAN (
 CREATE TABLE PHIEUMUON (
   MAPM varchar(50) NOT NULL,
   MADG varchar(50) DEFAULT NULL,
-  MAND varchar(50) DEFAULT NULL
+  MAND varchar(50) DEFAULT NULL,
+  TGMUON datetime DEFAULT NULL,
+  TIENPHAT decimal(10,0) DEFAULT NULL,
+  TGTRA datetime DEFAULT NULL
 );
 
 -- --------------------------------------------------------
@@ -282,3 +283,12 @@ ALTER TABLE SACH
   ADD CONSTRAINT FK_SACH_NXB FOREIGN KEY (MANXB) REFERENCES NHAXUATBAN(MANXB);
 ALTER TABLE SACH
   ADD CONSTRAINT FK_SACH_TL FOREIGN KEY (MATL) REFERENCES THELOAI(MATL);
+
+--
+-- Update Col NGAYNHAP
+--
+
+INSERT INTO ROLE (MAROLE, TENROLE) VALUES
+(0, 'Admin'),
+(1, 'Librarian'),
+(2, 'User');

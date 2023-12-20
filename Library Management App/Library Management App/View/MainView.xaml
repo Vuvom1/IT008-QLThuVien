@@ -125,7 +125,7 @@
                             FontFamily="{StaticResource Custom}"
                             Uid="2"
                             x:Name="btnProducts"
-                            Command="{Binding SPCM}">
+                            Command="{Binding ImportCM}">
 
                             </RadioButton>
                             <RadioButton
@@ -153,7 +153,7 @@
                             FontFamily="{StaticResource Custom}"
                             Uid="5"
                             x:Name="btnReport"
-                            Command="{Binding ReportCM}">
+                            Command="{Binding StatisticRP1AndRP2CM}">
 
 
                             </RadioButton>
@@ -164,7 +164,7 @@
                             Visibility="{Binding SetQuanLy}"
                             Style="{StaticResource BtnManage}"
                             FontFamily="{StaticResource Custom}"
-                            Command="{Binding QuanLyCM}">
+                            Command="{Binding FineMoneyCM}">
 
 
                             </RadioButton>
