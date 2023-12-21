@@ -1,20 +1,13 @@
+CREATE DATABASE QLTV;
 
---
--- Cơ sở dữ liệu: `QLThuVien`
---
-CREATE DATABASE QLTHUVIEN
-USE QLTHUVIEN
-
-
--- --------------------------------------------------------
-
+-- ------------------------------------------------------
 --
 -- Cấu trúc bảng cho bảng `CTPM`
 --
 
 CREATE TABLE CTPM (
-  MACTPM varchar(50) NOT NULL,
-  MAPM varchar(50) DEFAULT NULL,
+  MACTPM INT NOT NULL,
+  MAPM INT DEFAULT NULL,
   MASACH varchar(50) DEFAULT NULL
   
 );
@@ -45,19 +38,6 @@ CREATE TABLE DOCGIA (
   SDT varchar(100) DEFAULT NULL
 );
 
--- --------------------------------------------------------
-
---
--- Cấu trúc bảng cho bảng `HOADON`
---
-
-CREATE TABLE HOADON (
-  SOHD int NOT NULL,
-  MAND varchar(50) DEFAULT NULL,
-  MADG varchar(50) DEFAULT NULL,
-  TGHD datetime NOT NULL,
-  TRIGIA int NOT NULL
-);
 
 -- --------------------------------------------------------
 
@@ -87,7 +67,7 @@ CREATE TABLE NGUOIDUNG (
 --
 
 CREATE TABLE NHAXUATBAN (
-  MANXB varchar(50) NOT NULL,
+  MANXB INT NOT NULL,
   TENNXB varchar(50) DEFAULT NULL
 );
 
@@ -98,12 +78,14 @@ CREATE TABLE NHAXUATBAN (
 --
 
 CREATE TABLE PHIEUMUON (
-  MAPM varchar(50) NOT NULL,
+  MAPM INT NOT NULL,
   MADG varchar(50) DEFAULT NULL,
   MAND varchar(50) DEFAULT NULL,
   TGMUON datetime DEFAULT NULL,
-  TIENPHAT decimal(10,0) DEFAULT NULL,
-  TGTRA datetime DEFAULT NULL
+  TIENPHAT INT DEFAULT NULL,
+  TGTRA datetime DEFAULT NULL,
+  SL INT NOT NULL,
+  TRIGIA INT NOT NULL
 );
 
 -- --------------------------------------------------------
@@ -137,8 +119,8 @@ CREATE TABLE ROLE (
 
 CREATE TABLE SACH (
   TENSACH varchar(50) NOT NULL,
-  MATL varchar(50) DEFAULT NULL,
-  MANXB varchar(50) DEFAULT NULL,
+  MATL INT DEFAULT NULL,
+  MANXB INT DEFAULT NULL,
   NAMXUATBAN int DEFAULT NULL,
   TONGSL int DEFAULT NULL,
   SLCONLAI int DEFAULT NULL,
@@ -154,8 +136,17 @@ CREATE TABLE SACH (
 --
 
 CREATE TABLE THELOAI (
-  MATL varchar(50) NOT NULL,
+  MATL INT NOT NULL,
   TENTL varchar(50) DEFAULT NULL
+);
+
+CREATE TABLE PHIEUTHU (
+  MAPT INT NOT NULL,
+  MAPM INT NOT NULL, 
+  MAND varchar(50) NOT NULL,
+  TIENTHU INT, 
+  TIENCONLAI INT, 
+  TGPT datetime NOT NULL
 );
 
 --
@@ -179,12 +170,6 @@ ALTER TABLE CTPN
 --
 ALTER TABLE DOCGIA
   ADD PRIMARY KEY (MADG);
-
---
--- Chỉ mục cho bảng `HOADON`
---
-ALTER TABLE HOADON
-  ADD PRIMARY KEY (SOHD);
 
 --
 -- Chỉ mục cho bảng `NGUOIDUNG`
@@ -229,6 +214,12 @@ ALTER TABLE THELOAI
   ADD PRIMARY KEY (MATL);
 
 --
+-- Chỉ mục cho bảng `THELOAI`
+--
+ALTER TABLE PHIEUTHU
+  ADD PRIMARY KEY (MAPT);
+
+--
 -- Các ràng buộc cho các bảng đã đổ
 --
 
@@ -247,14 +238,6 @@ ALTER TABLE CTPN
   ADD CONSTRAINT FK_CTPN_PN FOREIGN KEY (MAPN) REFERENCES PHIEUNHAP (MAPN);
 ALTER TABLE CTPN
   ADD CONSTRAINT FK_CTPN_SACH FOREIGN KEY (MASACH) REFERENCES SACH(MASACH);
-
---
--- Các ràng buộc cho bảng `HOADON`
---
-ALTER TABLE HOADON
-  ADD CONSTRAINT FK_GD_HD FOREIGN KEY (MADG) REFERENCES DOCGIA(MADG);
-ALTER TABLE HOADON
-  ADD CONSTRAINT FK_HD_ND FOREIGN KEY (MAND) REFERENCES NGUOIDUNG(MAND);
 
 --
 -- Các ràng buộc cho bảng `NGUOIDUNG`
@@ -285,10 +268,18 @@ ALTER TABLE SACH
   ADD CONSTRAINT FK_SACH_TL FOREIGN KEY (MATL) REFERENCES THELOAI(MATL);
 
 --
+-- Các ràng buộc cho bảng `PHIEUTHU`
+--
+ALTER TABLE PHIEUTHU
+  ADD CONSTRAINT FK_PT_PM FOREIGN KEY (MAPM) REFERENCES PHIEUMUON(MAPM);
+ALTER TABLE PHIEUTHU
+  ADD CONSTRAINT FK_PT_ND FOREIGN KEY (MAND) REFERENCES NGUOIDUNG(MAND);
+
+--
 -- Update Col NGAYNHAP
 --
 
 INSERT INTO ROLE (MAROLE, TENROLE) VALUES
 (0, 'Admin'),
 (1, 'Librarian'),
-(2, 'User');
+(2, 'User');	
