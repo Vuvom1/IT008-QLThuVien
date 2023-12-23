@@ -14,7 +14,12 @@
     <viewmodel:BooksViewModel x:Key="BooksVM"></viewmodel:BooksViewModel>
     <viewmodel:ReadersViewModel x:Key="ReadersVM"></viewmodel:ReadersViewModel>
     <viewmodel:BorrowViewModel x:Key="BorrowVM"></viewmodel:BorrowViewModel>
+    <viewmodel:FineMoneyViewModel x:Key="FineMoneyVM"></viewmodel:FineMoneyViewModel>
+    <viewmodel:AddBooksViewModel x:Key="AddImportBookVM"></viewmodel:AddBooksViewModel>
+    <viewmodel:ImportBookViewModel x:Key="ImportBookVM"></viewmodel:ImportBookViewModel>
     <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
+    <viewmodel:AddFineMoneyViewModel x:Key="AddFineMoneyVM"></viewmodel:AddFineMoneyViewModel>
+    <viewmodel:StatisticReport1ViewModel x:Key="ReportVM"></viewmodel:StatisticReport1ViewModel>
     <viewmodel:AddBooksViewModel x:Key="AddBooksVM"></viewmodel:AddBooksViewModel>
     <viewmodel:AddReadersViewModel x:Key="AddReadersVM"></viewmodel:AddReadersViewModel>
     <viewmodel:DetailReaderViewModel x:Key="DetailRdVM"></viewmodel:DetailReaderViewModel>

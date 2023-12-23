@@ -16,8 +16,8 @@ namespace Library_Management_App.Model
         }
 
         [Key]
-        [StringLength(50)]
-        public string MANXB { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MANXB { get; set; }
 
         [StringLength(50)]
         public string TENNXB { get; set; }

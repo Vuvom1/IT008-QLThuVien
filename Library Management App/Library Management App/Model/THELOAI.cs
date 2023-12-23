@@ -16,8 +16,8 @@ namespace Library_Management_App.Model
         }
 
         [Key]
-        [StringLength(50)]
-        public string MATL { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MATL { get; set; }
 
         [StringLength(50)]
         public string TENTL { get; set; }

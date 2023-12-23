@@ -262,3 +262,13 @@ C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Manage
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.pdb
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticRP1AndRP2View.g.cs
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticRP1AndRP2View.baml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.dll
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.Wpf.dll
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.pdb
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.xml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.Wpf.pdb
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.Wpf.xml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddImportBookView.g.cs
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddImportBookView.baml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddFineMoneyView.g.cs
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddFineMoneyView.baml

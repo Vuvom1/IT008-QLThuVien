@@ -12,9 +12,9 @@ namespace Library_Management_App.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NGUOIDUNG()
         {
-            HOADONs = new HashSet<HOADON>();
             PHIEUMUONs = new HashSet<PHIEUMUON>();
             PHIEUNHAPs = new HashSet<PHIEUNHAP>();
+            PHIEUTHUs = new HashSet<PHIEUTHU>();
         }
 
         [Key]
@@ -55,14 +55,14 @@ namespace Library_Management_App.Model
         public string MAIL { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUMUON> PHIEUMUONs { get; set; }
 
         public virtual ROLE ROLE { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHIEUTHU> PHIEUTHUs { get; set; }
     }
 }

@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace Library_Management_App.ViewModel
 {
-    internal class StatisticReport1ViewModel: Window
+    internal class StatisticReport1ViewModel: BaseViewModel
     {
     }
 }

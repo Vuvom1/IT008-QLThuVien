@@ -5,17 +5,183 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library_Management_App.View"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FFF2FCFB" Margin="0,0,62,0">
-        <Label Content="PHIẾU NHẬP SÁCH" HorizontalAlignment="Center" Margin="0,35,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Foreground="#FF6C63FF"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="83,164,96,151" AutoGenerateColumns="False" CanUserResizeColumns="False" FontSize="24" FontWeight="Bold">
-            <DataGrid.Columns>
-                <DataGridTextColumn FontWeight="Bold" FontSize="16" Header="Mã sách" CanUserResize="False" Width="200"/>
-                <DataGridTextColumn FontWeight="Bold" FontSize="16" Header="Số lượng" CanUserResize="False" Width="200"/>
-                <DataGridTextColumn FontWeight="Bold" FontSize="16" Header="Ngày nhập" CanUserResize="False" Width="220"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="ImportBookView" Height="450" Width="800"
+        x:Name="ImporBooktwd"
+        DataContext="{StaticResource ImportBookVM}">
+    <Border
+                Height="605"
+                Background="Transparent"
+                CornerRadius="30" Margin="10,0,10,-155"
+                >
+        <Grid Margin="10,-72,-10,72">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,32,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="467*"/>
+                    <ColumnDefinition Width="313*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock VerticalAlignment="Center" 
+                       HorizontalAlignment="Left"
+                       FontSize="30" Margin="25,0,0,0" 
+                       FontFamily="{StaticResource Custom}" 
+                       Foreground="#1784C2" 
+                       >Danh sách phiếu nhập sách</TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <TextBox
+                            x:Name="txbSearch"
+                            Width="500"
+                            Height="40"
+                            Margin="30,0,0,0"
+                            BorderBrush="#1784C2"
+                            Foreground="Black"
+                            FontSize="14"
+                            FontWeight="SemiBold"
+                            materialDesign:HintAssist.Hint="Tìm kiếm"
+                            materialDesign:HintAssist.FontFamily="{StaticResource Custom}"
+                            materialDesign:HintAssist.Foreground="White"
+                            materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                            materialDesign:TextFieldAssist.TextBoxViewMargin="15,6,0,0"
+                            BorderThickness="2"
+                            VerticalAlignment="Center" CaretBrush="Gray" >
 
-    </Grid>
-    </Page>
+                    </TextBox>
+                    <Button
+                    Content="NHẬP"
+                    Margin="25,0,0,0"
+                    Width="120"
+                    Height="40"
+                    FontFamily="{StaticResource Custom}"
+                    BorderBrush="Transparent"
+                    Foreground="White"
+                    materialDesign:ButtonAssist.CornerRadius="15"
+                    Background="#1784C2"
+                    Command="{Binding AddImport}"
+                    >
+
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel>
+                    <Border
+                    Width="670"
+                    Height="40"
+                    CornerRadius="10"
+                    Background="Transparent"
+                    >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="180"/>
+                                <ColumnDefinition Width="250"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <TextBlock
+                            Text="MÃ PHIẾU"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource Custom}"
+                            FontSize="12"
+                            Margin="-50 0 0 0"
+                            />
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock
+                            HorizontalAlignment="Center"
+                            Text="SỐ  LƯỢNG"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource Custom}"
+                            FontSize="12"
+                            Margin="-60 0 0 0"
+                            />
+                            </Grid>
+                            <Grid Grid.Column="2">
+                                <TextBlock
+                            Text="NGÀY NHẬP"
+                            Margin="0,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            FontFamily="{StaticResource Custom}"
+                            FontSize="12"
+                            />
+                            </Grid>
+
+                        </Grid>
+                    </Border>
+                    <ListView x:Name="ListViewPN" ItemsSource="{Binding listPN}"
+                      Height="400"
+                      Width="670"
+                      SelectionMode="Single"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                          Foreground="White"
+                    >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border
+                                Width="600"
+                                Height="40"
+                                CornerRadius="10"
+                                Background="#6C63FF"
+                             >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="180"/>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock
+                                            Text="{Binding MAPN}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="{StaticResource Custom}"
+                                            FontSize="12"
+                                        />
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock
+                                            Margin="50,0,0,0"
+                                            HorizontalAlignment="Left"
+                                            Text="{Binding NGUOIDUNG.TENND}"
+                                            VerticalAlignment="Center"
+                                            FontFamily="{StaticResource Custom}"
+                                            FontSize="12"
+                                        />
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <TextBlock Margin="50,0,0,0"
+                                            Text="{Binding NGAYNHAP, StringFormat=dd/MM/yyyy hh:mm:tt}"
+                                            HorizontalAlignment="Left"
+                                            VerticalAlignment="Center"
+                                            FontFamily="{StaticResource Custom}"
+                                            FontSize="12"
+                                            MaxWidth="200"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Border>
+</Page>
 

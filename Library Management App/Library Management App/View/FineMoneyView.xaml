@@ -5,25 +5,263 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:local="clr-namespace:Library_Management_App.View"
     mc:Ignorable="d"
-    Title="Quan_Ly_Tien_Phat" Height="450" Width="800">
-    <Grid Background="#FFF3FAF9">
-        <Label Content="PHIẾU THU TIỀN PHẠT" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" FontSize="48" FontWeight="Bold" Foreground="#FF6C63FF"/>
-        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" Margin="17,194,0,80" AutoGenerateColumns="False" FontSize="24" FontWeight="Bold" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" Width="705">
-            <DataGrid.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.1"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DataGrid.RenderTransform>
-            <DataGrid.Columns>
-                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Họ tên độc giả" CanUserResize="False" Width="200"/>
-                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Tổng nợ" CanUserResize="False" Width="200"/>
-                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Số tiền thu" CanUserResize="False" Width="200"/>
-                <DataGridTextColumn FontWeight="Normal" FontSize="24" Header="Còn lại" CanUserResize="False" Width="180"/>
-            </DataGrid.Columns>
-        </DataGrid>
-    </Grid>
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Title="Quan_Ly_Tien_Phat" Height="605" Width="700"
+    DataContext="{StaticResource FineMoneyVM}"
+    x:Name="FineMoneywd">
+
+    <!--<i:Interaction.Triggers>
+     <i:EventTrigger EventName="Loaded">
+         <i:InvokeCommandAction Command="{Binding LoadCsCommand}"
+                                CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+     </i:EventTrigger>
+ </i:Interaction.Triggers>-->
+    <Border
+                 Height="605"
+                 Width="700"
+                 Background="Transparent"
+                 CornerRadius="40"
+                 Padding="13.75,0,6.875,0"
+                >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65"/>
+                <RowDefinition Height="70"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0">
+                <TextBlock VerticalAlignment="Top" 
+                        HorizontalAlignment="Left"
+                        FontSize="30" Margin="10,14,0,0" 
+                        FontFamily="{StaticResource Custom}" Foreground="#1784C2" 
+                        ><Run Text="Danh sách phiếu  thu tiền  phạt "/></TextBlock>
+            </Grid>
+            <Grid Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <Border
+                     Margin="5,0,0,0"
+                     Height="40"
+                     Width="115"
+                     CornerRadius="17"
+                     Background="#1784C2"
+                     >
+                        <ComboBox
+                     x:Name="cbxChon"
+                     Style="{StaticResource MaterialDesignFilledComboBox}"
+                     materialDesign:TextFieldAssist.TextBoxViewMargin="2,-12,-10,0"
+                     materialDesign:TextFieldAssist.TextFieldCornerRadius="14"
+                    
+                     materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                     BorderThickness="0"
+                     materialDesign:HintAssist.FontFamily="{StaticResource Custom}"
+                     materialDesign:HintAssist.Foreground="White"
+                     Background="White"
+                     FontFamily="{StaticResource Custom}"
+                     Height="35"
+                     FontSize="14"
+                     ItemsSource="{Binding listTK}"
+                     Width="110">
+
+
+                            <ComboBox.ItemTemplate >
+
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </Border>
+                    <TextBox
+                             x:Name="txbSearch"
+                             Width="430"
+                             Height="40"
+                             Margin="15,0,0,0"
+                             BorderBrush="#1784C2"
+                             Foreground="Black"
+                             FontSize="14"
+                             FontWeight="SemiBold"
+                             materialDesign:HintAssist.Hint="Tìm kiếm"
+                             materialDesign:HintAssist.FontFamily="{StaticResource Custom}"
+                             materialDesign:HintAssist.Foreground="White"
+                             materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                             materialDesign:TextFieldAssist.TextBoxViewMargin="10,6,0,0"
+                             BorderThickness="2"
+                             VerticalAlignment="Center" CaretBrush="Gray" >
+                        <!--<i:Interaction.Triggers>
+                         <i:EventTrigger EventName="TextChanged">
+                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                                                    CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+                         </i:EventTrigger>
+                     </i:Interaction.Triggers>-->
+                    </TextBox>
+                    <Button 
+                     Content="TẠO"
+                     Margin="15,0,0,0"
+                     Width="90"
+                     Height="40"
+                     FontFamily="{StaticResource Custom}"
+                     BorderBrush="Transparent"
+                     Foreground="White"
+                     materialDesign:ButtonAssist.CornerRadius="15"
+                     Background="#1784C2">
+
+
+                        <!--<i:Interaction.Triggers>
+                         <i:EventTrigger EventName="Click">
+                             <i:InvokeCommandAction Command="{Binding OpenAddOrder}"
+                                                    CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+                         </i:EventTrigger>
+                     </i:Interaction.Triggers>-->
+                    </Button>
+                </StackPanel>
+            </Grid>
+            <Grid Grid.Row="2">
+                <StackPanel>
+                    <Border
+                     Margin="-15,0,0,0"
+                     Width="670"
+                     Height="40"
+                     CornerRadius="10"
+                     Background="Transparent" RenderTransformOrigin="0.506,0.624"
+                     >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="130"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0">
+                                <TextBlock
+                             Text="Mã phiếu"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontFamily="{StaticResource Custom}"
+                             FontSize="12"
+                             />
+                            </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock
+                             Text="Họ tên độc giả"
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             FontFamily="{StaticResource Custom}"
+                             FontSize="12"
+                             />
+                            </Grid>
+                            <Grid Grid.Column="2" Margin="-7 0 0 0">
+                                <TextBlock
+                             HorizontalAlignment="Left"
+                             Text="Tổng nợ"
+                             VerticalAlignment="Top"
+                             FontFamily="{StaticResource Custom}"
+                             FontSize="12"
+                             Margin="68,10,0,0"
+                             />
+                            </Grid>
+                            <Grid Grid.Column="3" Margin="-60 0 0 0">
+                                <TextBlock
+                             Text="Số tiền thu" 
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Top"
+                             FontFamily="{StaticResource Custom}"
+                             FontSize="12" Margin="129,10,0,0"
+                             />
+                            </Grid>
+                            <Grid Grid.Column="4" Margin="-78 0 0 0">
+                                <TextBlock
+                             Text="Còn lại"
+                             VerticalAlignment="Top"
+                             FontFamily="{StaticResource Custom}"
+                             HorizontalAlignment="Left"
+                             FontSize="12" Margin="283,10,0,0"
+                             />
+                            </Grid>
+                        </Grid>
+                    </Border>
+                    <ListView x:Name="ListViewHD" ItemsSource="{Binding listHD}"
+                       Height="410"
+                       Width="675"
+                       SelectionMode="Single"
+                       ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                           Foreground="White">
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Border
+                     Width="600"
+                     Height="40"
+                     CornerRadius="10" Background="#6C63FF">
+
+
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="130"/>
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+                                        <Grid Grid.Column="0">
+                                            <TextBlock
+                                             Text="{Binding SOHD}"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             FontFamily="{StaticResource Custom}"
+                                             FontSize="12"
+                                         />
+                                        </Grid>
+                                        <Grid Grid.Column="1">
+                                            <TextBlock
+                                             Margin="2,0,0,0"
+                                             HorizontalAlignment="Left"
+                                             Text="{Binding KHACHHANG.HOTEN}"
+                                             VerticalAlignment="Center"
+                                             FontFamily="{StaticResource Custom}"
+                                             FontSize="12"
+                                         />
+                                        </Grid>
+                                        <Grid Grid.Column="2">
+                                            <TextBlock
+                                             Text="{Binding NGHD, StringFormat=dd/MM/yyyy}"
+                                             HorizontalAlignment="Left"
+                                             VerticalAlignment="Center"
+                                             FontFamily="{StaticResource Custom}"
+                             FontSize="12"
+                             />
+                                        </Grid>
+                                        <Grid Grid.Column="3">
+                                            <TextBlock
+                                            Text="{Binding TRIGIA, StringFormat={}{0:# ###} VNĐ}"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"
+                                             MaxWidth="150"
+                                             FontFamily="{StaticResource Custom}"
+                                             FontSize="12"
+                                         />
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                        <ListView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <WrapPanel Orientation="Vertical"/>
+                            </ItemsPanelTemplate>
+                        </ListView.ItemsPanel>
+                        <!--<i:Interaction.Triggers>
+                         <i:EventTrigger EventName="SelectionChanged">
+                             <i:InvokeCommandAction     Command="{Binding Detail}"
+                                                        CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+                         </i:EventTrigger>
+                     </i:Interaction.Triggers>-->
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Border>
 </Page>
 

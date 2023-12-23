@@ -20,11 +20,9 @@ namespace Library_Management_App.Model
         [StringLength(50)]
         public string TENSACH { get; set; }
 
-        [StringLength(50)]
-        public string MATL { get; set; }
+        public int? MATL { get; set; }
 
-        [StringLength(50)]
-        public string MANXB { get; set; }
+        public int? MANXB { get; set; }
 
         public int? NAMXUATBAN { get; set; }
 

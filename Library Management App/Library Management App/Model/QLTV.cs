@@ -15,25 +15,17 @@ namespace Library_Management_App.Model
         public virtual DbSet<CTPM> CTPMs { get; set; }
         public virtual DbSet<CTPN> CTPNs { get; set; }
         public virtual DbSet<DOCGIA> DOCGIAs { get; set; }
-        public virtual DbSet<HOADON> HOADONs { get; set; }
         public virtual DbSet<NGUOIDUNG> NGUOIDUNGs { get; set; }
         public virtual DbSet<NHAXUATBAN> NHAXUATBANs { get; set; }
         public virtual DbSet<PHIEUMUON> PHIEUMUONs { get; set; }
         public virtual DbSet<PHIEUNHAP> PHIEUNHAPs { get; set; }
+        public virtual DbSet<PHIEUTHU> PHIEUTHUs { get; set; }
         public virtual DbSet<ROLE> ROLEs { get; set; }
         public virtual DbSet<SACH> SACHes { get; set; }
         public virtual DbSet<THELOAI> THELOAIs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<CTPM>()
-                .Property(e => e.MACTPM)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CTPM>()
-                .Property(e => e.MAPM)
-                .IsUnicode(false);
-
             modelBuilder.Entity<CTPM>()
                 .Property(e => e.MASACH)
                 .IsUnicode(false);
@@ -60,14 +52,6 @@ namespace Library_Management_App.Model
 
             modelBuilder.Entity<DOCGIA>()
                 .Property(e => e.SDT)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOADON>()
-                .Property(e => e.MAND)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<HOADON>()
-                .Property(e => e.MADG)
                 .IsUnicode(false);
 
             modelBuilder.Entity<NGUOIDUNG>()
@@ -108,16 +92,13 @@ namespace Library_Management_App.Model
                 .Property(e => e.MAIL)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<NHAXUATBAN>()
-                .Property(e => e.MANXB)
-                .IsUnicode(false);
+            modelBuilder.Entity<NGUOIDUNG>()
+                .HasMany(e => e.PHIEUTHUs)
+                .WithRequired(e => e.NGUOIDUNG)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NHAXUATBAN>()
                 .Property(e => e.TENNXB)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<PHIEUMUON>()
-                .Property(e => e.MAPM)
                 .IsUnicode(false);
 
             modelBuilder.Entity<PHIEUMUON>()
@@ -129,8 +110,9 @@ namespace Library_Management_App.Model
                 .IsUnicode(false);
 
             modelBuilder.Entity<PHIEUMUON>()
-                .Property(e => e.TIENPHAT)
-                .HasPrecision(10, 0);
+                .HasMany(e => e.PHIEUTHUs)
+                .WithRequired(e => e.PHIEUMUON)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<PHIEUNHAP>()
                 .Property(e => e.MAND)
@@ -141,20 +123,16 @@ namespace Library_Management_App.Model
                 .WithRequired(e => e.PHIEUNHAP)
                 .WillCascadeOnDelete(false);
 
+            modelBuilder.Entity<PHIEUTHU>()
+                .Property(e => e.MAND)
+                .IsUnicode(false);
+
             modelBuilder.Entity<ROLE>()
                 .Property(e => e.TENROLE)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SACH>()
                 .Property(e => e.TENSACH)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<SACH>()
-                .Property(e => e.MATL)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<SACH>()
-                .Property(e => e.MANXB)
                 .IsUnicode(false);
 
             modelBuilder.Entity<SACH>()
@@ -173,10 +151,6 @@ namespace Library_Management_App.Model
                 .HasMany(e => e.CTPNs)
                 .WithRequired(e => e.SACH)
                 .WillCascadeOnDelete(false);
-
-            modelBuilder.Entity<THELOAI>()
-                .Property(e => e.MATL)
-                .IsUnicode(false);
 
             modelBuilder.Entity<THELOAI>()
                 .Property(e => e.TENTL)

@@ -12,7 +12,6 @@ namespace Library_Management_App.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DOCGIA()
         {
-            HOADONs = new HashSet<HOADON>();
             PHIEUMUONs = new HashSet<PHIEUMUON>();
         }
 
@@ -35,9 +34,6 @@ namespace Library_Management_App.Model
 
         [StringLength(100)]
         public string SDT { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUMUON> PHIEUMUONs { get; set; }

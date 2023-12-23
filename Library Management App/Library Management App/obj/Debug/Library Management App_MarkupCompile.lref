@@ -1,4 +1,4 @@
-﻿
+﻿C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\GeneratedInternalTypeHelper.g.cs
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\App.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\MainWindow.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\Resource\MainResource.xaml;;
@@ -6,6 +6,8 @@ FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Manag
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\UserControls\Item.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\AddBooksView.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\AddBorrowView.xaml;;
+FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\AddFineMoneyView.xaml;;
+FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\AddImportBookView.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\AddReadersView.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\BooksView.xaml;;
 FC:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\View\BorrowDetailView.xaml;;

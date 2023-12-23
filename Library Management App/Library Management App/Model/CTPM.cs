@@ -10,11 +10,10 @@ namespace Library_Management_App.Model
     public partial class CTPM
     {
         [Key]
-        [StringLength(50)]
-        public string MACTPM { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        public int MACTPM { get; set; }
 
-        [StringLength(50)]
-        public string MAPM { get; set; }
+        public int? MAPM { get; set; }
 
         [StringLength(50)]
         public string MASACH { get; set; }

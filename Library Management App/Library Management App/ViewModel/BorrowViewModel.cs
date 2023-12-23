@@ -20,17 +20,17 @@ namespace Library_Management_App.ViewModel
         public BorrowViewModel()
         {
            
-            OpenAddBorrowCM = new RelayCommand<BorrowView>((p) => true, (p) => _OpenAdd(p));
+            //OpenAddBorrowCM = new RelayCommand<BorrowView>((p) => true, (p) => _OpenAdd(p));
             
         }
-        void _OpenAdd(OrderView paramater)
-        {
-            AddBorrowView addOrder = new AddBorrowView();
-            addOrder.SoHD.Text = rdma().ToString();
-            listHD = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs);
-            paramater.ListViewHD.ItemsSource = listHD;
-            paramater.ListViewHD.Items.Refresh();
-            MainViewModel.MainFrame.Content = addOrder;
-        }
+        //void _OpenAdd(OrderView paramater)
+        //{
+        //    AddBorrowView addOrder = new AddBorrowView();
+        //    addOrder.SoHD.Text = rdma().ToString();
+        //    listHD = new ObservableCollection<HOADON>(DataProvider.Ins.DB.HOADONs);
+        //    paramater.ListViewHD.ItemsSource = listHD;
+        //    paramater.ListViewHD.Items.Refresh();
+        //    MainViewModel.MainFrame.Content = addOrder;
+        //}
     }
 }
