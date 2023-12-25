@@ -380,6 +380,9 @@
   <ItemGroup>
     <Resource Include="Resource\Image\addava.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Image\library.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

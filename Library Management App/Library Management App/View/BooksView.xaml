@@ -56,13 +56,13 @@
                     Foreground="Black"
                     Width="116">
                             <ComboBoxItem Content="Tất cả"/>
-                            <ComboBoxItem Content="Sách ngôn tình"/>
-                            <ComboBoxItem Content="Sách"/>
-                            <ComboBoxItem Content="Áo trùm đầu"/>
-                            <ComboBoxItem Content="Áo khoác"/>
-                            <ComboBoxItem Content="Áo tay dài"/>
-                            <ComboBoxItem Content="Quần"/>
-                            <ComboBoxItem Content="Phụ kiện"/>
+                            <ComboBoxItem Content="Tiểu thuyết"/>
+                            <ComboBoxItem Content="Sách thiếu nhi"/>
+                            <ComboBoxItem Content="Sách kinh doanh và tài chính"/>
+                            <ComboBoxItem Content="Sách khoa học"/>
+                            <ComboBoxItem Content="Sách giáo dục"/>
+                            <ComboBoxItem Content="Sách du lịch"/>
+                            <ComboBoxItem Content="Thơ"/>
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
                                     <i:InvokeCommandAction Command="{Binding Filter}"
@@ -148,7 +148,7 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
-                <ListView x:Name="ListViewBooks" ItemsSource="{Binding listSP}"
+                <ListView x:Name="ListViewBooks" ItemsSource="{Binding ListBook}"
                       SelectionMode="Single"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                       ScrollViewer.VerticalScrollBarVisibility="Hidden"
