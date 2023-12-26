@@ -85,6 +85,7 @@ namespace Library_Management_App.ViewModel
             BookCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame.Content = new BooksView();
+                
             });
 
             BorrowCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>

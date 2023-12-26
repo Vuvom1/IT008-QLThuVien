@@ -18,11 +18,16 @@ namespace Library_Management_App.ViewModel
         public ObservableCollection<SACH> ListBook { get => _ListBook; set => _ListBook = value; }
         public ICommand AddBookCommand { get; set; }
         public ICommand DetailBooksCommand { get; set; }
+        public ICommand LoadBooksCommand { get; set; }
+        public ICommand Filter { get; set; }
 
         public BooksViewModel() 
         {
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
             AddBookCommand = new RelayCommand<BooksView>((p) => { return p == null ? false : true; }, (p) => _AddBookCommand(p));
             DetailBooksCommand = new RelayCommand<BooksView>((p) => { return p.ListViewBooks.SelectedItem == null ? false : true; }, (p) => _DetailBooksCommand(p));
+            Filter = new RelayCommand<BooksView>((p) => true, (p) => _Filter(p));
+            LoadBooksCommand = new RelayCommand<BooksView>((p) => true, (p) => _LoadBooksCommand(p));
         }
 
         void _AddBookCommand(BooksView booksView)
@@ -32,6 +37,12 @@ namespace Library_Management_App.ViewModel
         void _DetailBooksCommand(BooksView booksView)
         {
 
+        }
+        void _Filter(BooksView booksView) 
+        {
+        }
+        void _LoadBooksCommand(BooksView booksView) 
+        {
         }
     }
 }
