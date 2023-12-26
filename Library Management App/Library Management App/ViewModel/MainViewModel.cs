@@ -47,10 +47,6 @@ namespace Library_Management_App.ViewModel
 
         public ICommand StatisticRP1CM { get; set; }
 
-        public ICommand StatisticRP2CM { get; set; }
-
-
-        public ICommand StatisticRP1AndRP2CM { get; set; }
 
 
 
@@ -110,16 +106,6 @@ namespace Library_Management_App.ViewModel
             StatisticRP1CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame.Content = new StatisticReport1();
-            });
-
-            StatisticRP2CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
-            {
-                MainFrame.Content = new StatisticReport2();
-            });
-
-            StatisticRP1AndRP2CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
-            {
-                MainFrame.Content = new StatisticRP1AndRP2View();
             });
 
 

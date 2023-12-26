@@ -222,7 +222,6 @@ C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Manage
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SettingView.g.cs
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SignUpView.g.cs
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport1.g.cs
-C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport2.g.cs
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\App.g.cs
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App_MarkupCompile.cache
@@ -252,7 +251,6 @@ C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Manage
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SettingView.baml
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\SignUpView.baml
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport1.baml
-C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticReport2.baml
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.g.resources
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library_Management_App.Properties.Resources.resources
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.GenerateResource.cache
@@ -260,8 +258,6 @@ C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Manage
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.csproj.CopyComplete
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.exe
 C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\Library Management App.pdb
-C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticRP1AndRP2View.g.cs
-C:\Users\Mr.T\Source\Repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\StatisticRP1AndRP2View.baml
 C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.dll
 C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.Wpf.dll
 C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\LiveCharts.pdb
@@ -272,3 +268,9 @@ C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Manage
 C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddImportBookView.baml
 C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddFineMoneyView.g.cs
 C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\AddFineMoneyView.baml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\DetailImportBookView.g.cs
+C:\Users\Mr.T\source\repos\IT008-QLThuVien\Library Management App\Library Management App\obj\Debug\View\DetailImportBookView.baml

@@ -66,7 +66,13 @@
                     Background="#1784C2"
                     Command="{Binding AddImport}"
                     >
-
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding OpenAddImport}"
+                                                       CommandParameter="{Binding ElementName=ImporBooktwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        
                     </Button>
                 </StackPanel>
             </Grid>

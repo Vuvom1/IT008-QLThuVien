@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Library_Management_App.View
 {
     /// <summary>
-    /// Interaction logic for StatisticReport2.xaml
+    /// Interaction logic for DetailImportBookView.xaml
     /// </summary>
-    public partial class StatisticReport2 : Page
+    public partial class DetailImportBookView : Page
     {
-        public StatisticReport2()
+        public DetailImportBookView()
         {
             InitializeComponent();
         }

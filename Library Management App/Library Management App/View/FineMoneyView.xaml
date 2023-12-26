@@ -11,12 +11,12 @@
     DataContext="{StaticResource FineMoneyVM}"
     x:Name="FineMoneywd">
 
-    <!--<i:Interaction.Triggers>
+    <i:Interaction.Triggers>
      <i:EventTrigger EventName="Loaded">
          <i:InvokeCommandAction Command="{Binding LoadCsCommand}"
-                                CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+                                CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
      </i:EventTrigger>
- </i:Interaction.Triggers>-->
+ </i:Interaction.Triggers>
     <Border
                  Height="605"
                  Width="700"
@@ -35,7 +35,7 @@
                         HorizontalAlignment="Left"
                         FontSize="30" Margin="10,14,0,0" 
                         FontFamily="{StaticResource Custom}" Foreground="#1784C2" 
-                        ><Run Text="Danh sách phiếu  thu tiền  phạt "/></TextBlock>
+                        ><Run Text="Danh sách phiếu thu tiền phạt "/></TextBlock>
             </Grid>
             <Grid Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
@@ -91,12 +91,12 @@
                              materialDesign:TextFieldAssist.TextBoxViewMargin="10,6,0,0"
                              BorderThickness="2"
                              VerticalAlignment="Center" CaretBrush="Gray" >
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                          <i:EventTrigger EventName="TextChanged">
                              <i:InvokeCommandAction Command="{Binding SearchCommand}"
-                                                    CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+                                                    CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
                          </i:EventTrigger>
-                     </i:Interaction.Triggers>-->
+                     </i:Interaction.Triggers>
                     </TextBox>
                     <Button 
                      Content="TẠO"
@@ -110,12 +110,12 @@
                      Background="#1784C2">
 
 
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                          <i:EventTrigger EventName="Click">
-                             <i:InvokeCommandAction Command="{Binding OpenAddOrder}"
-                                                    CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding AddCsCommand}"
+                                                    CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
                          </i:EventTrigger>
-                     </i:Interaction.Triggers>-->
+                     </i:Interaction.Triggers>
                     </Button>
                 </StackPanel>
             </Grid>

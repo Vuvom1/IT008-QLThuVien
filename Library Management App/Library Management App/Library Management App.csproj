@@ -60,6 +60,9 @@
     <Reference Include="MaterialDesignThemes.Wpf, Version=4.9.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.4.9.0\lib\net462\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xaml.Behaviors, Version=1.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Xaml.Behaviors.Wpf.1.1.39\lib\net45\Microsoft.Xaml.Behaviors.dll</HintPath>
     </Reference>
@@ -69,6 +72,9 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -129,6 +135,7 @@
     <Compile Include="ViewModel\BorrowViewModel.cs" />
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\DetailBookViewModel.cs" />
+    <Compile Include="ViewModel\DetailImportBookViewModel.cs" />
     <Compile Include="ViewModel\DetailReaderViewModel.cs" />
     <Compile Include="ViewModel\FineMoneyViewModel.cs" />
     <Compile Include="ViewModel\ForgetPasswordViewModel.cs" />
@@ -141,8 +148,6 @@
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\SignUpViewModel.cs" />
     <Compile Include="ViewModel\StatisticReport1ViewModel.cs" />
-    <Compile Include="ViewModel\StatisticReport2ViewModel.cs" />
-    <Compile Include="ViewModel\StatisticRP1AndRP2ViewModel.cs" />
     <Compile Include="View\AddBooksView.xaml.cs">
       <DependentUpon>AddBooksView.xaml</DependentUpon>
     </Compile>
@@ -172,6 +177,9 @@
     </Compile>
     <Compile Include="View\DetailBookView.xaml.cs">
       <DependentUpon>DetailBookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetailImportBookView.xaml.cs">
+      <DependentUpon>DetailImportBookView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DetailReaderView.xaml.cs">
       <DependentUpon>DetailReaderView.xaml</DependentUpon>
@@ -208,12 +216,6 @@
     </Compile>
     <Compile Include="View\StatisticReport1.xaml.cs">
       <DependentUpon>StatisticReport1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\StatisticReport2.xaml.cs">
-      <DependentUpon>StatisticReport2.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\StatisticRP1AndRP2View.xaml.cs">
-      <DependentUpon>StatisticRP1AndRP2View.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -287,6 +289,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\DetailImportBookView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\DetailReaderView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -334,14 +340,6 @@
     <Page Include="View\StatisticReport1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\StatisticReport2.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\StatisticRP1AndRP2View.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
