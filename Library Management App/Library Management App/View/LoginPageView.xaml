@@ -35,7 +35,7 @@
                     Foreground="#292929"
                     FontFamily="Josefin Sans" TextAlignment="Center" FontWeight="Bold"/>
             </Border>
-            
+
             <StackPanel Margin="0 50 0 0"
                 Orientation="Horizontal" >
                 <TextBox
@@ -45,19 +45,27 @@
                         Height="40" 
                         Width="300"
                         Padding="20,15,0,0">
-                    
+
                 </TextBox>
             </StackPanel>
             <PasswordBox
                 x:Name="PasswordBox"
+                
                 materialDesign:HintAssist.HelperText=""
                 materialDesign:HintAssist.Hint="Mật khẩu" FontFamily="Josefin Sans"
                 materialDesign:TextFieldAssist.HasClearButton="True" Width="300"
                 Margin="0 50 0 0"
                 Height="40"
                 Padding="20,15,0,0">
-                
-                
+
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PasswordChanged">
+                        <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
+                                   CommandParameter="{Binding ElementName=PasswordBox}">
+                        </i:InvokeCommandAction>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+
             </PasswordBox>
 
             <Button

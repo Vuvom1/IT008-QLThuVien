@@ -10,7 +10,8 @@
       d:DesignHeight="500" d:DesignWidth="700"
       Title="SettingViewPage"
       Name="SettingViewPage"
-      FontFamily="Josefin Sans">
+      FontFamily="Josefin Sans"
+      DataContext="{StaticResource SettingVM}">
 
 
     <Grid>

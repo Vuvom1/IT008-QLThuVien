@@ -23,6 +23,7 @@ namespace Library_Management_App.ViewModel
 
         private string _Password;
         public string Password { get => _Password; set { _Password = value; OnPropertyChanged(); } }
+
         public static Frame MainFrame { get; set; }
 
         public Button LoginButton { get; set; }
@@ -39,6 +40,7 @@ namespace Library_Management_App.ViewModel
 
         public LoginViewModel()
         {
+            PasswordChangedCommand = new RelayCommand<PasswordBox>((p) => { return true; }, (p) => { Password = p.Password; });
 
             IsLogin = false;
             Password = "";
@@ -47,17 +49,34 @@ namespace Library_Management_App.ViewModel
             LoadLoginPageCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame = p;
+                LoginView lgView = new LoginView();
+
+
                 p.Content = new LoginPageView();
             });
 
 
             LoginCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
+
                 try
                 {
+                    //MessageBox.Show(Password);
                     string PassEncode = MD5Hash(Base64Encode(Password));
-                
+
                     var accCount = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == Username && x.PASS == PassEncode && x.TTND).Count();
+
+                    foreach (NGUOIDUNG temp in DataProvider.Ins.DB.NGUOIDUNGs)
+                    {
+                        if ((temp.USERNAME == Username) && (temp.PASS == PassEncode))
+                        {
+                            accCount++;
+                            break;
+                        }
+
+                    }
+
+
 
                     if (accCount > 0)
                     {

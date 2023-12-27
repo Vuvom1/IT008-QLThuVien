@@ -8,6 +8,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="AddImportView" 
         
+        DataContext="{StaticResource BorrowDetailVM}"
         x:Name="AddImportwd"
         mc:Ignorable="d"
         Height="600"
@@ -181,7 +182,7 @@
                                 />
                         <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
                             <TextBox
-                                    x:Name="SoHD"
+                                    x:Name="MaPM"
                                     HorizontalAlignment="Left"
                                     FontFamily="{StaticResource Custom}"
                                     BorderThickness="0"
@@ -224,9 +225,9 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="150"/>
                                 <ColumnDefinition Width="130"/>
-                                <ColumnDefinition Width="50"/>
+                                <ColumnDefinition/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
@@ -249,6 +250,15 @@
                                 />
                             </Grid>
                             <Grid Grid.Column="2">
+                                <TextBlock Margin="0 0 0 0"
+                                Text="Thể loại"
+                                HorizontalAlignment="Center"
+                                VerticalAlignment="Center"
+                                FontFamily="{StaticResource Custom}"
+                                FontSize="12"
+                                />
+                            </Grid>
+                            <Grid Grid.Column="3">
                                 <TextBlock  Margin="35,0,0,0"
                                 Text="Nhà xuất bản"
                                 HorizontalAlignment="Left"
@@ -257,7 +267,7 @@
                                 FontSize="12" ></TextBlock>
 
                             </Grid>
-                            <Grid Grid.Column="3">
+                            <Grid Grid.Column="4">
                                 <TextBlock Margin="30,0,0,0"
                                 Text=""
                                 HorizontalAlignment="Left"
@@ -268,7 +278,7 @@
 
 
                             </Grid>
-                            <Grid Grid.Column="4">
+                            <Grid Grid.Column="5">
                                 <TextBlock
                                 Text="Trị giá"
                                 HorizontalAlignment="Left"
@@ -281,7 +291,7 @@
                             </Grid>
                         </Grid>
                     </Border>
-                    <ListView x:Name="ListViewSP" 
+                    <ListView x:Name="ListViewSach" 
                           SelectionMode="Single"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
                           Height="170"
@@ -376,7 +386,7 @@
                                     BorderThickness="0"
                                     Content="Hoàn tất"
                                     FontSize="12"
-                                    x:Name="deletebtn"
+                                    x:Name="completeBtn"
                                     FontFamily="{StaticResource Custom}"
                                     Background="#1784C2"
                                     Width="150"
@@ -388,7 +398,7 @@
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction     
-                                                            Command="{Binding DeleteOrder}"
+                                                            Command="{Binding CompleteBorrow}"
                                                             CommandParameter="{Binding ElementName=AddImportwd}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
@@ -431,7 +441,7 @@
                         <TextBlock
                             Margin="0,6,0,0"
                             Foreground="#1784C2"
-                            Text="Số sách đã trả: "
+                            Text="Tổng giá trị sách: "
                             FontFamily="{StaticResource Custom}"
                             FontSize="16"
                         />

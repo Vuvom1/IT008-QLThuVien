@@ -162,6 +162,7 @@
     <Compile Include="ViewModel\AddReadersViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\BooksViewModel.cs" />
+    <Compile Include="ViewModel\BorrowDetailViewModel.cs" />
     <Compile Include="ViewModel\BorrowViewModel.cs" />
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\DetailBookViewModel.cs" />

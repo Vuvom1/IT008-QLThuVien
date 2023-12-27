@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library_Management_App.View"
         mc:Ignorable="d"
-        x:Name="AddOrderwd"
+        x:Name="AddBorrowwd"
         xmlns:i= "http://schemas.microsoft.com/xaml/behaviors"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        DataContext="{StaticResource AddBorrowVM}"
         
         Height="705" 
         Width="700">
@@ -15,7 +16,7 @@
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Loadwd}"
-                                   CommandParameter="{Binding ElementName=AddOrderwd}"></i:InvokeCommandAction>
+                                   CommandParameter="{Binding ElementName=AddBorrowwd}"></i:InvokeCommandAction>
         </i:EventTrigger>
     </i:Interaction.Triggers>
 
@@ -23,7 +24,7 @@
         <EventTrigger RoutedEvent="Page.Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <ThicknessAnimation Storyboard.TargetName="AddOrderwd"
+                    <ThicknessAnimation Storyboard.TargetName="AddBorrowwd"
                                         Storyboard.TargetProperty="Margin"
                                         From="426,0,0,0"
                                         To="0"
@@ -87,7 +88,7 @@
                                     />
                                     <TextBlock
                                     Margin="4,2,0,0"
-                                    Text="Tên độc giả"
+                                    Text="Tên Người Dùng"
                                     FontFamily="{StaticResource Custom}"
                                     />
                                 </StackPanel>
@@ -137,36 +138,37 @@
                                     />
                                     <TextBlock
                                     Margin="2,2,0,0"
-                                    Text="Tên người lập phiếu"
+                                    Text="Tên Độc Giả"
                                     FontFamily="{StaticResource Custom}"
                                     />
                                 </StackPanel>
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
                                     <ComboBox
                                         Margin="13,0,0,0"
-                                        x:Name="KH"
+                                        x:Name="LDG"
                                         FontFamily="{StaticResource Custom}"
                                         BorderThickness="0"
                                         materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                        ItemsSource="{Binding LKH}"
+                                        ItemsSource="{Binding LDG}"
                                         >
                                         <ComboBox.ItemTemplate>
+
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="{Binding MAKH}"/>
+                                                    <TextBlock Text="{Binding MADG}"/>
                                                     <TextBlock
                                                         Text="|"
                                                         Margin="4,0,4,0"
                                                         />
                                                     <TextBlock 
-                                                        Text="{Binding HOTEN}"/>
+                                                    Text="{Binding TENDG}"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </ComboBox.ItemTemplate>
                                         <i:Interaction.Triggers>
                                             <i:EventTrigger EventName="SelectionChanged">
-                                                <i:InvokeCommandAction Command="{Binding chooseKH}"
-                                                       CommandParameter="{Binding ElementName=AddOrderwd}"></i:InvokeCommandAction>
+                                                <i:InvokeCommandAction Command="{Binding chooseDG}"
+                                                       CommandParameter="{Binding ElementName=AddBorrowwd}"></i:InvokeCommandAction>
                                             </i:EventTrigger>
                                         </i:Interaction.Triggers>
                                     </ComboBox>
@@ -198,7 +200,7 @@
                                 />
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
                                     <TextBox
-                                    x:Name="SoHD"
+                                    x:Name="MaPM"
                                     HorizontalAlignment="Left"
                                     FontFamily="{StaticResource Custom}"
                                     BorderThickness="0"
@@ -226,35 +228,57 @@
                                 FontFamily="{StaticResource Custom}"
                                 HorizontalAlignment="Center"
                                 />
-                            
+
                             <StackPanel Margin="0,2,0,0">
                                 <TextBlock
                                     Margin="8,2,0,0"
-                                    Text="Mã sách"
+                                    Text="Sách"
                                     FontFamily="{StaticResource Custom}"
                                 />
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
-                                    <TextBox
-                                    x:Name="DG"
-                                    HorizontalAlignment="Left"
-                                    FontFamily="{StaticResource Custom}"
-                                    BorderThickness="0"
-                                    materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                    materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                    IsEnabled="False"
-                                    materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"/>
+                                    <ComboBox
+                                        Margin="13,0,0,0"
+                                        x:Name="LSach"
+                                        FontFamily="{StaticResource Custom}"
+                                        BorderThickness="0"
+                                        materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                        ItemsSource="{Binding LSach}"
+                                        >
+                                        <ComboBox.ItemTemplate>
+
+                                            <DataTemplate>
+                                                <StackPanel Orientation="Horizontal">
+                                                    <TextBlock Text="{Binding MASACH}"/>
+                                                    <TextBlock
+                                                        Text="|"
+                                                        Margin="4,0,4,0"
+                                                        />
+                                                    <TextBlock 
+                                                        Text="{Binding TENSACH}"/>
+                                                </StackPanel>
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="SelectionChanged">
+                                                <i:InvokeCommandAction Command="{Binding chooseSach}"
+                                                    CommandParameter="{Binding ElementName=AddBorrowwd}"></i:InvokeCommandAction>
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </ComboBox>
                                 </Border>
+
                             </StackPanel>
-                            
+
                             <StackPanel
-                                Margin="20"
+                                Margin="50"
+                                Orientation="Horizontal"
                                 >
                                 <Button
                                     
                                     BorderThickness="0"
-                                    Content="+ Sách"
+                                    Content="- Sách"
                                     FontSize="10"
-                                    x:Name="addbtn"
+                                    x:Name="deletebtn"
                                     FontFamily="{StaticResource Custom}"
                                     materialDesign:ButtonAssist.CornerRadius="0"
                                     Background="#1784C2" Width="91" RenderTransformOrigin="0.328,0.49"
@@ -262,8 +286,26 @@
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
                                             <i:InvokeCommandAction     
-                                                            Command="{Binding AddSP}"
-                                                            CommandParameter="{Binding ElementName=AddOrderwd}"/>
+                                                            Command="{Binding DeleteSach}"
+                                                            CommandParameter="{Binding ElementName=AddBorrowwd}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </Button>
+                                <Button
+                                    Margin="20 0 0 0"
+                                    BorderThickness="0"
+                                    Content="+ Sách"
+                                    FontSize="10"
+                                    x:Name="addbtn"
+                                    FontFamily="{StaticResource Custom}"
+                                    materialDesign:ButtonAssist.CornerRadius="0"
+                                    Background="#1784C2" Width="91" RenderTransformOrigin="0.328,0.49"
+                                    >
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="Click">
+                                            <i:InvokeCommandAction     
+                            Command="{Binding AddSach}"
+                            CommandParameter="{Binding ElementName=AddBorrowwd}"/>
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
                                 </Button>
@@ -275,10 +317,12 @@
             </Grid>
             <Grid Grid.Row="3">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="173*"/>
+                    <ColumnDefinition Width="56*"/>
+                    <ColumnDefinition Width="27*"/>
+                    <ColumnDefinition Width="90*"/>
                     <ColumnDefinition Width="177*"/>
                 </Grid.ColumnDefinitions>
-                <StackPanel Margin="0,-32,0,225" Grid.ColumnSpan="2">
+                <StackPanel Margin="0,-32,0,225" Grid.ColumnSpan="4">
                     <Border
                         Width="600"
                         Height="46"
@@ -343,7 +387,7 @@
                             </Grid>
                         </Grid>
                     </Border>
-                    <ListView x:Name="ListViewSP" 
+                    <ListView x:Name="ListViewSach" 
                           SelectionMode="Single"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
                           Height="150"
@@ -367,7 +411,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
                                             <TextBlock
-                                            Text="{Binding MaSp}"
+                                            Text="{Binding MaSach}"
                                             HorizontalAlignment="Center"
                                             VerticalAlignment="Center"
                                             FontFamily="{StaticResource Custom}"
@@ -378,7 +422,7 @@
                                             <TextBlock
                                                 Margin="2,0,0,0"
                                                 HorizontalAlignment="Left"
-                                                Text="{Binding TenSP}"
+                                                Text="{Binding TenSach}"
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource Custom}"
                                                 FontSize="12"
@@ -386,7 +430,7 @@
                                         </Grid>
                                         <Grid Grid.Column="2">
                                             <TextBlock
-                                            Text="{Binding Size}"
+                                            Text="{Binding TheLoai}"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
                                             FontFamily="{StaticResource Custom}"
@@ -395,7 +439,7 @@
                                         </Grid>
                                         <Grid Grid.Column="3">
                                             <TextBlock
-                                                Text="{Binding SL}"
+                                                Text="{Binding NXB}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"
@@ -405,7 +449,7 @@
                                         </Grid>
                                         <Grid Grid.Column="4">
                                             <TextBlock
-                                                Text="{Binding Tong, StringFormat=VNĐ}"
+                                                Text="{Binding GiaTri, StringFormat=VNĐ}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"
@@ -445,13 +489,13 @@
         x:Name="submitbtn"
         FontFamily="{StaticResource Custom}"
         materialDesign:ButtonAssist.CornerRadius="0"
-        Background="#1784C2" Width="91" RenderTransformOrigin="0.328,0.49"
+        Background="#1784C2" Width="91" RenderTransformOrigin="0.5,0.5"
     >
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
                                     <i:InvokeCommandAction     
-                                Command="{Binding AddSP}"
-                                CommandParameter="{Binding ElementName=AddOrderwd}"/>
+                                Command="{Binding SavePM}"
+                                CommandParameter="{Binding ElementName=AddBorrowwd}"/>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Button>
