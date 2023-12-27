@@ -11,7 +11,7 @@ namespace Library_Management_App.Model
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int MAPT { get; set; }
+        public string MAPT { get; set; }
 
         public int MAPM { get; set; }
 
@@ -19,6 +19,7 @@ namespace Library_Management_App.Model
         [StringLength(50)]
         public string MAND { get; set; }
 
+        public int? TONGNO { get; set; }
         public int? TIENTHU { get; set; }
 
         public int? TIENCONLAI { get; set; }

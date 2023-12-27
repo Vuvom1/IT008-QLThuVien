@@ -27,7 +27,7 @@ namespace Library_Management_App.ViewModel
 
         public FineMoneyViewModel()
         {
-            listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
+            //listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
             //SearchCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _SearchCommand(p));
             AddCsCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _AddCs(p));
             LoadCsCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _LoadCsCommand(p));
@@ -44,7 +44,7 @@ namespace Library_Management_App.ViewModel
         {
             foreach (PHIEUTHU temp in DataProvider.Ins.DB.PHIEUTHUs)
             {
-                if (temp.MAND == m)
+                if (temp.MAPT == m)
                     return true;
             }
             return false;
@@ -55,7 +55,7 @@ namespace Library_Management_App.ViewModel
             do
             {
                 Random rand = new Random();
-                ma = "KH" + rand.Next(0, 10000).ToString();
+                ma = "PT" + rand.Next(0, 10000).ToString();
             } while (check(ma));
             return ma;
         }
