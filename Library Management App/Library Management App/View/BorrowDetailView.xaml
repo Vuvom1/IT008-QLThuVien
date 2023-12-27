@@ -11,7 +11,7 @@
         DataContext="{StaticResource BorrowDetailVM}"
         x:Name="AddImportwd"
         mc:Ignorable="d"
-        Height="600"
+        Height="506"
         Width="700"
       Background="White">
     <Border

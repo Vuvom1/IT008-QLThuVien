@@ -24,11 +24,11 @@ namespace Library_Management_App.Model
             }
         }
 
-        public QLTVEntities DB { get; set; }
+        public QLTV DB { get; set; }
 
         private DataProvider()
         {
-            DB = new QLTVEntities();
+            DB = new QLTV();
         }
     }
 }

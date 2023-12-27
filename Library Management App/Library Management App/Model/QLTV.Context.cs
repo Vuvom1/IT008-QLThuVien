@@ -13,10 +13,10 @@ namespace Library_Management_App.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QLTVEntities : DbContext
+    public partial class QLTV : DbContext
     {
-        public QLTVEntities()
-            : base("name=QLTVEntities")
+        public QLTV()
+            : base("name=QLTV")
         {
         }
     

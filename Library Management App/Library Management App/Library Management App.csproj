@@ -172,6 +172,7 @@
     <Compile Include="ViewModel\BorrowViewModel.cs" />
     <Compile Include="ViewModel\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModel\DetailBookViewModel.cs" />
+    <Compile Include="ViewModel\DetailFineMoneyViewModel.cs" />
     <Compile Include="ViewModel\DetailImportBookViewModel.cs" />
     <Compile Include="ViewModel\DetailReaderViewModel.cs" />
     <Compile Include="ViewModel\FineMoneyViewModel.cs" />
@@ -214,6 +215,9 @@
     </Compile>
     <Compile Include="View\DetailBookView.xaml.cs">
       <DependentUpon>DetailBookView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DetailFineMoneyView.xaml.cs">
+      <DependentUpon>DetailFineMoneyView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\DetailImportBookView.xaml.cs">
       <DependentUpon>DetailImportBookView.xaml</DependentUpon>
@@ -325,6 +329,10 @@
     <Page Include="View\DetailBookView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\DetailFineMoneyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\DetailImportBookView.xaml">
       <SubType>Designer</SubType>
