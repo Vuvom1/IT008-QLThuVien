@@ -82,10 +82,11 @@
           <Key>
             <PropertyRef Name="MAPT" />
           </Key>
-          <Property Name="MAPT" Type="int" Nullable="false" />
+          <Property Name="MAPT" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MAPM" Type="int" Nullable="false" />
           <Property Name="MAND" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TIENTHU" Type="int" />
+          <Property Name="TONGNO" Type="int" />
           <Property Name="TIENCONLAI" Type="int" />
           <Property Name="TGPT" Type="datetime" Nullable="false" />
         </EntityType>
@@ -422,10 +423,11 @@
           <Key>
             <PropertyRef Name="MAPT" />
           </Key>
-          <Property Name="MAPT" Type="Int32" Nullable="false" />
+          <Property Name="MAPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MAPM" Type="Int32" Nullable="false" />
           <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TIENTHU" Type="Int32" />
+          <Property Name="TONGNO" Type="Int32" />
           <Property Name="TIENCONLAI" Type="Int32" />
           <Property Name="TGPT" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="NGUOIDUNG" Relationship="Self.FK_PT_ND" FromRole="PHIEUTHU" ToRole="NGUOIDUNG" />
@@ -764,6 +766,7 @@
                 <ScalarProperty Name="MAPM" ColumnName="MAPM" />
                 <ScalarProperty Name="MAND" ColumnName="MAND" />
                 <ScalarProperty Name="TIENTHU" ColumnName="TIENTHU" />
+                <ScalarProperty Name="TONGNO" ColumnName="TONGNO" />
                 <ScalarProperty Name="TIENCONLAI" ColumnName="TIENCONLAI" />
                 <ScalarProperty Name="TGPT" ColumnName="TGPT" />
               </MappingFragment>
