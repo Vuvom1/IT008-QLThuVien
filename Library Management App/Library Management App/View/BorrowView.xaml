@@ -153,7 +153,7 @@
                             </Grid>
                             <Grid Grid.Column="3" Margin="-60 0 0 0">
                                 <TextBlock
-                                Text="Thời hạn" 
+                                Text="Số lượng" 
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 FontFamily="{StaticResource Custom}"
@@ -171,7 +171,7 @@
                             </Grid>
                         </Grid>
                     </Border>
-                    <ListView x:Name="ListViewPM" ItemsSource="{Binding listHD}"
+                    <ListView x:Name="ListViewPM" ItemsSource="{Binding listPM}"
                           Height="410"
                           Width="675"
                           SelectionMode="Single"
@@ -196,7 +196,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
                                             <TextBlock
-                                                Text="{Binding MaPhieu}"
+                                                Text="{Binding MAPM}"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource Custom}"
@@ -215,7 +215,7 @@
                                         </Grid>
                                         <Grid Grid.Column="2">
                                             <TextBlock
-                                                Text="{Binding NGHD, StringFormat=dd/MM/yyyy}"
+                                                Text="{Binding TGMUON, StringFormat=dd/MM/yyyy}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource Custom}"
@@ -224,7 +224,7 @@
                                         </Grid>
                                         <Grid Grid.Column="3">
                                             <TextBlock
-                                                Text="{Binding NGHD, StringFormat=dd/MM/yyyy}"
+                                                Text="{Binding SL, StringFormat=dd/MM/yyyy}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource Custom}"
@@ -233,7 +233,7 @@
                                         </Grid>
                                         <Grid Grid.Column="4">
                                             <TextBlock
-                                               Text="{Binding TRIGIA, StringFormat={}{0:# ###} VNĐ}"
+                                               Text="{Binding TGTRA, StringFormat={}{0:# ###} VNĐ}"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"
