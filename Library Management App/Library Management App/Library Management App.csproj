@@ -181,11 +181,11 @@
     <Compile Include="ViewModel\ImportBookViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\QLNVViewModel.cs" />
     <Compile Include="ViewModel\ReadersViewModel.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\SettingViewModel.cs" />
     <Compile Include="ViewModel\SignUpViewModel.cs" />
-    <Compile Include="ViewModel\StatisticReport1ViewModel.cs" />
     <Compile Include="View\AddBooksView.xaml.cs">
       <DependentUpon>AddBooksView.xaml</DependentUpon>
     </Compile>
@@ -246,6 +246,9 @@
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\QLNVView.xaml.cs">
+      <DependentUpon>QLNVView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\ReadersView.xaml.cs">
       <DependentUpon>ReadersView.xaml</DependentUpon>
     </Compile>
@@ -254,9 +257,6 @@
     </Compile>
     <Compile Include="View\SignUpView.xaml.cs">
       <DependentUpon>SignUpView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\StatisticReport1.xaml.cs">
-      <DependentUpon>StatisticReport1.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -370,6 +370,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="View\QLNVView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\ReadersView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -379,10 +383,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="View\SignUpView.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\StatisticReport1.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

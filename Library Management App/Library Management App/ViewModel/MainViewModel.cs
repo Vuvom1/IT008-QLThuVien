@@ -49,7 +49,7 @@ namespace Library_Management_App.ViewModel
 
         public ICommand ImportCM { get; set; }
 
-        public ICommand StatisticRP1CM { get; set; }
+        public ICommand QLNVCM { get; set; }
 
 
         private NGUOIDUNG _User;
@@ -134,9 +134,9 @@ namespace Library_Management_App.ViewModel
                 MainFrame.Content = new FineMoneyView();
             });
 
-            StatisticRP1CM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            QLNVCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
-                MainFrame.Content = new StatisticReport1();
+                MainFrame.Content = new QLNVView();
             });
 
 

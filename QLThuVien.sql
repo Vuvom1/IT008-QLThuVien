@@ -320,14 +320,14 @@ select * from sach
 
 
 --Insert độc giả
-INSERT INTO DOCGIA VALUES (N'DG01',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG02',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG03',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG04',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG05',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG06',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG07',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
-INSERT INTO DOCGIA VALUES (N'DG08',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG01',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG02',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG03',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG04',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG05',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG06',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG07',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG08',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
 
 
 select * from docgia
