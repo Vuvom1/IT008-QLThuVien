@@ -103,55 +103,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\Const.cs" />
-    <Compile Include="Model\CTPM.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\CTPN.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\DataProvider.cs" />
-    <Compile Include="Model\DOCGIA.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\NGUOIDUNG.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\NHAXUATBAN.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUMUON.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUNHAP.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\PHIEUTHU.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLTV.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTV.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLTV.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\QLTV.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLTV.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Model\ROLE.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\SACH.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\THELOAI.cs">
-      <DependentUpon>QLTV.tt</DependentUpon>
-    </Compile>
     <Compile Include="Resource\InfoCard.xaml.cs">
       <DependentUpon>InfoCard.xaml</DependentUpon>
     </Compile>
@@ -397,13 +349,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model\QLTV.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>QLTV.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="Model\QLTV.edmx.diagram">
-      <DependentUpon>QLTV.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -437,18 +382,6 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model\QLTV.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTV.edmx</DependentUpon>
-      <LastGenOutput>QLTV.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\QLTV.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTV.edmx</DependentUpon>
-      <LastGenOutput>QLTV.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
