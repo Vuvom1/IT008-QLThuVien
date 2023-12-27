@@ -10,12 +10,12 @@
     d:DesignHeight = "605" 
     d:DesignWidth = "700"
     DataContext = "{StaticResource ReadersVM}"
-    x:Name = "Customerwd">
+    x:Name = "Readerswd">
 
     <i:Interaction.Triggers >
         <i:EventTrigger EventName = "Loaded" >
-            <i:InvokeCommandAction Command = "{Binding LoadCsCommand}"
-                               CommandParameter="{Binding ElementName=Customerwd}"></i:InvokeCommandAction >
+            <i:InvokeCommandAction Command = "{Binding LoadReadersCommand}"
+                               CommandParameter="{Binding ElementName=Readerswd}"></i:InvokeCommandAction >
         </i:EventTrigger >
     </i:Interaction.Triggers >
     <Border
@@ -69,7 +69,7 @@
                         Height = "35"
                         FontSize = "14"
                         Width = "110"
-                        ItemsSource = "{Binding listTK}" >
+                        ItemsSource = "{Binding ListTK}" >
                             <ComboBox.ItemTemplate >
                                 <DataTemplate >
                                     <StackPanel Orientation = "Horizontal" >
@@ -98,8 +98,8 @@
                             VerticalAlignment = "Center" CaretBrush = "Gray" >
                         <i:Interaction.Triggers >
                             <i:EventTrigger EventName = "TextChanged" >
-                                <i:InvokeCommandAction Command = "{Binding SearchCommand}"
-                                                   CommandParameter="{Binding ElementName=Customerwd}"></i:InvokeCommandAction >
+                                <i:InvokeCommandAction Command = "{Binding SearchReadersCommand}"
+                                                   CommandParameter="{Binding ElementName=Readerswd}"></i:InvokeCommandAction >
                             </i:EventTrigger >
                         </i:Interaction.Triggers >
                     </TextBox >
@@ -115,7 +115,7 @@
                         <i:Interaction.Triggers >
                             <i:EventTrigger EventName = "Click" >
                                 <i:InvokeCommandAction Command = "{Binding AddCsCommand}"
-                                                   CommandParameter="{Binding ElementName=Customerwd}"></i:InvokeCommandAction >
+                                                   CommandParameter="{Binding ElementName=Readerswd}"></i:InvokeCommandAction >
                             </i:EventTrigger >
                         </i:Interaction.Triggers >
                     </Button >
@@ -199,12 +199,12 @@
 
                     </Border >
                     <ListView
-                    x:Name = "ListViewKH"
+                    x:Name = "ListViewDG"
                     Height = "410"
                     Width = "675"
                     SelectionMode = "Single"
                     ScrollViewer.VerticalScrollBarVisibility = "Hidden"
-                    ItemsSource = "{Binding listKH}" 
+                    ItemsSource = "{Binding ListDG}" 
                     Foreground="White"
                     >
                         <ListView.ItemTemplate >
@@ -225,7 +225,7 @@
                                         </Grid.ColumnDefinitions >
                                         <Grid Grid.Column = "0" >
                                             <TextBlock
-                                            Text = "{Binding MAKH}"
+                                            Text = "{Binding MADG}"
                                             HorizontalAlignment = "Center"
                                             VerticalAlignment = "Center"
                                             FontFamily = "{StaticResource Custom}"
@@ -235,7 +235,7 @@
                                         </Grid >
                                         <Grid Grid.Column = "1" >
                                             <TextBlock
-                                            Text = "{Binding HOTEN}"
+                                            Text = "{Binding TENDG}"
                                             HorizontalAlignment = "Left"
                                             VerticalAlignment = "Center"
                                             FontFamily = "{StaticResource Custom}"
@@ -279,7 +279,7 @@
                         <i:Interaction.Triggers >
                             <i:EventTrigger EventName = "SelectionChanged" >
                                 <i:InvokeCommandAction Command = "{Binding Detail}"
-                                                       CommandParameter="{Binding ElementName=Customerwd}"></i:InvokeCommandAction >
+                                                       CommandParameter="{Binding ElementName=Readerswd}"></i:InvokeCommandAction >
                             </i:EventTrigger >
                         </i:Interaction.Triggers >
                     </ListView >

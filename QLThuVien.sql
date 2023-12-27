@@ -1,4 +1,4 @@
-CREATE DATABASE QLTV;
+CREATE DATABASE QLTV
 USE QLTV
 -- ------------------------------------------------------
 --
@@ -33,9 +33,9 @@ CREATE TABLE CTPN (
 
 CREATE TABLE DOCGIA (
   MADG varchar(50) NOT NULL,
-  TENDG varchar(50) NOT NULL,
+  TENDG nvarchar(50) NOT NULL,
   NGSINH date DEFAULT NULL,
-  DCHI varchar(100) DEFAULT NULL,
+  DCHI nvarchar(100) DEFAULT NULL,
   EMAIL varchar(100) DEFAULT NULL,
   SDT varchar(100) DEFAULT NULL
 );
@@ -130,7 +130,6 @@ CREATE TABLE SACH (
   SLCONLAI int DEFAULT NULL,
   TRIGIA INT DEFAULT NULL,
   MASACH varchar(50) NOT NULL,
-  ISBN varchar(20) NOT NULL UNIQUE
 );
 
 -- --------------------------------------------------------
@@ -301,13 +300,33 @@ INSERT INTO THELOAI (MATL,TENTL) VALUES (8,N'Thiếu nhi')
 
 --Insert nhà xuất bản
 INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (1,N'Dân Trí')
+INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (2,N'NXB Thanh Niên')
+INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (3,N'Thế Giới')
+INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (4,N'NXB Tổng Hợp TPHCM')
+INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (5,N'Văn Học')
+INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (6,N'NXB Hội Nhà Văn')
+
 
 --Insert sách
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH,ISBN) VALUES (N'Chưa kịp lớn đã trưởng thành','/Resource/ImageBooks/chuakiplondatruongthanh.jpg',N'',7,1,2023,5,3,10000,N'9786048862862',N'asdasdas')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH,ISBN) VALUES (N'Khéo ăn nói sẽ có được thiên hạ','/Resource/ImageBooks/kheoannoisecoduocthienha.jpg',N'',7,1,2023,5,3,10000,N'978602862',N'asdadas')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH,ISBN) VALUES (N'Đắc nhân tâm','/Resource/ImageBooks/dacnhantam.jpg',N'',7,1,2023,5,3,10000,N'97048862862',N'asasdas')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH,ISBN) VALUES (N'Muôn kiếp nhân sinh','/Resource/ImageBooks/muonkiepnhansinh.jpg',N'',7,1,2023,5,3,10000,N'786048862862',N'sdasdas')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH,ISBN) VALUES (N'Không phải sói nhưng cũng đừng là cừu','/Resource/ImageBooks/khong-phai-soi-nhung-cung-dung-la-cuu.jpg',N'',7,1,2023,5,3,10000,N'976048862862',N'asdasds')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH,ISBN) VALUES (N'Tết ở làng địa ngục','/Resource/ImageBooks/Tetolangdianguc.jpg',N'',7,1,2023,5,3,10000,N'978604886286',N'asdasda')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Chưa kịp lớn đã trưởng thành','/Resource/ImageBooks/chuakiplondatruongthanh.jpg',N'',7,1,2023,5,3,10000,N'9786048862862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Khéo ăn nói sẽ có được thiên hạ','/Resource/ImageBooks/kheoannoisecoduocthienha.jpg',N'',6,1,2023,5,3,10000,N'978602862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Đắc nhân tâm','/Resource/ImageBooks/dacnhantam.jpg',N'Hiện nay có một sự hiểu nhầm đã xảy ra. Tuy Đắc Nhân Tâm là tựa sách hầu hết mọi người đều biết đến, vì những danh tiếng và mức độ phổ biến, nhưng một số người lại “ngại” đọc. Lý do vì họ tưởng đây là cuốn sách “dạy làm người” nên có tâm lý e ngại. Có lẽ là do khi giới thiệu về cuốn sách, người ta luôn gắn với miêu tả đây là “nghệ thuật đối nhân xử thế”, “nghệ thuật thu phục lòng người”… Những cụm từ này đã không còn hợp với hiện nay nữa, gây cảm giác xa lạ và không thực tế.',6,1 ,2023,5,3,10000,N'97048862862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Muôn kiếp nhân sinh','/Resource/ImageBooks/muonkiepnhansinh.jpg',N'',6,1,2023,5,3,10000,N'786048862862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Không phải sói nhưng cũng đừng là cừu','/Resource/ImageBooks/khong-phai-soi-nhung-cung-dung-la-cuu.jpg',N'',7,1,2023,5,3,10000,N'976048862862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Tết ở làng địa ngục','/Resource/ImageBooks/Tetolangdianguc.jpg',N'',4,1,2023,5,3,10000,N'978604886286')
 
 select * from sach
+
+
+--Insert độc giả
+INSERT INTO DOCGIA VALUES (N'DG01',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG02',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG03',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG04',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG05',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG06',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG07',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+INSERT INTO DOCGIA VALUES (N'DG08',N'Đào Anh Tú','30/10/2003','Thành phố HCM','tuanhdao2@gmail.com','0941520828')
+
+
+select * from docgia

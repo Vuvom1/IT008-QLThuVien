@@ -13,7 +13,7 @@ using System.Windows.Documents;
 
 namespace Library_Management_App.ViewModel
 {
-    internal class BooksViewModel: BaseViewModel
+    public class BooksViewModel: BaseViewModel
     {
         private string _localLink = System.Reflection.Assembly.GetExecutingAssembly().Location.Remove(System.Reflection.Assembly.GetExecutingAssembly().Location.IndexOf(@"bin\Debug"));
         private ObservableCollection<SACH> _ListBook;
