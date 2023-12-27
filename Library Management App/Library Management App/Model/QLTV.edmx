@@ -27,9 +27,9 @@
             <PropertyRef Name="MADG" />
           </Key>
           <Property Name="MADG" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TENDG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENDG" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="NGSINH" Type="date" />
-          <Property Name="DCHI" Type="varchar" MaxLength="100" />
+          <Property Name="DCHI" Type="nvarchar" MaxLength="100" />
           <Property Name="EMAIL" Type="varchar" MaxLength="100" />
           <Property Name="SDT" Type="varchar" MaxLength="100" />
         </EntityType>
@@ -111,7 +111,6 @@
           <Property Name="SLCONLAI" Type="int" />
           <Property Name="TRIGIA" Type="int" />
           <Property Name="MASACH" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="ISBN" Type="varchar" MaxLength="20" Nullable="false" />
         </EntityType>
         <EntityType Name="THELOAI">
           <Key>
@@ -356,9 +355,9 @@
             <PropertyRef Name="MADG" />
           </Key>
           <Property Name="MADG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TENDG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENDG" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="NGSINH" Type="DateTime" Precision="0" />
-          <Property Name="DCHI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DCHI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="SDT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PHIEUMUONs" Relationship="Self.FK_PM_DG" FromRole="DOCGIA" ToRole="PHIEUMUON" />
@@ -455,7 +454,6 @@
           <Property Name="SLCONLAI" Type="Int32" />
           <Property Name="TRIGIA" Type="Int32" />
           <Property Name="MASACH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="ISBN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CTPMs" Relationship="Self.FK_CTPM_SACH" FromRole="SACH" ToRole="CTPM" />
           <NavigationProperty Name="CTPNs" Relationship="Self.FK_CTPN_SACH" FromRole="SACH" ToRole="CTPN" />
           <NavigationProperty Name="NHAXUATBAN" Relationship="Self.FK_SACH_NXB" FromRole="SACH" ToRole="NHAXUATBAN" />
@@ -793,7 +791,6 @@
                 <ScalarProperty Name="SLCONLAI" ColumnName="SLCONLAI" />
                 <ScalarProperty Name="TRIGIA" ColumnName="TRIGIA" />
                 <ScalarProperty Name="MASACH" ColumnName="MASACH" />
-                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -31,7 +31,6 @@ namespace Library_Management_App.Model
         public Nullable<int> SLCONLAI { get; set; }
         public Nullable<int> TRIGIA { get; set; }
         public string MASACH { get; set; }
-        public string ISBN { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTPM> CTPMs { get; set; }
