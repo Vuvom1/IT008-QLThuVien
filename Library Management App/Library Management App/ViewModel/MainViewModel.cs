@@ -74,7 +74,6 @@ namespace Library_Management_App.ViewModel
                 string a = Const.UserName;
                 User = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == a).FirstOrDefault();
                 Const.ND = User;
-                MessageBox.Show(Const.ND.USERNAME);
                 //if ( User.MAROLE == 0 ) 
                 //    { User.MAROLE = 1; }
                 //SetQuanLy = User.QTV ? Visibility.Visible : Visibility.Collapsed;
