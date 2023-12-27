@@ -115,7 +115,7 @@
                             Style="{StaticResource BtnCreateBill}"
                             Uid="1"
                             FontFamily="{StaticResource Custom}"
-                            x:Name="btnOrder"
+                            x:Name="btnBooks"
                             Command="{Binding BookCM}">
                             </RadioButton>
 
@@ -124,7 +124,7 @@
                             Style="{StaticResource BtnProduct}"
                             FontFamily="{StaticResource Custom}"
                             Uid="2"
-                            x:Name="btnProducts"
+                            x:Name="btnImportBooks"
                             Command="{Binding ImportCM}">
 
                             </RadioButton>
@@ -133,7 +133,7 @@
                             Style="{StaticResource BtnKH}"
                             FontFamily="{StaticResource Custom}"
                             Uid="3"
-                            x:Name="btnKH"
+                            x:Name="btnReaders"
                             Command="{Binding ReaderCM}">
 
                             </RadioButton>
@@ -149,17 +149,17 @@
                             <RadioButton
                             Width="200"
                             Visibility="{Binding SetQuanLy}"
-                            Style="{StaticResource BtnStatistic}"
+                            Style="{StaticResource BtnQLNV}"
                             FontFamily="{StaticResource Custom}"
                             Uid="5"
-                            x:Name="btnReport"
-                            Command="{Binding StatisticRP1CM}">
+                            x:Name="btnQLNV"
+                            Command="{Binding QLNVCM}">
 
 
                             </RadioButton>
                             <RadioButton
                             Width="200"
-                            x:Name="btnQLNNV"
+                            x:Name="btnQLPT"
                             Uid="6"
                             Visibility="{Binding SetQuanLy}"
                             Style="{StaticResource BtnManage}"

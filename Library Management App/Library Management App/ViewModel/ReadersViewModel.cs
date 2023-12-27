@@ -15,17 +15,19 @@ namespace Library_Management_App.ViewModel
     public class ReadersViewModel:BaseViewModel
     {
         private ObservableCollection<DOCGIA> _ListDG;
-        public ObservableCollection<DOCGIA> ListDG { get => _ListDG; set { _ListDG = value; OnPropertyChanged(); } }
+        public ObservableCollection<DOCGIA> ListDG { get => _ListDG; set { _ListDG = value;/* OnPropertyChanged();*/ } }
         private ObservableCollection<string> _ListTK;
         public ObservableCollection<string> ListTK { get => _ListTK; set { _ListTK = value; OnPropertyChanged(); } }
         public ICommand SearchReadersCommand { get; set; }
         public ICommand LoadReadersCommand { get; set; }
+        public ICommand DetailReadersCommand { get; set; }
 
         public ReadersViewModel() 
         {
             ListDG = new ObservableCollection<DOCGIA>(DataProvider.Ins.DB.DOCGIAs);
             ListTK = new ObservableCollection<string>() { "Mã ĐG", "Tên ĐG", "SĐT" };
             SearchReadersCommand = new RelayCommand<ReadersView>((p) => { return p == null ? false : true; }, (p) => _SearchReadersCommand(p));
+            DetailReadersCommand = new RelayCommand<ReadersView>((p) => { return p.ListViewDG.SelectedItem == null ? false : true; }, (p) => _DetailReadersCommand(p));
             LoadReadersCommand = new RelayCommand<ReadersView>((p) => true, (p) => _LoadReadersCommand(p));
         }
 
@@ -90,6 +92,11 @@ namespace Library_Management_App.ViewModel
             }
             else
                 readersView.ListViewDG.ItemsSource = ListDG;
+        }
+
+        void _DetailReadersCommand(ReadersView readersView)
+        {
+
         }
     }
     

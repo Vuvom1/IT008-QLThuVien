@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using Library_Management_App.Model;
 using System.Data.Common;
 using System.Windows.Documents;
+using System.Windows.Media.Imaging;
 
 namespace Library_Management_App.ViewModel
 {
@@ -56,7 +57,23 @@ namespace Library_Management_App.ViewModel
         }
         void _DetailBooksCommand(BooksView booksView)
         {
-
+            DetailBookView detailBookView = new DetailBookView();
+            //SACH temp = (SACH)booksView.ListViewBooks.SelectedItem;
+            //detailBookView.TenSP.Text = temp.TENSP;
+            //detailProduct.GiaSP.Text = string.Format("{0:0,0}", temp.GIA) + " VNĐ";
+            //detailProduct.LoaiSP.Text = temp.LOAISP;
+            //string SL = listSP1.Where(p => p.TENSP == temp.TENSP && p.SL >= 0).Select(p => p.SL).Sum().ToString();
+            //detailProduct.SLSP.Text = "Số lượng: " + SL;
+            //detailProduct.kichco.ItemsSource = new ObservableCollection<SANPHAM>(listSP1.Where(p => p.TENSP == temp.TENSP && p.SL >= 0));
+            //detailProduct.Mota.Text = temp.MOTA;
+            //Uri fileUri = new Uri(temp.HINHSP, UriKind.Relative);
+            //detailProduct.HinhAnh.Source = new BitmapImage(fileUri);
+            //listSP1 = new ObservableCollection<SANPHAM>(DataProvider.Ins.DB.SANPHAMs.Where(p => p.SL > 0));
+            //paramater.ListViewProduct.ItemsSource = listSP1;
+            //paramater.ListViewProduct.SelectedItem = null;
+            //_Filter(paramater);
+            //_SearchCommand(paramater);
+            //MainViewModel.MainFrame.Content = detailProduct;
         }
         void _FilterBooksCommand(BooksView booksView) 
         {

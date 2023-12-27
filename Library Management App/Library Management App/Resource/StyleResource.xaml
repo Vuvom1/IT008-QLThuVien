@@ -355,7 +355,7 @@
     </Style>
     <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
            TargetType="RadioButton"
-           x:Key="BtnStatistic">
+           x:Key="BtnQLNV">
         <Style.Setters>
             <Setter Property="Template">
                 <Setter.Value>
@@ -371,14 +371,14 @@
                             >
                             <DockPanel>
                                 <materialDesign:PackIcon
-                                Kind="ChartAreaspline"
+                                Kind="AccountDetails"
                                 Width="25"
                                 Height="25"
                                 VerticalAlignment="Center"
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="THỐNG KÊ"
+                                Text="Quản lý nhân viên"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"

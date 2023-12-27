@@ -9,7 +9,7 @@
     <viewmodel:SignUpViewModel x:Key="SignUpVM"></viewmodel:SignUpViewModel>
     
     <viewmodel:ChangePasswordViewModel x:Key="ChangePasswordVM"></viewmodel:ChangePasswordViewModel>
-    
+    <viewmodel:QLNVViewModel x:Key="QLNVVM"></viewmodel:QLNVViewModel>
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
     <viewmodel:BooksViewModel x:Key="BooksVM"></viewmodel:BooksViewModel>
     <viewmodel:ReadersViewModel x:Key="ReadersVM"></viewmodel:ReadersViewModel>
@@ -22,7 +22,6 @@
     <viewmodel:DetailBookViewModel x:Key="DetailImportVM"></viewmodel:DetailBookViewModel>
     <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
     <viewmodel:AddFineMoneyViewModel x:Key="AddFineMoneyVM"></viewmodel:AddFineMoneyViewModel>
-    <viewmodel:StatisticReport1ViewModel x:Key="ReportVM"></viewmodel:StatisticReport1ViewModel>
     <viewmodel:AddBooksViewModel x:Key="AddBooksVM"></viewmodel:AddBooksViewModel>
     <viewmodel:AddReadersViewModel x:Key="AddReadersVM"></viewmodel:AddReadersViewModel>
     <viewmodel:DetailReaderViewModel x:Key="DetailRdVM"></viewmodel:DetailReaderViewModel>
