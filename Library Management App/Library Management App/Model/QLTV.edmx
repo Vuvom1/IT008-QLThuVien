@@ -1,0 +1,828 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="QLTVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CTPM">
+          <Key>
+            <PropertyRef Name="MACTPM" />
+          </Key>
+          <Property Name="MACTPM" Type="int" Nullable="false" />
+          <Property Name="MAPM" Type="int" />
+          <Property Name="MASACH" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CTPN">
+          <Key>
+            <PropertyRef Name="MAPN" />
+            <PropertyRef Name="MASACH" />
+          </Key>
+          <Property Name="MAPN" Type="int" Nullable="false" />
+          <Property Name="MASACH" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SL" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="DOCGIA">
+          <Key>
+            <PropertyRef Name="MADG" />
+          </Key>
+          <Property Name="MADG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENDG" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGSINH" Type="date" />
+          <Property Name="DCHI" Type="varchar" MaxLength="100" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="100" />
+          <Property Name="SDT" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NGUOIDUNG">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TENND" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NGSINH" Type="date" />
+          <Property Name="GIOITINH" Type="varchar" MaxLength="5" />
+          <Property Name="SDT" Type="char" MaxLength="50" Nullable="false" />
+          <Property Name="DIACHI" Type="varchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="char" MaxLength="50" />
+          <Property Name="PASS" Type="varchar" MaxLength="50" />
+          <Property Name="MAROLE" Type="int" />
+          <Property Name="TTND" Type="bit" Nullable="false" />
+          <Property Name="AVA" Type="varchar" MaxLength="100" />
+          <Property Name="MAIL" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="NHAXUATBAN">
+          <Key>
+            <PropertyRef Name="MANXB" />
+          </Key>
+          <Property Name="MANXB" Type="int" Nullable="false" />
+          <Property Name="TENNXB" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PHIEUMUON">
+          <Key>
+            <PropertyRef Name="MAPM" />
+          </Key>
+          <Property Name="MAPM" Type="int" Nullable="false" />
+          <Property Name="MADG" Type="varchar" MaxLength="50" />
+          <Property Name="MAND" Type="varchar" MaxLength="50" />
+          <Property Name="TGMUON" Type="datetime" />
+          <Property Name="TIENPHAT" Type="int" />
+          <Property Name="TGTRA" Type="datetime" />
+          <Property Name="SL" Type="int" Nullable="false" />
+          <Property Name="TRIGIA" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEUNHAP">
+          <Key>
+            <PropertyRef Name="MAPN" />
+          </Key>
+          <Property Name="MAPN" Type="int" Nullable="false" />
+          <Property Name="MAND" Type="varchar" MaxLength="50" />
+          <Property Name="TGNHAP" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PHIEUTHU">
+          <Key>
+            <PropertyRef Name="MAPT" />
+          </Key>
+          <Property Name="MAPT" Type="int" Nullable="false" />
+          <Property Name="MAPM" Type="int" Nullable="false" />
+          <Property Name="MAND" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TIENTHU" Type="int" />
+          <Property Name="TIENCONLAI" Type="int" />
+          <Property Name="TGPT" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="MAROLE" />
+          </Key>
+          <Property Name="MAROLE" Type="int" Nullable="false" />
+          <Property Name="TENROLE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SACH">
+          <Key>
+            <PropertyRef Name="MASACH" />
+          </Key>
+          <Property Name="TENSACH" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="IMAGESACH" Type="varchar(max)" />
+          <Property Name="MOTA" Type="nvarchar(max)" />
+          <Property Name="MATL" Type="int" />
+          <Property Name="MANXB" Type="int" />
+          <Property Name="NAMXUATBAN" Type="int" />
+          <Property Name="TONGSL" Type="int" />
+          <Property Name="SLCONLAI" Type="int" />
+          <Property Name="TRIGIA" Type="int" />
+          <Property Name="MASACH" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ISBN" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="THELOAI">
+          <Key>
+            <PropertyRef Name="MATL" />
+          </Key>
+          <Property Name="MATL" Type="int" Nullable="false" />
+          <Property Name="TENTL" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_CTPM_PM">
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="0..1" />
+          <End Role="CTPM" Type="Self.CTPM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUMUON">
+              <PropertyRef Name="MAPM" />
+            </Principal>
+            <Dependent Role="CTPM">
+              <PropertyRef Name="MAPM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTPM_SACH">
+          <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+          <End Role="CTPM" Type="Self.CTPM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SACH">
+              <PropertyRef Name="MASACH" />
+            </Principal>
+            <Dependent Role="CTPM">
+              <PropertyRef Name="MASACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTPN_PN">
+          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="1" />
+          <End Role="CTPN" Type="Self.CTPN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUNHAP">
+              <PropertyRef Name="MAPN" />
+            </Principal>
+            <Dependent Role="CTPN">
+              <PropertyRef Name="MAPN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTPN_SACH">
+          <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+          <End Role="CTPN" Type="Self.CTPN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SACH">
+              <PropertyRef Name="MASACH" />
+            </Principal>
+            <Dependent Role="CTPN">
+              <PropertyRef Name="MASACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MUON_ND">
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUOIDUNG">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="PHIEUMUON">
+              <PropertyRef Name="MAND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ND_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="MAROLE" />
+            </Principal>
+            <Dependent Role="NGUOIDUNG">
+              <PropertyRef Name="MAROLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_DG">
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCGIA">
+              <PropertyRef Name="MADG" />
+            </Principal>
+            <Dependent Role="PHIEUMUON">
+              <PropertyRef Name="MADG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PN_ND">
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUOIDUNG">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="PHIEUNHAP">
+              <PropertyRef Name="MAND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PT_ND">
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="1" />
+          <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUOIDUNG">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="PHIEUTHU">
+              <PropertyRef Name="MAND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PT_PM">
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="1" />
+          <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUMUON">
+              <PropertyRef Name="MAPM" />
+            </Principal>
+            <Dependent Role="PHIEUTHU">
+              <PropertyRef Name="MAPM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SACH_NXB">
+          <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAXUATBAN">
+              <PropertyRef Name="MANXB" />
+            </Principal>
+            <Dependent Role="SACH">
+              <PropertyRef Name="MANXB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SACH_TL">
+          <End Role="THELOAI" Type="Self.THELOAI" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAI">
+              <PropertyRef Name="MATL" />
+            </Principal>
+            <Dependent Role="SACH">
+              <PropertyRef Name="MATL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLTVModelStoreContainer">
+          <EntitySet Name="CTPM" EntityType="Self.CTPM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CTPN" EntityType="Self.CTPN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DOCGIA" EntityType="Self.DOCGIA" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NGUOIDUNG" EntityType="Self.NGUOIDUNG" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NHAXUATBAN" EntityType="Self.NHAXUATBAN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUMUON" EntityType="Self.PHIEUMUON" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUNHAP" EntityType="Self.PHIEUNHAP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PHIEUTHU" EntityType="Self.PHIEUTHU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SACH" EntityType="Self.SACH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="THELOAI" EntityType="Self.THELOAI" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_CTPM_PM" Association="Self.FK_CTPM_PM">
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUON" />
+            <End Role="CTPM" EntitySet="CTPM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTPM_SACH" Association="Self.FK_CTPM_SACH">
+            <End Role="SACH" EntitySet="SACH" />
+            <End Role="CTPM" EntitySet="CTPM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTPN_PN" Association="Self.FK_CTPN_PN">
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
+            <End Role="CTPN" EntitySet="CTPN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTPN_SACH" Association="Self.FK_CTPN_SACH">
+            <End Role="SACH" EntitySet="SACH" />
+            <End Role="CTPN" EntitySet="CTPN" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MUON_ND" Association="Self.FK_MUON_ND">
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ND_ROLE" Association="Self.FK_ND_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_DG" Association="Self.FK_PM_DG">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUON" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PN_ND" Association="Self.FK_PN_ND">
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PT_ND" Association="Self.FK_PT_ND">
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
+            <End Role="PHIEUTHU" EntitySet="PHIEUTHU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PT_PM" Association="Self.FK_PT_PM">
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUON" />
+            <End Role="PHIEUTHU" EntitySet="PHIEUTHU" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SACH_NXB" Association="Self.FK_SACH_NXB">
+            <End Role="NHAXUATBAN" EntitySet="NHAXUATBAN" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SACH_TL" Association="Self.FK_SACH_TL">
+            <End Role="THELOAI" EntitySet="THELOAI" />
+            <End Role="SACH" EntitySet="SACH" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="QLTVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CTPM">
+          <Key>
+            <PropertyRef Name="MACTPM" />
+          </Key>
+          <Property Name="MACTPM" Type="Int32" Nullable="false" />
+          <Property Name="MAPM" Type="Int32" />
+          <Property Name="MASACH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIEUMUON" Relationship="Self.FK_CTPM_PM" FromRole="CTPM" ToRole="PHIEUMUON" />
+          <NavigationProperty Name="SACH" Relationship="Self.FK_CTPM_SACH" FromRole="CTPM" ToRole="SACH" />
+        </EntityType>
+        <EntityType Name="CTPN">
+          <Key>
+            <PropertyRef Name="MAPN" />
+            <PropertyRef Name="MASACH" />
+          </Key>
+          <Property Name="MAPN" Type="Int32" Nullable="false" />
+          <Property Name="MASACH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SL" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="PHIEUNHAP" Relationship="Self.FK_CTPN_PN" FromRole="CTPN" ToRole="PHIEUNHAP" />
+          <NavigationProperty Name="SACH" Relationship="Self.FK_CTPN_SACH" FromRole="CTPN" ToRole="SACH" />
+        </EntityType>
+        <EntityType Name="DOCGIA">
+          <Key>
+            <PropertyRef Name="MADG" />
+          </Key>
+          <Property Name="MADG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENDG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NGSINH" Type="DateTime" Precision="0" />
+          <Property Name="DCHI" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIEUMUONs" Relationship="Self.FK_PM_DG" FromRole="DOCGIA" ToRole="PHIEUMUON" />
+        </EntityType>
+        <EntityType Name="NGUOIDUNG">
+          <Key>
+            <PropertyRef Name="MAND" />
+          </Key>
+          <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TENND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NGSINH" Type="DateTime" Precision="0" />
+          <Property Name="GIOITINH" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SDT" Type="String" MaxLength="50" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DIACHI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
+          <Property Name="PASS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAROLE" Type="Int32" />
+          <Property Name="TTND" Type="Boolean" Nullable="false" />
+          <Property Name="AVA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PHIEUMUONs" Relationship="Self.FK_MUON_ND" FromRole="NGUOIDUNG" ToRole="PHIEUMUON" />
+          <NavigationProperty Name="ROLE" Relationship="Self.FK_ND_ROLE" FromRole="NGUOIDUNG" ToRole="ROLE" />
+          <NavigationProperty Name="PHIEUNHAPs" Relationship="Self.FK_PN_ND" FromRole="NGUOIDUNG" ToRole="PHIEUNHAP" />
+          <NavigationProperty Name="PHIEUTHUs" Relationship="Self.FK_PT_ND" FromRole="NGUOIDUNG" ToRole="PHIEUTHU" />
+        </EntityType>
+        <EntityType Name="NHAXUATBAN">
+          <Key>
+            <PropertyRef Name="MANXB" />
+          </Key>
+          <Property Name="MANXB" Type="Int32" Nullable="false" />
+          <Property Name="TENNXB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SACHes" Relationship="Self.FK_SACH_NXB" FromRole="NHAXUATBAN" ToRole="SACH" />
+        </EntityType>
+        <EntityType Name="PHIEUMUON">
+          <Key>
+            <PropertyRef Name="MAPM" />
+          </Key>
+          <Property Name="MAPM" Type="Int32" Nullable="false" />
+          <Property Name="MADG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TGMUON" Type="DateTime" Precision="3" />
+          <Property Name="TIENPHAT" Type="Int32" />
+          <Property Name="TGTRA" Type="DateTime" Precision="3" />
+          <Property Name="SL" Type="Int32" Nullable="false" />
+          <Property Name="TRIGIA" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CTPMs" Relationship="Self.FK_CTPM_PM" FromRole="PHIEUMUON" ToRole="CTPM" />
+          <NavigationProperty Name="DOCGIA" Relationship="Self.FK_PM_DG" FromRole="PHIEUMUON" ToRole="DOCGIA" />
+          <NavigationProperty Name="NGUOIDUNG" Relationship="Self.FK_MUON_ND" FromRole="PHIEUMUON" ToRole="NGUOIDUNG" />
+          <NavigationProperty Name="PHIEUTHUs" Relationship="Self.FK_PT_PM" FromRole="PHIEUMUON" ToRole="PHIEUTHU" />
+        </EntityType>
+        <EntityType Name="PHIEUNHAP">
+          <Key>
+            <PropertyRef Name="MAPN" />
+          </Key>
+          <Property Name="MAPN" Type="Int32" Nullable="false" />
+          <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TGNHAP" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="CTPNs" Relationship="Self.FK_CTPN_PN" FromRole="PHIEUNHAP" ToRole="CTPN" />
+          <NavigationProperty Name="NGUOIDUNG" Relationship="Self.FK_PN_ND" FromRole="PHIEUNHAP" ToRole="NGUOIDUNG" />
+        </EntityType>
+        <EntityType Name="PHIEUTHU">
+          <Key>
+            <PropertyRef Name="MAPT" />
+          </Key>
+          <Property Name="MAPT" Type="Int32" Nullable="false" />
+          <Property Name="MAPM" Type="Int32" Nullable="false" />
+          <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TIENTHU" Type="Int32" />
+          <Property Name="TIENCONLAI" Type="Int32" />
+          <Property Name="TGPT" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="NGUOIDUNG" Relationship="Self.FK_PT_ND" FromRole="PHIEUTHU" ToRole="NGUOIDUNG" />
+          <NavigationProperty Name="PHIEUMUON" Relationship="Self.FK_PT_PM" FromRole="PHIEUTHU" ToRole="PHIEUMUON" />
+        </EntityType>
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="MAROLE" />
+          </Key>
+          <Property Name="MAROLE" Type="Int32" Nullable="false" />
+          <Property Name="TENROLE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="NGUOIDUNGs" Relationship="Self.FK_ND_ROLE" FromRole="ROLE" ToRole="NGUOIDUNG" />
+        </EntityType>
+        <EntityType Name="SACH">
+          <Key>
+            <PropertyRef Name="MASACH" />
+          </Key>
+          <Property Name="TENSACH" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IMAGESACH" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="MOTA" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="MATL" Type="Int32" />
+          <Property Name="MANXB" Type="Int32" />
+          <Property Name="NAMXUATBAN" Type="Int32" />
+          <Property Name="TONGSL" Type="Int32" />
+          <Property Name="SLCONLAI" Type="Int32" />
+          <Property Name="TRIGIA" Type="Int32" />
+          <Property Name="MASACH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ISBN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="CTPMs" Relationship="Self.FK_CTPM_SACH" FromRole="SACH" ToRole="CTPM" />
+          <NavigationProperty Name="CTPNs" Relationship="Self.FK_CTPN_SACH" FromRole="SACH" ToRole="CTPN" />
+          <NavigationProperty Name="NHAXUATBAN" Relationship="Self.FK_SACH_NXB" FromRole="SACH" ToRole="NHAXUATBAN" />
+          <NavigationProperty Name="THELOAI" Relationship="Self.FK_SACH_TL" FromRole="SACH" ToRole="THELOAI" />
+        </EntityType>
+        <EntityType Name="THELOAI">
+          <Key>
+            <PropertyRef Name="MATL" />
+          </Key>
+          <Property Name="MATL" Type="Int32" Nullable="false" />
+          <Property Name="TENTL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SACHes" Relationship="Self.FK_SACH_TL" FromRole="THELOAI" ToRole="SACH" />
+        </EntityType>
+        <Association Name="FK_CTPM_PM">
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="0..1" />
+          <End Role="CTPM" Type="Self.CTPM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUMUON">
+              <PropertyRef Name="MAPM" />
+            </Principal>
+            <Dependent Role="CTPM">
+              <PropertyRef Name="MAPM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTPM_SACH">
+          <End Role="SACH" Type="Self.SACH" Multiplicity="0..1" />
+          <End Role="CTPM" Type="Self.CTPM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SACH">
+              <PropertyRef Name="MASACH" />
+            </Principal>
+            <Dependent Role="CTPM">
+              <PropertyRef Name="MASACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTPN_PN">
+          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="1" />
+          <End Role="CTPN" Type="Self.CTPN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUNHAP">
+              <PropertyRef Name="MAPN" />
+            </Principal>
+            <Dependent Role="CTPN">
+              <PropertyRef Name="MAPN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CTPN_SACH">
+          <End Role="SACH" Type="Self.SACH" Multiplicity="1" />
+          <End Role="CTPN" Type="Self.CTPN" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SACH">
+              <PropertyRef Name="MASACH" />
+            </Principal>
+            <Dependent Role="CTPN">
+              <PropertyRef Name="MASACH" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PM_DG">
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="0..1" />
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCGIA">
+              <PropertyRef Name="MADG" />
+            </Principal>
+            <Dependent Role="PHIEUMUON">
+              <PropertyRef Name="MADG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_MUON_ND">
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUOIDUNG">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="PHIEUMUON">
+              <PropertyRef Name="MAND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ND_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="0..1" />
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="MAROLE" />
+            </Principal>
+            <Dependent Role="NGUOIDUNG">
+              <PropertyRef Name="MAROLE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PN_ND">
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
+          <End Role="PHIEUNHAP" Type="Self.PHIEUNHAP" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUOIDUNG">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="PHIEUNHAP">
+              <PropertyRef Name="MAND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PT_ND">
+          <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="1" />
+          <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NGUOIDUNG">
+              <PropertyRef Name="MAND" />
+            </Principal>
+            <Dependent Role="PHIEUTHU">
+              <PropertyRef Name="MAND" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SACH_NXB">
+          <End Role="NHAXUATBAN" Type="Self.NHAXUATBAN" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="NHAXUATBAN">
+              <PropertyRef Name="MANXB" />
+            </Principal>
+            <Dependent Role="SACH">
+              <PropertyRef Name="MANXB" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PT_PM">
+          <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="1" />
+          <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PHIEUMUON">
+              <PropertyRef Name="MAPM" />
+            </Principal>
+            <Dependent Role="PHIEUTHU">
+              <PropertyRef Name="MAPM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SACH_TL">
+          <End Role="THELOAI" Type="Self.THELOAI" Multiplicity="0..1" />
+          <End Role="SACH" Type="Self.SACH" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="THELOAI">
+              <PropertyRef Name="MATL" />
+            </Principal>
+            <Dependent Role="SACH">
+              <PropertyRef Name="MATL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="QLTVEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CTPMs" EntityType="Self.CTPM" />
+          <EntitySet Name="CTPNs" EntityType="Self.CTPN" />
+          <EntitySet Name="DOCGIAs" EntityType="Self.DOCGIA" />
+          <EntitySet Name="NGUOIDUNGs" EntityType="Self.NGUOIDUNG" />
+          <EntitySet Name="NHAXUATBANs" EntityType="Self.NHAXUATBAN" />
+          <EntitySet Name="PHIEUMUONs" EntityType="Self.PHIEUMUON" />
+          <EntitySet Name="PHIEUNHAPs" EntityType="Self.PHIEUNHAP" />
+          <EntitySet Name="PHIEUTHUs" EntityType="Self.PHIEUTHU" />
+          <EntitySet Name="ROLEs" EntityType="Self.ROLE" />
+          <EntitySet Name="SACHes" EntityType="Self.SACH" />
+          <EntitySet Name="THELOAIs" EntityType="Self.THELOAI" />
+          <AssociationSet Name="FK_CTPM_PM" Association="Self.FK_CTPM_PM">
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUONs" />
+            <End Role="CTPM" EntitySet="CTPMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTPM_SACH" Association="Self.FK_CTPM_SACH">
+            <End Role="SACH" EntitySet="SACHes" />
+            <End Role="CTPM" EntitySet="CTPMs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTPN_PN" Association="Self.FK_CTPN_PN">
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+            <End Role="CTPN" EntitySet="CTPNs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CTPN_SACH" Association="Self.FK_CTPN_SACH">
+            <End Role="SACH" EntitySet="SACHes" />
+            <End Role="CTPN" EntitySet="CTPNs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PM_DG" Association="Self.FK_PM_DG">
+            <End Role="DOCGIA" EntitySet="DOCGIAs" />
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_MUON_ND" Association="Self.FK_MUON_ND">
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ND_ROLE" Association="Self.FK_ND_ROLE">
+            <End Role="ROLE" EntitySet="ROLEs" />
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PN_ND" Association="Self.FK_PN_ND">
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+            <End Role="PHIEUNHAP" EntitySet="PHIEUNHAPs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PT_ND" Association="Self.FK_PT_ND">
+            <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
+            <End Role="PHIEUTHU" EntitySet="PHIEUTHUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SACH_NXB" Association="Self.FK_SACH_NXB">
+            <End Role="NHAXUATBAN" EntitySet="NHAXUATBANs" />
+            <End Role="SACH" EntitySet="SACHes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PT_PM" Association="Self.FK_PT_PM">
+            <End Role="PHIEUMUON" EntitySet="PHIEUMUONs" />
+            <End Role="PHIEUTHU" EntitySet="PHIEUTHUs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SACH_TL" Association="Self.FK_SACH_TL">
+            <End Role="THELOAI" EntitySet="THELOAIs" />
+            <End Role="SACH" EntitySet="SACHes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="QLTVModelStoreContainer" CdmEntityContainer="QLTVEntities">
+          <EntitySetMapping Name="CTPMs">
+            <EntityTypeMapping TypeName="QLTVModel.CTPM">
+              <MappingFragment StoreEntitySet="CTPM">
+                <ScalarProperty Name="MACTPM" ColumnName="MACTPM" />
+                <ScalarProperty Name="MAPM" ColumnName="MAPM" />
+                <ScalarProperty Name="MASACH" ColumnName="MASACH" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CTPNs">
+            <EntityTypeMapping TypeName="QLTVModel.CTPN">
+              <MappingFragment StoreEntitySet="CTPN">
+                <ScalarProperty Name="MAPN" ColumnName="MAPN" />
+                <ScalarProperty Name="MASACH" ColumnName="MASACH" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DOCGIAs">
+            <EntityTypeMapping TypeName="QLTVModel.DOCGIA">
+              <MappingFragment StoreEntitySet="DOCGIA">
+                <ScalarProperty Name="MADG" ColumnName="MADG" />
+                <ScalarProperty Name="TENDG" ColumnName="TENDG" />
+                <ScalarProperty Name="NGSINH" ColumnName="NGSINH" />
+                <ScalarProperty Name="DCHI" ColumnName="DCHI" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NGUOIDUNGs">
+            <EntityTypeMapping TypeName="QLTVModel.NGUOIDUNG">
+              <MappingFragment StoreEntitySet="NGUOIDUNG">
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TENND" ColumnName="TENND" />
+                <ScalarProperty Name="NGSINH" ColumnName="NGSINH" />
+                <ScalarProperty Name="GIOITINH" ColumnName="GIOITINH" />
+                <ScalarProperty Name="SDT" ColumnName="SDT" />
+                <ScalarProperty Name="DIACHI" ColumnName="DIACHI" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="PASS" ColumnName="PASS" />
+                <ScalarProperty Name="MAROLE" ColumnName="MAROLE" />
+                <ScalarProperty Name="TTND" ColumnName="TTND" />
+                <ScalarProperty Name="AVA" ColumnName="AVA" />
+                <ScalarProperty Name="MAIL" ColumnName="MAIL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NHAXUATBANs">
+            <EntityTypeMapping TypeName="QLTVModel.NHAXUATBAN">
+              <MappingFragment StoreEntitySet="NHAXUATBAN">
+                <ScalarProperty Name="MANXB" ColumnName="MANXB" />
+                <ScalarProperty Name="TENNXB" ColumnName="TENNXB" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUMUONs">
+            <EntityTypeMapping TypeName="QLTVModel.PHIEUMUON">
+              <MappingFragment StoreEntitySet="PHIEUMUON">
+                <ScalarProperty Name="MAPM" ColumnName="MAPM" />
+                <ScalarProperty Name="MADG" ColumnName="MADG" />
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TGMUON" ColumnName="TGMUON" />
+                <ScalarProperty Name="TIENPHAT" ColumnName="TIENPHAT" />
+                <ScalarProperty Name="TGTRA" ColumnName="TGTRA" />
+                <ScalarProperty Name="SL" ColumnName="SL" />
+                <ScalarProperty Name="TRIGIA" ColumnName="TRIGIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUNHAPs">
+            <EntityTypeMapping TypeName="QLTVModel.PHIEUNHAP">
+              <MappingFragment StoreEntitySet="PHIEUNHAP">
+                <ScalarProperty Name="MAPN" ColumnName="MAPN" />
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TGNHAP" ColumnName="TGNHAP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PHIEUTHUs">
+            <EntityTypeMapping TypeName="QLTVModel.PHIEUTHU">
+              <MappingFragment StoreEntitySet="PHIEUTHU">
+                <ScalarProperty Name="MAPT" ColumnName="MAPT" />
+                <ScalarProperty Name="MAPM" ColumnName="MAPM" />
+                <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="TIENTHU" ColumnName="TIENTHU" />
+                <ScalarProperty Name="TIENCONLAI" ColumnName="TIENCONLAI" />
+                <ScalarProperty Name="TGPT" ColumnName="TGPT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ROLEs">
+            <EntityTypeMapping TypeName="QLTVModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="MAROLE" ColumnName="MAROLE" />
+                <ScalarProperty Name="TENROLE" ColumnName="TENROLE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SACHes">
+            <EntityTypeMapping TypeName="QLTVModel.SACH">
+              <MappingFragment StoreEntitySet="SACH">
+                <ScalarProperty Name="TENSACH" ColumnName="TENSACH" />
+                <ScalarProperty Name="IMAGESACH" ColumnName="IMAGESACH" />
+                <ScalarProperty Name="MOTA" ColumnName="MOTA" />
+                <ScalarProperty Name="MATL" ColumnName="MATL" />
+                <ScalarProperty Name="MANXB" ColumnName="MANXB" />
+                <ScalarProperty Name="NAMXUATBAN" ColumnName="NAMXUATBAN" />
+                <ScalarProperty Name="TONGSL" ColumnName="TONGSL" />
+                <ScalarProperty Name="SLCONLAI" ColumnName="SLCONLAI" />
+                <ScalarProperty Name="TRIGIA" ColumnName="TRIGIA" />
+                <ScalarProperty Name="MASACH" ColumnName="MASACH" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="THELOAIs">
+            <EntityTypeMapping TypeName="QLTVModel.THELOAI">
+              <MappingFragment StoreEntitySet="THELOAI">
+                <ScalarProperty Name="MATL" ColumnName="MATL" />
+                <ScalarProperty Name="TENTL" ColumnName="TENTL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

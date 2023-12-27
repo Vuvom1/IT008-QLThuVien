@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Xml.Linq;
 using System.Windows.Navigation;
+using Library_Management_App.Model;
 
 namespace Library_Management_App.ViewModel
 {
@@ -26,8 +27,11 @@ namespace Library_Management_App.ViewModel
                 OnPropertyChanged(nameof(SelectedOption));
             }
         }
-
+        public ICommand Loadwd { get; set; }
         public static Frame MainFrame { get; set; }
+
+        public ICommand TenDangNhap_Loaded { get; set; }
+        public ICommand Quyen_Loaded { get; set; }
 
         public ICommand LoadPageCM { get; set; }
 
@@ -48,23 +52,51 @@ namespace Library_Management_App.ViewModel
         public ICommand StatisticRP1CM { get; set; }
 
 
+        private NGUOIDUNG _User;
 
+        public NGUOIDUNG User { get => _User; set { _User = value; OnPropertyChanged(); } }
+
+        private Visibility _SetRole;
+        public Visibility SetQuanLy { get => _SetRole; set { _SetRole = value; OnPropertyChanged(); } }
+        private string _Ava;
+        public string Ava { get => _Ava; set { _Ava = value; OnPropertyChanged(); } }
 
         public void LoadTenND(MainView p)
         {
+            p.TenDangNhap.Text = string.Join(" ", User.TENND.Split().Reverse().Take(2).Reverse());
         }
 
         void _Loadwd(MainView p)
         {
-            
+            MessageBox.Show("ok");
+            if (LoginViewModel.IsLogin)
+            {
+                string a = Const.UserName;
+                User = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == a).FirstOrDefault();
+                Const.ND = User;
+                MessageBox.Show(Const.ND.USERNAME);
+                //if ( User.MAROLE == 0 ) 
+                //    { User.MAROLE = 1; }
+                //SetQuanLy = User.QTV ? Visibility.Visible : Visibility.Collapsed;
+                //Const.Admin = User.QTV;
+                Ava = User.AVA;
+                LoadTenND(p);
+            }
         }
         public void LoadQuyen(MainView p)
         {
-            
+            if (User.MAROLE == 0)
+            { p.Quyen.Text = "Quản lý"; }
+            else if (User.MAROLE == 1)
+            { p.Quyen.Text = "Nhân viên"; }
+            else p.Quyen.Text = "Users";
         }
 
         public MainViewModel()
         {
+            Loadwd = new RelayCommand<MainView>((p) => true, (p) => _Loadwd(p));
+            Quyen_Loaded = new RelayCommand<MainView>((p) => true, (p) => LoadQuyen(p));
+            TenDangNhap_Loaded = new RelayCommand<MainView>((p) => true, (p) => LoadTenND(p));
 
 
             LoadPageCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
@@ -134,6 +166,6 @@ namespace Library_Management_App.ViewModel
             }
         }
 
-        
+
     }
 }

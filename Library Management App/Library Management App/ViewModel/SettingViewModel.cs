@@ -65,6 +65,7 @@ namespace Library_Management_App.ViewModel
         }
         void _Loadwd(SettingView p)
         {
+            MessageBox.Show("ok");
             if (LoginViewModel.IsLogin)
             {
                 string a = Const.UserName;
@@ -83,7 +84,7 @@ namespace Library_Management_App.ViewModel
         {
             foreach (NGUOIDUNG temp2 in DataProvider.Ins.DB.NGUOIDUNGs)
             {
-                if (temp2.MAIL == p.Mail.Text && p.Mail.Text != Const.ND.MAIL)
+                if (temp2.MAIL == p.Mail.Text)
                 {
                     MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;

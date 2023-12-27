@@ -23,18 +23,6 @@
                 <RowDefinition Height="100"/>
             </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-
-            </Grid>
-
-            <Grid Grid.Row="2">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-
-            </Grid>
 
             <Grid Grid.Row="1" Margin="5,0">
                 <Grid.ColumnDefinitions>
@@ -51,7 +39,7 @@
                        
 
                         <StackPanel Grid.Row="1">
-                            
+                            <Image Source="/Resource/Image/library.jpg" Height="426"/>
                         </StackPanel>
                     </Grid>
                 </Grid>

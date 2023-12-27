@@ -56,16 +56,17 @@
                     Foreground="Black"
                     Width="116">
                             <ComboBoxItem Content="Tất cả"/>
-                            <ComboBoxItem Content="Sách ngôn tình"/>
-                            <ComboBoxItem Content="Sách"/>
-                            <ComboBoxItem Content="Áo trùm đầu"/>
-                            <ComboBoxItem Content="Áo khoác"/>
-                            <ComboBoxItem Content="Áo tay dài"/>
-                            <ComboBoxItem Content="Quần"/>
-                            <ComboBoxItem Content="Phụ kiện"/>
+                            <ComboBoxItem Content="Khoa học"/>
+                            <ComboBoxItem Content="Chính trị"/>
+                            <ComboBoxItem Content="Kinh tế"/>
+                            <ComboBoxItem Content="Văn học"/>
+                            <ComboBoxItem Content="Lịch sử"/>
+                            <ComboBoxItem Content="Tâm Lý"/>
+                            <ComboBoxItem Content="Tiểu thuyết"/>
+                            <ComboBoxItem Content="Thiếu nhi"/>
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="SelectionChanged">
-                                    <i:InvokeCommandAction Command="{Binding Filter}"
+                                    <i:InvokeCommandAction Command="{Binding FilterBooksCommand}"
                                                    CommandParameter="{Binding ElementName=Bookswd}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
@@ -94,7 +95,7 @@
                     SelectedIndex="0"
                     Foreground="Black"
                     Width="116"
-                    ItemsSource="{Binding listTK}">
+                    ItemsSource="{Binding ListTK}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -105,7 +106,7 @@
                         </ComboBox>
                     </Border>
                     <TextBox
-                     x:Name = "tbxSearch"
+                     x:Name = "tbxSearchBooks"
                             Width = "310"
                             Height = "40"
                             Margin = "15,0,0,0"
@@ -123,7 +124,7 @@
                             VerticalAlignment = "Center" CaretBrush = "Gray" >
                         <i:Interaction.Triggers >
                             <i:EventTrigger EventName = "TextChanged" >
-                                <i:InvokeCommandAction Command = "{Binding SearchCommand}"
+                                <i:InvokeCommandAction Command = "{Binding SearchBooksCommand}"
                                                    CommandParameter="{Binding ElementName=Bookswd}"></i:InvokeCommandAction >
                             </i:EventTrigger >
                         </i:Interaction.Triggers >
@@ -140,7 +141,7 @@
                     >
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding AddPdPdCommand}"
+                                <i:InvokeCommandAction Command="{Binding AddBookCommand}"
                                                    CommandParameter="{Binding ElementName=Bookswd}"></i:InvokeCommandAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
@@ -148,7 +149,7 @@
                 </StackPanel>
             </Grid>
             <Grid Grid.Row="2">
-                <ListView x:Name="ListViewBooks" ItemsSource="{Binding listSP}"
+                <ListView x:Name="ListViewBooks" ItemsSource="{Binding ListBook}"
                       SelectionMode="Single"
                       ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                       ScrollViewer.VerticalScrollBarVisibility="Hidden"
@@ -165,7 +166,7 @@
                                 <StackPanel>
                                     <Image  
                                                 Margin="0,10,0,0"
-                                                Source="{Binding HINHSP,StringFormat={}}" 
+                                                Source="{Binding IMAGESACH,StringFormat={}}" 
                                                 Height="154" 
                                                 Width="140"
                                                 />
@@ -173,13 +174,13 @@
                                                 FontFamily="{StaticResource Custom}"
                                                 FontSize="14"
                                                 HorizontalAlignment="Center"
-                                                Text="{Binding TENSP}"
+                                                Text="{Binding TENSACH}"
                                                 />
                                     <TextBlock
                                                 FontFamily="{StaticResource Custom}"
                                                 FontSize="14"
                                                 HorizontalAlignment="Center"
-                                                Text="{Binding GIA,StringFormat={}{0:# ###} VNĐ}"
+                                                Text="{Binding TRIGIA,StringFormat={}{0:# ###} VNĐ}"
                                                 />
                                 </StackPanel>
                             </Border>
@@ -192,7 +193,7 @@
                     </ListView.ItemsPanel>
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="SelectionChanged">
-                            <i:InvokeCommandAction Command="{Binding DetailPdCommand}"
+                            <i:InvokeCommandAction Command="{Binding DetailBooksCommand}"
                                                    CommandParameter="{Binding ElementName=Bookswd}"></i:InvokeCommandAction>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
