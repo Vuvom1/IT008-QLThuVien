@@ -93,7 +93,6 @@ namespace Library_Management_App.ViewModel
 
         void _Loadwd(AddBorrowView paramater)
         {
-            MessageBox.Show("ok");
             LDG = DataProvider.Ins.DB.DOCGIAs.ToList();
             LSach = DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0).ToList();
             paramater.LDG.ItemsSource = LDG;
@@ -113,13 +112,13 @@ namespace Library_Management_App.ViewModel
             if (paramater.LSach.SelectedItem != null)
             {
                 SACH temp = (SACH)paramater.LSach.SelectedItem;
-                paramater.TT.Text = String.Format("{0:0,0}", tongSoLuong) + " quyển"; ;
-                paramater.TT1.Text = String.Format("{0:0,0}", tongTien) + " VND";
+                //paramater.TT.Text = String.Format("{0:0,0}", tongSoLuong) + " quyển"; ;
+                //paramater.TT1.Text = String.Format("{0:0,0}", tongTien) + " VND";
             }
             else
             {
-                paramater.TT.Text = "";
-                paramater.TT1.Text = "";
+                //paramater.TT.Text = "";
+                //paramater.TT1.Text = "";
             }
         }
         void _AddSach(AddBorrowView paramater)
@@ -143,6 +142,7 @@ namespace Library_Management_App.ViewModel
             SACH a = (SACH)paramater.LSach.SelectedItem;
             if (a.SLCONLAI > 0)
             {
+                bool isAdded = false;
                 foreach (Display temp in LDisplay)
                 {
                     if (temp.MaSach == a.MASACH)
@@ -152,7 +152,8 @@ namespace Library_Management_App.ViewModel
                             if (temp1.MASACH == a.MASACH)
                             {
                                 MessageBox.Show("Mỗi quyển sách chỉ được mượn một lần");
-                            }
+                                isAdded = true;
+                            } 
                         }
                         //tongSoLuong = tongSoLuong + 1;
                         //tongTien = (int)(int.Parse(paramater.TT1.Text) + a.TRIGIA);
@@ -164,23 +165,28 @@ namespace Library_Management_App.ViewModel
                         //return;
                     }
                 }
-                Display b = new Display(a.MASACH, a.TENSACH, a.THELOAI.TENTL, a.NHAXUATBAN.TENNXB, (int)a.TRIGIA);
-                CTPM ctpm = new CTPM()
+
+                if (!isAdded)
                 {
-                    MASACH = a.MASACH,
-                    SACH = a,
-                    MAPM = int.Parse(paramater.MaPM.Text),
-                };
-                tongSoLuong += 1;
-                tongTien += a.TRIGIA.Value;
-                paramater.TT.Text = String.Format("{0:0,0}", tongSoLuong) + " quyển";
-                paramater.TT1.Text = String.Format("{0:0,0}", tongTien) + " VND";
-                LCTPM.Add(ctpm);
-                LDisplay.Add(b);
-                paramater.ListViewSach.ItemsSource = LDisplay;
-                paramater.ListViewSach.Items.Refresh();
-                paramater.LSach.SelectedItem = null;
-                paramater.LSach.Text = "";
+                    Display b = new Display(a.MASACH, a.TENSACH, a.THELOAI.TENTL, a.NHAXUATBAN.TENNXB, (int)a.TRIGIA);
+                    CTPM ctpm = new CTPM()
+                    {
+                        MASACH = a.MASACH,
+                        SACH = a,
+                        MAPM = int.Parse(paramater.MaPM.Text),
+                    };
+                    tongSoLuong += 1;
+                    tongTien += a.TRIGIA.Value;
+                    paramater.TT.Text = String.Format("{0:0,0}", tongSoLuong) + " quyển";
+                    paramater.TT1.Text = String.Format("{0:0,0}", tongTien) + " VND";
+                    LCTPM.Add(ctpm);
+                    LDisplay.Add(b);
+                    paramater.ListViewSach.ItemsSource = LDisplay;
+                    paramater.ListViewSach.Items.Refresh();
+                    paramater.LSach.SelectedItem = null;
+                    paramater.LSach.Text = "";
+                }
+                
             }
             else
                 System.Windows.MessageBox.Show("Sách tồn kho không đủ cung cấp !", "THÔNG BÁO");
@@ -252,6 +258,7 @@ namespace Library_Management_App.ViewModel
                 int tonggia = 0;
                 foreach (Display b in LDisplay)
                 {
+                    MessageBox.Show(b.TenSach);
                     sl = sl + 1;
                     tonggia += b.GiaTri;
                 }
@@ -280,11 +287,11 @@ namespace Library_Management_App.ViewModel
                 }
                 DataProvider.Ins.DB.PHIEUMUONs.Add(temp);
                 DataProvider.Ins.DB.SaveChanges();
-                //MessageBoxResult d = System.Windows.MessageBox.Show("  Bạn có muốn in hóa đơn ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
-                //if (d == MessageBoxResult.Yes)
-                //{
-                //    print(paramater);
-                //}
+                ////MessageBoxResult d = System.Windows.MessageBox.Show("  Bạn có muốn in hóa đơn ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+                ////if (d == MessageBoxResult.Yes)
+                ////{
+                ////    print(paramater);
+                ////}
 
                 tongSoLuong = 0;
                 tongTien = 0;

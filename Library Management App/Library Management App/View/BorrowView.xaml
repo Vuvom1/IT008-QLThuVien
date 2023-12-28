@@ -224,7 +224,7 @@
                                         </Grid>
                                         <Grid Grid.Column="3">
                                             <TextBlock
-                                                Text="{Binding SL, StringFormat=dd/MM/yyyy}"
+                                                Text="{Binding SL}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource Custom}"
@@ -233,7 +233,7 @@
                                         </Grid>
                                         <Grid Grid.Column="4">
                                             <TextBlock
-                                               Text="{Binding TGTRA, StringFormat={}{0:# ###} VNĐ}"
+                                               Text="{Binding TGTRA, StringFormat=dd/MM/yyyy}"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"
@@ -251,6 +251,13 @@
                                 <WrapPanel Orientation="Vertical"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
+
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding Detail}"
+                               CommandParameter="{Binding ElementName=Borrowwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
 
                     </ListView>
                 </StackPanel>

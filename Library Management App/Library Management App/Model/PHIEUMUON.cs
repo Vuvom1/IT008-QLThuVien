@@ -29,6 +29,7 @@ namespace Library_Management_App.Model
         public Nullable<System.DateTime> TGTRA { get; set; }
         public int SL { get; set; }
         public int TRIGIA { get; set; }
+        public string TRANGTHAI { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTPM> CTPMs { get; set; }

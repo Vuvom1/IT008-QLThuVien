@@ -61,7 +61,6 @@ namespace Library_Management_App.ViewModel
 
                 try
                 {
-                    //MessageBox.Show(Password);
                     string PassEncode = MD5Hash(Base64Encode(Password));
 
                     var accCount = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == Username && x.PASS == PassEncode && x.TTND).Count();

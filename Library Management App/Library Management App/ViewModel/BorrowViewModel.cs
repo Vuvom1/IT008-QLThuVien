@@ -69,8 +69,8 @@ namespace Library_Management_App.ViewModel
             AddBorrowView addBorrow = new AddBorrowView();
             addBorrow.MaPM.Text = rdma().ToString();
             listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
-            paramater.ListViewPM.ItemsSource = listPM;
-            paramater.ListViewPM.Items.Refresh();
+            //paramater.ListViewPM.ItemsSource = listPM;
+            //paramater.ListViewPM.Items.Refresh();
             MainViewModel.MainFrame.Content = addBorrow;
         }
 

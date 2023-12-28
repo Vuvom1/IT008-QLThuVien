@@ -17,10 +17,15 @@
         WindowStartupLocation="CenterScreen"
         DataContext="{StaticResource MainVM}"
         Name="Mainview">
-       
 
-    
-    <Window.Triggers>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding Loadwd}"
+                                   CommandParameter="{Binding ElementName=Mainview}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+        </i:Interaction.Triggers>
+
+        <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded">
             <BeginStoryboard>
                 <Storyboard>
