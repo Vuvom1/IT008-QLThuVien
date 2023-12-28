@@ -77,7 +77,6 @@ namespace Library_Management_App.ViewModel
                 //    { User.MAROLE = 1; }
                 //SetQuanLy = User.QTV ? Visibility.Visible : Visibility.Collapsed;
                 //Const.Admin = User.QTV;
-                MessageBox.Show(User.AVA);
                 Ava = User.AVA;
                 LoadTenND(p);
             }
