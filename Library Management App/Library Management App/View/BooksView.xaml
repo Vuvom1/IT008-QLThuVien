@@ -11,12 +11,12 @@
         DataContext="{StaticResource BooksVM}"
         x:Name="Bookswd">
     
-    <i:Interaction.Triggers >
+    <!--<i:Interaction.Triggers >
         <i:EventTrigger EventName = "Loaded" >
             <i:InvokeCommandAction Command = "{Binding LoadBooksCommand}"
                            CommandParameter="{Binding ElementName=Bookswd}"></i:InvokeCommandAction >
         </i:EventTrigger >
-    </i:Interaction.Triggers >
+    </i:Interaction.Triggers >-->
     <Border
                 Height="605"
                 Width="700"

@@ -1,5 +1,5 @@
-CREATE DATABASE QLTV
 DROP DATABASE QLTV
+CREATE DATABASE QLTV
 USE QLTV
 -- ------------------------------------------------------
 --
@@ -67,6 +67,7 @@ CREATE TABLE NGUOIDUNG (
 
 -- --------------------------------------------------------
 
+
 --
 -- Cấu trúc bảng cho bảng `NHAXUATBAN`
 --
@@ -93,7 +94,6 @@ CREATE TABLE PHIEUMUON (
   TRIGIA INT NOT NULL,
   TRANGTHAI VARCHAR(50)
 );
-
 -- --------------------------------------------------------
 
 --
@@ -290,8 +290,7 @@ ALTER TABLE PHIEUTHU
 --Insert vai trò
 INSERT INTO ROLE (MAROLE, TENROLE) VALUES
 (0, 'Admin'),
-(1, 'Librarian'),
-(2, 'User');	
+(1, 'Librarian');
 
 --Insert thể loại
 INSERT INTO THELOAI (MATL,TENTL) VALUES (1,N'Khoa học')
@@ -333,11 +332,7 @@ INSERT INTO DOCGIA VALUES (N'DG06',N'Đào Anh Tú','30/10/2003',N'Thành phố 
 INSERT INTO DOCGIA VALUES (N'DG07',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
 INSERT INTO DOCGIA VALUES (N'DG08',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
 
-select * from PHIEUMUON
-select * from CTPM
+INSERT INTO NGUOIDUNG VALUES ('ND01','DAOANHTU', 
 
-INSERT INTO PHIEUMUON VALUES (86853,N'DG01','NV7937',2023-12-22,0 ,NULL, 2, 120000, 'Chưa trả')
 
-INSERT INTO CTPM (MAPM, MASACH) VALUES (86853,786048862862)
-INSERT INTO CTPM (MAPM, MASACH) VALUES (86853,97048862862)
 

@@ -33,7 +33,7 @@ namespace Library_Management_App.ViewModel
         public BooksViewModel() 
         {
             ListTK = new ObservableCollection<string>() {"Tên sách","Giá sách" };
-            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0));
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
             ListBookFilter = new ObservableCollection<SACH>(ListBook.GroupBy(p => p.TENSACH).Select(grp => grp.FirstOrDefault()));
             AddBookCommand = new RelayCommand<BooksView>((p) => { return p == null ? false : true; }, (p) => _AddBookCommand(p));
             SearchBooksCommand = new RelayCommand<BooksView>((p) => { return p == null ? false : true; }, (p) => _SearchBooksCommand(p));
@@ -45,15 +45,41 @@ namespace Library_Management_App.ViewModel
         void _LoadBooksCommand(BooksView booksView) 
         {
             ListTK = new ObservableCollection<string>() { "Tên sách", "Giá sách" };
-            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0));
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
             ListBookFilter = new ObservableCollection<SACH>(ListBook.GroupBy(p => p.TENSACH).Select(grp => grp.FirstOrDefault()));
             booksView.cbxBoLoc.SelectedIndex = 0;
             booksView.cbxTimKiem.SelectedIndex = 0;
         }
 
+        bool check(string m)
+        {
+            foreach (SACH temp in DataProvider.Ins.DB.SACHes)
+            {
+                if (temp.MASACH == m)
+                    return true;
+            }
+            return false;
+        }
+        string rdma()
+        {
+            string ma;
+            do
+            {
+                Random rand = new Random();
+                ma = rand.Next(0, 10000).ToString();
+            } while (check(ma));
+            return ma;
+        }
+
         void _AddBookCommand(BooksView booksView)
         {
             AddBooksView addBooksView = new AddBooksView();
+            addBooksView.MaSach.Text = rdma();
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL >= 0));
+            _FilterBooksCommand(booksView);
+            _SearchBooksCommand(booksView);
+            booksView.ListViewBooks.ItemsSource = ListBook;
+            booksView.ListViewBooks.Items.Refresh();
             MainViewModel.MainFrame.Content = addBooksView;
         }
         void _DetailBooksCommand(BooksView booksView)
@@ -75,7 +101,7 @@ namespace Library_Management_App.ViewModel
             detailBookView.Mota.Text = temp.MOTA;
             Uri fileUri = new Uri(temp.IMAGESACH, UriKind.Relative);
             detailBookView.HinhAnhSach.Source = new BitmapImage(fileUri);
-            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI > 0));
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
             booksView.ListViewBooks.ItemsSource = ListBook;
             booksView.ListViewBooks.SelectedItem = null;
             _FilterBooksCommand(booksView);
