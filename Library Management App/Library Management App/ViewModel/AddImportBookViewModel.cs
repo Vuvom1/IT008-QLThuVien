@@ -1,11 +1,11 @@
 ﻿using Library_Management_App.Model;
 using Library_Management_App.View;
-using Library_Management_App.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Documents;
@@ -13,10 +13,29 @@ using System.Windows.Input;
 
 namespace Library_Management_App.ViewModel
 {
-    class AddImportBookViewModel:  BaseViewModel
+
+    public class Display1
     {
-        private List<SACH> _LSP;
-        public List<SACH> LSP { get => _LSP; set { _LSP = value; OnPropertyChanged(); } }
+        public string MASACH { get; set; }
+        public string TENSACH { get; set; }
+        public int DONGIA { get; set; }
+        public int SL { get; set; }
+        public int TIENNHAP { get; set; }
+        public Display1(string MaSp = "", string TenSP = "", int Dongia = 0, int SL = 0, int Tiennhap = 0)
+        {
+            this.MASACH = MaSp;
+            this.TENSACH = TenSP;
+            this.SL = SL;
+            this.DONGIA = Dongia;
+            this.TIENNHAP = Tiennhap;
+        }
+
+        
+    }
+    public class AddImportBookViewModel:  BaseViewModel
+    {
+        private List<SACH> _SP;
+        public List<SACH> SP { get => _SP; set { _SP = value; OnPropertyChanged(); } }
         private ObservableCollection<Display1> _LHT;
         public ObservableCollection<Display1> LHT { get => _LHT; set { _LHT = value; OnPropertyChanged(); } }
         private ObservableCollection<SACH> _LSPSelected;
@@ -45,11 +64,13 @@ namespace Library_Management_App.ViewModel
 
         void _Loadwd(AddImportBookView paramater)
         {
-            LSP = DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL >= 0).ToList();
-            paramater.SP.ItemsSource = LSP;
+            SP = DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0).ToList();
+            paramater.SP.ItemsSource = SP;
             paramater.MaND.Text = Const.ND.MAND;
+            paramater.TenND.Text = Const.ND.TENND;      
+            paramater.NGAY.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
             paramater.TT.Text = String.Format("{0:0,0}", tongtien) + " VND";
-            paramater.Ngay.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+
         }
 
         void _Choose(AddImportBookView paramater)
@@ -57,11 +78,11 @@ namespace Library_Management_App.ViewModel
             if (paramater.SP.SelectedItem != null)
             {
                 SACH temp = (SACH)paramater.SP.SelectedItem;
-                paramater.DG.Text = String.Format("{0:#,###} VNĐ", ((int)(float)temp.TRIGIA * 5 / 6));
+                //paramater.DG.Text = String.Format("{0:#,###} VNĐ", ((int)(float)temp.TRIGIA * 5 / 6));
             }
             else
             {
-                paramater.DG.Text = "";
+                //paramater.DG.Text = "";
             }
         }
 
@@ -122,7 +143,7 @@ namespace Library_Management_App.ViewModel
             tongtien += int.Parse(paramater.SL.Text) * (int)(a.TRIGIA * 5 / 6);
             paramater.ListViewSP.ItemsSource = LHT;
             paramater.ListViewSP.Items.Refresh();
-            paramater.SP.ItemsSource = LSP;
+            paramater.SP.ItemsSource = SP;
             paramater.SP.Items.Refresh();
             paramater.SP.SelectedItem = null;
             paramater.SL.Text = "";
@@ -193,12 +214,12 @@ namespace Library_Management_App.ViewModel
                 }
                 DataProvider.Ins.DB.PHIEUNHAPs.Add(temp);
                 DataProvider.Ins.DB.SaveChanges();
-                System.Windows.MessageBox.Show("Nhập hàng thành công", "THÔNG BÁO");
+                System.Windows.MessageBox.Show("Nhập sách thành công", "THÔNG BÁO");
                 LHT = new ObservableCollection<Display1>();
                 paramater.MaPN.Clear();
                 LCTPN = new ObservableCollection<CTPN>();
                 paramater.ListViewSP.ItemsSource = LHT;
-                LSP = DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL >= 0).ToList();
+                SP = DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL >= 0).ToList();
                 paramater.SP.Items.Refresh();
                 ImportBookView importView = new ImportBookView();
                 importView.ListViewPN.ItemsSource = new ObservableCollection<PHIEUNHAP>(DataProvider.Ins.DB.PHIEUNHAPs);

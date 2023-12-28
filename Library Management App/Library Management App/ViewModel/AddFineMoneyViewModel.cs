@@ -48,7 +48,7 @@ namespace Library_Management_App.ViewModel
                 MessageBox.Show("Bạn chưa nhập đủ thông tin !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            MessageBoxResult h = System.Windows.MessageBox.Show("  Bạn muốn thêm khách hàng ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel);
+            MessageBoxResult h = System.Windows.MessageBox.Show("  Bạn muốn thêm phiếu thu ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel);
             if (h == MessageBoxResult.Yes)
             {
                 if (string.IsNullOrEmpty(paramater.MAPT.Text) || string.IsNullOrEmpty(paramater.TENDG.Text) || string.IsNullOrEmpty(paramater.TONGNO.Text) || string.IsNullOrEmpty(paramater.SOTIENTHU.Text) /*|| string.IsNullOrEmpty(paramater.DC.Text)*/)

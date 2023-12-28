@@ -12,36 +12,39 @@
       x:Name="AddImportBookwd"
       Title="AddImportBookView">
 
-    <Page.Triggers>
-        <EventTrigger RoutedEvent="Page.Loaded">
-            <BeginStoryboard>
-                <Storyboard>
-                    <ThicknessAnimation Storyboard.TargetName="AddImportBookwd"
-                                    Storyboard.TargetProperty="Margin"
-                                    From="426,0,0,0"
-                                    To="0"
-                                    Duration="0:0:0.2" />
-                </Storyboard>
-            </BeginStoryboard>
-        </EventTrigger>
-    </Page.Triggers>
+    
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding Loadwd}"
                                CommandParameter="{Binding ElementName=AddImportBookwd}"></i:InvokeCommandAction>
         </i:EventTrigger>
     </i:Interaction.Triggers>
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <ThicknessAnimation Storyboard.TargetName="AddImportBookwd"
+                                Storyboard.TargetProperty="Margin"
+                                From="426,0,0,0"
+                                To="0"
+                                Duration="0:0:0.2" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+
     <Border
     x:Name="xx"
     CornerRadius="15"
     Background="Transparent"
     >
-        <i:Interaction.Triggers>
+        <!--<i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
                 <i:InvokeCommandAction Command="{Binding MoveWindow}"
                                    CommandParameter="{Binding ElementName=AddImportBookwd}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>
+        </i:Interaction.Triggers>-->
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -108,10 +111,20 @@
                             <StackPanel Orientation="Vertical">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock
-                                Margin="8,0,0,0"
-                                Text="MÃ ND"
+                                Margin="8,2,0,0"
+                                Text="MÃ"
                                 FontFamily="{StaticResource Custom}"
                                 />
+                                    <TextBlock
+                                Margin="4,2,0,0"
+                                Text="|"
+                                FontFamily="{StaticResource Custom}"
+                                />
+                                    <TextBlock
+                                    Margin="4,2,0,0"
+                                    Text="TÊN NGƯỜI DÙNG"
+                                    FontFamily="{StaticResource Custom}"
+                                    />
                                 </StackPanel>
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
                                     <StackPanel Orientation="Horizontal">
@@ -153,7 +166,7 @@
                             />
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
                                     <TextBox
-                                    x:Name="Ngay"
+                                    x:Name="NGAY"
                                     HorizontalAlignment="Left"
                                     FontFamily="{StaticResource Custom}"
                                     BorderThickness="0"

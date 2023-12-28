@@ -12,26 +12,8 @@ using System.Windows.Input;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace Library_Management_App.ViewModel
-{
-
-
-    public class Display1
-    {
-        public string MASACH { get; set; }
-        public string TENSACH { get; set; }
-        public int DONGIA { get; set; }
-        public int SL { get; set; }
-        public int TIENNHAP { get; set; }
-        public Display1(string MaSp = "", string TenSP = "", int Dongia = 0, int SL = 0, int Tiennhap = 0)
-        {
-            this.MASACH = MaSp;
-            this.TENSACH = TenSP;
-            this.SL = SL;
-            this.DONGIA = Dongia;
-            this.TIENNHAP = Tiennhap;
-        }
-    }
-    class ImportBookViewModel : BaseViewModel
+{ 
+    public class ImportBookViewModel : BaseViewModel
     {
         private ObservableCollection<PHIEUNHAP> _listPN;
         public ObservableCollection<PHIEUNHAP> listPN { get => _listPN; set { _listPN = value; OnPropertyChanged(); } }
