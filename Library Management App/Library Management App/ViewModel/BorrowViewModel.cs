@@ -32,7 +32,7 @@ namespace Library_Management_App.ViewModel
         public BorrowViewModel()
         {
             listTK = new ObservableCollection<string>() { "Họ tên", "Mã PM", "Ngày" };
-            listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
+            //listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
             OpenAddBorrowCM = new RelayCommand<BorrowView>((p) => true, (p) => _OpenAdd(p));
             SearchCM = new RelayCommand<BorrowView>((p) => true, (p) => _SearchCommand(p));
             Detail = new RelayCommand<BorrowView>((p) => p.ListViewPM.SelectedItem != null ? true : false, (p) => _Detail(p));
