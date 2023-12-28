@@ -1,4 +1,5 @@
 CREATE DATABASE QLTV
+DROP DATABASE QLTV
 USE QLTV
 -- ------------------------------------------------------
 --
@@ -8,11 +9,13 @@ USE QLTV
 SET DATEFORMAT DMY;
 
 CREATE TABLE CTPM (
-  MACTPM INT NOT NULL,
+  MACTPM INT  NOT NULL IDENTITY(1,1),
   MAPM INT DEFAULT NULL,
   MASACH varchar(50) DEFAULT NULL
   
 );
+
+
 -- --------------------------------------------------------
 
 --
@@ -70,7 +73,7 @@ CREATE TABLE NGUOIDUNG (
 
 CREATE TABLE NHAXUATBAN (
   MANXB INT NOT NULL,
-  TENNXB nvarchar(50) DEFAULT NULL
+  TENNXB varchar(50) DEFAULT NULL
 );
 
 -- --------------------------------------------------------
@@ -87,7 +90,8 @@ CREATE TABLE PHIEUMUON (
   TIENPHAT INT DEFAULT NULL,
   TGTRA datetime DEFAULT NULL,
   SL INT NOT NULL,
-  TRIGIA INT NOT NULL
+  TRIGIA INT NOT NULL,
+  TRANGTHAI VARCHAR(50)
 );
 
 -- --------------------------------------------------------
@@ -140,7 +144,7 @@ CREATE TABLE SACH (
 
 CREATE TABLE THELOAI (
   MATL INT NOT NULL,
-  TENTL nvarchar(50) DEFAULT NULL
+  TENTL varchar(50) DEFAULT NULL
 );
 
 CREATE TABLE PHIEUTHU (
@@ -329,5 +333,11 @@ INSERT INTO DOCGIA VALUES (N'DG06',N'Đào Anh Tú','30/10/2003',N'Thành phố 
 INSERT INTO DOCGIA VALUES (N'DG07',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
 INSERT INTO DOCGIA VALUES (N'DG08',N'Đào Anh Tú','30/10/2003',N'Thành phố HCM','tuanhdao2@gmail.com','0941520828')
 
+select * from PHIEUMUON
+select * from CTPM
 
-select * from docgia
+INSERT INTO PHIEUMUON VALUES (86853,N'DG01','NV7937',2023-12-22,0 ,NULL, 2, 120000, 'Chưa trả')
+
+INSERT INTO CTPM (MAPM, MASACH) VALUES (86853,786048862862)
+INSERT INTO CTPM (MAPM, MASACH) VALUES (86853,97048862862)
+
