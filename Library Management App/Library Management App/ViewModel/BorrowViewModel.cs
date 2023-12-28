@@ -32,7 +32,7 @@ namespace Library_Management_App.ViewModel
         public BorrowViewModel()
         {
             listTK = new ObservableCollection<string>() { "Họ tên", "Mã PM", "Ngày" };
-            //listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
+            listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
             OpenAddBorrowCM = new RelayCommand<BorrowView>((p) => true, (p) => _OpenAdd(p));
             SearchCM = new RelayCommand<BorrowView>((p) => true, (p) => _SearchCommand(p));
             Detail = new RelayCommand<BorrowView>((p) => p.ListViewPM.SelectedItem != null ? true : false, (p) => _Detail(p));
@@ -151,7 +151,7 @@ namespace Library_Management_App.ViewModel
             p.MaPM.Text = temp.MAPM.ToString();
             p.MaDG.Text = temp.MADG.ToString();
             p.TenDG.Text = temp.DOCGIA.TENDG;
-            //p.KM.Text = temp.KHUYENMAI.ToString() + "%";
+            p.TRANGTHAI.Text = temp.TRANGTHAI.ToString();
             List<Display> list = new List<Display>();
             foreach (CTPM a in temp.CTPMs)
             {
@@ -159,8 +159,8 @@ namespace Library_Management_App.ViewModel
             }
             p.ListViewSach.ItemsSource = list;
             p.GG.Text = Convert.ToString(temp.SL) + " quyển";
-            p.TT.Text = String.Format("{0:0,0}", temp.TRIGIA) + " VND";
-            p.TT1.Text = String.Format("{0:0,0}", temp.TIENPHAT) + " VND";
+            p.TT1.Text = String.Format("{0:0,0}", temp.TRIGIA) + " VND";
+            p.TT.Text = String.Format("{0:0,0}", temp.TIENPHAT) + " VND";
             parameter.ListViewPM.SelectedItem = null;
             listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
             parameter.ListViewPM.ItemsSource = listPM;

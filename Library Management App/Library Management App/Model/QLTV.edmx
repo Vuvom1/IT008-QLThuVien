@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="MACTPM" />
           </Key>
-          <Property Name="MACTPM" Type="int" Nullable="false" />
+          <Property Name="MACTPM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MAPM" Type="int" />
           <Property Name="MASACH" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -334,7 +334,7 @@
           <Key>
             <PropertyRef Name="MACTPM" />
           </Key>
-          <Property Name="MACTPM" Type="Int32" Nullable="false" />
+          <Property Name="MACTPM" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MAPM" Type="Int32" />
           <Property Name="MASACH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PHIEUMUON" Relationship="Self.FK_CTPM_PM" FromRole="CTPM" ToRole="PHIEUMUON" />

@@ -215,7 +215,7 @@ namespace Library_Management_App.ViewModel
                         break;
                     }
                 }
-                paramater.ListViewSach.ItemsSource = LSach;
+                paramater.LSach.ItemsSource = LSach;
                 paramater.LSach.Items.Refresh();
                 paramater.ListViewSach.Items.Refresh();
             }
@@ -258,7 +258,6 @@ namespace Library_Management_App.ViewModel
                 int tonggia = 0;
                 foreach (Display b in LDisplay)
                 {
-                    MessageBox.Show(b.TenSach);
                     sl = sl + 1;
                     tonggia += b.GiaTri;
                 }
@@ -271,9 +270,12 @@ namespace Library_Management_App.ViewModel
                     TGMUON = DateTime.Now,
                     CTPMs = new ObservableCollection<CTPM>(LCTPM),
                     DOCGIA = a,
-                    NGUOIDUNG = Const.ND,
+                    //NGUOIDUNG = Const.ND,
                     SL = sl,
                     TRIGIA = tonggia,
+                    TGTRA = null,
+                    TRANGTHAI = "Chưa trả",
+                    TIENPHAT = 0,
                 };
                 foreach (CTPM s in LCTPM)
                 {

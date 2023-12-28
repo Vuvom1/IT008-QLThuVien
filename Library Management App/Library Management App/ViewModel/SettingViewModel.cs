@@ -65,7 +65,6 @@ namespace Library_Management_App.ViewModel
         }
         void _Loadwd(SettingView p)
         {
-            MessageBox.Show("ok");
             if (LoginViewModel.IsLogin)
             {
                 string a = Const.UserName;

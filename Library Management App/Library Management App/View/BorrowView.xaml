@@ -233,7 +233,7 @@
                                         </Grid>
                                         <Grid Grid.Column="4">
                                             <TextBlock
-                                               Text="{Binding TGTRA, StringFormat=dd/MM/yyyy}"
+                                               Text="{Binding TRANGTHAI}"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"

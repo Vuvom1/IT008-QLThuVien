@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Library_Management_App.ViewModel
 {
@@ -75,18 +76,20 @@ namespace Library_Management_App.ViewModel
                     {
                         foreach (CTPM temp1 in temp.CTPMs)
                         {
-                            foreach (PHIEUMUON temp2 in DataProvider.Ins.DB.PHIEUMUONs)
+                            foreach (SACH temp2 in DataProvider.Ins.DB.SACHes)
                             {
-                                if (temp1.MAPM == temp2.MAPM)
+                                if (temp1.MASACH == temp2.MASACH)
                                 {
-                                    if (temp2.SL == -1)
-                                        temp2.SL += 1;
-                                    else if (temp2.SL >= 0)
-                                        temp2.SL += 1;
+                                    if (temp2.SLCONLAI == -1)
+                                        temp2.SLCONLAI += 1;
+                                    else if (temp2.SLCONLAI >= 0)
+                                        temp2.SLCONLAI += 1;
                                 }
                             }
                         }
-                        DataProvider.Ins.DB.PHIEUMUONs.Remove(temp);
+
+                        temp.TRANGTHAI = "Đã trả";
+
                     }
                 }
                 DataProvider.Ins.DB.SaveChanges();
