@@ -70,7 +70,7 @@ CREATE TABLE NGUOIDUNG (
 
 CREATE TABLE NHAXUATBAN (
   MANXB INT NOT NULL,
-  TENNXB varchar(50) DEFAULT NULL
+  TENNXB nvarchar(50) DEFAULT NULL
 );
 
 -- --------------------------------------------------------
@@ -140,7 +140,7 @@ CREATE TABLE SACH (
 
 CREATE TABLE THELOAI (
   MATL INT NOT NULL,
-  TENTL varchar(50) DEFAULT NULL
+  TENTL nvarchar(50) DEFAULT NULL
 );
 
 CREATE TABLE PHIEUTHU (

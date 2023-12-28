@@ -50,7 +50,7 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0"
-                x:Name="HinhAnh"
+                x:Name="HinhAnhSach"
                 VerticalAlignment="Center"/>
                 <Canvas Grid.Row="1">
                     <Button Content="CẬP NHẬT"
@@ -123,71 +123,53 @@
                                BorderThickness="0"
                                FontFamily="{StaticResource Custom}"
                                
-                               x:Name="TenSP"
+                               x:Name="TenSach"
                                />
                         <TextBlock 
                                FontSize="20"
                                FontFamily="{StaticResource Custom}"
-                               x:Name="GiaSP"
+                               x:Name="GiaSach"
                                />
                         <StackPanel Orientation="Horizontal">
                             <TextBlock
                             FontFamily="{StaticResource Custom}"
                             FontSize="14"
                             VerticalAlignment="Center"
-                            Text="Loại sản phẩm: "
+                            Text="Loại sách: "
                             />
                             <TextBlock
                             VerticalAlignment="Center"
                                FontSize="14"
                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                FontFamily="{StaticResource Custom}"
-                               x:Name="LoaiSP"
+                               x:Name="LoaiSach"
                                />
                         </StackPanel>
                         <TextBlock 
                                FontSize="14"
                                FontFamily="{StaticResource Custom}"
                                Margin="0,0,0,10"
-                               x:Name="SLSP"
+                               x:Name="SLSach"
                                />
-                        <StackPanel>
-                            <TextBlock  
-                                    Margin="0,-10,0,0"
-                                    FontSize="14"
-                                    FontFamily="{StaticResource Custom}"
-                                    x:Name="Size"
-                                    Text="Kích cỡ"
-                               />
-                            <ItemsControl x:Name="kichco">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Border
-                                    Margin="2"
-                                    Height="20"
-                                    Width="50"
-                                    Background="White"
-                                    CornerRadius="10"
-                                    >
-                                            <TextBlock Text="{Binding SIZE}"
-                                                   FontFamily="{StaticResource Custom}"
-                                                   VerticalAlignment="Center"
-                                                   HorizontalAlignment="Center"
-                                                   />
-                                        </Border>
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                                <ItemsControl.ItemsPanel>
-                                    <ItemsPanelTemplate>
-                                        <WrapPanel/>
-                                    </ItemsPanelTemplate>
-                                </ItemsControl.ItemsPanel>
-                            </ItemsControl>
-                        </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock
+                                FontFamily="{StaticResource Custom}"
+                                FontSize="14"
+                                VerticalAlignment="Center"
+                                Text="Nhà xuất bản: "
+                                    />
+                                <TextBlock
+                                 VerticalAlignment="Center"
+                                FontSize="14"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                 FontFamily="{StaticResource Custom}"
+                                x:Name="TenNXB"
+                                    />
+                            </StackPanel>
                         <Expander
                         x:Name="Info"
                         Background="Transparent"
-                        Header="Chi tiết sản phẩm"
+                        Header="Mô tả"
                         FontFamily="{StaticResource Custom}"
                         >
                             <TextBox x:Name="Mota"

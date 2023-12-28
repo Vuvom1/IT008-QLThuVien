@@ -11,6 +11,7 @@ using Library_Management_App.Model;
 using System.Data.Common;
 using System.Windows.Documents;
 using System.Windows.Media.Imaging;
+using System.Runtime.Remoting.Contexts;
 
 namespace Library_Management_App.ViewModel
 {
@@ -58,22 +59,28 @@ namespace Library_Management_App.ViewModel
         void _DetailBooksCommand(BooksView booksView)
         {
             DetailBookView detailBookView = new DetailBookView();
-            //SACH temp = (SACH)booksView.ListViewBooks.SelectedItem;
-            //detailBookView.TenSP.Text = temp.TENSP;
-            //detailProduct.GiaSP.Text = string.Format("{0:0,0}", temp.GIA) + " VNĐ";
-            //detailProduct.LoaiSP.Text = temp.LOAISP;
-            //string SL = listSP1.Where(p => p.TENSP == temp.TENSP && p.SL >= 0).Select(p => p.SL).Sum().ToString();
-            //detailProduct.SLSP.Text = "Số lượng: " + SL;
-            //detailProduct.kichco.ItemsSource = new ObservableCollection<SANPHAM>(listSP1.Where(p => p.TENSP == temp.TENSP && p.SL >= 0));
-            //detailProduct.Mota.Text = temp.MOTA;
-            //Uri fileUri = new Uri(temp.HINHSP, UriKind.Relative);
-            //detailProduct.HinhAnh.Source = new BitmapImage(fileUri);
-            //listSP1 = new ObservableCollection<SANPHAM>(DataProvider.Ins.DB.SANPHAMs.Where(p => p.SL > 0));
-            //paramater.ListViewProduct.ItemsSource = listSP1;
-            //paramater.ListViewProduct.SelectedItem = null;
-            //_Filter(paramater);
-            //_SearchCommand(paramater);
-            //MainViewModel.MainFrame.Content = detailProduct;
+            SACH temp = (SACH)booksView.ListViewBooks.SelectedItem;
+            detailBookView.TenSach.Text = temp.TENSACH;
+            detailBookView.GiaSach.Text = string.Format("{0:0,0}", temp.TRIGIA) + " VNĐ";
+            int sotheloai = int.Parse(ListBook.Where(p => p.TENSACH == temp.TENSACH).Select(p => p.MATL).Sum().ToString());
+            List<THELOAI> theloai = new List<THELOAI>(DataProvider.Ins.DB.THELOAIs);
+            string tentheloai = theloai.Where(p => p.MATL == sotheloai).Select(p => p.TENTL).FirstOrDefault();
+            detailBookView.LoaiSach.Text = tentheloai;
+            string SL = ListBook.Where(p => p.TENSACH == temp.TENSACH && p.TONGSL >= 0).Select(p => p.TONGSL).Sum().ToString();
+            detailBookView.SLSach.Text = "Số lượng: " + SL;
+            int somaNXB = int.Parse(ListBook.Where(p => p.TENSACH == temp.TENSACH).Select(p => p.MANXB).Sum().ToString());
+            List<NHAXUATBAN> NXB = new List<NHAXUATBAN>(DataProvider.Ins.DB.NHAXUATBANs);
+            string tenmaNXB = NXB.Where(p => p.MANXB == somaNXB).Select(p => p.TENNXB).FirstOrDefault();
+            detailBookView.TenNXB.Text = tenmaNXB;
+            detailBookView.Mota.Text = temp.MOTA;
+            Uri fileUri = new Uri(temp.IMAGESACH, UriKind.Relative);
+            detailBookView.HinhAnhSach.Source = new BitmapImage(fileUri);
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI > 0));
+            booksView.ListViewBooks.ItemsSource = ListBook;
+            booksView.ListViewBooks.SelectedItem = null;
+            _FilterBooksCommand(booksView);
+            _SearchBooksCommand(booksView);
+            MainViewModel.MainFrame.Content = detailBookView;
         }
         void _FilterBooksCommand(BooksView booksView) 
         {
