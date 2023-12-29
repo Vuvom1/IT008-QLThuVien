@@ -60,7 +60,7 @@
                         FontFamily="{StaticResource Custom}"
                         Height="35"
                         FontSize="14"
-                        ItemsSource="{Binding listTK}"
+                        ItemsSource="{Binding listTKQLNV}"
                         Width="110">
 
 
@@ -93,7 +93,7 @@
                                 VerticalAlignment="Center" CaretBrush="Gray" >
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="TextChanged">
-                                    <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                                    <i:InvokeCommandAction Command="{Binding SearchQLNVCM}"
                                                        CommandParameter="{Binding ElementName=QLNVwd}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
@@ -112,7 +112,7 @@
 
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction Command="{Binding AddNDCommand}"
+                                    <i:InvokeCommandAction Command="{Binding AddQLNVCM}"
                                                        CommandParameter="{Binding ElementName=QLNVwd}"></i:InvokeCommandAction>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
@@ -120,7 +120,7 @@
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <ListView x:Name="ListViewND" ItemsSource="{Binding listND}"
+                    <ListView x:Name="ListViewQLNV" ItemsSource="{Binding ListQLNV}"
                             SelectionMode="Single"
                             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                             ScrollViewer.VerticalScrollBarVisibility="Hidden"
