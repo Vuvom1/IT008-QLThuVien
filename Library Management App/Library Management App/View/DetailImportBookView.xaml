@@ -33,7 +33,7 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0">
                 <TextBlock
-                Text="PHIẾU NHẬP HÀNG"
+                Text="PHIẾU NHẬP SÁCH"
                 Foreground="#6C63FF"
                 FontFamily="{StaticResource Custom}"
                 FontSize="30"
@@ -168,7 +168,7 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <TextBlock
-                            Text="MÃ SP"
+                            Text="MÃ SÁCH"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Custom}"
@@ -177,23 +177,14 @@
                             </Grid>
                             <Grid Grid.Column="1">
                                 <TextBlock
-                            Margin="2,0,0,0"
                             HorizontalAlignment="Left"
-                            Text="TÊN SẢN PHẨM"
+                            Text="TÊN SÁCH"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Custom}"
-                            FontSize="12"
+                            FontSize="12" Margin="48,0,0,0"
                             />
                             </Grid>
-                            <Grid Grid.Column="2">
-                                <TextBlock
-                            Text="SIZE"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Custom}"
-                            FontSize="12"
-                            />
-                            </Grid>
+                            <Grid Grid.Column="2"/>
                             <Grid Grid.Column="3">
                                 <TextBlock
                             Text="SỐ LƯỢNG"
@@ -201,7 +192,7 @@
                             VerticalAlignment="Center"
                                             
                             FontFamily="{StaticResource Custom}"
-                            FontSize="12"
+                            FontSize="12" Margin="-22,0,0,0"
                             />
                             </Grid>
                             <Grid Grid.Column="4">

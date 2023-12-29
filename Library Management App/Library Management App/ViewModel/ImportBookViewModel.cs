@@ -10,29 +10,32 @@ using System.Threading.Tasks;
 using System.Windows.Documents;
 using System.Windows.Input;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Windows;
 
 namespace Library_Management_App.ViewModel
 { 
     public class ImportBookViewModel : BaseViewModel
     {
-        private ObservableCollection<PHIEUNHAP> _listPN;
+        ObservableCollection<PHIEUNHAP> _listPN;
         public ObservableCollection<PHIEUNHAP> listPN { get => _listPN; set { _listPN = value; OnPropertyChanged(); } }
         public ICommand OpenAddImport { get; set; }
 
         public ICommand SearchCommand { get; set; }
+
+        public ICommand Detail { get; set; }
 
         public ImportBookViewModel()
         {
             listPN = new ObservableCollection<PHIEUNHAP>(DataProvider.Ins.DB.PHIEUNHAPs);
             SearchCommand = new RelayCommand<ImportBookView>((p) => true, (p) => _SearchCommand(p));
             OpenAddImport = new RelayCommand<ImportBookView>((p) => true, (p) => _OpenAdd(p));
-            
+            Detail = new RelayCommand<ImportBookView>((p) => p.ListViewPN.SelectedItem != null ? true : false, (p) => _Detail(p));
         }
 
 
         bool check(int m)
         {
-            foreach (CTPN temp in DataProvider.Ins.DB.CTPNs)
+            foreach (PHIEUNHAP temp in DataProvider.Ins.DB.PHIEUNHAPs)
             {
                 if (temp.MAPN == m)
                     return true;
@@ -71,7 +74,7 @@ namespace Library_Management_App.ViewModel
             int tong = 0;
             foreach (CTPN a in temp.CTPNs)
             {
-                list.Add(new Display1(a.MASACH, a.SACH.TENSACH,  (int)((float)a.SACH.TRIGIA * 5 / 6), a.SL, (int)((float)(a.SL * a.SACH.TRIGIA) * 5 / 6)));
+                list.Add(new Display1(a.MASACH, a.SACH.TENSACH, a.SL, (int)((float)(a.SL * a.SACH.TRIGIA) * 5 / 6)));
                 tong += (int)((float)(a.SL * a.SACH.TRIGIA) * 5 / 6);
             }
             detailImport.ttn.Text = String.Format("{0:0,0}", tong) + " VND";

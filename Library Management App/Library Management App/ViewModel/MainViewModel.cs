@@ -49,6 +49,7 @@ namespace Library_Management_App.ViewModel
 
         public ICommand ImportCM { get; set; }
 
+        public ICommand AddImport { get; set; }
         public ICommand QLNVCM { get; set; }
 
 
@@ -126,6 +127,11 @@ namespace Library_Management_App.ViewModel
             ImportCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame.Content = new ImportBookView();
+            });
+
+            AddImport = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new AddImportBookView();
             });
 
             FineMoneyCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>

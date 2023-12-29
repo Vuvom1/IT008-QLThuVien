@@ -12,11 +12,11 @@
     x:Name="FineMoneywd">
 
     <i:Interaction.Triggers>
-     <i:EventTrigger EventName="Loaded">
-         <i:InvokeCommandAction Command="{Binding LoadCsCommand}"
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadCsCommand}"
                                 CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
-     </i:EventTrigger>
- </i:Interaction.Triggers>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Border
                  Height="605"
                  Width="700"
@@ -92,11 +92,11 @@
                              BorderThickness="2"
                              VerticalAlignment="Center" CaretBrush="Gray" >
                         <i:Interaction.Triggers>
-                         <i:EventTrigger EventName="TextChanged">
-                             <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction Command="{Binding SearchCommand}"
                                                     CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
-                         </i:EventTrigger>
-                     </i:Interaction.Triggers>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </TextBox>
                     <Button 
                      Content="TẠO"
@@ -111,11 +111,11 @@
 
 
                         <i:Interaction.Triggers>
-                         <i:EventTrigger EventName="Click">
+                            <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding AddCsCommand}"
                                                     CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
-                         </i:EventTrigger>
-                     </i:Interaction.Triggers>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </Button>
                 </StackPanel>
             </Grid>
@@ -147,43 +147,18 @@
                             <Grid Grid.Column="1">
                                 <TextBlock
                              Text="Họ tên độc giả"
-                             HorizontalAlignment="Center"
+                             HorizontalAlignment="Left"
                              VerticalAlignment="Center"
                              FontFamily="{StaticResource Custom}"
-                             FontSize="12"
+                             FontSize="12" Margin="66,0,0,0"
                              />
                             </Grid>
-                            <Grid Grid.Column="2" Margin="-7 0 0 0">
-                                <TextBlock
-                             HorizontalAlignment="Left"
-                             Text="Tổng nợ"
-                             VerticalAlignment="Top"
-                             FontFamily="{StaticResource Custom}"
-                             FontSize="12"
-                             Margin="68,10,0,0"
-                             />
-                            </Grid>
-                            <Grid Grid.Column="3" Margin="-60 0 0 0">
-                                <TextBlock
-                             Text="Số tiền thu" 
-                             HorizontalAlignment="Left"
-                             VerticalAlignment="Top"
-                             FontFamily="{StaticResource Custom}"
-                             FontSize="12" Margin="129,10,0,0"
-                             />
-                            </Grid>
-                            <Grid Grid.Column="4" Margin="-78 0 0 0">
-                                <TextBlock
-                             Text="Còn lại"
-                             VerticalAlignment="Top"
-                             FontFamily="{StaticResource Custom}"
-                             HorizontalAlignment="Left"
-                             FontSize="12" Margin="283,10,0,0"
-                             />
-                            </Grid>
+                            <Grid Grid.Column="2" Margin="-7 0 0 0"/>
+                            <Grid Grid.Column="3" Margin="-60 0 0 0"/>
+                            <Grid Grid.Column="4" Margin="-78 0 0 0"/>
                         </Grid>
                     </Border>
-                    <ListView x:Name="ListViewHD" ItemsSource="{Binding listHD}"
+                    <ListView x:Name="ListViewPT" ItemsSource="{Binding listPT}"
                        Height="410"
                        Width="675"
                        SelectionMode="Single"
@@ -207,7 +182,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
                                             <TextBlock
-                                             Text="{Binding SOHD}"
+                                             Text="{Binding MAPT}"
                                              HorizontalAlignment="Center"
                                              VerticalAlignment="Center"
                                              FontFamily="{StaticResource Custom}"
@@ -218,30 +193,12 @@
                                             <TextBlock
                                              Margin="2,0,0,0"
                                              HorizontalAlignment="Left"
-                                             Text="{Binding KHACHHANG.HOTEN}"
+                                             Text="{Binding PHIEUTHU.NGUOIDUNG.TENND}"
                                              VerticalAlignment="Center"
                                              FontFamily="{StaticResource Custom}"
                                              FontSize="12"
                                          />
-                                        </Grid>
-                                        <Grid Grid.Column="2">
-                                            <TextBlock
-                                             Text="{Binding NGHD, StringFormat=dd/MM/yyyy}"
-                                             HorizontalAlignment="Left"
-                                             VerticalAlignment="Center"
-                                             FontFamily="{StaticResource Custom}"
-                             FontSize="12"
-                             />
-                                        </Grid>
-                                        <Grid Grid.Column="3">
-                                            <TextBlock
-                                            Text="{Binding TRIGIA, StringFormat={}{0:# ###} VNĐ}"
-                                             HorizontalAlignment="Center"
-                                             VerticalAlignment="Center"
-                                             MaxWidth="150"
-                                             FontFamily="{StaticResource Custom}"
-                                             FontSize="12"
-                                         />
+                                        
                                         </Grid>
                                     </Grid>
                                 </Border>
@@ -252,12 +209,12 @@
                                 <WrapPanel Orientation="Vertical"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-                        <!--<i:Interaction.Triggers>
+                        <i:Interaction.Triggers>
                          <i:EventTrigger EventName="SelectionChanged">
                              <i:InvokeCommandAction     Command="{Binding Detail}"
                                                         CommandParameter="{Binding ElementName=Orderwd}"></i:InvokeCommandAction>
                          </i:EventTrigger>
-                     </i:Interaction.Triggers>-->
+                     </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>

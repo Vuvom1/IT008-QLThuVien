@@ -39,12 +39,12 @@
     CornerRadius="15"
     Background="Transparent"
     >
-        <!--<i:Interaction.Triggers>
+        <i:Interaction.Triggers>
             <i:EventTrigger EventName="MouseLeftButtonDown">
                 <i:InvokeCommandAction Command="{Binding MoveWindow}"
                                    CommandParameter="{Binding ElementName=AddImportBookwd}"></i:InvokeCommandAction>
             </i:EventTrigger>
-        </i:Interaction.Triggers>-->
+        </i:Interaction.Triggers>
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="30"/>
@@ -220,23 +220,23 @@
                                 <Border BorderThickness="2" BorderBrush="Gray" CornerRadius="10">
                                     <ComboBox
                                     Margin="4,0,0,0"
-                                    x:Name="SP"
+                                    x:Name="LSach"
                                     FontFamily="{StaticResource Custom}"
                                     BorderThickness="0"
                                     materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                    ItemsSource="{Binding LSP}"
+                                    ItemsSource="{Binding LSach}"
                                     >
                                         <ComboBox.ItemTemplate>
                                             <DataTemplate>
                                                 <StackPanel Orientation="Horizontal">
-                                                    <TextBlock Text="{Binding TENSP}"/>
+                                                    <TextBlock Text="{Binding MASACH}"/>
                                                     <TextBlock
                                                     Text="|"
                                                     Margin="4,0,4,0"
                                                     />
                                                     
                                                     <TextBlock 
-                                                    Text="{Binding SL}"/>
+                                                    Text="{Binding TENSACH}"/>
                                                 </StackPanel>
                                             </DataTemplate>
                                         </ComboBox.ItemTemplate>
@@ -310,7 +310,7 @@
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
                                             <i:InvokeCommandAction     
-                                                        Command="{Binding AddSP}"
+                                                        Command="{Binding AddSach}"
                                                         CommandParameter="{Binding ElementName=AddImportBookwd}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
@@ -329,7 +329,7 @@
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
                                             <i:InvokeCommandAction     
-                                                        Command="{Binding DeleteSP}"
+                                                        Command="{Binding DeleteSach}"
                                                         CommandParameter="{Binding ElementName=AddImportBookwd}"></i:InvokeCommandAction>
                                         </i:EventTrigger>
                                     </i:Interaction.Triggers>
@@ -417,7 +417,7 @@
                             </Grid>
                         </Grid>
                     </Border>
-                    <ListView x:Name="ListViewSP" 
+                    <ListView x:Name="ListViewSach" 
                       SelectionMode="Single"
                       ScrollViewer.VerticalScrollBarVisibility="Hidden" Height="220" Width="680"
                     >
@@ -440,12 +440,12 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
                                             <TextBlock
-                            Text="{Binding MASACH}"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Custom}"
-                            FontSize="12"
-                            />
+                                            Text="{Binding MASACH}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            FontFamily="{StaticResource Custom}"
+                                            FontSize="12"
+                                            />
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock

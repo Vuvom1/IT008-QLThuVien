@@ -36,23 +36,7 @@ namespace Library_Management_App.ViewModel
                 foreach (PHIEUNHAP temp in DataProvider.Ins.DB.PHIEUNHAPs)
                 {
                     if (temp.MAPN == int.Parse(parameter.MaPN.Text))
-                    {
-                        foreach (CTPN temp1 in temp.CTPNs)
-                        {
-                            foreach (SACH temp2 in DataProvider.Ins.DB.SACHes)
-                            {
-                                if (temp1.MASACH == temp2.MASACH)
-                                {
-                                    if (temp2.TONGSL - temp1.SL < 0)
-                                    {
-                                        MessageBox.Show("Không thể xóa phiếu nhập vì sản phẩm nhập đã được bán !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
-                                        return;
-                                    }
-                                    else
-                                        temp2.TONGSL -= temp1.SL;
-                                }
-                            }
-                        }
+                    {                       
                         DataProvider.Ins.DB.PHIEUNHAPs.Remove(temp);
                     }
                 }

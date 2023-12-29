@@ -20,6 +20,8 @@ namespace Library_Management_App.ViewModel
         private ObservableCollection<PHIEUTHU> _listPT;
         public ObservableCollection<PHIEUTHU> listPT { get => _listPT; set { _listPT = value; OnPropertyChanged(); } }
 
+        private ObservableCollection<string> _listTK;
+        public ObservableCollection<string> listTK { get => _listTK; set { _listTK = value; OnPropertyChanged(); } }
         public ICommand SearchCommand { get; set; }
         public ICommand Detail { get; set; }
         public ICommand AddCsCommand { get; set; }
@@ -27,10 +29,11 @@ namespace Library_Management_App.ViewModel
 
         public FineMoneyViewModel()
         {
-            //listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
-            //SearchCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _SearchCommand(p));
+            listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
+            SearchCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _SearchCommand(p));
             AddCsCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _AddCs(p));
             LoadCsCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _LoadCsCommand(p));
+            Detail = new RelayCommand<FineMoneyView>((p) => true, (p) => _Detail(p));
 
         }
 
@@ -64,10 +67,70 @@ namespace Library_Management_App.ViewModel
             AddFineMoneyView addFineMoneyView = new AddFineMoneyView();
             addFineMoneyView.MAPT.Text = rdma().ToString();
             listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
-            paramater.ListViewHD.ItemsSource = listPT;
-            paramater.ListViewHD.Items.Refresh();
+            listTK = new ObservableCollection<string>() { "Họ tên", "Mã PT" };
+            paramater.ListViewPT.ItemsSource = listPT;
+            paramater.ListViewPT.Items.Refresh();
             MainViewModel.MainFrame.Content = addFineMoneyView;
         }
 
+
+        void _SearchCommand(FineMoneyView paramater)
+        {
+            ObservableCollection<PHIEUTHU> temp = new ObservableCollection<PHIEUTHU>();
+            if (paramater.txbSearch.Text != "")
+            {
+                switch (paramater.cbxChon.SelectedItem.ToString())
+                {
+                    case "Mã PT":
+                        {
+                            foreach (PHIEUTHU s in listPT)
+                            {
+                                if (s.MAPT.Contains(paramater.txbSearch.Text))
+                                {
+                                    temp.Add(s);
+                                }
+                            }
+                            break;
+                        }
+                    case "Họ tên":
+                        {
+                            foreach (PHIEUTHU s in listPT)
+                            {
+                                if (s.NGUOIDUNG.TENND.ToLower().Contains(paramater.txbSearch.Text.ToLower()))
+                                {
+                                    temp.Add(s);
+                                }
+                            }
+                            break;
+                        }
+                    
+                    default:
+                        {
+                            foreach (PHIEUTHU s in listPT)
+                            {
+                                if (s.NGUOIDUNG.TENND.ToLower().Contains(paramater.txbSearch.Text))
+                                {
+                                    temp.Add(s);
+                                }
+                            }
+                            break;
+                        }
+                }
+                paramater.ListViewPT.ItemsSource = temp;
+            }
+            else
+                paramater.ListViewPT.ItemsSource = listPT;
+        }
+
+        void _Detail(FineMoneyView paramater)
+        {
+            DetailFineMoneyView detailFineMoneyView = new DetailFineMoneyView();
+            PHIEUTHU temp = (PHIEUTHU)paramater.ListViewPT.SelectedItem;
+            detailFineMoneyView.MaPT.Text = temp.MAPT;
+            detailFineMoneyView.TenDG.Text = temp.NGUOIDUNG.TENND;
+            detailFineMoneyView.TONGNO.Text = temp.TONGNO.ToString();
+            detailFineMoneyView.STT.Text = temp.TIENTHU.ToString();
+            detailFineMoneyView.CL.Text = temp.TIENCONLAI.ToString();
+        }
     }
 }

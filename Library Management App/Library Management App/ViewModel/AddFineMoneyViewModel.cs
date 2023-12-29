@@ -70,7 +70,7 @@ namespace Library_Management_App.ViewModel
                         temp.TIENTHU = paramater.SOTIENTHU.Text.Length;
                         temp.TIENCONLAI = paramater.CONLAI.Text.Length;
                         DataProvider.Ins.DB.PHIEUTHUs.Add(temp);
-                        DataProvider.Ins.DB.SaveChanges();
+                        //DataProvider.Ins.DB.SaveChanges();
                         MessageBox.Show("Thêm phiếu thu thành công.", "THÔNG BÁO");
                         paramater.MAPT.Text = rdma();
                         paramater.TENDG.Clear();

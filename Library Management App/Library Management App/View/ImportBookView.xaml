@@ -52,7 +52,12 @@
                             materialDesign:TextFieldAssist.TextBoxViewMargin="15,6,0,0"
                             BorderThickness="2"
                             VerticalAlignment="Center" CaretBrush="Gray" >
-
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction Command="{Binding SearchCommand}"
+                               CommandParameter="{Binding ElementName=ImporBooktwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </TextBox>
                     <Button
                     Content="NHẬP"
@@ -103,7 +108,7 @@
                             <Grid Grid.Column="1">
                                 <TextBlock
                             HorizontalAlignment="Center"
-                            Text="SỐ  LƯỢNG"
+                            Text="NHÂN VIÊN"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Custom}"
                             FontSize="12"
@@ -182,7 +187,12 @@
                                 <WrapPanel Orientation="Vertical"/>
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
-
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction     Command="{Binding Detail}"
+                                   CommandParameter="{Binding ElementName=ImportBookwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>

@@ -18,33 +18,30 @@ namespace Library_Management_App.ViewModel
     {
         public string MASACH { get; set; }
         public string TENSACH { get; set; }
-        public int DONGIA { get; set; }
         public int SL { get; set; }
-        public int TIENNHAP { get; set; }
-        public Display1(string MaSp = "", string TenSP = "", int Dongia = 0, int SL = 0, int Tiennhap = 0)
+        public int THANHTIEN { get; set; }
+        public Display1(string MaSach = "", string TenSach = "",  int SL = 0, int Thanhtien = 0)
         {
-            this.MASACH = MaSp;
-            this.TENSACH = TenSP;
+            this.MASACH = MaSach;
+            this.TENSACH = TenSach;
             this.SL = SL;
-            this.DONGIA = Dongia;
-            this.TIENNHAP = Tiennhap;
+            this.THANHTIEN = Thanhtien;
         }
 
-        
     }
     public class AddImportBookViewModel:  BaseViewModel
     {
-        private List<SACH> _SP;
-        public List<SACH> SP { get => _SP; set { _SP = value; OnPropertyChanged(); } }
+        private List<SACH> _LSach;
+        public List<SACH> LSach { get => _LSach; set { _LSach = value; OnPropertyChanged(); } }
         private ObservableCollection<Display1> _LHT;
         public ObservableCollection<Display1> LHT { get => _LHT; set { _LHT = value; OnPropertyChanged(); } }
         private ObservableCollection<SACH> _LSPSelected;
-        public ObservableCollection<SACH> LSPSelected { get => _LSPSelected; set { _LSPSelected = value; OnPropertyChanged(); } }
+        public ObservableCollection<SACH> LSachSelected { get => _LSPSelected; set { _LSPSelected = value; OnPropertyChanged(); } }
         private ObservableCollection<CTPN> _LCTPN;
         public ObservableCollection<CTPN> LCTPN { get => _LCTPN; set { _LCTPN = value; OnPropertyChanged(); } }
         public ICommand Loadwd { get; set; }
-        public ICommand AddSP { get; set; }
-        public ICommand DeleteSP { get; set; }
+        public ICommand AddSach { get; set; }
+        public ICommand DeleteSach { get; set; }
         public ICommand SavePN { get; set; }
         public ICommand Choose { get; set; }
         public int tongtien { get; set; }
@@ -52,22 +49,21 @@ namespace Library_Management_App.ViewModel
         public AddImportBookViewModel()
         {
             tongtien = 0;
-            LSPSelected = new ObservableCollection<SACH>();
+            LSachSelected = new ObservableCollection<SACH>();
             LHT = new ObservableCollection<Display1>();
             LCTPN = new ObservableCollection<CTPN>();
             Choose = new RelayCommand<AddImportBookView>((p) => true, (p) => _Choose(p));
             Loadwd = new RelayCommand<AddImportBookView>((p) => true, (p) => _Loadwd(p));
-            AddSP = new RelayCommand<AddImportBookView>((p) => true, (p) => _AddSP(p));
-            DeleteSP = new RelayCommand<AddImportBookView>((p) => true, (p) => _DeleteSP(p));
+            AddSach = new RelayCommand<AddImportBookView>((p) => true, (p) => _AddSach(p));
+            DeleteSach = new RelayCommand<AddImportBookView>((p) => true, (p) => _DeleteSach(p));
             SavePN = new RelayCommand<AddImportBookView>((p) => true, (p) => _SavePN(p));
         }
 
         void _Loadwd(AddImportBookView paramater)
         {
-            SP = DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0).ToList();
-            paramater.SP.ItemsSource = SP;
+            LSach = DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0).ToList();
             paramater.MaND.Text = Const.ND.MAND;
-            paramater.TenND.Text = Const.ND.TENND;      
+            paramater.TenND.Text = Const.ND.TENND;
             paramater.NGAY.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
             paramater.TT.Text = String.Format("{0:0,0}", tongtien) + " VND";
 
@@ -75,24 +71,31 @@ namespace Library_Management_App.ViewModel
 
         void _Choose(AddImportBookView paramater)
         {
-            if (paramater.SP.SelectedItem != null)
+            if (paramater.LSach.SelectedItem != null)
             {
-                SACH temp = (SACH)paramater.SP.SelectedItem;
-                //paramater.DG.Text = String.Format("{0:#,###} VNĐ", ((int)(float)temp.TRIGIA * 5 / 6));
+                SACH temp = (SACH)paramater.LSach.SelectedItem;
+                paramater.DG.Text = String.Format("{0:#,###} VNĐ", ((int)(float)temp.TRIGIA * 5 / 6));
             }
             else
             {
-                //paramater.DG.Text = "";
+                paramater.DG.Text = "";
             }
         }
 
-        void _AddSP(AddImportBookView paramater)
+        void _AddSach(AddImportBookView paramater)
         {
             if (paramater.MaPN.Text == "")
             {
                 System.Windows.MessageBox.Show("Bạn chưa nhập mã phiếu nhập!", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
+
+            if (paramater.LSach.SelectedItem == null)
+            {
+                System.Windows.MessageBox.Show("Bạn chưa chọn sản phẩm để thêm !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             foreach (PHIEUNHAP s in DataProvider.Ins.DB.PHIEUNHAPs)
             {
                 if (int.Parse(paramater.MaPN.Text) == s.MAPN)
@@ -114,13 +117,13 @@ namespace Library_Management_App.ViewModel
                 System.Windows.MessageBox.Show("Số lượng nhập không hợp lệ!", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
-            SACH a = (SACH)paramater.SP.SelectedItem;
-            foreach (Display1 display in paramater.ListViewSP.Items)
+            SACH a = (SACH)paramater.LSach.SelectedItem;
+            foreach (Display1 display in paramater.ListViewSach.Items)
             {
                 if (display.MASACH == a.MASACH)
                 {
                     display.SL += int.Parse(paramater.SL.Text);
-                    display.TIENNHAP = display.SL * (int)(a.TRIGIA * 5 / 6);
+                    display.THANHTIEN = display.SL * (int)(a.TRIGIA * 5 / 6);
                     foreach (CTPN ct in LCTPN)
                     {
                         if (ct.MASACH == display.MASACH)
@@ -129,7 +132,7 @@ namespace Library_Management_App.ViewModel
                     goto There;
                 }
             }
-            Display1 b = new Display1(a.MASACH, a.TENSACH, (int)((float)a.TRIGIA * 5 / 6), int.Parse(paramater.SL.Text), (int)((float)(int.Parse(paramater.SL.Text) * a.TRIGIA) * 5 / 6));
+            Display1 b = new Display1(a.MASACH, a.TENSACH, int.Parse(paramater.SL.Text), (int)((float)(int.Parse(paramater.SL.Text) * a.TRIGIA) * 5 / 6));
             CTPN ctpn = new CTPN()
             {
                 MASACH = a.MASACH,
@@ -141,18 +144,18 @@ namespace Library_Management_App.ViewModel
             LHT.Add(b);
         There:
             tongtien += int.Parse(paramater.SL.Text) * (int)(a.TRIGIA * 5 / 6);
-            paramater.ListViewSP.ItemsSource = LHT;
-            paramater.ListViewSP.Items.Refresh();
-            paramater.SP.ItemsSource = SP;
-            paramater.SP.Items.Refresh();
-            paramater.SP.SelectedItem = null;
+            paramater.ListViewSach.ItemsSource = LHT;
+            paramater.ListViewSach.Items.Refresh();
+            paramater.LSach.ItemsSource = LSach;
+            paramater.LSach.Items.Refresh();
+            paramater.LSach.SelectedItem = null;
             paramater.SL.Text = "";
             paramater.TT.Text = tongtien.ToString("#,### VNĐ");
         }
 
-        void _DeleteSP(AddImportBookView paramater)
+        void _DeleteSach(AddImportBookView paramater)
         {
-            if (paramater.ListViewSP.SelectedItem == null)
+            if (paramater.ListViewSach.SelectedItem == null)
             {
                 System.Windows.MessageBox.Show("Bạn chưa chọn sách !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -160,15 +163,15 @@ namespace Library_Management_App.ViewModel
             MessageBoxResult h = System.Windows.MessageBox.Show("  Bạn có chắc muốn xóa sách.", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (h == MessageBoxResult.Yes)
             {
-                Display1 a = (Display1)paramater.ListViewSP.SelectedItem;
-                tongtien -= a.TIENNHAP;
+                Display1 a = (Display1)paramater.ListViewSach.SelectedItem;
+                tongtien -= a.THANHTIEN;
                 paramater.TT.Text = String.Format("{0:0,0}", tongtien) + " VND";
                 LHT.Remove(a);
-                foreach (SACH b in LSPSelected)
+                foreach (SACH b in LSachSelected)
                 {
                     if (b.MASACH == a.MASACH)
                     {
-                        LSPSelected.Remove(b);
+                        LSachSelected.Remove(b);
                         break;
                     }
                 }
@@ -180,14 +183,16 @@ namespace Library_Management_App.ViewModel
                         break;
                     }
                 }
-                paramater.ListViewSP.Items.Refresh();
+                paramater.LSach.ItemsSource = LSach;
+                paramater.LSach.Items.Refresh();
+                paramater.ListViewSach.Items.Refresh();
             }
             else
                 return;
         }
         void _SavePN(AddImportBookView paramater)
         {
-            if (paramater.ListViewSP.Items.Count == 0)
+            if (paramater.ListViewSach.Items.Count == 0)
             {
                 System.Windows.MessageBox.Show("Thông tin phiếu nhập chưa đầy đủ !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -218,9 +223,10 @@ namespace Library_Management_App.ViewModel
                 LHT = new ObservableCollection<Display1>();
                 paramater.MaPN.Clear();
                 LCTPN = new ObservableCollection<CTPN>();
-                paramater.ListViewSP.ItemsSource = LHT;
-                SP = DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL >= 0).ToList();
-                paramater.SP.Items.Refresh();
+                paramater.ListViewSach.ItemsSource = LHT;
+                paramater.TT.Text = String.Format("{0:0,0}", tongtien) + " VND";
+                LSach = DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0).ToList();
+                paramater.LSach.Items.Refresh();
                 ImportBookView importView = new ImportBookView();
                 importView.ListViewPN.ItemsSource = new ObservableCollection<PHIEUNHAP>(DataProvider.Ins.DB.PHIEUNHAPs);
                 MainViewModel.MainFrame.Content = importView;
