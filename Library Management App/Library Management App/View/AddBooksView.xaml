@@ -8,7 +8,7 @@
     Background="White"
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    x:Name="AddProductwd"
+    x:Name="AddBookswd"
     DataContext="{StaticResource AddBooksVM}"
     Height="605" 
     Width="700">
@@ -18,7 +18,7 @@
         <EventTrigger RoutedEvent="Page.Loaded">
             <BeginStoryboard>
                 <Storyboard>
-                    <ThicknessAnimation Storyboard.TargetName="AddProductwd"
+                    <ThicknessAnimation Storyboard.TargetName="AddBookswd"
                                 Storyboard.TargetProperty="Margin"
                                 From="426,0,0,0"
                                 To="0"
@@ -76,7 +76,7 @@
                         Height="30"
                         >
                                 <TextBox
-                            x:Name="MaSp"
+                            x:Name="MaSach"
                             HorizontalAlignment="Left"
                             Width="150"
                             BorderThickness="0"
@@ -102,7 +102,7 @@
                         />
                             <TextBox
                             Height="30"
-                            x:Name="TenSp"
+                            x:Name="TenSach"
                             FontFamily="{StaticResource Custom}"
                             Foreground="Black"
                             HorizontalAlignment="Left"
@@ -128,7 +128,7 @@
                         />
                             <TextBox
                             Height="30"
-                            x:Name="GiaSp"
+                            x:Name="GiaSach"
                             HorizontalAlignment="Left"
                             Width="150"
                             Foreground="Black"
@@ -160,7 +160,7 @@
                         Background="White"
                     >
                                 <ComboBox
-                            x:Name="LoaiSp"
+                            x:Name="LoaiSach"
                             Style="{StaticResource MaterialDesignFilledComboBox}"
                             materialDesign:TextFieldAssist.TextBoxViewMargin="-10,-15,0,0"
                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -172,13 +172,14 @@
                             Height="30"
                             FontSize="12"
                             Width="130">
-                                    <ComboBoxItem Content="Áo sơ mi"/>
-                                    <ComboBoxItem Content="Áo thun"/>
-                                    <ComboBoxItem Content="Áo trùm đầu"/>
-                                    <ComboBoxItem Content="Áo khoác"/>
-                                    <ComboBoxItem Content="Áo tay dài"/>
-                                    <ComboBoxItem Content="Quần"/>
-                                    <ComboBoxItem Content="Phụ kiện"/>
+                                    <ComboBoxItem Content="Khoa học"/>
+                                    <ComboBoxItem Content="Chính trị"/>
+                                    <ComboBoxItem Content="Kinh tế"/>
+                                    <ComboBoxItem Content="Văn học"/>
+                                    <ComboBoxItem Content="Lịch sử"/>
+                                    <ComboBoxItem Content="Tâm Lý"/>
+                                    <ComboBoxItem Content="Tiểu thuyết"/>
+                                    <ComboBoxItem Content="Thiếu nhi"/>
                                 </ComboBox>
                             </Border>
                         </StackPanel>
@@ -195,7 +196,7 @@
                         />
                             <TextBox
                             Height="30"
-                            x:Name="SlSp"
+                            x:Name="SlSach"
                             HorizontalAlignment="Left"
                             Width="150"
                             FontFamily="{StaticResource Custom}"
@@ -213,7 +214,7 @@
                                 >
                             <TextBlock
                             Margin="10,0,0,0"
-                            Text="KÍCH CỠ"
+                            Text="Nhà xuất bản"
                             FontFamily="{StaticResource Custom}"
                                                         Foreground="#6C63FF"
 
@@ -228,7 +229,7 @@
                         Background="White"
                     >
                                 <ComboBox
-                            x:Name="SizeSp"
+                            x:Name="NXB"
                             Style="{StaticResource MaterialDesignFilledComboBox}"
                             materialDesign:TextFieldAssist.TextBoxViewMargin="-10,-15,0,0"
                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
@@ -241,24 +242,49 @@
                             Height="30"
                             FontSize="12"
                             Width="130">
-                                    <ComboBoxItem Content="S"/>
-                                    <ComboBoxItem Content="M"/>
-                                    <ComboBoxItem Content="L"/>
-                                    <ComboBoxItem Content="XL"/>
-                                    <ComboBoxItem Content="Freesize"/>
+                                    <ComboBoxItem Content="Dân Trí"/>
+                                    <ComboBoxItem Content="NXB Thanh Niên"/>
+                                    <ComboBoxItem Content="Thế Giới"/>
+                                    <ComboBoxItem Content="NXB Tổng Hợp TPHCM"/>
+                                    <ComboBoxItem Content="Văn Học"/>
+                                    <ComboBoxItem Content="NXB Hội Nhà Văn"/>
                                 </ComboBox>
                             </Border>
                         </StackPanel>
                     </StackPanel>
+                    <StackPanel>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                Margin="10,10,0,0"
+                                Text="Năm xuất bản"
+                                FontFamily="{StaticResource Custom}"
+                                Foreground="#6C63FF"
+                                />
+                            <TextBox
+                                Height="30"
+                                x:Name="Namxuatban"
+                                HorizontalAlignment="Left"
+                                Width="150"
+                                FontFamily="{StaticResource Custom}"
+                                BorderThickness="2"
+                                Foreground="Black"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:HintAssist.Hint="Nhập năm xuất bản"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
+                                materialDesign:TextFieldAssist.UnderlineBrush="Gray"
+/>
+                        </StackPanel>
+                    </StackPanel>
                     <TextBlock
                             Margin="8,10,0,0"
-                            Text="THÔNG TIN SẢN PHẨM"
+                            Text="Thông tin sách"
                             FontFamily="{StaticResource Custom}"
                                                 Foreground="#6C63FF"
 
                         />
                     <TextBox
-                            x:Name="MotaSp"
+                            x:Name="MotaSach"
                             FontFamily="{StaticResource Custom}"
                             HorizontalAlignment="Left"
                             Width="310"
@@ -286,8 +312,8 @@
                         >
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
-                                <i:InvokeCommandAction Command="{Binding AddProduct}"
-                                               CommandParameter="{Binding ElementName=AddProductwd}"></i:InvokeCommandAction>
+                                <i:InvokeCommandAction Command="{Binding AddBookCM}"
+                                               CommandParameter="{Binding ElementName=AddBookswd}"></i:InvokeCommandAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
