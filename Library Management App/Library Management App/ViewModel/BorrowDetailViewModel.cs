@@ -89,6 +89,7 @@ namespace Library_Management_App.ViewModel
                         }
 
                         temp.TRANGTHAI = "Đã trả";
+                        temp.TGTRA = DateTime.Now;
 
                     }
                 }

@@ -49,9 +49,6 @@ namespace Library_Management_App.ViewModel
             LoadLoginPageCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame = p;
-                LoginView lgView = new LoginView();
-
-
                 p.Content = new LoginPageView();
             });
 

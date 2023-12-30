@@ -26,7 +26,7 @@
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="DASHBOARD"
+                                Text="Dashboard"
                                 FontSize="13"                                
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -70,7 +70,7 @@
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="ĐỘC GIẢ"
+                                Text="Độc gỉả"
                                 FontSize="13"                                
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -114,7 +114,7 @@
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="SÁCH"
+                                Text="Sách"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -158,7 +158,7 @@
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="CÀI ĐẶT"
+                                Text="Cài đặt"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -202,7 +202,7 @@
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="THÔNG BÁO"
+                                Text="Thông báo"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -246,7 +246,7 @@
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="BÁO LỖI"
+                                Text="Báo lỗi"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -283,14 +283,14 @@
                             >
                             <DockPanel>
                                 <materialDesign:PackIcon
-                                Kind="TshirtCrew"
+                                Kind="HomeImportOutline"
                                 Width="25"
                                 Height="25"
                                 VerticalAlignment="Center"
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="NHẬP SÁCH"
+                                Text="Nhập sách"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -327,14 +327,14 @@
                             >
                             <DockPanel>
                                 <materialDesign:PackIcon
-                                Kind="Warehouse"
+                                Kind="Exchange"
                                 Width="25"
                                 Height="25"
                                 VerticalAlignment="Center"
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="MƯỢN SÁCH"
+                                Text="Mượn trả sách"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -415,14 +415,14 @@
                             >
                             <DockPanel>
                                 <materialDesign:PackIcon
-                                Kind="AccountCog"
+                                Kind="Money"
                                 Width="25"
                                 Height="25"
                                 VerticalAlignment="Center"
                                 Margin="6"
                                 />
                                 <TextBlock 
-                                Text="QUẢN LÝ"
+                                Text="Thu tiền phạt"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
@@ -469,7 +469,7 @@
                                 />
                                 <TextBlock 
                                 Foreground="White"
-                                Text="ĐĂNG XUẤT"
+                                Text="Đăng xuất"
                                 FontSize="13"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Center"

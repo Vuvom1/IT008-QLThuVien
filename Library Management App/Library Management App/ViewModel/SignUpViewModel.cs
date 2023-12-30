@@ -124,7 +124,7 @@ namespace Library_Management_App.ViewModel
                 temp.NGSINH = (DateTime)parameter.NS.SelectedDate;
                 temp.MAIL = parameter.Mail.Text;
                 temp.SDT = parameter.SDT.Text;
-                temp.MAROLE = 2;
+                temp.MAROLE = 1;
                 temp.TTND = true;
                 temp.USERNAME = parameter.User.Text;
                 temp.PASS = LoginViewModel.MD5Hash(LoginViewModel.Base64Encode(Password));
