@@ -208,10 +208,10 @@
                             </Grid>
                         </Grid>
                     </Border>
-                    <ListView x:Name="ListViewSP" 
+                    <ListView x:Name="ListViewSach" 
                       SelectionMode="Single"
                       ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                      Height="207"
+                      Height="207" RenderTransformOrigin="0.501,0.424" Width="701"
                     >
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -232,7 +232,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
                                             <TextBlock
-                            Text="{Binding MaSp}"
+                            Text="{Binding MASACH}"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Custom}"
@@ -241,9 +241,9 @@
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock
-                                            Margin="2,0,0,0"
+                                            Margin="50,0,0,0"
                             HorizontalAlignment="Left"
-                            Text="{Binding TenSP}"
+                            Text="{Binding TENSACH}"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Custom}"
                             FontSize="12"
@@ -251,28 +251,19 @@
                                         </Grid>
                                         <Grid Grid.Column="2">
                                             <TextBlock
-                                            Margin="2,0,0,0"
-                            Text="{Binding Size}"
+                                            Margin="70,0,0,0"
+                            Text="{Binding SL}"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             FontFamily="{StaticResource Custom}"
                             FontSize="12"
                             />
+                                       
                                         </Grid>
                                         <Grid Grid.Column="3">
                                             <TextBlock
-                            Text="{Binding SL}"
-                                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                                            MaxWidth="150"
-                            FontFamily="{StaticResource Custom}"
-                            FontSize="12"
-                            />
-                                        </Grid>
-                                        <Grid Grid.Column="4">
-                                            <TextBlock
-                                            
-                                            Text="{Binding Tiennhap,StringFormat={}{0:# ###} VNĐ}"
+                                            Margin="90,0,0,0"
+                                            Text="{Binding THANHTIEN,StringFormat={}{0:# ###} VNĐ}"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
                                             MaxWidth="150"

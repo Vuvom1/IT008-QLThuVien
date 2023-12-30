@@ -139,6 +139,7 @@ namespace Library_Management_App.ViewModel
                 SL = int.Parse(paramater.SL.Text),
                 SACH = a,
                 MAPN = int.Parse(paramater.MaPN.Text),
+               
             };
             LCTPN.Add(ctpn);
             LHT.Add(b);

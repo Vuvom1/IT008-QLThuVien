@@ -118,7 +118,7 @@
             <PropertyRef Name="MATL" />
           </Key>
           <Property Name="MATL" Type="int" Nullable="false" />
-          <Property Name="TENTL" Type="varchar" MaxLength="50" />
+          <Property Name="TENTL" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <Association Name="FK_CTPM_PM">
           <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="0..1" />
@@ -466,7 +466,7 @@
             <PropertyRef Name="MATL" />
           </Key>
           <Property Name="MATL" Type="Int32" Nullable="false" />
-          <Property Name="TENTL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="TENTL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="SACHes" Relationship="Self.FK_SACH_TL" FromRole="THELOAI" ToRole="SACH" />
         </EntityType>
         <Association Name="FK_CTPM_PM">

@@ -9,5 +9,7 @@ namespace Library_Management_App.ViewModel
 {
     internal class DetailBookViewModel:BaseViewModel
     {
+
+
     }
 }

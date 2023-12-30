@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace Library_Management_App.ViewModel
 {
-    class DetailImportBookViewModel
+    public class DetailImportBookViewModel
     {
         public ICommand Loadwd { get; set; }
         public ICommand Back { get; set; }

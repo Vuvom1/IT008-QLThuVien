@@ -68,6 +68,7 @@ namespace Library_Management_App.ViewModel
             DetailImportBookView detailImport = new DetailImportBookView();
             PHIEUNHAP temp = (PHIEUNHAP)p.ListViewPN.SelectedItem;
             detailImport.MaND.Text = temp.NGUOIDUNG.MAND;
+            detailImport.TenND.Text = temp.NGUOIDUNG.TENND;
             detailImport.Ngay.Text = temp.TGNHAP.ToString("dd/MM/yyyy hh:mm tt");
             detailImport.MaPN.Text = temp.MAPN.ToString();
             List<Display1> list = new List<Display1>();
@@ -78,7 +79,7 @@ namespace Library_Management_App.ViewModel
                 tong += (int)((float)(a.SL * a.SACH.TRIGIA) * 5 / 6);
             }
             detailImport.ttn.Text = String.Format("{0:0,0}", tong) + " VND";
-            detailImport.ListViewSP.ItemsSource = list;
+            detailImport.ListViewSach.ItemsSource = list;
             p.ListViewPN.SelectedItem = null;
             listPN = new ObservableCollection<PHIEUNHAP>(DataProvider.Ins.DB.PHIEUNHAPs);
             p.ListViewPN.ItemsSource = listPN;

@@ -19,7 +19,7 @@
     <viewmodel:FineMoneyViewModel x:Key="FineMoneyVM"></viewmodel:FineMoneyViewModel>
     <viewmodel:AddImportBookViewModel x:Key="AddImportBookVM"></viewmodel:AddImportBookViewModel>
     <viewmodel:ImportBookViewModel x:Key="ImportBookVM"></viewmodel:ImportBookViewModel>
-    <viewmodel:DetailBookViewModel x:Key="DetailImportVM"></viewmodel:DetailBookViewModel>
+    <viewmodel:DetailImportBookViewModel x:Key="DetailImportVM"></viewmodel:DetailImportBookViewModel>
     <viewmodel:DetailFineMoneyViewModel x:Key="DetailFMVM"></viewmodel:DetailFineMoneyViewModel>
     <viewmodel:BorrowDetailViewModel x:Key="BorrowDetailVM"></viewmodel:BorrowDetailViewModel>
     <viewmodel:HomeViewModel x:Key="HomeVM"></viewmodel:HomeViewModel>
