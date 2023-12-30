@@ -420,6 +420,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Library Management App_dgzepdtj_wpftmp.csproj" />
     <EntityDeploy Include="Model\QLTV.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>QLTV.Designer.cs</LastGenOutput>
@@ -466,6 +467,12 @@
     <Resource Include="Resource\Image\add.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resource\Image\NextAct.png" />
+    <Resource Include="Resource\Image\NextPas.png" />
+    <Resource Include="Resource\Image\PrevAct.png" />
+    <Resource Include="Resource\Image\PrevPas.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\QLTV.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTV.edmx</DependentUpon>
@@ -476,10 +483,6 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resource\Image\NextAct.png" />
-    <Resource Include="Resource\Image\NextPas.png" />
-    <Resource Include="Resource\Image\PrevAct.png" />
-    <Resource Include="Resource\Image\PrevPas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

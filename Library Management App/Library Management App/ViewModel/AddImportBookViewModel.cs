@@ -29,7 +29,7 @@ namespace Library_Management_App.ViewModel
         }
 
     }
-    public class AddImportBookViewModel:  BaseViewModel
+    public class AddImportBookViewModel:BaseViewModel
     {
         private List<SACH> _LSach;
         public List<SACH> LSach { get => _LSach; set { _LSach = value; OnPropertyChanged(); } }
@@ -39,8 +39,8 @@ namespace Library_Management_App.ViewModel
         public ObservableCollection<SACH> LSachSelected { get => _LSPSelected; set { _LSPSelected = value; OnPropertyChanged(); } }
         private ObservableCollection<CTPN> _LCTPN;
         public ObservableCollection<CTPN> LCTPN { get => _LCTPN; set { _LCTPN = value; OnPropertyChanged(); } }
-        public ICommand Loadwd { get; set; }
-        public ICommand AddSach { get; set; }
+        public ICommand LoadImportCM { get; set; }
+        public ICommand AddImportCM { get; set; }
         public ICommand DeleteSach { get; set; }
         public ICommand SavePN { get; set; }
         public ICommand Choose { get; set; }
@@ -53,13 +53,13 @@ namespace Library_Management_App.ViewModel
             LHT = new ObservableCollection<Display1>();
             LCTPN = new ObservableCollection<CTPN>();
             Choose = new RelayCommand<AddImportBookView>((p) => true, (p) => _Choose(p));
-            Loadwd = new RelayCommand<AddImportBookView>((p) => true, (p) => _Loadwd(p));
-            AddSach = new RelayCommand<AddImportBookView>((p) => true, (p) => _AddSach(p));
+            LoadImportCM = new RelayCommand<AddImportBookView>((p) => true, (p) => _LoadImportCM(p));
+            AddImportCM = new RelayCommand<AddImportBookView>((p) => true, (p) => _AddImportCM(p));
             DeleteSach = new RelayCommand<AddImportBookView>((p) => true, (p) => _DeleteSach(p));
             SavePN = new RelayCommand<AddImportBookView>((p) => true, (p) => _SavePN(p));
         }
 
-        void _Loadwd(AddImportBookView paramater)
+        void _LoadImportCM(AddImportBookView paramater)
         {
             LSach = DataProvider.Ins.DB.SACHes.Where(p => p.SLCONLAI >= 0).ToList();
             paramater.MaND.Text = Const.ND.MAND;
@@ -82,7 +82,7 @@ namespace Library_Management_App.ViewModel
             }
         }
 
-        void _AddSach(AddImportBookView paramater)
+        void _AddImportCM(AddImportBookView paramater)
         {
             if (paramater.MaPN.Text == "")
             {

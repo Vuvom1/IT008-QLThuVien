@@ -170,7 +170,7 @@
                                         </Grid>
                                         <Grid Grid.Column="2">
                                             <TextBlock Margin="50,0,0,0"
-                                            Text="{Binding NGAYNHAP, StringFormat=dd/MM/yyyy hh:mm:tt}"
+                                            Text="{Binding TGNHAP, StringFormat=dd/MM/yyyy hh:mm:tt}"
                                             HorizontalAlignment="Left"
                                             VerticalAlignment="Center"
                                             FontFamily="{StaticResource Custom}"
