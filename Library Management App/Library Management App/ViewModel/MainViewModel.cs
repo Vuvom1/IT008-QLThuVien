@@ -74,10 +74,15 @@ namespace Library_Management_App.ViewModel
                 string a = Const.UserName;
                 User = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == a).FirstOrDefault();
                 Const.ND = User;
-                //if ( User.MAROLE == 0 ) 
-                //    { User.MAROLE = 1; }
-                //SetQuanLy = User.QTV ? Visibility.Visible : Visibility.Collapsed;
-                //Const.Admin = User.QTV;
+                if (User.MAROLE == 0)
+                {
+                    SetQuanLy = Visibility.Visible;
+                   
+                } else
+                {
+                    SetQuanLy = Visibility.Collapsed;
+                }
+                //Const.Admin = User.MAROLE;
                 Ava = User.AVA;
                 LoadTenND(p);
             }
@@ -85,10 +90,13 @@ namespace Library_Management_App.ViewModel
         public void LoadQuyen(MainView p)
         {
             if (User.MAROLE == 0)
-            { p.Quyen.Text = "Quản lý"; }
-            else if (User.MAROLE == 1)
-            { p.Quyen.Text = "Nhân viên"; }
-            else p.Quyen.Text = "Users";
+            { 
+                p.Quyen.Text = "Quản lý"; 
+            }
+            else 
+            {
+                p.Quyen.Text = "Nhân viên"; 
+            }
         }
 
         public MainViewModel()

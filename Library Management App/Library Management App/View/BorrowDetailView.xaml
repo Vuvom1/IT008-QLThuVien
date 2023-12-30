@@ -300,7 +300,7 @@
                             <DataTemplate>
                                 <Border
                                 Margin="35,0,0,0"
-                                Width="600"
+                                Width="680"
                                 Height="40"
                                 CornerRadius="10"
                                 Background="#1784C2">

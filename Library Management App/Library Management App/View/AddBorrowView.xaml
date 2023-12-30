@@ -224,7 +224,7 @@
                             >
                             <TextBlock
                                 Margin="0,10,0,5"
-                                Text="CHI TIẾT PHIẾU MƯỢN"
+                                Text="THÊM SÁCH"
                                 FontFamily="{StaticResource Custom}"
                                 HorizontalAlignment="Center"
                                 />
@@ -405,9 +405,9 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="100"/>
-                                            <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="130"/>
-                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="180"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
