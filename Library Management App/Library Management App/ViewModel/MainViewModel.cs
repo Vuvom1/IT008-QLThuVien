@@ -101,7 +101,7 @@ namespace Library_Management_App.ViewModel
             LoadPageCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
             {
                 MainFrame = p;
-                p.Content = new BorrowView();
+                p.Content = new HomeView();
             });
 
             ReaderCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>

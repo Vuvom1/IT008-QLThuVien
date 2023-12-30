@@ -7,8 +7,9 @@
     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
     xmlns:local="clr-namespace:Library_Management_App.View"
+      xmlns:uc="clr-namespace:Library_Management_App.UserControls"
     mc:Ignorable="d" 
-    d:DesignHeight="605" d:DesignWidth="705"
+    d:DesignHeight="605" d:DesignWidth="750"
     Title="HomeView"
     DataContext="{StaticResource HomeVM}"
     x:Name="HomeViewwd">
@@ -18,32 +19,16 @@
         >
         <Grid>
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="202*"/>
+                <RowDefinition Height="350*"/>
+                <RowDefinition Height="53*"/>
             </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="1" Margin="5,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Column="1">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="50"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-
-                       
-
-                        <StackPanel Grid.Row="1">
-                            <Image Source="/Resource/Image/library.jpg" Height="426"/>
-                        </StackPanel>
-                    </Grid>
-                </Grid>
+            <Grid Grid.Row="1" Margin="0,0,471,7">
+                <uc:SlideCard></uc:SlideCard>
             </Grid>
+
         </Grid>
     </Border>
 </Page>

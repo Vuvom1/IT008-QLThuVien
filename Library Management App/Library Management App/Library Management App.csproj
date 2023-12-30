@@ -161,6 +161,9 @@
     <Compile Include="UserControls\Item.xaml.cs">
       <DependentUpon>Item.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\SlideCard.xaml.cs">
+      <DependentUpon>SlideCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\AddBooksViewModel.cs" />
     <Compile Include="ViewModel\AddBorrowViewModel.cs" />
     <Compile Include="ViewModel\AddFineMoneyViewModel.cs" />
@@ -282,6 +285,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\ButtonStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ColorStyles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\InfoCard.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -289,6 +300,10 @@
     <Page Include="UserControls\Item.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\SlideCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\AddBooksView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -461,6 +476,10 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resource\Image\NextAct.png" />
+    <Resource Include="Resource\Image\NextPas.png" />
+    <Resource Include="Resource\Image\PrevAct.png" />
+    <Resource Include="Resource\Image\PrevPas.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
