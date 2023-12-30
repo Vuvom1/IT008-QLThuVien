@@ -26,12 +26,22 @@
         </EventTrigger>
     </Page.Triggers>
 
+    
+    
     <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadFineMNCM}"
+               CommandParameter="{Binding ElementName=AddFineMoneywd}"></i:InvokeCommandAction>
+        </i:EventTrigger>
+
         <i:EventTrigger EventName="MouseLeftButtonDown">
             <i:InvokeCommandAction Command="{Binding MoveWindow}"
                                 CommandParameter="{Binding ElementName=AddFineMoneywd}"></i:InvokeCommandAction>
         </i:EventTrigger>
+
+        
     </i:Interaction.Triggers>
+
     <Grid>
         <Grid RenderTransformOrigin="0.5,0.499">
             <Grid.ColumnDefinitions>
@@ -157,31 +167,54 @@
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
-                                Margin="0,10,0,0" Width="194"
+                        Height="58" Width="349"
                                 >
                         <StackPanel Orientation="Vertical">
                             <TextBlock
+                                Margin="10,0,0,0"
                                 Text="CÒN LẠI"
                                 FontFamily="{StaticResource Custom}"
-                            Foreground="#1784C2" RenderTransformOrigin="0.516,0.527" Width="66"
+                                Foreground="#1784C2"
                             />
                             <TextBox
                                 Height="30"
-                                x:Name="CONLAI"
+                                x:Name="CONLAI" 
+                                HorizontalAlignment="Left"
                                 Width="150"
+                                Foreground="Black"
                                 FontFamily="{StaticResource Custom}"
                                 BorderThickness="2"
-                            Foreground="Black"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:HintAssist.Hint="Nhập còn lại"
+                                materialDesign:HintAssist.Hint=""
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
                                 materialDesign:TextFieldAssist.UnderlineBrush="Gray"
                             />
                         </StackPanel>
                         <StackPanel Orientation="Vertical"
-                                    Margin="10,0,0,0"
-                                    />
+                            Margin="10,0,0,0"
+                                    >
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                Text="THỜI GIAN"
+                                FontFamily="{StaticResource Custom}"
+                                Foreground="#1784C2"
+                            />
+                            <TextBox
+                                Height="30"
+                                x:Name="NGAY" 
+                                FontFamily="{StaticResource Custom}"
+                                Foreground="Black"
+                                HorizontalAlignment="Left"
+                                Width="150"
+                                BorderThickness="2"
+                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                         
+                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
+                                materialDesign:TextFieldAssist.UnderlineBrush="Gray"
+                            />
+                        </StackPanel>
                     </StackPanel>
                     <Button Content="THÊM PHIẾU THU"
                             Margin="0,30,0,0"
@@ -201,7 +234,6 @@
                 </StackPanel>
             </Grid>
         </Grid>
-    </Grid>
-
+        </Grid>
 
 </Page>

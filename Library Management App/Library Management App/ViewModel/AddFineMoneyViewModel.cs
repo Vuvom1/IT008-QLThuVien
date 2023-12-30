@@ -15,9 +15,13 @@ namespace Library_Management_App.ViewModel
     public class AddFineMoneyViewModel : BaseViewModel
     {
         public ICommand AddCsCommand { get; set; }
+
+        public ICommand LoadFineMNCM { get; set; }
+
         public AddFineMoneyViewModel()
         {
             AddCsCommand = new RelayCommand<AddFineMoneyView>((p) => true, (p) => _AddCsCommand(p));
+            LoadFineMNCM = new RelayCommand<AddFineMoneyView>((p) => true, (p) => _LoadFineMNCM(p));
 
         }
 
@@ -41,8 +45,13 @@ namespace Library_Management_App.ViewModel
             return ma;
         }
 
+        void _LoadFineMNCM(AddFineMoneyView paramater) 
+        {
+            paramater.NGAY.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+        }
         void _AddCsCommand(AddFineMoneyView paramater)
         {
+            
             if (paramater.MAPT.Text == "" || paramater.TENDG.Text == "" || paramater.TONGNO.Text == "" || paramater.SOTIENTHU.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập đủ thông tin !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -65,10 +74,10 @@ namespace Library_Management_App.ViewModel
                     {
                         PHIEUTHU temp = new PHIEUTHU();
                         temp.MAPT = paramater.MAPT.Text.ToString();
-                        temp.MAND = paramater.TENDG.Text.ToString();
-                        temp.TONGNO = paramater.TONGNO.Text.Length;
+                        temp.MAND = paramater.TENDG.Text.ToString();                     
                         temp.TIENTHU = paramater.SOTIENTHU.Text.Length;
-                        temp.TIENCONLAI = paramater.CONLAI.Text.Length;
+                        temp.TONGNO = paramater.TONGNO.Text.Length;
+                        temp.TIENCONLAI = temp.TONGNO - temp.TIENTHU;
                         DataProvider.Ins.DB.PHIEUTHUs.Add(temp);
                         //DataProvider.Ins.DB.SaveChanges();
                         MessageBox.Show("Thêm phiếu thu thành công.", "THÔNG BÁO");
@@ -78,7 +87,7 @@ namespace Library_Management_App.ViewModel
                         paramater.SOTIENTHU.Clear();
                         paramater.CONLAI.Clear();
                         AddFineMoneyView addFineMoneyView = new AddFineMoneyView();
-                        //addFineMoneyView..ItemsSource = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
+                        //addFineMoneyView.ListViewPT.ItemsSource = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
                         MainViewModel.MainFrame.Content = addFineMoneyView;
                     }
                 }
