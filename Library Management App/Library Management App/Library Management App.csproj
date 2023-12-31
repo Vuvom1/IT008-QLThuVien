@@ -231,8 +231,8 @@
     <Compile Include="View\FineMoneyView.xaml.cs">
       <DependentUpon>FineMoneyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ForgotPasswordPageView.xaml.cs">
-      <DependentUpon>ForgotPasswordPageView.xaml</DependentUpon>
+    <Compile Include="View\ForgetPasswordView.xaml.cs">
+      <DependentUpon>ForgetPasswordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -361,9 +361,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ForgotPasswordPageView.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\ForgetPasswordView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -481,6 +481,7 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resource\Image\login-background.png" />
     <Resource Include="Resource\Ava\NV1523.png" />
     <Resource Include="Resource\Image\Password_16x16.png" />
   </ItemGroup>

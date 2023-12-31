@@ -25,11 +25,11 @@ namespace Library_Management_App.ViewModel
                 LoginViewModel.MainFrame.Content = new LoginPageView();
             });
 
-            SendPassCM = new RelayCommand<ForgotPasswordPageView>((p) => true, (p) => _SendPass(p));
+            SendPassCM = new RelayCommand<ForgetPasswordView>((p) => true, (p) => _SendPass(p));
 
         }
 
-        void _SendPass(ForgotPasswordPageView parameter)
+        void _SendPass(ForgetPasswordView parameter)
         {
             int dem = DataProvider.Ins.DB.NGUOIDUNGs.Where(p => p.MAIL == parameter.MailAddress.Text).Count();
             if (dem == 0)

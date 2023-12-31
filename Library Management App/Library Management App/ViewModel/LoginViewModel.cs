@@ -98,7 +98,7 @@ namespace Library_Management_App.ViewModel
 
             ForgetPasswordCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                MainFrame.Content = new ForgotPasswordPageView();
+                MainFrame.Content = new ForgetPasswordView();
             });
 
 

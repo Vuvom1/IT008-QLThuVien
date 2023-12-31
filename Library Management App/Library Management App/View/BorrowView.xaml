@@ -40,7 +40,7 @@
                         Height="40"
                         Width="115"
                         CornerRadius="17"
-                        Background="#1784C2"
+                        Background="Black"
                         >
                         <ComboBox
                         x:Name="cbxChon"
@@ -104,7 +104,7 @@
                         BorderBrush="Transparent"
                         Foreground="White"
                         materialDesign:ButtonAssist.CornerRadius="15"
-                        Background="#1784C2">
+                        Background="#353A55">
 
 
 
@@ -188,7 +188,7 @@
                                 <Border
                         Width="600"
                         Height="40"
-                        CornerRadius="10" Background="#6C63FF">
+                        CornerRadius="10" Background="#353A55">
 
 
                                     <Grid>

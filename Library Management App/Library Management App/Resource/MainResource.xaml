@@ -4,13 +4,12 @@
 
     <viewmodel:LoginViewModel x:Key="LoginVM"></viewmodel:LoginViewModel>
 
-    <viewmodel:ForgetPasswordViewModel x:Key="ForgetPassVM"></viewmodel:ForgetPasswordViewModel>
-
     <viewmodel:SignUpViewModel x:Key="SignUpVM"></viewmodel:SignUpViewModel>
     
     <viewmodel:ChangePasswordViewModel x:Key="ChangePasswordVM"></viewmodel:ChangePasswordViewModel>
     <viewmodel:QLNVViewModel x:Key="QLNVVM"></viewmodel:QLNVViewModel>
     <viewmodel:MainViewModel x:Key="MainVM"></viewmodel:MainViewModel>
+    <viewmodel:ForgetPasswordViewModel x:Key="ForgetPassVM"></viewmodel:ForgetPasswordViewModel>
     <viewmodel:BooksViewModel x:Key="BooksVM"></viewmodel:BooksViewModel>
     <viewmodel:ReadersViewModel x:Key="ReadersVM"></viewmodel:ReadersViewModel>
     <viewmodel:BorrowViewModel x:Key="BorrowVM"></viewmodel:BorrowViewModel>

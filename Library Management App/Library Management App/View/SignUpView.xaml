@@ -55,7 +55,7 @@
                                 VerticalAlignment="Center"
                                 Margin="0,0,10,0"
                                 >
-                    <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#6C63FF" Height="24" Width="24" Margin="0,0,8,0" MouseDown="MinimizeButton">
+                    <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#353A55" Height="24" Width="24" Margin="0,0,8,0" MouseDown="MinimizeButton">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="MouseLeftButtonDown">
                                 <i:InvokeCommandAction Command="{Binding Minimizewd}"
@@ -63,7 +63,7 @@
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </materialDesign:PackIcon>
-                    <materialDesign:PackIcon Kind="CloseThick" Foreground="#6C63FF" Height="24" Width="24" MouseDown="CloseButton">
+                    <materialDesign:PackIcon Kind="CloseThick" Foreground="#353A55" Height="24" Width="24" MouseDown="CloseButton">
                     </materialDesign:PackIcon>
                 </StackPanel>
             </Grid>
@@ -74,7 +74,7 @@
                     FontWeight="Bold"
                     HorizontalAlignment="Center"
                     FontSize="24"
-                    Foreground="#6C63FF"
+                    Foreground="#353A55"
                     FontFamily="Josefin Sans"
                     />
             </Grid>
@@ -109,7 +109,7 @@
                         Style="{StaticResource MaterialDesignFlatMidBgButton}"
                         Content="Thêm ảnh đại diện" FontFamily="{StaticResource Custom}"
                         BorderThickness="0"
-                        Width="160" Height="40" Background="#6C63FF" Foreground="White"
+                        Width="160" Height="40" Background="#353A55" Foreground="White"
                         Grid.Row="1">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
@@ -246,7 +246,7 @@
                             BorderThickness="0"
                             FontFamily="Josefin Sans"
                             Foreground="White"
-                            Background="#6C63FF"
+                            Background="#353A55"
                             Height="40"
                             Style="{StaticResource MaterialDesignFlatMidBgButton}"
                         >

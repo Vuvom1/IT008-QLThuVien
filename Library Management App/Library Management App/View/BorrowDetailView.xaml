@@ -54,7 +54,7 @@
                                 Text="CHI TIẾT PHIẾU MƯỢN" FontSize = "16"
                                 FontFamily="{StaticResource Custom}"
                                 HorizontalAlignment="Center"
-                                Foreground="#1784C2"
+                                Foreground="#353A55"
                                 />
                     <StackPanel Orientation="Vertical">
                         <StackPanel Orientation="Horizontal">
@@ -379,7 +379,7 @@
                                     Visibility="{Binding isReturnVis}"
                                     x:Name="completeBtn"
                                     FontFamily="{StaticResource Custom}"
-                                    Background="#1784C2"
+                                    Background="#353A55"
                                     Width="150"
                                     VerticalAlignment="Center"
                                     Margin="33,0,34,0"
@@ -404,21 +404,21 @@
                     <StackPanel Margin="0,0,0,18">
                         <TextBlock
                             Margin="0,6,0,0"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             Text="Tổng số sách các loại đã mượn: "
                             FontFamily="{StaticResource Custom}"
                             FontSize="16"
                         />
                         <TextBlock
                             Margin="0,6,0,0"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             Text="Tổng giá trị sách: "
                             FontFamily="{StaticResource Custom}"
                             FontSize="16"
                         />
                         <TextBlock
                             Margin="0,6,0,0"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             Text="Tiền phạt: "
                             FontFamily="{StaticResource Custom}"
                             FontSize="16"

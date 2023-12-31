@@ -281,7 +281,7 @@
                                     x:Name="deletebtn"
                                     FontFamily="{StaticResource Custom}"
                                     materialDesign:ButtonAssist.CornerRadius="0"
-                                    Background="#1784C2" Width="91" RenderTransformOrigin="0.328,0.49"
+                                    Background="#353A55" Width="91" RenderTransformOrigin="0.328,0.49"
                                 >
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
@@ -299,7 +299,7 @@
                                     x:Name="addbtn"
                                     FontFamily="{StaticResource Custom}"
                                     materialDesign:ButtonAssist.CornerRadius="0"
-                                    Background="#1784C2" Width="91" RenderTransformOrigin="0.328,0.49"
+                                    Background="#353A55" Width="91" RenderTransformOrigin="0.328,0.49"
                                     >
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
@@ -490,7 +490,7 @@
         x:Name="submitbtn"
         FontFamily="{StaticResource Custom}"
         materialDesign:ButtonAssist.CornerRadius="0"
-        Background="#1784C2" Width="91" RenderTransformOrigin="0.5,0.5"
+        Background="#353A55" Width="91" RenderTransformOrigin="0.5,0.5"
     >
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
@@ -508,13 +508,13 @@
                       >
                     <StackPanel Margin="0,0,0,0">
                         <TextBlock
-                        Foreground="#1784C2"
+                        Foreground="#353A55"
                         Text="Tổng số sách các loại: "
                         FontFamily="{StaticResource Custom}"
                         FontSize="16"
                         />
                         <TextBlock
-                        Foreground="#1784C2" 
+                        Foreground="#353A55" 
                         Text="Tổng gía trị sách: "
                         FontFamily="{StaticResource Custom}"
                         FontSize="16"
@@ -525,7 +525,7 @@
                 <Grid Grid.Column="2">
                     <StackPanel>
                         <TextBlock
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             x:Name="TT"
                             Margin="0,0,30,0"
                             FontFamily="{StaticResource Custom}"
@@ -533,7 +533,7 @@
                             HorizontalAlignment="Right"
                         />
                         <TextBlock
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             x:Name="TT1"
                             Margin="0,20,30,0"
                             FontFamily="{StaticResource Custom}"

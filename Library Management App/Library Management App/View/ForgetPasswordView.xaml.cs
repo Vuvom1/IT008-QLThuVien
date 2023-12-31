@@ -15,12 +15,9 @@ using System.Windows.Shapes;
 
 namespace Library_Management_App.View
 {
-    /// <summary>
-    /// Interaction logic for ChangePasswordView.xaml
-    /// </summary>
-    public partial class ChangePasswordView : Page
+    public partial class ForgetPasswordView : Page
     {
-        public ChangePasswordView()
+        public ForgetPasswordView()
         {
             InitializeComponent();
         }

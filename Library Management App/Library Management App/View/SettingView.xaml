@@ -36,7 +36,7 @@
                             Margin="15 0 0 0"
                             FontFamily="Josefin Sans"
                             FontSize=" 25"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             FontWeight="Bold" RenderTransformOrigin="0.719,0.72" Width="260"/>
                     </StackPanel>
                 </Grid>
@@ -72,7 +72,7 @@
                         Style="{StaticResource MaterialDesignFlatMidBgButton}"
                         Content="Thay đổi ảnh" FontFamily="{StaticResource Custom}"
                         BorderThickness="0"
-                        Width="160" Height="40" Background="#1784C2" Foreground="White"
+                        Width="160" Height="40" Background="#353A55" Foreground="White"
                         Grid.Row="1" >
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
@@ -176,7 +176,7 @@
                             BorderThickness="0"
                             FontFamily="Josefin Sans"
                             Foreground="White"
-                            Background="#1784C2"
+                            Background="#353A55"
                             Height="40"
                             Style="{StaticResource MaterialDesignFlatMidBgButton}"
                             Margin="25,-25,0,0">
@@ -206,7 +206,7 @@
                                 <Button.Style>
                                     <Style TargetType="Button">
                                         <Setter Property="Background" Value="Transparent"/>
-                                        <Setter Property="Foreground" Value="#1784C2"/>
+                                        <Setter Property="Foreground" Value="#353A55"/>
                                         <Style.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter Property="Background" Value="#6891DF"/>
