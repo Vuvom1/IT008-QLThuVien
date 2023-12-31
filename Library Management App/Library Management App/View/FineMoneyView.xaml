@@ -139,18 +139,18 @@
                                 <TextBlock
                              Text="Mã phiếu"
                              HorizontalAlignment="Center"
-                             VerticalAlignment="Center"
+                             VerticalAlignment="Top"
                              FontFamily="{StaticResource Custom}"
-                             FontSize="12"
+                             FontSize="12" Margin="0,10,0,0"
                              />
                             </Grid>
-                            <Grid Grid.Column="1">
+                            <Grid Grid.Column="1" Width="200">
                                 <TextBlock
-                             Text="Họ tên độc giả"
+                             Text="Tên người lập phiếu"
                              HorizontalAlignment="Left"
                              VerticalAlignment="Center"
                              FontFamily="{StaticResource Custom}"
-                             FontSize="12" Margin="66,0,0,0"
+                             FontSize="12" Margin="38,0,0,0" Height="20" Width="139"
                              />
 
                             </Grid>
@@ -160,8 +160,8 @@
                              HorizontalAlignment="Left"
                              VerticalAlignment="Center"
                              FontFamily="{StaticResource Custom}"
-                             FontSize="12" Margin="66,0,0,0"
-                             />     
+                             FontSize="12" Margin="74,0,0,0" Height="20" Width="92"
+                             />
                             </Grid>
                             <Grid Grid.Column="2" Margin="-7 0 0 0"/>
                             <Grid Grid.Column="3" Margin="-60 0 0 0"/>
@@ -173,7 +173,7 @@
                        Width="675"
                        SelectionMode="Single"
                        ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                           Foreground="White">
+                           Foreground="White" RenderTransformOrigin="0.619,0.514">
 
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -185,15 +185,16 @@
 
                                     <Grid>
                                         <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="130"/>
+                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="200"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
                                             <TextBlock
+                                            Margin="10,0,0,0"
                                              Text="{Binding MAPT}"
-                                             HorizontalAlignment="Center"
+                                             HorizontalAlignment="Left"
                                              VerticalAlignment="Center"
                                              FontFamily="{StaticResource Custom}"
                                              FontSize="12"
@@ -201,9 +202,9 @@
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock
-                                             Margin="2,0,0,0"
+                                             Margin="10,0,0,0"
                                              HorizontalAlignment="Left"
-                                             Text="{Binding PHIEUTHU.NGUOIDUNG.TENND}"
+                                             Text="{Binding NGUOIDUNG.TENND}"
                                              VerticalAlignment="Center"
                                              FontFamily="{StaticResource Custom}"
                                              FontSize="12"
@@ -212,12 +213,13 @@
                                         </Grid>
                                         <Grid Grid.Column="2">
                                             <TextBlock
-                                            Margin="2,0,0,0"
+                                            Margin="10,0,0,0"
                                              HorizontalAlignment="Left"
-                                             Text="{Binding PHIEUTHU.TGPT}"
+                                             Text="{Binding TGPT}"
                                              VerticalAlignment="Center"
                                              FontFamily="{StaticResource Custom}"
                                              FontSize="12"
+                                             MaxWidth="200"
                                         />
 
                                         </Grid>
@@ -231,11 +233,11 @@
                             </ItemsPanelTemplate>
                         </ListView.ItemsPanel>
                         <i:Interaction.Triggers>
-                         <i:EventTrigger EventName="SelectionChanged">
-                             <i:InvokeCommandAction     Command="{Binding Detail}"
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction     Command="{Binding Detail}"
                                                         CommandParameter="{Binding ElementName=FineMoneywd}"></i:InvokeCommandAction>
-                         </i:EventTrigger>
-                     </i:Interaction.Triggers>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </ListView>
                 </StackPanel>
             </Grid>

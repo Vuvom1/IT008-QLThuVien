@@ -17,6 +17,7 @@ namespace Library_Management_App.Model
         public string MAPT { get; set; }
         public int MAPM { get; set; }
         public string MAND { get; set; }
+        public string TENND { get; set; }
         public Nullable<int> TIENTHU { get; set; }
         public Nullable<int> TONGNO { get; set; }
         public Nullable<int> TIENCONLAI { get; set; }

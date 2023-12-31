@@ -29,6 +29,7 @@ namespace Library_Management_App.ViewModel
 
         public FineMoneyViewModel()
         {
+            listTK = new ObservableCollection<string>() { "Mã PT", "Họ tên" };
             listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
             SearchCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _SearchCommand(p));
             AddCsCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _AddCs(p));
@@ -127,10 +128,11 @@ namespace Library_Management_App.ViewModel
             DetailFineMoneyView detailFineMoneyView = new DetailFineMoneyView();
             PHIEUTHU temp = (PHIEUTHU)paramater.ListViewPT.SelectedItem;
             detailFineMoneyView.MaPT.Text = temp.MAPT;
-            detailFineMoneyView.TenDG.Text = temp.NGUOIDUNG.TENND;
+            detailFineMoneyView.TenDG.Text = temp.TENND;
             detailFineMoneyView.TONGNO.Text = temp.TONGNO.ToString();
             detailFineMoneyView.STT.Text = temp.TIENTHU.ToString();
             detailFineMoneyView.CL.Text = temp.TIENCONLAI.ToString();
+            MainViewModel.MainFrame.Content = detailFineMoneyView;
         }
     }
 }

@@ -74,21 +74,38 @@ namespace Library_Management_App.ViewModel
                     {
                         PHIEUTHU temp = new PHIEUTHU();
                         temp.MAPT = paramater.MAPT.Text.ToString();
-                        temp.MAND = paramater.TENDG.Text.ToString();                     
-                        temp.TIENTHU = paramater.SOTIENTHU.Text.Length;
-                        temp.TONGNO = paramater.TONGNO.Text.Length;
-                        temp.TIENCONLAI = temp.TONGNO - temp.TIENTHU;
+                        temp.MAPM = 2487;
+                        temp.MAND = "NV01";
+                        temp.TENND = paramater.TENDG.Text.ToString();
+                      
+                        if (int.TryParse(paramater.SOTIENTHU.Text, out int tienThu))
+                        {
+                            temp.TIENTHU = tienThu;
+                        }
+
+                        if (int.TryParse(paramater.TONGNO.Text, out int tongNo))
+                        {
+                            temp.TONGNO = tongNo;
+                        }
+
+                        if (int.TryParse(paramater.CONLAI.Text, out int tienconlai))
+                        {
+                            temp.TIENCONLAI = tienconlai;
+                        }
+
+                        temp.TGPT = DateTime.Now;
                         DataProvider.Ins.DB.PHIEUTHUs.Add(temp);
-                        //DataProvider.Ins.DB.SaveChanges();
+                        DataProvider.Ins.DB.SaveChanges();
                         MessageBox.Show("Thêm phiếu thu thành công.", "THÔNG BÁO");
                         paramater.MAPT.Text = rdma();
+            
                         paramater.TENDG.Clear();
                         paramater.TONGNO.Clear();
                         paramater.SOTIENTHU.Clear();
                         paramater.CONLAI.Clear();
-                        AddFineMoneyView addFineMoneyView = new AddFineMoneyView();
-                        //addFineMoneyView.ListViewPT.ItemsSource = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
-                        MainViewModel.MainFrame.Content = addFineMoneyView;
+                        FineMoneyView fineMoneyView = new FineMoneyView();
+                        fineMoneyView.ListViewPT.ItemsSource = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
+                        MainViewModel.MainFrame.Content = fineMoneyView;
                     }
                 }
             }
