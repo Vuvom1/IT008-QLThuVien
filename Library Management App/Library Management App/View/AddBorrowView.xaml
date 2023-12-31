@@ -450,7 +450,7 @@
                                         </Grid>
                                         <Grid Grid.Column="4">
                                             <TextBlock
-                                                Text="{Binding GiaTri, StringFormat=VNĐ}"
+                                                Text="{Binding GiaTri}"
                                                 HorizontalAlignment="Left"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"

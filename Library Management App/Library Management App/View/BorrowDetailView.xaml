@@ -11,7 +11,7 @@
         DataContext="{StaticResource BorrowDetailVM}"
         x:Name="AddImportwd"
         mc:Ignorable="d"
-        Height="506"
+        Height="605"
         Width="700"
       Background="White">
     <Border
@@ -216,7 +216,7 @@
             <Grid Grid.Row="1">
                 <StackPanel>
                     <Border
-                        Margin="-12,-10,-10,0"
+                        Margin="0,0,0,0"
                         Width="680"
                         Height="40"
                         CornerRadius="10"
@@ -225,13 +225,13 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="150"/>
-                                <ColumnDefinition Width="130"/>
-                                <ColumnDefinition/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <TextBlock Margin="0 0 0 0"
+                                <TextBlock
                                 Text="Mã sách"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -250,7 +250,7 @@
                                 />
                             </Grid>
                             <Grid Grid.Column="2">
-                                <TextBlock Margin="0 0 0 0"
+                                <TextBlock
                                 Text="Thể loại"
                                 HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
@@ -259,29 +259,19 @@
                                 />
                             </Grid>
                             <Grid Grid.Column="3">
-                                <TextBlock  Margin="35,0,0,0"
+                                <TextBlock
                                 Text="Nhà xuất bản"
-                                HorizontalAlignment="Left"
+                                HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 FontFamily="{StaticResource Custom}"
                                 FontSize="12" ></TextBlock>
 
                             </Grid>
+                            
                             <Grid Grid.Column="4">
-                                <TextBlock Margin="30,0,0,0"
-                                Text=""
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Center"
-                                MaxWidth="150"
-                                FontFamily="{StaticResource Custom}"
-                                FontSize="12" ></TextBlock>
-
-
-                            </Grid>
-                            <Grid Grid.Column="5">
                                 <TextBlock
                                 Text="Trị giá"
-                                HorizontalAlignment="Left"
+                                HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 MaxWidth="150"
                                 FontFamily="{StaticResource Custom}"
@@ -294,22 +284,22 @@
                     <ListView x:Name="ListViewSach" 
                           SelectionMode="Single"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"
-                          Height="98"
+                          Height="182"
                         >
-                        <ListView.ItemTemplate>
+                        <ListView.ItemTemplate  >
                             <DataTemplate>
                                 <Border
-                                Margin="35,0,0,0"
+                             
                                 Width="680"
                                 Height="40"
-                                CornerRadius="10"
+                                CornerRadius="4"
                                 Background="#1784C2">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="100"/>
-                                            <ColumnDefinition Width="150"/>
-                                            <ColumnDefinition Width="130"/>
-                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="100"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
@@ -323,7 +313,7 @@
                                         </Grid>
                                         <Grid Grid.Column="1">
                                             <TextBlock
-                                                Margin="2,0,0,0"
+                                                Margin="40,0,0,0"
                                                 HorizontalAlignment="Left"
                                                 Text="{Binding TenSach}"
                                                 VerticalAlignment="Center"
@@ -334,7 +324,7 @@
                                         <Grid Grid.Column="2">
                                             <TextBlock
                                                 Text="{Binding TheLoai}"
-                                                HorizontalAlignment="Left"
+                                                HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 FontFamily="{StaticResource Custom}"
                                                 FontSize="12"
@@ -343,7 +333,7 @@
                                         <Grid Grid.Column="3">
                                             <TextBlock
                                                 Text="{Binding NXB}"
-                                                HorizontalAlignment="Left"
+                                                HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"
                                                 FontFamily="{StaticResource Custom}"
@@ -352,8 +342,8 @@
                                         </Grid>
                                         <Grid Grid.Column="4">
                                             <TextBlock
-                                                Text="{Binding GiaTri,StringFormat={}{0:# ###} VNĐ}"
-                                                HorizontalAlignment="Left"
+                                                Text="{Binding GiaTri}"
+                                                HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 MaxWidth="150"
                                                 FontFamily="{StaticResource Custom}"
@@ -386,6 +376,7 @@
                                     BorderThickness="0"
                                     Content="Hoàn tất"
                                     FontSize="12"
+                                    Visibility="{Binding isReturnVis}"
                                     x:Name="completeBtn"
                                     FontFamily="{StaticResource Custom}"
                                     Background="#1784C2"
@@ -403,27 +394,7 @@
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Button>
-                        <Button
-                                    BorderThickness="0"
-                                    Content="In phiếu"
-                                    FontSize="12"
-                                    x:Name="printbtn"
-                                    FontFamily="{StaticResource Custom}"
-                                    Background="#1784C2"
-                                    Width="150"
-                                    VerticalAlignment="Center"
-                                    Margin="33,10,34,0"
-                                    Foreground="Black"
-                                    materialDesign:ButtonAssist.CornerRadius="15" Height="40"
-                                >
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction     
-                                                            Command="{Binding PrintOrderCM}"
-                                                            CommandParameter="{Binding ElementName=AddImportwd}"></i:InvokeCommandAction>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </Button>
+                        
                     </StackPanel>
 
                 </Grid>

@@ -87,7 +87,12 @@
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,6,0,0"
                                 BorderThickness="2"
                                 VerticalAlignment="Center" CaretBrush="Gray" >
-
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <i:InvokeCommandAction Command="{Binding SearchCM}"
+                                    CommandParameter="{Binding ElementName=Borrowwd}"></i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                     </TextBox>
                     <Button 
                         Command="{Binding OpenAddBorrowCM}"

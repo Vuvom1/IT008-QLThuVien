@@ -34,14 +34,6 @@ namespace Library_Management_App.ViewModel
             this.GiaTri = GiaTri;
         }
 
-        public Display(string mASACH, string tENSACH, string tENTL, string tENNXB, int? tRIGIA)
-        {
-            MaSach = mASACH;
-            TenSach = tENSACH;
-            this.tENTL = tENTL;
-            this.tENNXB = tENNXB;
-            this.tRIGIA = tRIGIA;
-        }
     }
     public class AddBorrowViewModel : BaseViewModel
     {
