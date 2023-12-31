@@ -11,6 +11,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using System.Windows;
+using System.Data;
 
 namespace Library_Management_App.ViewModel
 {
@@ -37,7 +38,28 @@ namespace Library_Management_App.ViewModel
             SearchCM = new RelayCommand<BorrowView>((p) => true, (p) => _SearchCommand(p));
             Detail = new RelayCommand<BorrowView>((p) => p.ListViewPM.SelectedItem != null ? true : false, (p) => _Detail(p));
             LoadCsCommand = new RelayCommand<BorrowView>((p) => true, (p) => _LoadCsCommand(p));
+            updateStatus();
         }
+
+        private void updateStatus()
+        {
+            foreach (PHIEUMUON temp in listPM)
+            {
+                TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
+
+                if (differenceDate.TotalDays > 30)
+                {
+                    temp.TIENPHAT = temp.TRIGIA * 5;
+                }
+
+                temp.TRANGTHAI = "Hết hạn";
+            }
+
+            DataProvider.Ins.DB.SaveChanges();
+
+        }
+
+
         void _LoadCsCommand(BorrowView parameter)
         {
             parameter.cbxChon.SelectedIndex = 0;
@@ -164,10 +186,29 @@ namespace Library_Management_App.ViewModel
             if (temp.TRANGTHAI == "Chưa trả")
             {
                 p.completeBtn.Visibility = Visibility.Visible;
-            } else
+            } 
+            else
             {
                 p.completeBtn.Visibility = Visibility.Hidden;
-            }   
+            }
+
+            if (temp.TRANGTHAI == "Hết hạn")
+            {
+                p.sendMail.Visibility = Visibility.Hidden;
+            }
+            else
+            {
+                p.sendMail.Visibility = Visibility.Visible;
+            }
+
+
+            //TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
+
+            //if (differenceDate.TotalDays > 30)
+            //{
+            //    temp.TIENPHAT = temp.TRIGIA * 5;
+            //}
+
             parameter.ListViewPM.SelectedItem = null;
             listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
             parameter.ListViewPM.ItemsSource = listPM;

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows;
+using System.Net.Mail;
+using System.Net;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Library_Management_App.ViewModel
@@ -19,55 +21,30 @@ namespace Library_Management_App.ViewModel
         public static Frame MainFrame { get; set; }
         public ICommand Loadwd { get; set; }
         public ICommand CompleteBorrow { get; set; }
-        //public ICommand PrintOrderCM { get; set; }
+        public ICommand SendMailCM { get; set; }
 
         private Visibility _isReturnVis;
         public Visibility isReturnVis { get => _isReturnVis; set { _isReturnVis = value; OnPropertyChanged(); } }
 
         public BorrowDetailViewModel()
         {
-            //PrintOrderCM = new RelayCommand<BorrowDetailView>((p) => true, (p) => _PrintBorrowView(p));
+            SendMailCM = new RelayCommand<BorrowDetailView>((p) => true, (p) => _SendMail(p));
             CompleteBorrow = new RelayCommand<BorrowDetailView>((p) => true, (p) => _CompleteBorrow(p));
+        
         }
-        //void _PrintOrderView(DetailsOrder paramater)
-        //{
 
-        //    KHACHHANG tempKH = new KHACHHANG();
-        //    HOADON tempHD = new HOADON();
-        //    foreach (HOADON temp in DataProvider.Ins.DB.HOADONs)
-        //    {
-        //        if (temp.SOHD == int.Parse(paramater.SoHD.Text))
-        //        {
-        //            tempHD = temp;
-        //            foreach (KHACHHANG kh in DataProvider.Ins.DB.KHACHHANGs)
-        //            {
-        //                if (temp.MAKH == kh.MAKH)
-        //                {
-        //                    tempKH = kh;
-        //                    break;
-        //                }
-        //            }
-        //            break;
-        //        }
-        //    }
+        void _SendMail(BorrowDetailView parameter)
+        {
 
-        //    PrintOrderView printOrderView = new PrintOrderView();
-        //    printOrderView.TenKH.Text = tempKH.HOTEN;
-        //    printOrderView.sdt.Text = tempKH.SDT;
-        //    printOrderView.dc.Text = tempKH.DCHI;
-        //    printOrderView.ngay.Text = tempHD.NGHD.ToShortDateString();
-        //    printOrderView.sohd.Text = paramater.SoHD.Text;
-        //    printOrderView.GG.Text = "- " + String.Format("{0:0,0}", (tempHD.TRIGIA * 100 / (100 - tempHD.KHUYENMAI)) * tempHD.KHUYENMAI / 100) + " VND";
-        //    printOrderView.TT1.Text = String.Format("{0:0,0}", tempHD.TRIGIA) + " VND";
-        //    printOrderView.TT.Text = String.Format("{0:0,0}", tempHD.TRIGIA) + " VND";
-        //    List<HienThi> list = new List<HienThi>();
-        //    foreach (CTHD a in tempHD.CTHDs)
-        //    {
-        //        list.Add(new HienThi(a.MASP, a.SANPHAM.TENSP, a.SANPHAM.SIZE, a.SL, a.SANPHAM.GIA, a.SL * a.SANPHAM.GIA));
-        //    }
-        //    printOrderView.ListSP.ItemsSource = list;
-        //    MainViewModel.MainFrame.Content = printOrderView;
-        //}
+            string nd = "Hệ thống thư viện thông báo: bạn đang có phiếu trả sách hết hạn, vui lòng trả sách. Trân trọng !";
+            MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", "21149374@student.hcmute.edu.vn", "Nhắc nhở trả sách", nd);
+            SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
+            smtpClient.EnableSsl = true;
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential("21522808@gm.uit.edu.vn", "vuvo@1143");
+            smtpClient.Send(message);
+            MessageBox.Show("Đã gửi mật khẩu vào Email đăng ký !", "Thông báo");
+        } 
         void _CompleteBorrow(BorrowDetailView parameter)
         {
             MessageBoxResult h = System.Windows.MessageBox.Show("Xác nhận?", "THÔNG BÁO", MessageBoxButton.YesNo, MessageBoxImage.Question);
@@ -94,7 +71,7 @@ namespace Library_Management_App.ViewModel
                         TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
 
 
-                        if (differenceDate.TotalDays > 30)
+                        if (temp.TRANGTHAI == "Hết hạn")
                         {
                             temp.TIENPHAT = temp.TRIGIA * 5;
                         }

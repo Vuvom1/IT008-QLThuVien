@@ -383,7 +383,7 @@
                                     Width="150"
                                     VerticalAlignment="Center"
                                     Margin="33,0,34,0"
-                                    Foreground="Black"
+                                    Foreground="White"
                                     materialDesign:ButtonAssist.CornerRadius="15" Height="40"
                                 >
                             <i:Interaction.Triggers>
@@ -394,7 +394,28 @@
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </Button>
-                        
+                        <Button
+            BorderThickness="0"
+            Content="Gửi email"
+            FontSize="12"
+            x:Name="sendMail"
+            FontFamily="{StaticResource Custom}"
+            Background="#353A55"
+            Width="150"
+            VerticalAlignment="Center"
+            Margin="33,10,34,0"
+            Foreground="White"
+            materialDesign:ButtonAssist.CornerRadius="15" Height="40"
+        >
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction     
+                                    Command="{Binding SendMailCM}"
+                                    CommandParameter="{Binding ElementName=AddImportwd}"></i:InvokeCommandAction>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </Button>
+
                     </StackPanel>
 
                 </Grid>
