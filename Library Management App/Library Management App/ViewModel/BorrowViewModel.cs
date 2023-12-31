@@ -155,12 +155,19 @@ namespace Library_Management_App.ViewModel
             List<Display> list = new List<Display>();
             foreach (CTPM a in temp.CTPMs)
             {
-                list.Add(new Display(a.MASACH, a.SACH.TENSACH, a.SACH.THELOAI.TENTL, a.SACH.NHAXUATBAN.TENNXB, a.SACH.TRIGIA));
+                list.Add(new Display(a.MASACH, a.SACH.TENSACH, a.SACH.THELOAI.TENTL, a.SACH.NHAXUATBAN.TENNXB, a.SACH.TRIGIA.Value));
             }
             p.ListViewSach.ItemsSource = list;
             p.GG.Text = Convert.ToString(temp.SL) + " quyển";
             p.TT1.Text = String.Format("{0:0,0}", temp.TRIGIA) + " VND";
             p.TT.Text = String.Format("{0:0,0}", temp.TIENPHAT) + " VND";
+            if (temp.TRANGTHAI == "Chưa trả")
+            {
+                p.completeBtn.Visibility = Visibility.Visible;
+            } else
+            {
+                p.completeBtn.Visibility = Visibility.Hidden;
+            }   
             parameter.ListViewPM.SelectedItem = null;
             listPM = new ObservableCollection<PHIEUMUON>(DataProvider.Ins.DB.PHIEUMUONs);
             parameter.ListViewPM.ItemsSource = listPM;

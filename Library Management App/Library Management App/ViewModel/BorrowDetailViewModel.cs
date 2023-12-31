@@ -13,13 +13,16 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace Library_Management_App.ViewModel
 {
-    public class BorrowDetailViewModel
+    public class BorrowDetailViewModel : BaseViewModel
     {
 
         public static Frame MainFrame { get; set; }
         public ICommand Loadwd { get; set; }
         public ICommand CompleteBorrow { get; set; }
-        public ICommand PrintOrderCM { get; set; }
+        //public ICommand PrintOrderCM { get; set; }
+
+        private Visibility _isReturnVis;
+        public Visibility isReturnVis { get => _isReturnVis; set { _isReturnVis = value; OnPropertyChanged(); } }
 
         public BorrowDetailViewModel()
         {
@@ -86,6 +89,14 @@ namespace Library_Management_App.ViewModel
                                         temp2.SLCONLAI += 1;
                                 }
                             }
+                        }
+
+                        TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
+
+
+                        if (differenceDate.TotalDays > 30)
+                        {
+                            temp.TIENPHAT = temp.TRIGIA * 5;
                         }
 
                         temp.TRANGTHAI = "Đã trả";

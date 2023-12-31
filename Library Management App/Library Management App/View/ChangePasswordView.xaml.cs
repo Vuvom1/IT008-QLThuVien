@@ -23,7 +23,7 @@ namespace Library_Management_App.View
     {
         public ChangePasswordView()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
 
         private void lbl_Click(object sender, RoutedEventArgs e)

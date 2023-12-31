@@ -50,8 +50,8 @@ namespace Library_Management_App.ViewModel
 
         void _ChangePass()
         {
-            ChangePasswordView change = new ChangePasswordView();
-            MainViewModel.MainFrame.Content = change;
+            ChangePasswordView changePasswordView = new ChangePasswordView();
+            MainViewModel.MainFrame.Content = changePasswordView;
         }
         void _AddImage(ImageBrush p)
         {
