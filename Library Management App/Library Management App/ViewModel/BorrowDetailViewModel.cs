@@ -35,9 +35,16 @@ namespace Library_Management_App.ViewModel
 
         void _SendMail(BorrowDetailView parameter)
         {
-
+            string receiveEmail = "";
+            foreach (DOCGIA temp in DataProvider.Ins.DB.DOCGIAs)
+            {
+                if (temp.MADG == parameter.MaDG.Text)
+                {
+                    receiveEmail = temp.EMAIL;
+                }
+            }
             string nd = "Hệ thống thư viện thông báo: bạn đang có phiếu trả sách hết hạn, vui lòng trả sách. Trân trọng !";
-            MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", "21149374@student.hcmute.edu.vn", "Nhắc nhở trả sách", nd);
+            MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", receiveEmail, "Nhắc nhở trả sách", nd);
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
             smtpClient.UseDefaultCredentials = false;

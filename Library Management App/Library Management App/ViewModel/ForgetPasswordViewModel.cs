@@ -49,7 +49,7 @@ namespace Library_Management_App.ViewModel
             }
             DataProvider.Ins.DB.SaveChanges();
             string nd = "Vui lòng nhập mật khẩu " + newpass + " để đăng nhập. Trân trọng !";
-            MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", "21149374@student.hcmute.edu.vn", "Lấy lại mật khẩu", nd);
+            MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", parameter.MailAddress.Text, "Lấy lại mật khẩu", nd);
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
             smtpClient.UseDefaultCredentials = false;
