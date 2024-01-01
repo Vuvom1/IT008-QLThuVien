@@ -13,6 +13,8 @@ namespace Library_Management_App.Model
         public static int Role {  get; set; }
 
         public static NGUOIDUNG ND { get; set; }
+        public static PHIEUMUON PM { get; set; }
+
         public static string _localLink = System.Reflection.Assembly.GetExecutingAssembly().Location.Remove(System.Reflection.Assembly.GetExecutingAssembly().Location.IndexOf(@"bin\Debug"));
     }
 }

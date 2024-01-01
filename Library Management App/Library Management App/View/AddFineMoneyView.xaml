@@ -26,8 +26,8 @@
         </EventTrigger>
     </Page.Triggers>
 
-    
-    
+
+
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadFineMNCM}"
@@ -39,7 +39,7 @@
                                 CommandParameter="{Binding ElementName=AddFineMoneywd}"></i:InvokeCommandAction>
         </i:EventTrigger>
 
-        
+
     </i:Interaction.Triggers>
 
     <Grid>
@@ -52,7 +52,7 @@
             <Grid Grid.Column="0">
                 <StackPanel 
                             Orientation="Vertical"
-                            Margin="15,42,0,0"
+                            Margin="15,0,10,0"
                             >
                     <TextBlock
                         Margin="-15,0,0,20"
@@ -62,11 +62,45 @@
                         FontFamily="{StaticResource Custom}"
                         Foreground="#1784C2"
                         />
-                    <StackPanel Orientation="Horizontal" Height="63" Width="342">
+                    <StackPanel Orientation="Horizontal" Height="63" Width="179">
                         <StackPanel Orientation="Vertical">
                             <TextBlock
                                 Margin="10,0,0,0"
                                 Text="MÃ PHIẾU THU"
+                                FontFamily="{StaticResource Custom}"
+                                Foreground="#1784C2"
+                            />
+                            <Border
+                                CornerRadius="10"
+                                BorderThickness="2"
+                                BorderBrush="Gray"
+                                Height="30"
+                            >
+                                <TextBox
+                                    x:Name="MAPT"
+                                    HorizontalAlignment="Left"
+                                    Width="150"
+                                    BorderThickness="0"
+                                    Foreground="Black"
+                                    IsEnabled="False"
+                                    FontFamily="{StaticResource Custom}"
+                                    materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                                    materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
+                                    materialDesign:HintAssist.Hint="Nhập mã phiếu thu"
+                                    materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
+                                    materialDesign:TextFieldAssist.UnderlineBrush="Black"
+                            />
+                            </Border>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical"
+                            Margin="10,0,0,0"
+                                    />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Height="63" Width="342">
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock
+                                Margin="10,0,0,0"
+                                Text="MÃ PHIẾU MƯỢN"
                                 FontFamily="{StaticResource Custom}"
                             Foreground="#1784C2"
                             />
@@ -76,44 +110,74 @@
                             BorderBrush="Gray"
                             Height="30"
                             >
-                                <TextBox
-                                x:Name="MAPT"
-                                HorizontalAlignment="Left"
-                                Width="150"
-                                BorderThickness="0"
-                                Foreground="Black"
-                                IsEnabled="False"
+                                <ComboBox
+                                x:Name="LPM"
                                 FontFamily="{StaticResource Custom}"
+                                 BorderThickness="0"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:HintAssist.Hint="Nhập mã phiếu thu"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
-                                materialDesign:TextFieldAssist.UnderlineBrush="Black"
-                            />
+                                ItemsSource="{Binding LPM}" Width="135" Height="29"
+                                 >      
+                                    <ComboBox.ItemTemplate>
+
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding MAPM}"/>
+                                                
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding choosePM}"
+                                             CommandParameter="{Binding ElementName=AddFineMoneywd}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
                             </Border>
                         </StackPanel>
                         <StackPanel Orientation="Vertical"
                                     Margin="10,0,0,0"
                                     >
                             <TextBlock
-                                Text="TÊN ĐỘC GIẢ"
+                                Text="MÃ | TÊN ĐỘC GIẢ"
                                 FontFamily="{StaticResource Custom}"
                                 Foreground="#1784C2"
                             />
-                            <TextBox
-                                Height="30"
-                                x:Name="TENDG"
-                                FontFamily="{StaticResource Custom}"
-                                Foreground="Black"
-                                HorizontalAlignment="Left"
-                                Width="150"
-                                BorderThickness="2"
-                                materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
-                                materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                                materialDesign:HintAssist.Hint="Nhập tên độc giả"
-                                materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
-                                materialDesign:TextFieldAssist.UnderlineBrush="Gray"
-                            />
+                            <Border
+                            CornerRadius="10"
+                            BorderThickness="2"
+                            BorderBrush="Gray"
+                            Height="30"
+                            >
+                                <ComboBox
+                            x:Name="LDG"
+                            FontFamily="{StaticResource Custom}"
+                             BorderThickness="0"
+                            materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
+                            ItemsSource="{Binding LDG}" Width="135" Height="29"
+                             >
+                                    <ComboBox.ItemTemplate>
+
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="{Binding MADG}"/>
+                                                <TextBlock
+                                            Text="|"
+                                            Margin="4,0,4,0"
+                                            />
+                                                <TextBlock 
+                                            Text="{Binding TENDG}"/>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                    <i:Interaction.Triggers>
+                                        <i:EventTrigger EventName="SelectionChanged">
+                                            <i:InvokeCommandAction Command="{Binding chooseDG}"
+                                         CommandParameter="{Binding ElementName=AddFineMoneywd}"/>
+                                        </i:EventTrigger>
+                                    </i:Interaction.Triggers>
+                                </ComboBox>
+                            </Border>
                         </StackPanel>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" 
@@ -176,7 +240,13 @@
                                 FontFamily="{StaticResource Custom}"
                                 Foreground="#1784C2"
                             />
-                            <TextBox
+                            <Border
+                            CornerRadius="10"
+                            BorderThickness="2"
+                            BorderBrush="Gray"
+                            Height="30"
+                            >
+                                <TextBox
                                 Height="30"
                                 x:Name="CONLAI" 
                                 HorizontalAlignment="Left"
@@ -184,12 +254,14 @@
                                 Foreground="Black"
                                 FontFamily="{StaticResource Custom}"
                                 BorderThickness="2"
+                                IsEnabled="False"
                                 materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                 materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
                                 materialDesign:HintAssist.Hint=""
                                 materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
                                 materialDesign:TextFieldAssist.UnderlineBrush="Gray"
                             />
+                            </Border>
                         </StackPanel>
                         <StackPanel Orientation="Vertical"
                             Margin="10,0,0,0"
@@ -217,23 +289,22 @@
                         </StackPanel>
                     </StackPanel>
                     <Button Content="THÊM PHIẾU THU"
-                            Margin="0,30,0,0"
                             Width="230"
                             Background="#1784C2"
                             BorderThickness="0"
                             x:Name="btnadd"
-                        materialDesign:ButtonAssist.CornerRadius="10"
+                        materialDesign:ButtonAssist.CornerRadius="10" Height="44"
                             >
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding AddCsCommand}"
-                                                   CommandParameter="{Binding ElementName=AddFineMoneywd}"></i:InvokeCommandAction>
+                                                   CommandParameter="{Binding ElementName=AddFineMoneywd}"/>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>
                     </Button>
                 </StackPanel>
             </Grid>
         </Grid>
-        </Grid>
+    </Grid>
 
 </Page>

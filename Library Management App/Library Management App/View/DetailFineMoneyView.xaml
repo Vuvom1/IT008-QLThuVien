@@ -164,7 +164,13 @@
                             FontSize="12" Height="18" Width="60" RenderTransformOrigin="0.829,0.547"
                         />
                         </StackPanel>
-                        <TextBox
+                        <Border
+                            CornerRadius="10"
+                            BorderThickness="2"
+                            BorderBrush="Gray"
+                            Height="30" Width="192"
+                            >       
+                            <TextBox
                     
                             x:Name="CL"
                             FontFamily="{StaticResource Custom}"
@@ -172,15 +178,17 @@
                             Width="170"
                             Height="29"
                             BorderThickness="2"
+                            IsEnabled="False"
                             materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                             materialDesign:TextFieldAssist.TextFieldCornerRadius="10"
-                            materialDesign:HintAssist.Hint="Còn lại"
+                            materialDesign:HintAssist.Hint=""
                             materialDesign:TextFieldAssist.TextBoxViewMargin="10,0,0,0"
                             materialDesign:TextFieldAssist.UnderlineBrush="Black"
                             HorizontalScrollBarVisibility="Auto"
                             AcceptsReturn="True"
                             TextWrapping="Wrap"
                         />
+                        </Border>
                         <StackPanel Orientation="Horizontal" 
                             Margin="0,10,0,0"
                             HorizontalAlignment="Center" Height="19" Width="86"/>

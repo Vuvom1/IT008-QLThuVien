@@ -18,13 +18,34 @@ namespace Library_Management_App.ViewModel
 
         public ICommand LoadFineMNCM { get; set; }
 
+        private List<DOCGIA> _LDG;
+
+        public List<DOCGIA> LDG { get => _LDG; set { _LDG = value; OnPropertyChanged(); } }
+
+        private List<PHIEUMUON> _LPM;
+
+        public List<PHIEUMUON> LPM { get => _LPM; set { _LPM = value; OnPropertyChanged(); } }
+        public ICommand chooseDG { get; set; }
+
+        public ICommand choosePM { get; set; }
+
         public AddFineMoneyViewModel()
         {
             AddCsCommand = new RelayCommand<AddFineMoneyView>((p) => true, (p) => _AddCsCommand(p));
             LoadFineMNCM = new RelayCommand<AddFineMoneyView>((p) => true, (p) => _LoadFineMNCM(p));
-
+            chooseDG = new RelayCommand<AddFineMoneyView>((p) => true, (p) => _chooseDG(p));
+            choosePM = new RelayCommand<AddFineMoneyView>((p) => true, (p) => _choosePM(p));
         }
 
+        void _chooseDG(AddFineMoneyView parameter)
+        {
+            DOCGIA temp = (DOCGIA)parameter.LDG.SelectedItem;
+        }
+
+        void _choosePM(AddFineMoneyView parameter)
+        {
+            PHIEUMUON temp = (PHIEUMUON)parameter.LPM.SelectedItem;
+        }
         bool check(string m)
         {
             foreach (PHIEUTHU temp in DataProvider.Ins.DB.PHIEUTHUs)
@@ -47,12 +68,17 @@ namespace Library_Management_App.ViewModel
 
         void _LoadFineMNCM(AddFineMoneyView paramater) 
         {
+            LDG = DataProvider.Ins.DB.DOCGIAs.ToList();
+            paramater.LDG.ItemsSource = LDG;
+            LPM = DataProvider.Ins.DB.PHIEUMUONs.ToList();
+            paramater.LPM.ItemsSource = LPM;
             paramater.NGAY.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm tt");
+            
         }
         void _AddCsCommand(AddFineMoneyView paramater)
         {
             
-            if (paramater.MAPT.Text == "" || paramater.TENDG.Text == "" || paramater.TONGNO.Text == "" || paramater.SOTIENTHU.Text == "")
+            if (paramater.MAPT.Text == ""  || paramater.TONGNO.Text == "" || paramater.SOTIENTHU.Text == "")
             {
                 MessageBox.Show("Bạn chưa nhập đủ thông tin !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -60,9 +86,14 @@ namespace Library_Management_App.ViewModel
             MessageBoxResult h = System.Windows.MessageBox.Show("  Bạn muốn thêm phiếu thu ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel);
             if (h == MessageBoxResult.Yes)
             {
-                if (string.IsNullOrEmpty(paramater.MAPT.Text) || string.IsNullOrEmpty(paramater.TENDG.Text) || string.IsNullOrEmpty(paramater.TONGNO.Text) || string.IsNullOrEmpty(paramater.SOTIENTHU.Text) /*|| string.IsNullOrEmpty(paramater.DC.Text)*/)
+                if (string.IsNullOrEmpty(paramater.MAPT.Text) ||  string.IsNullOrEmpty(paramater.TONGNO.Text) || string.IsNullOrEmpty(paramater.SOTIENTHU.Text) )
                 {
                     MessageBox.Show("Thông tin chưa đầy đủ !", "THÔNG BÁO");
+                }
+                if (!int.TryParse(paramater.TONGNO.Text, out int TongNo) || !int.TryParse(paramater.SOTIENTHU.Text, out int TienThu) || TongNo < TienThu)
+                {
+                    MessageBox.Show("Số tiền thu không thể lớn hơn tổng nợ!", "THÔNG BÁO");
+                    return;
                 }
                 else
                 {
@@ -72,12 +103,18 @@ namespace Library_Management_App.ViewModel
                     }
                     else
                     {
+                        
+                        DOCGIA a = (DOCGIA)paramater.LDG.SelectedItem;
+                        PHIEUMUON b = (PHIEUMUON)paramater.LPM.SelectedItem; 
+
                         PHIEUTHU temp = new PHIEUTHU();
                         temp.MAPT = paramater.MAPT.Text.ToString();
-                        temp.MAPM = 2487;
-                        temp.MAND = "NV01";
-                        //temp.TENND = paramater.TENDG.Text.ToString();
-                      
+
+                        temp.MAPM = b.MAPM;
+                        temp.MAND = Const.ND.MAND;
+                        temp.TENND = a.TENDG.ToString();
+                        temp.MADG = a.MADG.ToString();
+                                                
                         if (int.TryParse(paramater.SOTIENTHU.Text, out int tienThu))
                         {
                             temp.TIENTHU = tienThu;
@@ -88,7 +125,10 @@ namespace Library_Management_App.ViewModel
                             temp.TONGNO = tongNo;
                         }
 
-                        if (int.TryParse(paramater.CONLAI.Text, out int tienconlai))
+                        int tienconlai =(int) (temp.TONGNO - temp.TIENTHU);
+                        temp.TIENCONLAI = tienconlai;
+
+                        if (int.TryParse(paramater.CONLAI.Text, out tienconlai))
                         {
                             temp.TIENCONLAI = tienconlai;
                         }
@@ -98,8 +138,6 @@ namespace Library_Management_App.ViewModel
                         DataProvider.Ins.DB.SaveChanges();
                         MessageBox.Show("Thêm phiếu thu thành công.", "THÔNG BÁO");
                         paramater.MAPT.Text = rdma();
-            
-                        paramater.TENDG.Clear();
                         paramater.TONGNO.Clear();
                         paramater.SOTIENTHU.Clear();
                         paramater.CONLAI.Clear();
