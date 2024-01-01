@@ -59,7 +59,7 @@
                     Text="SÁCH MỚI"
                     FontSize="24"
                     FontFamily="{StaticResource Custom}"
-                    Foreground="#6C63FF"
+                    Foreground="#353A55"
                     />
                     <StackPanel Orientation="Horizontal">
                         <StackPanel Orientation="Vertical">
@@ -67,7 +67,7 @@
                             Margin="10,0,0,0"
                             Text="MÃ SÁCH"
                             FontFamily="{StaticResource Custom}"
-                        Foreground="#6C63FF"
+                        Foreground="#353A55"
                         />
                             <Border
                         CornerRadius="10"
@@ -98,7 +98,7 @@
                             Margin="10,0,0,0"
                             Text="TÊN SÁCH"
                             FontFamily="{StaticResource Custom}"
-                            Foreground="#6C63FF"
+                            Foreground="#353A55"
                         />
                             <TextBox
                             Height="30"
@@ -124,7 +124,7 @@
                             Margin="10,0,0,0"
                             Text="GIÁ SÁCH"
                             FontFamily="{StaticResource Custom}"
-                        Foreground="#6C63FF"
+                        Foreground="#353A55"
                         />
                             <TextBox
                             Height="30"
@@ -148,7 +148,7 @@
                             Margin="10,0,0,0"
                             Text="LOẠI SÁCH"
                             FontFamily="{StaticResource Custom}"
-                        Foreground="#6C63FF"
+                        Foreground="#353A55"
                         />
                             <Border
                         BorderBrush="Gray"
@@ -192,7 +192,7 @@
                             Margin="10,0,0,0"
                             Text="SỐ LƯỢNG"
                             FontFamily="{StaticResource Custom}"
-                        Foreground="#6C63FF"
+                        Foreground="#353A55"
                         />
                             <TextBox
                             Height="30"
@@ -216,7 +216,7 @@
                             Margin="10,0,0,0"
                             Text="Nhà xuất bản"
                             FontFamily="{StaticResource Custom}"
-                                                        Foreground="#6C63FF"
+                                                        Foreground="#353A55"
 
                         />
                             <Border
@@ -258,7 +258,7 @@
                                 Margin="10,10,0,0"
                                 Text="Năm xuất bản"
                                 FontFamily="{StaticResource Custom}"
-                                Foreground="#6C63FF"
+                                Foreground="#353A55"
                                 />
                             <TextBox
                                 Height="30"
@@ -280,7 +280,7 @@
                             Margin="8,10,0,0"
                             Text="Thông tin sách"
                             FontFamily="{StaticResource Custom}"
-                                                Foreground="#6C63FF"
+                                                Foreground="#353A55"
 
                         />
                     <TextBox
@@ -305,7 +305,7 @@
                     <Button Content="THÊM SÁCH"
                         Margin="0,30,0,0"
                         Width="230"
-                        Background="#6C63FF"
+                        Background="#353A55"
                         BorderThickness="0"
                         x:Name="btnadd"
                     materialDesign:ButtonAssist.CornerRadius="10"

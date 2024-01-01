@@ -9,7 +9,7 @@
         xmlns:local="clr-namespace:Library_Management_App"
         xmlns:view="clr-namespace:Library_Management_App.View"
         mc:Ignorable="d"
-        Title="Phần mềm quản lý bán hàng" Height="700" Width="1000"
+        Title="Phần mềm quản lý bán hàng" Height="750" Width="1000"
         WindowStyle="None"
         ResizeMode="NoResize"
         Background="Transparent"
@@ -23,9 +23,9 @@
             <i:InvokeCommandAction Command="{Binding Loadwd}"
                                    CommandParameter="{Binding ElementName=Mainview}"></i:InvokeCommandAction>
         </i:EventTrigger>
-        </i:Interaction.Triggers>
+    </i:Interaction.Triggers>
 
-        <Window.Triggers>
+    <Window.Triggers>
         <EventTrigger RoutedEvent="Window.Loaded">
             <BeginStoryboard>
                 <Storyboard>
@@ -50,58 +50,16 @@
 
             <Border Grid.Column="0"
                     Background="#353A55"
-                    CornerRadius="40,40,40,40" Height="700" VerticalAlignment="Top">
+                    CornerRadius="40,0,0,40" Height="750" VerticalAlignment="Center">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="60"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="170"/>
+                        <RowDefinition Height="111"/>
+                        <RowDefinition Height="109"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0"
-                          Margin="0,0,0,0"/>
-                    <Grid Grid.Row="1"
-                          Margin="0">
-                        <DockPanel>
-                            <Border
-                                Height="40"
-                                Width="40"
-                                Background="White"
-                                CornerRadius="50"
-                                Margin="30,5,5,5">
-
-                                <Ellipse Height="40" Width="40" VerticalAlignment="Top">
-                                    <Ellipse.Fill>
-                                        <ImageBrush ImageSource="{Binding Ava}"/>
-                                    </Ellipse.Fill>
-                                </Ellipse>
-
-                            </Border>
-                            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
-                                <TextBlock x:Name="TenDangNhap" 
-                                           Text=""
-                                           FontSize="15"
-                                           Foreground="White"
-                                           FontWeight="Thin"
-                                           FontFamily="{StaticResource Custom}"
-                                           >
-                                    
-                                </TextBlock>
-                                <TextBlock x:Name="Quyen" 
-                                           Text="Quản trị viên"
-                                           FontSize="13"
-                                           Foreground="White"
-                                           FontFamily="{StaticResource Custom}"
-                                           FontWeight="Thin">
-                                    
-                                </TextBlock>
-
-                            </StackPanel>
-                        </DockPanel>
-                    </Grid>
-
-
+                    <Grid Grid.Row="0"/>
                     <Grid Grid.Row="2" Margin="0,30,0,0" Grid.RowSpan="2">
 
                         <StackPanel>
@@ -151,7 +109,7 @@
                             x:Name="btnBorrow"
                             Command="{Binding BorrowCM}">
                             </RadioButton>
-                            
+
                             <RadioButton
                             Width="200"
                             Visibility="{Binding SetQuanLy}"
@@ -172,14 +130,7 @@
 
 
                             </RadioButton>
-                            <RadioButton
-                            Width="200"
-                            Style="{StaticResource BtnSetting}"
-                            FontFamily="{StaticResource Custom}"
-                            Uid="7"
-                            Command="{Binding SettingCM}">
 
-                            </RadioButton>
                             <RadioButton
                             Width="200"
                             Style="{StaticResource BtnNoti}"
@@ -218,6 +169,7 @@
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"/>
+                        <RowDefinition Height="50"/>
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
@@ -233,10 +185,56 @@
                             </materialDesign:PackIcon>
                         </StackPanel>
                     </Border>
+                    <Grid Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="563*"/>
+                            <ColumnDefinition Width="237*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="1">
+                            <StackPanel Orientation="Horizontal">
+                                <DockPanel Margin="0,0,25,0">
+                                    <Border
+                                        Height="40"
+                                        Width="40"
+                                        Background="Black"
+                                        CornerRadius="50"
+                                        Margin="30,5,5,5">
 
+                                        <Ellipse Height="40" Width="40" VerticalAlignment="Top">
+                                            <Ellipse.Fill>
+                                                <ImageBrush ImageSource="{Binding Ava}"/>
+                                            </Ellipse.Fill>
+                                        </Ellipse>
+
+                                    </Border>
+                                    <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <TextBlock x:Name="TenDangNhap" 
+                                        FontSize="15"
+                                        Text=""
+                                        Foreground="black"
+                                        FontWeight="Thin"
+                                        FontFamily="{StaticResource Custom}"
+                                        >
+
+                                        </TextBlock>
+                                        <TextBlock x:Name="Quyen" 
+                                        Text="Quản trị viên"
+                                        FontSize="13"
+                                        Foreground="black"
+                                        FontFamily="{StaticResource Custom}"
+                                        FontWeight="Thin">
+
+                                        </TextBlock>
+
+                                    </StackPanel>
+                                </DockPanel>
+                                <Button Style="{StaticResource BtnSetting}" Height="50" x:Name="btnSetting" Command="{Binding SettingCM}"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
                     <Frame x:Name="frame"
-                           Background="White"
-                           NavigationUIVisibility="Hidden" Grid.Row="1" Height="605" Width="750" DataContext="{StaticResource MainVM}">
+                           Background="White" Margin="0,-40,0,0"
+                           NavigationUIVisibility="Hidden" Grid.Row="2" Height="605" Width="750" DataContext="{StaticResource MainVM}">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Loaded">
                                 <i:InvokeCommandAction Command="{Binding LoadPageCM}"

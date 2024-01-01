@@ -44,6 +44,7 @@ namespace Library_Management_App.ViewModel
         public ICommand SettingCM { get; set; }
 
         public ICommand BorrowCM { get; set; }
+        public ICommand HomeCM { get; set; }
 
         public ICommand FineMoneyCM { get; set; }
 
@@ -110,6 +111,11 @@ namespace Library_Management_App.ViewModel
             {
                 MainFrame = p;
                 p.Content = new HomeView();
+            });
+
+            HomeCM = new RelayCommand<Frame>((P) => { return true; }, (P) =>
+            {
+                MainFrame.Content = new HomeView();
             });
 
             ReaderCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>

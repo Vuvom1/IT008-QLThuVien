@@ -32,7 +32,7 @@
             <Grid Grid.Row="0">
                 <TextBlock VerticalAlignment="Center" 
                        FontSize="30" Margin="20,0,0,0" 
-                       FontFamily="{StaticResource Custom}" Foreground="#6C63FF" 
+                       FontFamily="{StaticResource Custom}" Foreground="#353A55" 
                        >SÁCH</TextBlock>
             </Grid>
             <Grid Grid.Row="1">
@@ -42,7 +42,7 @@
                     Height="40"
                     Width="120"
                     CornerRadius="17"
-                    Background="#6C63FF"
+                    Background="#353A55"
                     >
                         <ComboBox
                         Margin="1,1,1,1"
@@ -83,7 +83,7 @@
                     Height="40"
                     Width="120"
                     CornerRadius="17"
-                    Background="#6C63FF"
+                    Background="#353A55"
                     >
                         <ComboBox
                     x:Name="cbxTimKiem"
@@ -91,7 +91,7 @@
                     materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                     BorderThickness="0"
                     materialDesign:HintAssist.FontFamily="{StaticResource Custom}"
-                    materialDesign:TextFieldAssist.UnderlineBrush="#6C63FF"
+                    materialDesign:TextFieldAssist.UnderlineBrush="#353A55"
                     materialDesign:TextFieldAssist.TextBoxViewMargin="2,-12,-10,0"
                     materialDesign:TextFieldAssist.TextFieldCornerRadius="17"
                     Background="White"
@@ -99,7 +99,7 @@
                     Height="35"          
                     FontSize="14"
                     SelectedIndex="0"
-                    Foreground="Black"
+                    Foreground="#353A55"
                     Width="116"
                     ItemsSource="{Binding ListTK}">
                             <ComboBox.ItemTemplate>
@@ -116,7 +116,7 @@
                             Width = "310"
                             Height = "40"
                             Margin = "15,0,0,0"
-                            BorderBrush = "#6C63FF"
+                            BorderBrush = "#353A55"
                             Foreground = "Black"
                             FontSize = "14"
                             FontWeight = "SemiBold"
@@ -136,14 +136,14 @@
                         </i:Interaction.Triggers >
                     </TextBox >
                     <Button
-                    Content="THÊM"
+                    Content="+ THÊM"
                     Margin="10,0,0,0"
                     Width="90"
                     Height="40"
                     FontFamily="{StaticResource Custom}"
                     materialDesign:ButtonAssist.CornerRadius="6"
                     BorderThickness="0"
-                    Background="#6C63FF"
+                    Background="#353A55"
                     >
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">

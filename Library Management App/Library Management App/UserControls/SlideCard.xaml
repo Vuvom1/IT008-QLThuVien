@@ -28,7 +28,8 @@
             <Button x:Name="btnPrevious" 
                 Style="{StaticResource BtnPrevStyle}"
                 Click="btnPrevious_Click"/>
-
+            
+            
             <StackPanel x:Name="stackPanel">
 
                 <Grid x:Name="grid0" 
@@ -48,19 +49,12 @@
                     <StackPanel VerticalAlignment="Center">
                         <Image Source="/Resource/ImageBooks/chuakiplondatruongthanh.jpg" 
                        Grid.Row="0"
-                       Width="150" 
-                       Height="150" 
+                       Width="180" 
+                       Height="200" 
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center"/>
 
-                        <TextBlock Text="M O N K E Y" 
-                           Grid.Row="1"
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           FontFamily="Roboto"
-                           FontWeight="SemiBold"
-                           Foreground="{StaticResource cs_Txt}"
-                           Margin="0 30 0 5"/>
+                        
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
@@ -101,21 +95,14 @@
                         BorderBrush="{StaticResource cs_ImgPas}"/>
 
                     <StackPanel VerticalAlignment="Center">
-                        <Image Source="Images/WolfAct.png" 
+                        <Image Source="/Resource/ImageBooks/kheoannoisecoduocthienha.jpg" 
                        Grid.Row="0"
-                       Width="150" 
-                       Height="150" 
+                       Width="180" 
+                       Height="200"
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center"/>
 
-                        <TextBlock Text="W O L F" 
-                           Grid.Row="1"
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           FontFamily="Roboto"
-                           FontWeight="SemiBold"
-                           Foreground="{StaticResource cs_Txt}"
-                           Margin="0 30 0 0"/>
+                        
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
@@ -156,21 +143,14 @@
                         BorderBrush="{StaticResource cs_ImgPas}"/>
 
                     <StackPanel VerticalAlignment="Center">
-                        <Image Source="Images/ZebraAct.png" 
+                        <Image Source="/Resource/ImageBooks/Tetolangdianguc.jpg" 
                        Grid.Row="0"
-                       Width="150" 
-                       Height="150" 
+                       Width="180" 
+                       Height="200"
                        HorizontalAlignment="Center" 
                        VerticalAlignment="Center"/>
 
-                        <TextBlock Text="Z E B R A" 
-                           Grid.Row="1"
-                           HorizontalAlignment="Center" 
-                           VerticalAlignment="Center"
-                           FontFamily="Roboto"
-                           FontWeight="SemiBold"
-                           Foreground="{StaticResource cs_Txt}"
-                           Margin="0 30 0 0"/>
+                       
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal"
@@ -199,10 +179,9 @@
             </StackPanel>
 
             <Button x:Name="btnNext" 
-                Style="{StaticResource BtnNextStyle}" 
+                Style="{StaticResource BtnNextStyle}"
                 Click="btnNext_Click"/>
 
         </StackPanel>
-
     </Grid>
 </UserControl>

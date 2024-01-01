@@ -30,7 +30,7 @@
                        HorizontalAlignment="Left"
                        FontSize="30" Margin="25,0,0,0" 
                        FontFamily="{StaticResource Custom}" 
-                       Foreground="#1784C2" 
+                       Foreground="#353A55" 
                        >Danh sách phiếu nhập sách</TextBlock>
             </Grid>
             <Grid Grid.Row="1">
@@ -40,7 +40,7 @@
                             Width="500"
                             Height="40"
                             Margin="30,0,0,0"
-                            BorderBrush="#1784C2"
+                            BorderBrush="#353A55"
                             Foreground="Black"
                             FontSize="14"
                             FontWeight="SemiBold"
@@ -68,7 +68,7 @@
                     BorderBrush="Transparent"
                     Foreground="White"
                     materialDesign:ButtonAssist.CornerRadius="15"
-                    Background="#1784C2"
+                    Background="#353A55"
                     Command="{Binding AddImport}"
                     >
                         <i:Interaction.Triggers>
@@ -141,7 +141,7 @@
                                 Width="600"
                                 Height="40"
                                 CornerRadius="10"
-                                Background="#6C63FF"
+                                Background="#353A55"
                              >
                                     <Grid>
                                         <Grid.ColumnDefinitions>

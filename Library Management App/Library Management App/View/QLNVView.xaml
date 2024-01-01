@@ -31,7 +31,7 @@
                   Background="Transparent" Margin="35,10,0,0">
                     <TextBlock VerticalAlignment="Center" 
                            FontSize="30" Margin="0,0,20,0" 
-                           FontFamily="{StaticResource Custom}" Foreground="#6C63FF" 
+                           FontFamily="{StaticResource Custom}" Foreground="#353A55" 
                            >QUẢN LÝ NHÂN VIÊN</TextBlock>
                 </Grid>
                 <Grid Grid.Row="1">
@@ -43,7 +43,7 @@
                         Height="40"
                         Width="115"
                         CornerRadius="16"
-                        Background="#6C63FF"
+                        Background="#353A55"
                         >
                                 <ComboBox
                         x:Name="cbxChon"
@@ -76,10 +76,10 @@
                         </StackPanel>
                         <TextBox
                                 x:Name="txbSearch"
-                                Width="250"
+                                Width="400"
                                 Height="40"
                                 Margin="10,0,0,0"
-                                BorderBrush="#6C63FF"
+                                BorderBrush="#353A55"
                                 Foreground="Black"
                                 FontSize="14"
                                 FontWeight="SemiBold"
@@ -99,15 +99,15 @@
                             </i:Interaction.Triggers>
                         </TextBox>
                         <Button x:Name="AddNV"
-                        Content="THÊM"
-                        Margin="124,0,0,0"
+                        Content="+ THÊM"
+                        Margin="25,0,0,0"
                         Width="90"
                         Height="40"
                         FontFamily="{StaticResource Custom}"
                         BorderBrush="Transparent"
                         Foreground="White"
                         materialDesign:ButtonAssist.CornerRadius="10"
-                        Background="#6C63FF">
+                        Background="#353A55">
 
 
                             <i:Interaction.Triggers>
@@ -132,7 +132,7 @@
                                 Width="290"
                                 Height="100"
                                 CornerRadius="10"
-                                Background="#6C63FF">
+                                Background="#353A55">
 
 
                                     <Grid>

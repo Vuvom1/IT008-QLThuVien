@@ -173,7 +173,7 @@
                         FontFamily="{StaticResource Custom}"
                         >
                             <TextBox x:Name="Mota"
-                                 Height="80"
+                                 Height="120"
                                  TextWrapping="Wrap"
                                  materialDesign:TextFieldAssist.DecorationVisibility="Hidden"
                                  BorderThickness="0"

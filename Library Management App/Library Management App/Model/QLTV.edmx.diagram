@@ -4,7 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< Updated upstream
       <Diagram DiagramId="c1da93ba2921410bb965fef79dea9983" Name="Diagram1">
+=======
+      <Diagram DiagramId="bfd8f11bf99442cabfdcf4a537ddda44" Name="Diagram1">
+>>>>>>> Stashed changes
         <EntityTypeShape EntityType="QLTVModel.CTPM" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTVModel.CTPN" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="QLTVModel.DOCGIA" Width="1.5" PointX="0.75" PointY="16.5" IsExpanded="true" />

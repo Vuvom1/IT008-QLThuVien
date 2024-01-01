@@ -3,19 +3,18 @@
     
     <!--#region Gradient Color-->
     <LinearGradientBrush x:Key="cs_Background" StartPoint="0,0" EndPoint="0,5">
-        <GradientStop Color="#f0932b" Offset="0.0"/>
-        <GradientStop Color="#ffbe76" Offset="0.5"/>
+        <GradientStop Color="#EBEEF4" Offset="0.5"/>
     </LinearGradientBrush>
     <!--#endregion-->
 
     <!--#region Solid Color-->
-    <SolidColorBrush x:Key="cs_BorderBrush" Color="#cd6133"/>
+    <SolidColorBrush x:Key="cs_BorderBrush" Color="Gray"/>
 
-    <SolidColorBrush x:Key="cs_ImgAct" Color="#FFA4B883"/>
+    <SolidColorBrush x:Key="cs_ImgAct" Color="Black"/>
 
-    <SolidColorBrush x:Key="cs_ImgPas" Color="#FFE6F6CD"/>
+    <SolidColorBrush x:Key="cs_ImgPas" Color="Black"/>
 
-    <SolidColorBrush x:Key="cs_Txt" Color="#FFF5ECEB"/>
+    <SolidColorBrush x:Key="cs_Txt" Color="Black"/>
     <!--#endregion-->
 
 </ResourceDictionary>

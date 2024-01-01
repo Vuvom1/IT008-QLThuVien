@@ -216,7 +216,7 @@
                         <ListView.ItemTemplate>
                             <DataTemplate>
                                 <Border
-                            Margin="35,0,0,0"
+                            Margin="0,0,0,0"
                             Width="600"
                             Height="40"
                             CornerRadius="10"
