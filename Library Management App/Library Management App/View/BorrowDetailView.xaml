@@ -225,9 +225,9 @@
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="250"/>
                                 <ColumnDefinition Width="100"/>
-                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="120"/>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
@@ -271,12 +271,12 @@
                             <Grid Grid.Column="4">
                                 <TextBlock
                                 Text="Trị giá"
-                                HorizontalAlignment="Left"
+                                HorizontalAlignment="Center"
                                 VerticalAlignment="Center"
                                 MaxWidth="150"
                                 FontFamily="{StaticResource Custom}"
                                 FontSize="12"
-                                    Margin="90,0,0,0"
+                        
                                 />
                             </Grid>
                         </Grid>
@@ -297,9 +297,9 @@
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="100"/>
-                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="250"/>
                                             <ColumnDefinition Width="100"/>
-                                            <ColumnDefinition Width="100"/>
+                                            <ColumnDefinition Width="120"/>
                                             <ColumnDefinition/>
                                         </Grid.ColumnDefinitions>
                                         <Grid Grid.Column="0">
