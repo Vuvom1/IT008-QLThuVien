@@ -51,7 +51,7 @@ namespace Library_Management_App.ViewModel
                         a.SDT = p.SDTDG.Text;
                         a.DCHI = p.DCDG.Text;
                         a.EMAIL = p.eMAILDG.Text;
-                        a.NGSINH = DateTime.Parse(p.NgaySinhDG.Text);
+                        a.NGSINH = (DateTime)p.NgaySinhDG.SelectedDate;
                     }
                     DataProvider.Ins.DB.SaveChanges();
                     MessageBox.Show("Cập nhật thông tin thành công !", "THÔNG BÁO");

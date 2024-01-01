@@ -28,4 +28,5 @@
     <viewmodel:DetailReaderViewModel x:Key="DetailRdVM"></viewmodel:DetailReaderViewModel>
     <viewmodel:DetailBookViewModel x:Key="DetailBookVM"></viewmodel:DetailBookViewModel>
     <viewmodel:SettingViewModel x:Key="SettingVM"></viewmodel:SettingViewModel>
+    <viewmodel:DetailQLNVViewModel x:Key="DetailQLNVVM"></viewmodel:DetailQLNVViewModel>
 </ResourceDictionary>

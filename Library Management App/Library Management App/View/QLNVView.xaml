@@ -14,7 +14,7 @@
       x:Name="QLNVwd">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction  Command="{Binding LoadCsCommand}"
+            <i:InvokeCommandAction  Command="{Binding LoadQLNVCM}"
                                     CommandParameter="{Binding ElementName=QLNVwd}"></i:InvokeCommandAction>
         </i:EventTrigger>
     </i:Interaction.Triggers>
@@ -207,7 +207,7 @@
                         </ListView.ItemsPanel>
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="SelectionChanged">
-                                <i:InvokeCommandAction     Command="{Binding Detail}"
+                                <i:InvokeCommandAction     Command="{Binding DetailQLNVCM}"
                                                        CommandParameter="{Binding ElementName=QLNVwd}"></i:InvokeCommandAction>
                             </i:EventTrigger>
                         </i:Interaction.Triggers>

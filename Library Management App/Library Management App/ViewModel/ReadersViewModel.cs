@@ -37,6 +37,10 @@ namespace Library_Management_App.ViewModel
         void _AddReadersCommand(ReadersView readersView)
         {
             AddReadersView addReadersView = new AddReadersView();
+            addReadersView.Madg.Text = rdma().ToString();
+            ListDG = new ObservableCollection<DOCGIA>(DataProvider.Ins.DB.DOCGIAs);
+            readersView.ListViewDG.ItemsSource = ListDG;
+            readersView.ListViewDG.Items.Refresh();
             MainViewModel.MainFrame.Content = addReadersView;
         }
 
@@ -101,6 +105,26 @@ namespace Library_Management_App.ViewModel
             }
             else
                 readersView.ListViewDG.ItemsSource = ListDG;
+        }
+
+        bool check(string m)
+        {
+            foreach (DOCGIA temp in DataProvider.Ins.DB.DOCGIAs)
+            {
+                if (temp.MADG == m)
+                    return true;
+            }
+            return false;
+        }
+        string rdma()
+        {
+            string ma;
+            do
+            {
+                Random rand = new Random();
+                ma = "DG" + rand.Next(0, 10000).ToString();
+            } while (check(ma));
+            return ma;
         }
 
         void _DetailReadersCommand(ReadersView readersView)

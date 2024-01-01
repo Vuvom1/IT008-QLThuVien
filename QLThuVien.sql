@@ -67,6 +67,7 @@ CREATE TABLE NGUOIDUNG (
 -- --------------------------------------------------------
 
 
+
 --
 -- Cấu trúc bảng cho bảng `NHAXUATBAN`
 --
