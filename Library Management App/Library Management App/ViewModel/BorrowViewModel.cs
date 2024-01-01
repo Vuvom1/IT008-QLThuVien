@@ -104,7 +104,7 @@ namespace Library_Management_App.ViewModel
         void _SearchCommand(BorrowView paramater)
         {
             ObservableCollection<PHIEUMUON> temp = new ObservableCollection<PHIEUMUON>();
-            if (paramater.txbSearch.Text != "")
+            if (paramater.txbSearch.Text != "" && paramater.cbxChon.SelectedItem != null)
             {
                 switch (paramater.cbxChon.SelectedItem.ToString())
                 {
