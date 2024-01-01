@@ -271,7 +271,7 @@
                             <Grid Grid.Column="4">
                                 <TextBlock
                                 Text="Trị giá"
-                                HorizontalAlignment="Center"
+                                HorizontalAlignment="Left"
                                 VerticalAlignment="Center"
                                 MaxWidth="150"
                                 FontFamily="{StaticResource Custom}"

@@ -441,6 +441,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Resource\Avatar\" />
     <Folder Include="Resource\Ava\" />
   </ItemGroup>
   <ItemGroup>
@@ -473,6 +474,10 @@
     <Resource Include="Resource\Image\PrevPas.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resource\Image\login-background.png" />
+    <Resource Include="Resource\Image\Password_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\QLTV.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTV.edmx</DependentUpon>
@@ -483,8 +488,6 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resource\Image\login-background.png" />
-    <Resource Include="Resource\Image\Password_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

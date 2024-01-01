@@ -177,7 +177,7 @@
                         </Grid>
                     </Border>
                     <ListView x:Name="ListViewPM" ItemsSource="{Binding listPM}"
-                          Height="410"
+                          Height="402"
                           Width="675"
                           SelectionMode="Single"
                           ScrollViewer.VerticalScrollBarVisibility="Hidden"

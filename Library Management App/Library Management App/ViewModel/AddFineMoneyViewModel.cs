@@ -76,7 +76,7 @@ namespace Library_Management_App.ViewModel
                         temp.MAPT = paramater.MAPT.Text.ToString();
                         temp.MAPM = 2487;
                         temp.MAND = "NV01";
-                        temp.TENND = paramater.TENDG.Text.ToString();
+                        //temp.TENND = paramater.TENDG.Text.ToString();
                       
                         if (int.TryParse(paramater.SOTIENTHU.Text, out int tienThu))
                         {

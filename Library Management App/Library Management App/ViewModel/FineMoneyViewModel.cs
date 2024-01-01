@@ -128,7 +128,7 @@ namespace Library_Management_App.ViewModel
             DetailFineMoneyView detailFineMoneyView = new DetailFineMoneyView();
             PHIEUTHU temp = (PHIEUTHU)paramater.ListViewPT.SelectedItem;
             detailFineMoneyView.MaPT.Text = temp.MAPT;
-            detailFineMoneyView.TenDG.Text = temp.TENND;
+            //detailFineMoneyView.TenDG.Text = temp.TENND;
             detailFineMoneyView.TONGNO.Text = temp.TONGNO.ToString();
             detailFineMoneyView.STT.Text = temp.TIENTHU.ToString();
             detailFineMoneyView.CL.Text = temp.TIENCONLAI.ToString();

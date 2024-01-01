@@ -83,7 +83,7 @@ namespace Library_Management_App.ViewModel
                     SetQuanLy = Visibility.Collapsed;
                 }
                 //Const.Admin = User.MAROLE;
-                Ava = User.AVA;
+                Ava = Const._localLink + @"Resource\Ava\" + User.MAND + ((User.AVA.Contains(".jpg")) ? ".jpg" : ".png").ToString();
                 LoadTenND(p);
             }
         }

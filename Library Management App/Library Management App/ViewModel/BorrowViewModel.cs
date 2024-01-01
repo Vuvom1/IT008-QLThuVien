@@ -43,16 +43,21 @@ namespace Library_Management_App.ViewModel
 
         private void updateStatus()
         {
+
             foreach (PHIEUMUON temp in listPM)
             {
-                TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
-
-                if (differenceDate.TotalDays > 30)
+                if (temp.TRANGTHAI == "Chưa trả")
                 {
-                    temp.TIENPHAT = temp.TRIGIA * 5;
-                }
+                    TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
 
-                temp.TRANGTHAI = "Hết hạn";
+                    if (differenceDate.TotalDays > 30)
+                    {
+                        temp.TIENPHAT = temp.TRIGIA * 5;
+                    }
+
+                    temp.TRANGTHAI = "Hết hạn";
+                }
+                
             }
 
             DataProvider.Ins.DB.SaveChanges();
@@ -187,21 +192,18 @@ namespace Library_Management_App.ViewModel
             {
                 p.completeBtn.Visibility = Visibility.Visible;
             } 
-            else
+            else if (temp.TRANGTHAI == "Hết hạn")
             {
-                p.completeBtn.Visibility = Visibility.Hidden;
+                p.completeBtn.Visibility = Visibility.Visible;
+                p.sendMail.Visibility = Visibility.Visible;
+                
             }
-
-            if (temp.TRANGTHAI == "Hết hạn")
+            else
             {
                 p.sendMail.Visibility = Visibility.Hidden;
+                p.completeBtn.Visibility = Visibility.Hidden;
             }
-            else
-            {
-                p.sendMail.Visibility = Visibility.Visible;
-            }
-
-
+            
             //TimeSpan differenceDate = DateTime.Now - temp.TGMUON.Value;
 
             //if (differenceDate.TotalDays > 30)

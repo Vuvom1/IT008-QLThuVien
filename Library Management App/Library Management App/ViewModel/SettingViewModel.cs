@@ -69,7 +69,7 @@ namespace Library_Management_App.ViewModel
             {
                 string a = Const.UserName;
                 User = DataProvider.Ins.DB.NGUOIDUNGs.Where(x => x.USERNAME == a).FirstOrDefault();
-                Ava = User.AVA;
+                Ava = Const._localLink + @"Resource\Ava\" + User.MAND + ((User.AVA.Contains(".jpg")) ? ".jpg" : ".png").ToString();
                 Name = User.TENND;
                 DoB = User.NGSINH.ToString();
                 DiaChi = User.DIACHI;

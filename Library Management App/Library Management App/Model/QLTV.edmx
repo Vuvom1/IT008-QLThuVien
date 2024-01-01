@@ -86,7 +86,6 @@
           <Property Name="MAPT" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MAPM" Type="int" Nullable="false" />
           <Property Name="MAND" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="TENND" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TIENTHU" Type="int" />
           <Property Name="TONGNO" Type="int" />
           <Property Name="TIENCONLAI" Type="int" />
@@ -428,7 +427,6 @@
           <Property Name="MAPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MAPM" Type="Int32" Nullable="false" />
           <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="TENND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TIENTHU" Type="Int32" />
           <Property Name="TONGNO" Type="Int32" />
           <Property Name="TIENCONLAI" Type="Int32" />
@@ -615,7 +613,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLTVEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLTVEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTPMs" EntityType="Self.CTPM" />
           <EntitySet Name="CTPNs" EntityType="Self.CTPN" />
           <EntitySet Name="DOCGIAs" EntityType="Self.DOCGIA" />
@@ -681,7 +679,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLTVModelStoreContainer" CdmEntityContainer="QLTVEntities2">
+        <EntityContainerMapping StorageEntityContainer="QLTVModelStoreContainer" CdmEntityContainer="QLTVEntities">
           <EntitySetMapping Name="CTPMs">
             <EntityTypeMapping TypeName="QLTVModel.CTPM">
               <MappingFragment StoreEntitySet="CTPM">
@@ -768,7 +766,6 @@
                 <ScalarProperty Name="MAPT" ColumnName="MAPT" />
                 <ScalarProperty Name="MAPM" ColumnName="MAPM" />
                 <ScalarProperty Name="MAND" ColumnName="MAND" />
-                <ScalarProperty Name="TENND" ColumnName="TENND" />
                 <ScalarProperty Name="TIENTHU" ColumnName="TIENTHU" />
                 <ScalarProperty Name="TONGNO" ColumnName="TONGNO" />
                 <ScalarProperty Name="TIENCONLAI" ColumnName="TIENCONLAI" />
