@@ -231,8 +231,8 @@
     <Compile Include="View\FineMoneyView.xaml.cs">
       <DependentUpon>FineMoneyView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ForgotPasswordPageView.xaml.cs">
-      <DependentUpon>ForgotPasswordPageView.xaml</DependentUpon>
+    <Compile Include="View\ForgetPasswordView.xaml.cs">
+      <DependentUpon>ForgetPasswordView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\HomeView.xaml.cs">
       <DependentUpon>HomeView.xaml</DependentUpon>
@@ -361,9 +361,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\ForgotPasswordPageView.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="View\ForgetPasswordView.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\HomeView.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -441,6 +441,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Model\QLTV.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTV.edmx</DependentUpon>
@@ -451,6 +452,9 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
+=======
+    <Folder Include="Resource\Ava\" />
+>>>>>>> 8a4089465e08ac55f53e5167ac495c9531bddb99
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Image\addava.png" />
@@ -482,7 +486,21 @@
     <Resource Include="Resource\Image\PrevPas.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Resource Include="Resource\Ava\NV1523.png" />
+=======
+    <Content Include="Model\QLTV.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLTV.edmx</DependentUpon>
+      <LastGenOutput>QLTV.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\QLTV.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLTV.edmx</DependentUpon>
+      <LastGenOutput>QLTV.cs</LastGenOutput>
+    </Content>
+    <Resource Include="Resource\Image\login-background.png" />
+>>>>>>> 8a4089465e08ac55f53e5167ac495c9531bddb99
     <Resource Include="Resource\Image\Password_16x16.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

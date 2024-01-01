@@ -25,26 +25,29 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+
         <materialDesign:Card 
         UniformCornerRadius="40" 
         
-            
+        
         Background="#FFF9F5" 
         Margin="25,25,25,25" 
         Grid.RowSpan="4" 
         Grid.ColumnSpan="2">
         </materialDesign:Card>
 
+        <Image Source="/Resource/Image/login-background.png" Width="630" Margin="10,0,10,0"/>
+
         <Frame x:Name="frame"
                            Background="#FFF9F5"
                            NavigationUIVisibility="Hidden" Grid.Column="1" Margin="45,95,70,90">
-            
+
             <i:Interaction.Triggers>
-    <i:EventTrigger EventName="Loaded">
-        <i:InvokeCommandAction Command="{Binding LoadLoginPageCM}"
+                <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding LoadLoginPageCM}"
                                            CommandParameter="{Binding ElementName=frame}" />
-    </i:EventTrigger>
-</i:Interaction.Triggers>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
         </Frame>
         <StackPanel 
                                 Orientation="Horizontal" 
@@ -60,13 +63,13 @@
                     <TranslateTransform/>
                 </TransformGroup>
             </StackPanel.RenderTransform>
-            <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#1784C2" Height="24" Width="24" Margin="0,0,8,0" MouseDown="MinimizeButton">
-               
-                
+            <materialDesign:PackIcon Kind="WindowMinimize" Foreground="#353A55" Height="24" Width="24" Margin="0,0,8,0" MouseDown="MinimizeButton">
+
+
             </materialDesign:PackIcon>
-            <materialDesign:PackIcon Kind="CloseThick" Foreground="#1784C2" Height="24" Width="24" MouseDown="CloseButton">
-                
-                
+            <materialDesign:PackIcon Kind="CloseThick" Foreground="#353A55" Height="24" Width="24" MouseDown="CloseButton">
+
+
             </materialDesign:PackIcon>
         </StackPanel>
 

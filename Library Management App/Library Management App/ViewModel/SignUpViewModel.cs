@@ -21,6 +21,7 @@ namespace Library_Management_App.ViewModel
 {
     public class SignUpViewModel : BaseViewModel
     {
+        private string _localLink = System.Reflection.Assembly.GetExecutingAssembly().Location.Remove(System.Reflection.Assembly.GetExecutingAssembly().Location.IndexOf(@"bin\Debug"));
 
         public ICommand Closewd { get; set; }
         public ICommand Minimizewd { get; set; }
@@ -138,7 +139,10 @@ namespace Library_Management_App.ViewModel
                 {
                     File.Copy(linkaddimage, Const._localLink + @"Resource\Ava\" + temp.MAND + ((linkaddimage.Contains(".jpg")) ? ".jpg" : ".png").ToString(), true);
                 }
-                catch { }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.Message);
+                }
                 MessageBox.Show("Chúc mừng bạn đã đăng ký thành công !", "THÔNG BÁO", MessageBoxButton.OK);
                 parameter.User.Clear();
                 parameter.password.Clear();

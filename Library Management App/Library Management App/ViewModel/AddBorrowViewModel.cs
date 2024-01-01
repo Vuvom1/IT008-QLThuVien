@@ -14,10 +14,6 @@ namespace Library_Management_App.ViewModel
 
     public class Display
     {
-        private string tENTL;
-        private string tENNXB;
-        private int? tRIGIA;
-
         public string MaSach { get; set; }
         public string TenSach { get; set; }
         public string TheLoai { get; set; }

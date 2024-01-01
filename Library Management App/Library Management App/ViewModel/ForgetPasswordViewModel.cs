@@ -25,11 +25,11 @@ namespace Library_Management_App.ViewModel
                 LoginViewModel.MainFrame.Content = new LoginPageView();
             });
 
-            SendPassCM = new RelayCommand<ForgotPasswordPageView>((p) => true, (p) => _SendPass(p));
+            SendPassCM = new RelayCommand<ForgetPasswordView>((p) => true, (p) => _SendPass(p));
 
         }
 
-        void _SendPass(ForgotPasswordPageView parameter)
+        void _SendPass(ForgetPasswordView parameter)
         {
             int dem = DataProvider.Ins.DB.NGUOIDUNGs.Where(p => p.MAIL == parameter.MailAddress.Text).Count();
             if (dem == 0)
@@ -49,10 +49,11 @@ namespace Library_Management_App.ViewModel
             }
             DataProvider.Ins.DB.SaveChanges();
             string nd = "Vui lòng nhập mật khẩu " + newpass + " để đăng nhập. Trân trọng !";
-            MailMessage message = new MailMessage("vhnm3004@gmail.com", parameter.MailAddress.Text, "Lấy lại mật khẩu", nd);
+            MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", parameter.MailAddress.Text, "Lấy lại mật khẩu", nd);
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
-            smtpClient.Credentials = new NetworkCredential("vhnm3004@gmail.com", "snnaarxvfndqhptl");
+            smtpClient.UseDefaultCredentials = false;
+            smtpClient.Credentials = new NetworkCredential("21522808@gm.uit.edu.vn", "vuvo@1143");
             smtpClient.Send(message);
             MessageBox.Show("Đã gửi mật khẩu vào Email đăng ký !", "Thông báo");
         }
