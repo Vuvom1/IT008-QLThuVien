@@ -35,22 +35,35 @@ namespace Library_Management_App.ViewModel
 
         void _SendMail(BorrowDetailView parameter)
         {
-            string receiveEmail = "";
-            foreach (DOCGIA temp in DataProvider.Ins.DB.DOCGIAs)
+            string receiveEmail = "vuvo1142003@gmail.com";
+            string borrowDate = "";
+            foreach (PHIEUMUON temp in DataProvider.Ins.DB.PHIEUMUONs)
             {
                 if (temp.MADG == parameter.MaDG.Text)
                 {
-                    receiveEmail = temp.EMAIL;
+                    receiveEmail = temp.DOCGIA.EMAIL;
+                    borrowDate = temp.TGMUON.ToString();
+
                 }
             }
-            string nd = "Hệ thống thư viện thông báo: bạn đang có phiếu trả sách hết hạn, vui lòng trả sách. Trân trọng !";
+            try
+            {
+            string nd = "Hệ thống thư viện thông báo: bạn đang có phiếu trả sách vào ngày " + borrowDate + " đã hết hạn, vui lòng trả sách. Trân trọng !";
             MailMessage message = new MailMessage("21522808@gm.uit.edu.vn", receiveEmail, "Nhắc nhở trả sách", nd);
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
             smtpClient.UseDefaultCredentials = false;
             smtpClient.Credentials = new NetworkCredential("21522808@gm.uit.edu.vn", "vuvo@1143");
-            smtpClient.Send(message);
-            MessageBox.Show("Đã gửi mật khẩu vào Email đăng ký !", "Thông báo");
+            
+                smtpClient.Send(message);
+                MessageBox.Show("Đã gửi mật khẩu vào Email đăng ký !", "Thông báo");
+            } 
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+            }
+            
+         
         } 
         void _CompleteBorrow(BorrowDetailView parameter)
         {
