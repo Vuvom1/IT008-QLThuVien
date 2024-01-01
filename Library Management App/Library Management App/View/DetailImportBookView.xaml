@@ -34,7 +34,7 @@
             <Grid Grid.Row="0">
                 <TextBlock
                 Text="PHIẾU NHẬP SÁCH"
-                Foreground="#6C63FF"
+                Foreground="#353A55"
                 FontFamily="{StaticResource Custom}"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -58,7 +58,7 @@
                             FontFamily="{StaticResource Custom}"
                             HorizontalAlignment="Center"
                         FontSize="18"
-                        Foreground="#6C63FF"
+                        Foreground="#353A55"
                             />
                         <StackPanel Orientation="Vertical">
                             <StackPanel Orientation="Horizontal">
@@ -212,6 +212,7 @@
                       SelectionMode="Single"
                       ScrollViewer.VerticalScrollBarVisibility="Hidden"
                       Height="207" RenderTransformOrigin="0.501,0.424" Width="701"
+                              Foreground="White"
                     >
                         <ListView.ItemTemplate>
                             <DataTemplate>
@@ -219,13 +220,14 @@
                             Margin="0,0,0,0"
                             Width="600"
                             Height="40"
-                            CornerRadius="10"
-                            Background="#6C63FF"
+                            CornerRadius="10"                                   
+                            Background="#353A55"
+                            
                     >
                                     <Grid>
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="100"/>
-                                            <ColumnDefinition Width="150"/>
+                                            <ColumnDefinition Width="200"/>
                                             <ColumnDefinition Width="100"/>
                                             <ColumnDefinition Width="200"/>
                                             <ColumnDefinition/>
@@ -295,7 +297,7 @@
                                 FontSize="12"
                                 x:Name="deleteimportbtn"
                                 FontFamily="{StaticResource Custom}"
-                                Background="#6C63FF"
+                                Background="#353A55"
                                 Width="150"
                                 Foreground="White"
                                 materialDesign:ButtonAssist.CornerRadius="10"
@@ -315,7 +317,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                         <TextBlock Text="TỔNG TIỀN NHẬP: " 
                                FontFamily="{StaticResource Custom}" 
-                               FontSize="16" Foreground="#6C63FF"
+                               FontSize="16" Foreground="#353A55"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"/>
                         <TextBlock x:Name="ttn" 
@@ -323,7 +325,7 @@
                                FontSize="16"
                                VerticalAlignment="Center"
                                HorizontalAlignment="Center"
-                               Foreground="#6C63FF" Width="305"/>
+                               Foreground="#353A55" Width="305"/>
                     </StackPanel>
                 </Grid>
             </Grid>
@@ -339,7 +341,7 @@
                 VerticalAlignment="Center"
                 Margin="300,10,0,0"
                 Foreground="White"
-                Background="#6C63FF"
+                Background="#353A55"
                 HorizontalAlignment="Left" Grid.Column="1">
 
                     <i:Interaction.Triggers>

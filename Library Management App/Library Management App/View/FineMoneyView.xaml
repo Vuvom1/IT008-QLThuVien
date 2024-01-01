@@ -34,7 +34,7 @@
                 <TextBlock VerticalAlignment="Top" 
                         HorizontalAlignment="Left"
                         FontSize="30" Margin="10,14,0,0" 
-                        FontFamily="{StaticResource Custom}" Foreground="#1784C2" 
+                        FontFamily="{StaticResource Custom}" Foreground="#353A55" 
                         ><Run Text="Danh sách phiếu thu tiền phạt "/></TextBlock>
             </Grid>
             <Grid Grid.Row="1">
@@ -44,7 +44,7 @@
                      Height="40"
                      Width="115"
                      CornerRadius="17"
-                     Background="#1784C2"
+                     Background="#353A55"
                      >
                         <ComboBox
                      x:Name="cbxChon"
@@ -79,7 +79,7 @@
                              Width="430"
                              Height="40"
                              Margin="15,0,0,0"
-                             BorderBrush="#1784C2"
+                             BorderBrush="#353A55"
                              Foreground="Black"
                              FontSize="14"
                              FontWeight="SemiBold"
@@ -107,7 +107,7 @@
                      BorderBrush="Transparent"
                      Foreground="White"
                      materialDesign:ButtonAssist.CornerRadius="15"
-                     Background="#1784C2">
+                     Background="#353A55">
 
 
                         <i:Interaction.Triggers>
@@ -192,7 +192,7 @@
                                 <Border
                      Width="600"
                      Height="40"
-                     CornerRadius="10" Background="#6C63FF">
+                     CornerRadius="10" Background="#353A55">
 
 
                                     <Grid>

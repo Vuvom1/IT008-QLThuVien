@@ -29,7 +29,7 @@ namespace Library_Management_App.ViewModel
 
         public FineMoneyViewModel()
         {
-            listTK = new ObservableCollection<string>() { "Mã PT", "Họ tên" };
+            listTK = new ObservableCollection<string>() { "Mã PT", "Họ tên", "Mã PM" };
             listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
             SearchCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _SearchCommand(p));
             AddCsCommand = new RelayCommand<FineMoneyView>((p) => true, (p) => _AddCs(p));
@@ -68,7 +68,7 @@ namespace Library_Management_App.ViewModel
             AddFineMoneyView addFineMoneyView = new AddFineMoneyView();
             addFineMoneyView.MAPT.Text = rdma().ToString();
             listPT = new ObservableCollection<PHIEUTHU>(DataProvider.Ins.DB.PHIEUTHUs);
-            listTK = new ObservableCollection<string>() { "Họ tên", "Mã PT" };
+            listTK = new ObservableCollection<string>() { "Họ tên", "Mã PT", "Mã PM" };
             paramater.ListViewPT.ItemsSource = listPT;
             paramater.ListViewPT.Items.Refresh();
             MainViewModel.MainFrame.Content = addFineMoneyView;
@@ -93,6 +93,7 @@ namespace Library_Management_App.ViewModel
                             }
                             break;
                         }
+
                     case "Họ tên":
                         {
                             foreach (PHIEUTHU s in listPT)
@@ -104,7 +105,19 @@ namespace Library_Management_App.ViewModel
                             }
                             break;
                         }
-                    
+
+                    case "Mã PM":
+                        {
+                            foreach (PHIEUTHU s in listPT)
+                            {
+                                if (s.PHIEUMUON.MAPM.ToString().ToLower().Contains(paramater.txbSearch.Text.ToLower()))
+                                {
+                                    temp.Add(s);
+                                }
+                            }
+                            break;
+                        }
+
                     default:
                         {
                             foreach (PHIEUTHU s in listPT)
@@ -128,7 +141,6 @@ namespace Library_Management_App.ViewModel
             DetailFineMoneyView detailFineMoneyView = new DetailFineMoneyView();
             PHIEUTHU temp = (PHIEUTHU)paramater.ListViewPT.SelectedItem;
             detailFineMoneyView.MaPT.Text = temp.MAPT;
-            //detailFineMoneyView.TenDG.Text = temp.TENND;
             detailFineMoneyView.TONGNO.Text = temp.TONGNO.ToString();
             detailFineMoneyView.STT.Text = temp.TIENTHU.ToString();
             detailFineMoneyView.CL.Text = temp.TIENCONLAI.ToString();

@@ -80,7 +80,7 @@
             <Grid Grid.Row="1">
                 <TextBlock
                 Text="PHIẾU NHẬP SÁCH"
-                Foreground="#1784C2"
+                Foreground="#353A55"
                 FontFamily="{StaticResource Custom}"
                 FontSize="30"
                 HorizontalAlignment="Center"
@@ -304,7 +304,7 @@
                                     x:Name="addbtn"
                                     FontFamily="{StaticResource Custom}"
                                     materialDesign:ButtonAssist.CornerRadius="10"
-                                    Background="#1784C2"
+                                    Background="#353A55"
                             >
                                     <i:Interaction.Triggers>
                                         <i:EventTrigger EventName="Click">
@@ -322,7 +322,7 @@
                                 x:Name="deletebtn"
                                 FontFamily="{StaticResource Custom}"
                                 materialDesign:ButtonAssist.CornerRadius="10"
-                                Background="#1784C2"
+                                Background="#353A55"
                             >
 
                                     <i:Interaction.Triggers>
@@ -341,7 +341,7 @@
                                 FontFamily="{StaticResource Custom}"
                                 materialDesign:ButtonAssist.CornerRadius="10"
                                 x:Name="ttbtn"
-                                Background="#1784C2"
+                                Background="#353A55"
                             >
 
                                     <i:Interaction.Triggers>
@@ -505,7 +505,7 @@
                   HorizontalAlignment="Right"
                   >
                     <TextBlock
-                    Foreground="#1784C2"
+                    Foreground="#353A55"
                     Text="TỔNG TIỀN: "
                     FontFamily="{StaticResource Custom}"
                     FontSize="16"

@@ -60,7 +60,7 @@
                         Text="PHIẾU THU TIỀN PHẠT MỚI"
                         FontSize="24"
                         FontFamily="{StaticResource Custom}"
-                        Foreground="#1784C2"
+                        Foreground="#353A55"
                         />
                     <StackPanel Orientation="Horizontal" Height="63" Width="179">
                         <StackPanel Orientation="Vertical">
@@ -68,7 +68,7 @@
                                 Margin="10,0,0,0"
                                 Text="MÃ PHIẾU THU"
                                 FontFamily="{StaticResource Custom}"
-                                Foreground="#1784C2"
+                                Foreground="#353A55"
                             />
                             <Border
                                 CornerRadius="10"
@@ -102,7 +102,7 @@
                                 Margin="10,0,0,0"
                                 Text="MÃ PHIẾU MƯỢN"
                                 FontFamily="{StaticResource Custom}"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             />
                             <Border
                             CornerRadius="10"
@@ -141,7 +141,7 @@
                             <TextBlock
                                 Text="MÃ | TÊN ĐỘC GIẢ"
                                 FontFamily="{StaticResource Custom}"
-                                Foreground="#1784C2"
+                                Foreground="#353A55"
                             />
                             <Border
                             CornerRadius="10"
@@ -188,7 +188,7 @@
                                 Margin="10,0,0,0"
                                 Text="TỔNG NỢ"
                                 FontFamily="{StaticResource Custom}"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             />
                             <TextBox
                                 Height="30"
@@ -212,7 +212,7 @@
                                 Margin="10,0,0,0"
                                 Text="SỐ TIỀN THU"
                                 FontFamily="{StaticResource Custom}"
-                            Foreground="#1784C2"
+                            Foreground="#353A55"
                             />
                             <TextBox
                             Height="30"
@@ -238,7 +238,7 @@
                                 Margin="10,0,0,0"
                                 Text="CÒN LẠI"
                                 FontFamily="{StaticResource Custom}"
-                                Foreground="#1784C2"
+                                Foreground="#353A55"
                             />
                             <Border
                             CornerRadius="10"
@@ -270,7 +270,7 @@
                                 Margin="10,0,0,0"
                                 Text="THỜI GIAN"
                                 FontFamily="{StaticResource Custom}"
-                                Foreground="#1784C2"
+                                Foreground="#353A55"
                             />
                             <TextBox
                                 Height="30"
@@ -290,7 +290,7 @@
                     </StackPanel>
                     <Button Content="THÊM PHIẾU THU"
                             Width="230"
-                            Background="#1784C2"
+                            Background="#353A55"
                             BorderThickness="0"
                             x:Name="btnadd"
                         materialDesign:ButtonAssist.CornerRadius="10" Height="44"
