@@ -86,6 +86,7 @@
           <Property Name="MAPT" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="MAPM" Type="int" Nullable="false" />
           <Property Name="MAND" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MADG" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TENND" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="TIENTHU" Type="int" />
           <Property Name="TONGNO" Type="int" />
@@ -217,6 +218,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PT_DG">
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
+          <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCGIA">
+              <PropertyRef Name="MADG" />
+            </Principal>
+            <Dependent Role="PHIEUTHU">
+              <PropertyRef Name="MADG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_PT_ND">
           <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="1" />
           <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
@@ -309,6 +322,10 @@
             <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
             <End Role="PHIEUNHAP" EntitySet="PHIEUNHAP" />
           </AssociationSet>
+          <AssociationSet Name="FK_PT_DG" Association="Self.FK_PT_DG">
+            <End Role="DOCGIA" EntitySet="DOCGIA" />
+            <End Role="PHIEUTHU" EntitySet="PHIEUTHU" />
+          </AssociationSet>
           <AssociationSet Name="FK_PT_ND" Association="Self.FK_PT_ND">
             <End Role="NGUOIDUNG" EntitySet="NGUOIDUNG" />
             <End Role="PHIEUTHU" EntitySet="PHIEUTHU" />
@@ -363,6 +380,7 @@
           <Property Name="EMAIL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="SDT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="PHIEUMUONs" Relationship="Self.FK_PM_DG" FromRole="DOCGIA" ToRole="PHIEUMUON" />
+          <NavigationProperty Name="PHIEUTHUs" Relationship="Self.FK_PT_DG" FromRole="DOCGIA" ToRole="PHIEUTHU" />
         </EntityType>
         <EntityType Name="NGUOIDUNG">
           <Key>
@@ -428,11 +446,13 @@
           <Property Name="MAPT" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="MAPM" Type="Int32" Nullable="false" />
           <Property Name="MAND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MADG" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TENND" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="TIENTHU" Type="Int32" />
           <Property Name="TONGNO" Type="Int32" />
           <Property Name="TIENCONLAI" Type="Int32" />
           <Property Name="TGPT" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="DOCGIA" Relationship="Self.FK_PT_DG" FromRole="PHIEUTHU" ToRole="DOCGIA" />
           <NavigationProperty Name="NGUOIDUNG" Relationship="Self.FK_PT_ND" FromRole="PHIEUTHU" ToRole="NGUOIDUNG" />
           <NavigationProperty Name="PHIEUMUON" Relationship="Self.FK_PT_PM" FromRole="PHIEUTHU" ToRole="PHIEUMUON" />
         </EntityType>
@@ -531,6 +551,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_PT_DG">
+          <End Role="DOCGIA" Type="Self.DOCGIA" Multiplicity="1" />
+          <End Role="PHIEUTHU" Type="Self.PHIEUTHU" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DOCGIA">
+              <PropertyRef Name="MADG" />
+            </Principal>
+            <Dependent Role="PHIEUTHU">
+              <PropertyRef Name="MADG" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_MUON_ND">
           <End Role="NGUOIDUNG" Type="Self.NGUOIDUNG" Multiplicity="0..1" />
           <End Role="PHIEUMUON" Type="Self.PHIEUMUON" Multiplicity="*" />
@@ -615,7 +647,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="QLTVEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QLTVEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="CTPMs" EntityType="Self.CTPM" />
           <EntitySet Name="CTPNs" EntityType="Self.CTPN" />
           <EntitySet Name="DOCGIAs" EntityType="Self.DOCGIA" />
@@ -646,6 +678,10 @@
           <AssociationSet Name="FK_PM_DG" Association="Self.FK_PM_DG">
             <End Role="DOCGIA" EntitySet="DOCGIAs" />
             <End Role="PHIEUMUON" EntitySet="PHIEUMUONs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PT_DG" Association="Self.FK_PT_DG">
+            <End Role="DOCGIA" EntitySet="DOCGIAs" />
+            <End Role="PHIEUTHU" EntitySet="PHIEUTHUs" />
           </AssociationSet>
           <AssociationSet Name="FK_MUON_ND" Association="Self.FK_MUON_ND">
             <End Role="NGUOIDUNG" EntitySet="NGUOIDUNGs" />
@@ -681,7 +717,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QLTVModelStoreContainer" CdmEntityContainer="QLTVEntities2">
+        <EntityContainerMapping StorageEntityContainer="QLTVModelStoreContainer" CdmEntityContainer="QLTVEntities">
           <EntitySetMapping Name="CTPMs">
             <EntityTypeMapping TypeName="QLTVModel.CTPM">
               <MappingFragment StoreEntitySet="CTPM">
@@ -768,6 +804,7 @@
                 <ScalarProperty Name="MAPT" ColumnName="MAPT" />
                 <ScalarProperty Name="MAPM" ColumnName="MAPM" />
                 <ScalarProperty Name="MAND" ColumnName="MAND" />
+                <ScalarProperty Name="MADG" ColumnName="MADG" />
                 <ScalarProperty Name="TENND" ColumnName="TENND" />
                 <ScalarProperty Name="TIENTHU" ColumnName="TIENTHU" />
                 <ScalarProperty Name="TONGNO" ColumnName="TONGNO" />

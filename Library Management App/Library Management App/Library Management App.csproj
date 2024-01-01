@@ -440,7 +440,18 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Model\QLTV.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLTV.edmx</DependentUpon>
+      <LastGenOutput>QLTV.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model\QLTV.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>QLTV.edmx</DependentUpon>
+      <LastGenOutput>QLTV.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Image\addava.png" />
   </ItemGroup>
@@ -471,16 +482,6 @@
     <Resource Include="Resource\Image\PrevPas.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model\QLTV.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTV.edmx</DependentUpon>
-      <LastGenOutput>QLTV.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Model\QLTV.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>QLTV.edmx</DependentUpon>
-      <LastGenOutput>QLTV.cs</LastGenOutput>
-    </Content>
     <Resource Include="Resource\Ava\NV1523.png" />
     <Resource Include="Resource\Image\Password_16x16.png" />
   </ItemGroup>

@@ -18,6 +18,7 @@ namespace Library_Management_App.Model
         public DOCGIA()
         {
             this.PHIEUMUONs = new HashSet<PHIEUMUON>();
+            this.PHIEUTHUs = new HashSet<PHIEUTHU>();
         }
     
         public string MADG { get; set; }
@@ -29,5 +30,7 @@ namespace Library_Management_App.Model
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUMUON> PHIEUMUONs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PHIEUTHU> PHIEUTHUs { get; set; }
     }
 }
