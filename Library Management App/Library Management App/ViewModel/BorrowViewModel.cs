@@ -53,9 +53,8 @@ namespace Library_Management_App.ViewModel
                     if (differenceDate.TotalDays > 30)
                     {
                         temp.TIENPHAT = temp.TRIGIA * 5;
+                        temp.TRANGTHAI = "Hết hạn";
                     }
-
-                    temp.TRANGTHAI = "Hết hạn";
                 }
                 
             }
