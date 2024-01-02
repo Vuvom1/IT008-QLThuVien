@@ -42,7 +42,7 @@ namespace Library_Management_App.ViewModel
         }
         void _DeleteBook(DetailBookView detailBookView)
         {
-            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn muốn xóa sản phẩm ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn muốn xóa sách ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (h == MessageBoxResult.Yes)
             {
                 foreach (SACH a in DataProvider.Ins.DB.SACHes)
@@ -54,7 +54,7 @@ namespace Library_Management_App.ViewModel
                     }
                 }
                 DataProvider.Ins.DB.SaveChanges();
-                MessageBox.Show("Xóa sản phẩm thành công !", "THÔNG BÁO");
+                MessageBox.Show("Xóa sách thành công !", "THÔNG BÁO");
                 BooksView booksView = new BooksView();
                 booksView.ListViewBooks.ItemsSource = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL > 0));
                 MainViewModel.MainFrame.Content = booksView;
@@ -62,7 +62,7 @@ namespace Library_Management_App.ViewModel
         }
         void _UpdateBook(DetailBookView p)
         {
-            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn muốn cập nhật sản phẩm ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn muốn cập nhật sách ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
             if (h == MessageBoxResult.Yes)
             {
                 if (string.IsNullOrEmpty(p.TenSach.Text) || string.IsNullOrEmpty(p.GiaSach.Text))
@@ -89,7 +89,7 @@ namespace Library_Management_App.ViewModel
                         }
                     }
                     DataProvider.Ins.DB.SaveChanges();
-                    MessageBox.Show("Cập nhật sản phẩm thành công !", "THÔNG BÁO");
+                    MessageBox.Show("Cập nhật sách thành công !", "THÔNG BÁO");
                     BooksView booksView = new BooksView();
                     booksView.ListViewBooks.ItemsSource = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
                     MainViewModel.MainFrame.Content = booksView;
