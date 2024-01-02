@@ -17,17 +17,40 @@ namespace Library_Management_App.ViewModel
         public ICommand GetNV { get; set; }
         public ICommand Back { get; set; }
         public ICommand Update { get; set; }
+        public ICommand Remove { get; set; }
         public DetailQLNVViewModel() 
         {
             Back = new RelayCommand<DetailQLNV>((p) => true, (p) => _Back(p));
-            Update = new RelayCommand<DetailQLNV>((p) => true,(p)=>_Update(p));
+            Update = new RelayCommand<DetailQLNV>((p) => true,(p)=> _Update(p));
             GetNV = new RelayCommand<DetailQLNV>((p) => true, (p) => _GetNV(p));
+            Remove = new RelayCommand<DetailQLNV>((p) => true, (p) => _Remove(p));
         }
 
         public void _Back(DetailQLNV detailQLNV)
         {
             QLNVView qLNVView = new QLNVView();
             MainViewModel.MainFrame.Content = qLNVView;
+        }
+
+        public void _Remove(DetailQLNV detailQLNV)
+        {
+            MessageBoxResult h = System.Windows.MessageBox.Show("Bạn muốn xóa nhân viên ?", "THÔNG BÁO", MessageBoxButton.YesNoCancel, MessageBoxImage.Question);
+            if (h == MessageBoxResult.Yes)
+            {
+                foreach (NGUOIDUNG a in DataProvider.Ins.DB.NGUOIDUNGs.Where(p => (p.MAROLE == 1 && p.TTND == true)))
+                {
+                    if (manv == a.MAND)
+                    {
+                        a.TTND = false;
+                        break;
+                    }
+                }
+                DataProvider.Ins.DB.SaveChanges();
+                MessageBox.Show("Xóa nhân viên thành công !", "THÔNG BÁO");
+                QLNVView qLNV = new QLNVView();
+                qLNV.ListViewQLNV.ItemsSource = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => (p.MAROLE == 1 && p.TTND == true)));
+                MainViewModel.MainFrame.Content = qLNV;
+            }
         }
 
         public void _GetNV(DetailQLNV paramater)
@@ -59,7 +82,7 @@ namespace Library_Management_App.ViewModel
                     DataProvider.Ins.DB.SaveChanges();
                     MessageBox.Show("Cập nhật thông tin thành công !", "THÔNG BÁO");
                     QLNVView qlnvview = new QLNVView();
-                    qlnvview.ListViewQLNV.ItemsSource = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => p.MAROLE == 1));
+                    qlnvview.ListViewQLNV.ItemsSource = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p =>( p.MAROLE == 1 &&  p.TTND == true)));
                     MainViewModel.MainFrame.Content = qlnvview;
                 }
             }

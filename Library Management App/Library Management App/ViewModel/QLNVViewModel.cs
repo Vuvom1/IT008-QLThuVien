@@ -29,9 +29,8 @@ namespace Library_Management_App.ViewModel
         public QLNVViewModel() 
         {
             listTKQLNV = new ObservableCollection<string>() {"Mã nhân viên","Tên nhân viên", "Số điện thoại" };
-            ListQLNV = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => p.MAROLE == 1));
+            ListQLNV = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => (p.MAROLE == 1 && p.TTND == true)));
             SearchQLNVCM = new RelayCommand<QLNVView>((p) => true, (p) => _SearchQLNVCM(p));
-            AddQLNVCM = new RelayCommand<QLNVView>((p) => true, (p) => _AddQLNVCM(p));
             LoadQLNVCM = new RelayCommand<QLNVView>((p) => true, (p) => _LoadQLNVCM(p));
             DetailQLNVCM = new RelayCommand<QLNVView>((p) => { return p.ListViewQLNV.SelectedItem == null ? false : true; }, (p) => _DetailQLNVCM(p));
         }
@@ -39,7 +38,7 @@ namespace Library_Management_App.ViewModel
         public void _LoadQLNVCM(QLNVView qlnvview)
         {
             qlnvview.cbxChon.SelectedIndex = 0;
-            ListQLNV = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => p.MAROLE == 1));
+            ListQLNV = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => (p.MAROLE == 1 && p.TTND == true)));
         }
 
        
@@ -102,10 +101,7 @@ namespace Library_Management_App.ViewModel
                 qlnvview.ListViewQLNV.ItemsSource = ListQLNV;
         }
 
-        public void _AddQLNVCM(QLNVView qllnnview)
-        {
 
-        }
 
         public void _DetailQLNVCM(QLNVView qlnvview)
         {
@@ -118,7 +114,7 @@ namespace Library_Management_App.ViewModel
             detailQLNV.NgaySinhNV.SelectedDate = (DateTime)temp.NGSINH;
             detailQLNV.eMAILNV.Text = temp.MAIL;
             detailQLNV.DCNV.Text = temp.DIACHI;
-            ListQLNV = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => p.MAROLE == 1));
+            ListQLNV = new ObservableCollection<NGUOIDUNG>(DataProvider.Ins.DB.NGUOIDUNGs.Where(p => (p.MAROLE == 1 && p.TTND == true)));
             qlnvview.ListViewQLNV.ItemsSource = ListQLNV;
             qlnvview.ListViewQLNV.SelectedItem = null;
             MainViewModel.MainFrame.Content = detailQLNV;

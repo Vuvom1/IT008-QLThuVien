@@ -33,7 +33,7 @@ namespace Library_Management_App.ViewModel
         public BooksViewModel() 
         {
             ListTK = new ObservableCollection<string>() {"Tên sách","Giá sách" };
-            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL > 0));
             ListBookFilter = new ObservableCollection<SACH>(ListBook.GroupBy(p => p.TENSACH).Select(grp => grp.FirstOrDefault()));
             AddBookCommand = new RelayCommand<BooksView>((p) => { return p == null ? false : true; }, (p) => _AddBookCommand(p));
             SearchBooksCommand = new RelayCommand<BooksView>((p) => { return p == null ? false : true; }, (p) => _SearchBooksCommand(p));
@@ -87,7 +87,7 @@ namespace Library_Management_App.ViewModel
             DetailBookView detailBookView = new DetailBookView();
             SACH temp = (SACH)booksView.ListViewBooks.SelectedItem;
             detailBookView.TenSach.Text = temp.TENSACH;
-            detailBookView.GiaSach.Text = string.Format("{0:0,0}", temp.TRIGIA) + " VNĐ";
+            detailBookView.GiaSach.Text = string.Format("{0:0,0}", temp.TRIGIA);
             int sotheloai = int.Parse(ListBook.Where(p => p.TENSACH == temp.TENSACH).Select(p => p.MATL).Sum().ToString());
             List<THELOAI> theloai = new List<THELOAI>(DataProvider.Ins.DB.THELOAIs);
             string tentheloai = theloai.Where(p => p.MATL == sotheloai).Select(p => p.TENTL).FirstOrDefault();
@@ -101,7 +101,7 @@ namespace Library_Management_App.ViewModel
             detailBookView.Mota.Text = temp.MOTA;
             Uri fileUri = new Uri(temp.IMAGESACH, UriKind.Relative);
             detailBookView.HinhAnhSach.Source = new BitmapImage(fileUri);
-            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
+            ListBook = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(p => p.TONGSL > 0));
             booksView.ListViewBooks.ItemsSource = ListBook;
             booksView.ListViewBooks.SelectedItem = null;
             _FilterBooksCommand(booksView);

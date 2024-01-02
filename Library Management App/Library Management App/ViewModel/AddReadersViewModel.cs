@@ -18,10 +18,18 @@ namespace Library_Management_App.ViewModel
     public class AddReadersViewModel:BaseViewModel
     {
         public ICommand AddAddReadersCM { get; set; }
+        public ICommand Back {  get; set; }
         public AddReadersViewModel()
         {
             AddAddReadersCM = new RelayCommand<AddReadersView>((p) => true, (p) => _AddAddReadersCM(p));
+            Back = new RelayCommand<AddReadersView>((p) => true, (p) => _Back(p));
 
+        }
+
+        public void _Back(AddReadersView view)
+        {
+            ReadersView readersView = new ReadersView();
+            MainViewModel.MainFrame.Content = readersView;
         }
         bool check(string m)
         {

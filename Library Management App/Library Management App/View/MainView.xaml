@@ -59,7 +59,9 @@
                         <RowDefinition/>
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0"/>
+                    <Grid Grid.Row="1">
+                        <Image Source="/Resource/Image/logo.png"/>
+                    </Grid>
                     <Grid Grid.Row="2" Margin="0,30,0,0" Grid.RowSpan="2">
 
                         <StackPanel>
