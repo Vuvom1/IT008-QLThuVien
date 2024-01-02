@@ -57,11 +57,11 @@ Do kiến thức và thời gian thực hiện hạn chế, đồ án của nhó
 <div id="Congnghe"></div>
 
 ### 2. Công nghệ
-* Sử dụng ngôn ngữ C# kết hợp CSDL SQL Server
-* Sử dụng ngôn ngữ XAML
+* Hệ thống API: WPF - Mô hình MVVM
+* IDE: Visual Studio 2019 (C#/.Net)
+* Database: SQL Server
+* Công cụ quản lý: Git, GitHub
 * Entity Framework
-* WPF
-
 
 <div id="Doituongsudung"></div>
 
