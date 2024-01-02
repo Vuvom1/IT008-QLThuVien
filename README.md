@@ -138,7 +138,7 @@ Do kiến thức và thời gian thực hiện hạn chế, đồ án của nhó
 * [Bùi Khánh Đang](https://github.com/22520187) - 22520187
     * Vai trò: Tester, frontend developer, backend developer
 
-* [Đào Anh Tú](https://github.com/anhtu301003) - 
+* [Đào Anh Tú](https://github.com/anhtu301003) - 21522736
     * Vai trò: UI design, frontend developer, backend developer
 
 <!-- NGƯỜI HƯỚNG DẪN -->
