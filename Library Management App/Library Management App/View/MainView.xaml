@@ -139,7 +139,7 @@
                             FontFamily="{StaticResource Custom}"
                             Uid="7"
                             Visibility="{Binding SetQuanLy}"
-                            Command="{Binding NotiCM}">
+                            Command="{Binding SupportCM}">
                             </RadioButton>
 
                             <RadioButton
@@ -148,7 +148,7 @@
                             FontFamily="{StaticResource Custom}"
                             Visibility="{Binding SetNV}"
                             Uid="8"
-                            Command="{Binding SupportCM}">
+                            Command="{Binding NotiCM}">
 
                             </RadioButton>
                             <Grid Grid.Row="2" VerticalAlignment="Bottom">

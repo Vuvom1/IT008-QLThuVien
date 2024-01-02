@@ -70,7 +70,7 @@
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <i:InvokeCommandAction  Command="{Binding SendMSG}"
-                                        CommandParameter="{Binding ElementName=NotiDevView}">
+                                        CommandParameter="{Binding ElementName=NotiView}">
                     </i:InvokeCommandAction>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
@@ -85,7 +85,7 @@
             <i:Interaction.Triggers>
                 <i:EventTrigger EventName="Click">
                     <i:InvokeCommandAction  Command="{Binding SendAttachment}"
-                                        CommandParameter="{Binding ElementName=NotiDevView}">
+                                        CommandParameter="{Binding ElementName=NotiView}">
                     </i:InvokeCommandAction>
                 </i:EventTrigger>
             </i:Interaction.Triggers>
