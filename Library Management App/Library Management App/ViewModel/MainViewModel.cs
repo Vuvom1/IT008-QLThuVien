@@ -62,6 +62,10 @@ namespace Library_Management_App.ViewModel
 
         private Visibility _SetRole;
         public Visibility SetQuanLy { get => _SetRole; set { _SetRole = value; OnPropertyChanged(); } }
+
+        private Visibility _SetRoleNV;
+        public Visibility SetNV { get => _SetRoleNV; set { _SetRoleNV = value; OnPropertyChanged(); } }
+
         private string _Ava;
         public string Ava { get => _Ava; set { _Ava = value; OnPropertyChanged(); } }
 
@@ -80,10 +84,13 @@ namespace Library_Management_App.ViewModel
                 if (User.MAROLE == 0)
                 {
                     SetQuanLy = Visibility.Visible;
-                   
-                } else
+                    SetNV = Visibility.Collapsed;
+
+                } 
+                else
                 {
                     SetQuanLy = Visibility.Collapsed;
+                    SetNV = Visibility.Visible;
                 }
                 //Const.Admin = User.MAROLE;
                 Ava = Const._localLink + @"Resource\Ava\" + User.MAND + ((User.AVA.Contains(".jpg")) ? ".jpg" : ".png").ToString();
