@@ -58,7 +58,7 @@ Do kiến thức và thời gian thực hiện hạn chế, đồ án của nhó
 
 ### 2. Công nghệ
 * Hệ thống API: WPF - Mô hình MVVM
-* IDE: Visual Studio 2019 (C#/.Net)
+* IDE: Visual Studio 2022 (C#/.Net)
 * Database: SQL Server
 * Công cụ quản lý: Git, GitHub
 * Entity Framework
