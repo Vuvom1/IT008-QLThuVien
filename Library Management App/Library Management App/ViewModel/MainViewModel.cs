@@ -49,6 +49,8 @@ namespace Library_Management_App.ViewModel
         public ICommand FineMoneyCM { get; set; }
 
         public ICommand ImportCM { get; set; }
+        public ICommand NotiCM { get; set; }
+        public ICommand SupportCM { get; set; }
 
         public ICommand AddImport { get; set; }
         public ICommand QLNVCM { get; set; }
@@ -60,6 +62,10 @@ namespace Library_Management_App.ViewModel
 
         private Visibility _SetRole;
         public Visibility SetQuanLy { get => _SetRole; set { _SetRole = value; OnPropertyChanged(); } }
+
+        private Visibility _SetRoleNV;
+        public Visibility SetNV { get => _SetRoleNV; set { _SetRoleNV = value; OnPropertyChanged(); } }
+
         private string _Ava;
         public string Ava { get => _Ava; set { _Ava = value; OnPropertyChanged(); } }
 
@@ -78,10 +84,13 @@ namespace Library_Management_App.ViewModel
                 if (User.MAROLE == 0)
                 {
                     SetQuanLy = Visibility.Visible;
-                   
-                } else
+                    SetNV = Visibility.Collapsed;
+
+                } 
+                else
                 {
                     SetQuanLy = Visibility.Collapsed;
+                    SetNV = Visibility.Visible;
                 }
                 //Const.Admin = User.MAROLE;
                 Ava = Const._localLink + @"Resource\Ava\" + User.MAND + ((User.AVA.Contains(".jpg")) ? ".jpg" : ".png").ToString();
@@ -157,8 +166,14 @@ namespace Library_Management_App.ViewModel
             {
                 MainFrame.Content = new QLNVView();
             });
-
-
+            NotiCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new NotificationView();
+            });
+            SupportCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new ReportView();
+            });
             SignoutCM = new RelayCommand<FrameworkElement>((p) => { return p == null ? false : true; }, (p) =>
             {
                 FrameworkElement window = GetParentWindow(p);

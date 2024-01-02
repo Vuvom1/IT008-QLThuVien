@@ -138,6 +138,7 @@
                             Style="{StaticResource BtnNoti}"
                             FontFamily="{StaticResource Custom}"
                             Uid="7"
+                            Visibility="{Binding SetQuanLy}"
                             Command="{Binding NotiCM}">
                             </RadioButton>
 
@@ -145,7 +146,8 @@
                             Width="200"
                             Style="{StaticResource BtnSupport}"
                             FontFamily="{StaticResource Custom}"
-                            Uid="7"
+                            Visibility="{Binding SetNV}"
+                            Uid="8"
                             Command="{Binding SupportCM}">
 
                             </RadioButton>
