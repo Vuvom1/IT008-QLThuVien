@@ -49,6 +49,8 @@ namespace Library_Management_App.ViewModel
         public ICommand FineMoneyCM { get; set; }
 
         public ICommand ImportCM { get; set; }
+        public ICommand NotiCM { get; set; }
+        public ICommand SupportCM { get; set; }
 
         public ICommand AddImport { get; set; }
         public ICommand QLNVCM { get; set; }
@@ -157,8 +159,14 @@ namespace Library_Management_App.ViewModel
             {
                 MainFrame.Content = new QLNVView();
             });
-
-
+            NotiCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new NotificationView();
+            });
+            SupportCM = new RelayCommand<Frame>((p) => { return true; }, (p) =>
+            {
+                MainFrame.Content = new ReportView();
+            });
             SignoutCM = new RelayCommand<FrameworkElement>((p) => { return p == null ? false : true; }, (p) =>
             {
                 FrameworkElement window = GetParentWindow(p);
