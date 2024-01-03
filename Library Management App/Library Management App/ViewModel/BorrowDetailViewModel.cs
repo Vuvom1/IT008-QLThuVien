@@ -56,7 +56,7 @@ namespace Library_Management_App.ViewModel
             smtpClient.Credentials = new NetworkCredential("21522808@gm.uit.edu.vn", "vuvo@1143");
             
                 smtpClient.Send(message);
-                MessageBox.Show("Đã gửi mật khẩu vào Email đăng ký !", "Thông báo");
+                MessageBox.Show("Đã gửi thông báo vào tài khoản độc giả !", "Thông báo");
             } 
             catch (Exception e)
             {

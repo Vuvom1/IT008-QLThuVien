@@ -83,7 +83,7 @@ namespace Library_Management_App.ViewModel
         {
             foreach (NGUOIDUNG temp2 in DataProvider.Ins.DB.NGUOIDUNGs)
             {
-                if (temp2.MAIL == p.Mail.Text)
+                if (temp2.MAIL == p.Mail.Text && temp2.MAIL != User.MAIL)
                 {
                     MessageBox.Show("Email này đã được sử dụng !", "THÔNG BÁO", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
@@ -104,34 +104,36 @@ namespace Library_Management_App.ViewModel
             temp.GIOITINH = p.GTBox.Text;
             temp.NGSINH = (DateTime)p.DateBox.SelectedDate;
             temp.MAIL = p.Mail.Text;
-            string rd = StringGenerator();
-            if (User.AVA != Ava)
-                temp.AVA = "/Resource/Ava/" + rd + (Ava.Contains(".jpg") ? ".jpg" : ".png").ToString();
+            //string rd = StringGenerator();
+            //if (User.AVA != Ava)
+            //    temp.AVA = "/Resource/Ava/" + rd + (Ava.Contains(".jpg") ? ".jpg" : ".png").ToString();
             DataProvider.Ins.DB.SaveChanges();
-            try
-            {
-                if (User.AVA != Ava)
-                    File.Copy(Ava, Const._localLink + @"Resource/Ava/" + rd + (Ava.Contains(".jpg") ? ".jpg" : ".png").ToString(), true);
-            }
-            catch { }
+            //try
+            //{
+            //    if (User.AVA != Ava)
+            //        File.Copy(Ava, Const._localLink + @"Resource/Ava/" + rd + (Ava.Contains(".jpg") ? ".jpg" : ".png").ToString(), true);
+            //}
+            //catch { }
+           
             MessageBox.Show("Cập nhật thành công!", "Thông báo");
+            
         }
-        static string StringGenerator()
-        {
-            Random rd = new Random();
-            int length = rd.Next(5, 20);
-            StringBuilder str_build = new StringBuilder();
-            Random random = new Random();
-            char letter;
-            for (int i = 0; i < length; i++)
-            {
-                double flt = random.NextDouble();
-                int shift = Convert.ToInt32(Math.Floor(25 * flt));
-                letter = Convert.ToChar(shift + 65);
-                str_build.Append(letter);
-            }
-            return str_build.ToString();
-        }
+        ////static string StringGenerator()
+        ////{
+        ////    Random rd = new Random();
+        ////    int length = rd.Next(5, 20);
+        ////    StringBuilder str_build = new StringBuilder();
+        ////    Random random = new Random();
+        ////    char letter;
+        ////    for (int i = 0; i < length; i++)
+        ////    {
+        ////        double flt = random.NextDouble();
+        ////        int shift = Convert.ToInt32(Math.Floor(25 * flt));
+        ////        letter = Convert.ToChar(shift + 65);
+        ////        str_build.Append(letter);
+        ////    }
+        ////    return str_build.ToString();
+        ////}
 
     }
 }

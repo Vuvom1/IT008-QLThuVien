@@ -68,19 +68,7 @@
                                 </Ellipse.Fill>
                             </Ellipse>
                         </Border>
-                        <Button HorizontalAlignment="Left" Margin="30,-85,0,0" VerticalAlignment="Top"
-                        Style="{StaticResource MaterialDesignFlatMidBgButton}"
-                        Content="Thay đổi ảnh" FontFamily="{StaticResource Custom}"
-                        BorderThickness="0"
-                        Width="160" Height="40" Background="#353A55" Foreground="White"
-                        Grid.Row="1" >
-                            <i:Interaction.Triggers>
-                                <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction Command="{Binding AddImage}"
-                                                   CommandParameter="{Binding ElementName=ProfilePicture}"></i:InvokeCommandAction>
-                                </i:EventTrigger>
-                            </i:Interaction.Triggers>
-                        </Button>
+                        
                         <Grid Grid.Column="1">
                             <StackPanel>
 

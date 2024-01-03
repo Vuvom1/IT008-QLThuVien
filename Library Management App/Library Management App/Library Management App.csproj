@@ -505,6 +505,15 @@
     <Resource Include="Resource\Image\logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Resource\ImageBooks\bac-ho-viet-di-chuc-va-di-chuc-cua-bac-ho.jpg" />
+    <Resource Include="Resource\ImageBooks\bieguni.jpg" />
+    <Resource Include="Resource\ImageBooks\book_3996.png" />
+    <Resource Include="Resource\ImageBooks\lichsuvietnam.jpg" />
+    <Resource Include="Resource\ImageBooks\loinguyencau.jpg" />
+    <Resource Include="Resource\ImageBooks\tamlyvesutienhoa.jpg" />
+    <Resource Include="Resource\Ava\NV4736.png" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="Model\QLTV.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>QLTV.edmx</DependentUpon>
@@ -515,13 +524,12 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
-    <Resource Include="Resource\ImageBooks\bac-ho-viet-di-chuc-va-di-chuc-cua-bac-ho.jpg" />
-    <Resource Include="Resource\ImageBooks\bieguni.jpg" />
-    <Resource Include="Resource\ImageBooks\book_3996.png" />
-    <Resource Include="Resource\ImageBooks\lichsuvietnam.jpg" />
-    <Resource Include="Resource\ImageBooks\loinguyencau.jpg" />
-    <Resource Include="Resource\ImageBooks\tamlyvesutienhoa.jpg" />
-    <Resource Include="Resource\Ava\NV4736.png" />
+    <Resource Include="Resource\Ava\NV6303.png" />
+    <Resource Include="Resource\Ava\NV7144.jpg" />
+    <Resource Include="Resource\Ava\NV8165.png" />
+    <Resource Include="Resource\Ava\RWMRWTIJFMAVPQI.png" />
+    <Resource Include="Resource\ImageBooks\book_1071.jpg" />
+    <Resource Include="Resource\ImageBooks\book_4896.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

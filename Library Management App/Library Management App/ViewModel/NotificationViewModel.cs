@@ -20,7 +20,7 @@ namespace Library_Management_App.ViewModel
     public class NotificationViewModel:BaseViewModel
     {
         List<string> file_list;
-        string[] files;
+        string[] files = new string[0];
         public ICommand SendMSG { get; set; }
         public ICommand SendAttachment { get; set; }
         public NotificationViewModel()
@@ -50,7 +50,16 @@ namespace Library_Management_App.ViewModel
                         }
                     }
                 }
-                files = file_list.ToArray();
+                
+                
+                if (file_list.Count() == null)
+                {
+                    files = file_list.ToArray();
+                }
+                else
+                {
+                    files = file_list.ToArray();
+                }
                 int filenum = file.FileNames.Count();
                 parameter.attachButton.Content = "Attachments(" + filenum + ")";
             }
@@ -70,11 +79,16 @@ namespace Library_Management_App.ViewModel
             message.Subject = parameter.SubjectBox.Text;
             message.Body = parameter.MSGBox.Text;
             message.IsBodyHtml = true;
-            foreach (var item in files)
-            {
-                attachment = new System.Net.Mail.Attachment(item);
-                message.Attachments.Add(attachment);
-            }
+          
+            
+                foreach (var item in files)
+                {
+
+                    attachment = new System.Net.Mail.Attachment(item);
+                    message.Attachments.Add(attachment);
+                }
+            
+          
             SmtpClient smtpClient = new SmtpClient("smtp.gmail.com", 587);
             smtpClient.EnableSsl = true;
             smtpClient.DeliveryMethod = SmtpDeliveryMethod.Network;

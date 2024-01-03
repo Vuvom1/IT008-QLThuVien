@@ -50,9 +50,14 @@ namespace Library_Management_App.ViewModel
                     if(a.TENSACH == tenbook)
                     {
                         a.TONGSL = -1;
+
+                        // delete book
+
                         break;
                     }
                 }
+
+
                 DataProvider.Ins.DB.SaveChanges();
                 MessageBox.Show("Xóa sách thành công !", "THÔNG BÁO");
                 BooksView booksView = new BooksView();
@@ -91,7 +96,7 @@ namespace Library_Management_App.ViewModel
                     DataProvider.Ins.DB.SaveChanges();
                     MessageBox.Show("Cập nhật sách thành công !", "THÔNG BÁO");
                     BooksView booksView = new BooksView();
-                    booksView.ListViewBooks.ItemsSource = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes);
+                    booksView.ListViewBooks.ItemsSource = new ObservableCollection<SACH>(DataProvider.Ins.DB.SACHes.Where(a => a.TONGSL>0));
                     MainViewModel.MainFrame.Content = booksView;
                 }
             }

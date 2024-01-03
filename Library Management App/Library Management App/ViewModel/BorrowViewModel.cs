@@ -190,6 +190,7 @@ namespace Library_Management_App.ViewModel
             if (temp.TRANGTHAI == "Chưa trả")
             {
                 p.completeBtn.Visibility = Visibility.Visible;
+                p.sendMail.Visibility = Visibility.Hidden;
             } 
             else if (temp.TRANGTHAI == "Hết hạn")
             {
