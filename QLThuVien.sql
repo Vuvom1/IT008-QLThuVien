@@ -74,7 +74,7 @@ CREATE TABLE NGUOIDUNG (
 
 CREATE TABLE NHAXUATBAN (
   MANXB INT NOT NULL,
-  TENNXB varchar(50) DEFAULT NULL
+  TENNXB Nvarchar(50) DEFAULT NULL
 );
 
 -- --------------------------------------------------------
@@ -307,6 +307,7 @@ INSERT INTO THELOAI (MATL,TENTL) VALUES (6,N'Tâm Lý')
 INSERT INTO THELOAI (MATL,TENTL) VALUES (7,N'Tiểu thuyết')
 INSERT INTO THELOAI (MATL,TENTL) VALUES (8,N'Thiếu nhi')
 
+SELECT * FROM THELOAI
 --Insert nhà xuất bản
 INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (1,N'Dân Trí')
 INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (2,N'NXB Thanh Niên')
@@ -320,9 +321,17 @@ INSERT INTO NHAXUATBAN (MANXB, TENNXB) VALUES (6,N'NXB Hội Nhà Văn')
 INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Chưa kịp lớn đã trưởng thành','/Resource/ImageBooks/chuakiplondatruongthanh.jpg',N'',7,1,2023,5,3,10000,N'9786048862862')
 INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Khéo ăn nói sẽ có được thiên hạ','/Resource/ImageBooks/kheoannoisecoduocthienha.jpg',N'',6,1,2023,5,3,10000,N'978602862')
 INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Đắc nhân tâm','/Resource/ImageBooks/dacnhantam.jpg',N'Hiện nay có một sự hiểu nhầm đã xảy ra. Tuy Đắc Nhân Tâm là tựa sách hầu hết mọi người đều biết đến, vì những danh tiếng và mức độ phổ biến, nhưng một số người lại “ngại” đọc. Lý do vì họ tưởng đây là cuốn sách “dạy làm người” nên có tâm lý e ngại. Có lẽ là do khi giới thiệu về cuốn sách, người ta luôn gắn với miêu tả đây là “nghệ thuật đối nhân xử thế”, “nghệ thuật thu phục lòng người”… Những cụm từ này đã không còn hợp với hiện nay nữa, gây cảm giác xa lạ và không thực tế.',6,1 ,2023,5,3,10000,N'97048862862')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Muôn kiếp nhân sinh','/Resource/ImageBooks/muonkiepnhansinh.jpg',N'',6,1,2023,5,3,10000,N'786048862862')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Không phải sói nhưng cũng đừng là cừu','/Resource/ImageBooks/khong-phai-soi-nhung-cung-dung-la-cuu.jpg',N'',7,1,2023,5,3,10000,N'976048862862')
-INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Tết ở làng địa ngục','/Resource/ImageBooks/Tetolangdianguc.jpg',N'',4,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Muôn kiếp nhân sinh','/Resource/ImageBooks/muonkiepnhansinh.jpg',N'eeee',6,1,2023,5,3,10000,N'786048862862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Không phải sói nhưng cũng đừng là cừu','/Resource/ImageBooks/khong-phai-soi-nhung-cung-dung-la-cuu.jpg',N'bbbb',7,1,2023,5,3,10000,N'976048862862')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Bác Hồ viết di chúc','/Resource/ImageBooks/bac-ho-viet-di-chuc-va-di-chuc-cua-bac-ho.jpg',N'dfdsfg',5,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Lịch sử việt nam','/Resource/ImageBooks/lichsuvietnam.jpg',N'ccccc',5,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Lời nguyện cầu','/Resource/ImageBooks/loinguyencau.jpg',N'ccccc',4,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Thuật thao túng','/Resource/ImageBooks/thuatthaotungtamly.jpg',N'ccccc',6,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'tâm lý về sự tiến hóa của các dân tộc','/Resource/ImageBooks/tamlyvesutienhoa.jpg',N'ccccc',5,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Bieguni','/Resource/ImageBooks/bieguni.jpg',N'ccccc',4,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Nhà giả kim','/Resource/ImageBooks/nhagiakim.jpg',N'ccccc',7,1,2023,5,3,10000,N'978604886286')
+INSERT INTO SACH (TENSACH,IMAGESACH,MOTA,MATL,MANXB,NAMXUATBAN,TONGSL,SLCONLAI,TRIGIA,MASACH) VALUES (N'Tết ở làng địa ngục','/Resource/ImageBooks/Tetolangdianguc.jpg',N'ccccc',4,1,2023,5,3,10000,N'978604886286')
+
 
 select * from sach
 
@@ -354,14 +363,14 @@ select * from ctpn
 
 select * from Docgia
 
-INSERT INTO NGUOIDUNG VALUES (N'NV01',N'Đào Anh Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'NV02',N'Đào Anh Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'NV03',N'Đào Anh Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'NV04',N'Đào Anh Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'NV05',N'Đào Anh Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'AD01',N'Tú','30/10/2003',N'Nam','0941520828','','admin1','db69fc039dcbd2962cb4d28f5891aae1',0,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'AD02',N'Tú','30/10/2003',N'Nam','0941520828','','admin2','db69fc039dcbd2962cb4d28f5891aae1',0,1,'','');
-INSERT INTO NGUOIDUNG VALUES (N'AD03',N'Tú','30/10/2003',N'Nam','0941520828','','admin3','db69fc039dcbd2962cb4d28f5891aae1',0,1,'','');
+INSERT INTO NGUOIDUNG VALUES (N'NV01',N'Đào Anh Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'/Resource/Ava/NV4736.png','a@gmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'NV02',N'Võ Minh Vũ','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'/Resource/Ava/NV4736.png','b@gmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'NV03',N'Bùi Khánh Đang','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'/Resource/Ava/NV4736.png','c@gmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'NV04',N'Tú','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'/Resource/Ava/NV4736.png','d@gmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'NV05',N'Vũ','30/10/2003',N'Nam','0941520828','','anhtu','6fd742a61bd034804c00c49b18045020',1,1,'/Resource/Ava/NV4736.png','e@gmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'AD01',N'Tú','30/10/2003',N'Nam','0941520828','','admin1','db69fc039dcbd2962cb4d28f5891aae1',0,1,'/Resource/Ava/NV4736.png','j@gmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'AD02',N'Tú','30/10/2003',N'Nam','0941520828','','admin2','db69fc039dcbd2962cb4d28f5891aae1',0,1,'/Resource/Ava/NV4736.png','kgmail.com');
+INSERT INTO NGUOIDUNG VALUES (N'AD03',N'Tú','30/10/2003',N'Nam','0941520828','','admin3','db69fc039dcbd2962cb4d28f5891aae1',0,1,'/Resource/Ava/NV4736.png','l@gmail.com');
 
 select * from nguoidung
 

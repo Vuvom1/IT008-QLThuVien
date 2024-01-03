@@ -466,7 +466,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resource\Avatar\" />
-    <Folder Include="Resource\Ava\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\Image\addava.png" />
@@ -488,7 +487,6 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\ImageBooks\book_7133.jpg" />
     <Resource Include="Resource\Image\add.png" />
   </ItemGroup>
   <ItemGroup>
@@ -517,6 +515,13 @@
       <DependentUpon>QLTV.edmx</DependentUpon>
       <LastGenOutput>QLTV.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resource\ImageBooks\bac-ho-viet-di-chuc-va-di-chuc-cua-bac-ho.jpg" />
+    <Resource Include="Resource\ImageBooks\bieguni.jpg" />
+    <Resource Include="Resource\ImageBooks\book_3996.png" />
+    <Resource Include="Resource\ImageBooks\lichsuvietnam.jpg" />
+    <Resource Include="Resource\ImageBooks\loinguyencau.jpg" />
+    <Resource Include="Resource\ImageBooks\tamlyvesutienhoa.jpg" />
+    <Resource Include="Resource\Ava\NV4736.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
