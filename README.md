@@ -25,6 +25,7 @@ Hỗ trợ các thư viện dễ dàng hơn trong quản lý sách và giúp ng�
 
 [V. Tổng kết](#Tongket)
 
+[VI. Hướng dẫn cài đặt](#Huongdancaidat)
 
 <!-- MỞ ĐẦU -->
 <div id="Modau"></div>
@@ -173,6 +174,34 @@ Do kiến thức và thời gian thực hiện hạn chế, đồ án của nhó
 * Thêm mục báo cáo thống kê cho dễ dàng quản lý
 
 * Quản lý chi tiết lợi nhuận, chi phí trong mục thống kê.
+
+
+<div id="Huongdancaidat"></div>
+## VI. Hướng dẫn cài đặt:
+
+
+* Bước 1: Vào https://github.com/Vuvom1/IT008-QLThuVien
+  
+*	Bước 2: Vào Code và copy https://github.com/Vuvom1/IT008-QLThuVien.git
+  
+*	Bước 3: Mở git base (yêu cầu phải code git) và gõ git clone https://github.com/Vuvom1/IT008-QLThuVien.git
+  
+*	Bước 4: Sau khi clone về, mở file QLThuVien.sql, chạy file sql này.
+  
+*	Bước 5: Mở file “Library Management App.sln”, trong mục Model trong Solution Explorer, xóa mục QLTV.edmx
+  
+*	Bước 6: Vào App.config trong Solution Explorer, xóa connectionStrings
+  
+*	Bước 7: click chuột phải vào Model, chọn Add  New Item…
+  
+*	Bước 8. Chọn data  ADO.NET Entity Data Model, đổi tên thành QLTV sao đó nhấn add
+  
+*	Bước 9: Chọn EF Design from database  nhấn Next
+  
+* Bước 10: Chọn New Connection, chọn Server Name và database QLTV  Test Connection  OK
+  
+*	Bước 11: Nhấn Next và click chọn Tables  Finish 
+
 ---
 
 <p align="right"><a href="#Top">Quay lại đầu trang</a></p>
